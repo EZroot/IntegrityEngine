@@ -1,0 +1,101 @@
+## C# .gitignore for Visual Studio, MSBuild, and NuGet
+
+### 1. Visual Studio and Solution Files
+# Built files and folders
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+*[Tt]mp/
+*[Ss]vn/
+[Ee]rrorLog/
+
+# User-specific settings and preferences
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ReSharper-related files
+_ReSharper.*/
+*.[Rr]e[Ss]harper
+*.DotSettings
+
+# Visual Studio Code specific settings (often used in C# projects)
+.vscode/
+
+# Visual Studio 2017+ cache/settings/user files
+.vs/
+!/.vs/
+!/.vs/Solution/
+!/.vs/Solution/FileContentIndex/
+
+# Miscellaneous Visual Studio files
+ipch/
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.cache
+*.bak
+*.log
+*.pfx
+*.vspscc
+*.vssscc
+*.vsp
+*.wsd
+
+---
+
+### 2. NuGet and Package Management
+# NuGet packages directory
+[Pp]ackages/
+# The lock file often used to pin dependencies, but sometimes committed if using package references
+# Uncomment the line below if you *do not* want to commit the lock file (e.g., packages.lock.json)
+# packages.lock.json
+
+# Local NuGet cache folder (should generally be outside the project, but included for completeness)
+# nuget.g.props
+# nuget.g.targets
+
+# Package restoration files
+*.nuet
+*.nupkg
+*.snupkg
+
+---
+
+### 3. Generated Files and Deployments
+# Generated documentation
+*.[Dd]oc[Cc]ontent
+*.[Xx]ml[Cc]ontent
+# Web/Deployment files
+*.publish.xml
+*.refresh
+
+# Test results and coverage
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# SQL Server database files
+*.mdf
+*.ldf
+
+# Local settings files that may contain secrets (e.g., Azure or other cloud settings)
+appsettings.Development.json
+appsettings.Staging.json
+appsettings.Production.json
+# Or for environment variables:
+*.env
+
+---
+
+### 4. Operating System Files
+# Thumbnails
+.DS_Store
+# Linux/Mac files
+*~
+# Windows files
+Thumbs.db
