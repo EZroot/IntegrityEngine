@@ -7,7 +7,6 @@ public class GLTexture
     public int Width { get; }
     public int Height { get; }
     
-    // Store the GL API instance
     private readonly GL m_GlApi;
 
     public GLTexture(GL glApi, ImageData imageData)
@@ -25,33 +24,30 @@ public class GLTexture
         
         m_GlApi.BindTexture(TextureTarget.Texture2D, textureId);
 
-        // --- Set Texture Parameters ---
-        // Basic Linear filtering and Clamp-to-Edge wrapping
+        // Basic Linear filtering and edge wrapping
         m_GlApi.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (int)GLEnum.ClampToEdge);
         m_GlApi.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (int)GLEnum.ClampToEdge);
         m_GlApi.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)GLEnum.Linear);
         m_GlApi.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)GLEnum.Linear);
 
-        // --- Load Data into GPU ---
+        // Load onto gpu
         fixed (byte* ptr = imageData.PixelData)
         {
             m_GlApi.TexImage2D(
                 TextureTarget.Texture2D,
                 0, // mipmap level
-                (int)InternalFormat.Rgba, // internal format
+                (int)InternalFormat.Rgba, 
                 (uint)imageData.Width,
                 (uint)imageData.Height,
                 0, // border
-                PixelFormat.Rgba, // source format (matches StbImageSharp output)
-                PixelType.UnsignedByte, // source data type
+                PixelFormat.Rgba,
+                PixelType.UnsignedByte, 
                 ptr
             );
         }
 
         m_GlApi.GenerateMipmap(TextureTarget.Texture2D);
-        
-        m_GlApi.BindTexture(TextureTarget.Texture2D, 0); // Unbind
-        
+        m_GlApi.BindTexture(TextureTarget.Texture2D, 0); 
         return textureId;
     }
     
@@ -61,7 +57,6 @@ public class GLTexture
         m_GlApi.BindTexture(TextureTarget.Texture2D, TextureId);
     }
     
-    // Clean up GPU resource
     public void Dispose()
     {
         m_GlApi.DeleteTexture(TextureId);

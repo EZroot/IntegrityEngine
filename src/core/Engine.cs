@@ -105,7 +105,7 @@ public class Engine
 
         // DEBUG TESTING
         Debug.Assert(m_TestTexture != null, "Test texture is null in Engine Render.");
-        m_RenderPipe.DrawTexture(m_TestTexture);
+        m_RenderPipe.DrawTextureAt(m_TestTexture, 100, 50, 256, 256);
         // END DEBUG
 
         m_Game.Render();

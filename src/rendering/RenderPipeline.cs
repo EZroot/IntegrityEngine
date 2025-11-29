@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Numerics;
 using Silk.NET.OpenGL;
 using Silk.NET.SDL;
 
@@ -6,13 +7,14 @@ public class RenderPipeline : IRenderPipeline
 {
     private const string SHADER_DIR = "/home/ezroot/Repos/Integrity/src/rendering/shaders/";
     private static readonly float[] s_QuadVertices = {
-        -1.0f,  1.0f, 0.0f, 1.0f, // Top-Left
-        -1.0f, -1.0f, 0.0f, 0.0f, // Bottom-Left
-        1.0f, -1.0f, 1.0f, 0.0f, // Bottom-Right
+        // Position (X, Y) | Texture Coord (U, V)
+        0.0f, 1.0f, 0.0f, 1.0f, // Top-Left
+        0.0f, 0.0f, 0.0f, 0.0f, // Bottom-Left
+        1.0f, 0.0f, 1.0f, 0.0f, // Bottom-Right
 
-        -1.0f,  1.0f, 0.0f, 1.0f, // Top-Left
-        1.0f, -1.0f, 1.0f, 0.0f, // Bottom-Right
-        1.0f,  1.0f, 1.0f, 1.0f  // Top-Right
+        0.0f, 1.0f, 0.0f, 1.0f, // Top-Left
+        1.0f, 0.0f, 1.0f, 0.0f, // Bottom-Right
+        1.0f, 1.0f, 1.0f, 1.0f  // Top-Right
     };
 
     private Sdl? m_SdlApi;
@@ -26,8 +28,11 @@ public class RenderPipeline : IRenderPipeline
     private readonly System.Drawing.Color ClearColor = System.Drawing.Color.CornflowerBlue;
     private readonly ClearBufferMask m_ClearBufferMask = ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit;
 
-    public GL? GlApi => m_GlApi;
+    private int m_ProjectionUniformLocation;
+    private Matrix4x4 m_ProjectionMatrix;
     
+    public GL? GlApi => m_GlApi;
+
     /// <summary>
     /// Initializes the renderer with the given SDL API and window.
     /// </summary>
@@ -53,6 +58,24 @@ public class RenderPipeline : IRenderPipeline
         );
 
         SetupQuadMesh();
+
+        m_ProjectionMatrix = Matrix4x4.CreateOrthographicOffCenter(
+            0, 
+            settings.Data.WindowWidth,
+            settings.Data.WindowHeight, 
+            0,                          // Top (makes Y=0 the top of the window)
+            -1.0f, 
+            1.0f
+        );
+
+        m_ProjectionUniformLocation = m_GlApi.GetUniformLocation(m_ShaderProgramId, "projection");
+
+        m_GlApi.UseProgram(m_ShaderProgramId);
+        fixed(float* ptr = &m_ProjectionMatrix.M11)
+        {
+            m_GlApi.UniformMatrix4(m_ProjectionUniformLocation, 1, false, ptr);         
+        }
+        m_GlApi.UseProgram(0);
     }
 
     public void DrawTexture(GLTexture texture)
@@ -68,6 +91,31 @@ public class RenderPipeline : IRenderPipeline
         m_GlApi.BindVertexArray(m_VaoId);
         m_GlApi.DrawArrays(PrimitiveType.Triangles, 0, 6);
 
+        m_GlApi.BindVertexArray(0);
+        m_GlApi.BindTexture(TextureTarget.Texture2D, 0);
+    }
+
+    public void DrawTextureAt(GLTexture texture, float x, float y, float width, float height)
+    {
+        Debug.Assert(m_GlApi != null, "GL API is null.");
+
+        m_GlApi.UseProgram(m_ShaderProgramId);
+        texture.Use(TextureUnit.Texture0);
+
+        var model = MathHelper.Translation(x, y, width, height);
+        int modelLoc = m_GlApi.GetUniformLocation(m_ShaderProgramId, "model");
+        unsafe
+        {
+            m_GlApi.UniformMatrix4(modelLoc, 1, false, (float*)&model); 
+        }
+
+        int location = m_GlApi.GetUniformLocation(m_ShaderProgramId, "textureSampler");
+        m_GlApi.Uniform1(location, 0); 
+
+        m_GlApi.BindVertexArray(m_VaoId);
+        m_GlApi.DrawArrays(PrimitiveType.Triangles, 0, 6);
+
+        // Clean up
         m_GlApi.BindVertexArray(0);
         m_GlApi.BindTexture(TextureTarget.Texture2D, 0);
     }

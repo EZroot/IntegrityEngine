@@ -17,7 +17,6 @@ public class AssetManager : IAssetManager
             return default;
         }
         
-        StbImage.stbi_set_flip_vertically_on_load(1);
         using (var stream = File.OpenRead(assetPath))
         {
             var image = ImageResult.FromStream(stream, ColorComponents.RedGreenBlueAlpha);
