@@ -17,7 +17,7 @@ public class Engine
     private bool m_IsRunning;
 
     // DEBUG TESTING
-    private GLTexture? m_TestTexture;
+    private GameObject? m_testObject;
     // END
 
     /// <summary>
@@ -83,9 +83,7 @@ public class Engine
         m_Game.Initialize();
 
         // DEBUG TESTING
-        var imageData = m_AssetManager.LoadAsset("/home/ezroot/Repos/Integrity/DefaultEngineAssets/logo.png");
-        Debug.Assert(m_RenderPipe.GlApi != null, "GL API is null in Engine.");
-        m_TestTexture = new GLTexture(m_RenderPipe.GlApi, imageData);
+        m_testObject = Service.Get<IGameObjectFactory>()?.CreateGameObject("/home/ezroot/Repos/Integrity/DefaultEngineAssets/logo.png");
         // END DEBUG
     }
 
@@ -104,8 +102,8 @@ public class Engine
         m_RenderPipe.RenderFrameStart();
 
         // DEBUG TESTING
-        Debug.Assert(m_TestTexture != null, "Test texture is null in Engine Render.");
-        m_RenderPipe.DrawTextureAt(m_TestTexture, 100, 50, 256, 256);
+        Debug.Assert(m_testObject != null, "Test texture is null in Engine Render.");
+        m_RenderPipe.DrawTextureAt(m_testObject.Sprite.Texture, 100, 50, 256, 256);
         // END DEBUG
 
         m_Game.Render();
