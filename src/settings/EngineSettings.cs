@@ -1,5 +1,6 @@
 public class EngineSettings : IEngineSettings
 {
+    public const string SHADER_DIR = "/home/ezroot/Repos/Integrity/src/rendering/shaders/";
     public const string FILENAME_ENGINE_SETTINGS = "engine.ini";
 
     [System.Serializable]

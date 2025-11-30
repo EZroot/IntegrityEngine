@@ -8,8 +8,6 @@ using PixelType = Silk.NET.OpenGL.PixelType;
 
 public class ImGuiPipeline : IImGuiPipeline
 {
-    private const string SHADER_DIR = "/home/ezroot/Repos/Integrity/src/rendering/shaders/";
-
     private IntPtr m_Context;
     private GL? m_GlApi;
     private unsafe void* m_GlContext;
@@ -250,8 +248,8 @@ public class ImGuiPipeline : IImGuiPipeline
         Debug.Assert(m_GlApi != null, "OpenGL API is null when setting up ImGui resources.");
 
         m_ProgramId = CreateShaderProgram(
-            Path.Combine(SHADER_DIR, "imgui.vert"), 
-            Path.Combine(SHADER_DIR, "imgui.frag")
+            Path.Combine(EngineSettings.SHADER_DIR, "imgui.vert"), 
+            Path.Combine(EngineSettings.SHADER_DIR, "imgui.frag")
         );
         
         m_AttribLocationPos = m_GlApi.GetAttribLocation(m_ProgramId, "in_position");

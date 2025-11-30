@@ -5,7 +5,6 @@ using Silk.NET.SDL;
 
 public class RenderPipeline : IRenderPipeline
 {
-    private const string SHADER_DIR = "/home/ezroot/Repos/Integrity/src/rendering/shaders/";
     private static readonly float[] s_QuadVertices = {
         // Position (X, Y) | Texture Coord (U, V)
         0.0f, 1.0f, 0.0f, 1.0f, // Top-Left
@@ -53,8 +52,8 @@ public class RenderPipeline : IRenderPipeline
         UpdateViewportSize(settings.Data.WindowWidth, settings.Data.WindowHeight);
 
         m_ShaderProgramId = CreateShaderProgram(
-            Path.Combine(SHADER_DIR, "default.vert"), 
-            Path.Combine(SHADER_DIR, "default.frag")
+            Path.Combine(EngineSettings.SHADER_DIR, "default.vert"), 
+            Path.Combine(EngineSettings.SHADER_DIR, "default.frag")
         );
 
         SetupQuadMesh();
