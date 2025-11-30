@@ -1,5 +1,7 @@
+using Silk.NET.SDL;
+
 public interface IInputManager : IService
 {
-    void InitializeInput();
-    void ProcessInput();
+    unsafe void ProcessInput(Event ev);
+    bool IsKeyDown(Scancode scancode);
 }

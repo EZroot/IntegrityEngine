@@ -100,6 +100,9 @@ public class Engine
         Event ev;
         while (m_SdlApi!.PollEvent(&ev) != 0) 
         {
+            m_ImGuiPipe.ProcessEvents(ev);
+            m_InputManager.ProcessInput(ev); 
+
             if ((EventType)ev.Type == EventType.Windowevent && ev.Window.Event == (byte)WindowEventID.SizeChanged)
             {
                 int newW, newH;
@@ -107,13 +110,24 @@ public class Engine
                 m_MainCamera.UpdateViewportSize(newW, newH);
                 m_RenderPipe.UpdateViewportSize(newW, newH); 
             }
-            m_ImGuiPipe.ProcessEvents(ev);
-            m_InputManager.ProcessInput(); 
         }
     }
 
+    // DEBUG
+    const float cameraSpeed = 300.0f; 
+    // END DEBUG
     private void Update()
     {
+        float deltaTime = 1.0f / 60.0f; 
+        if (m_InputManager.IsKeyDown(Scancode.ScancodeW))
+            m_MainCamera.Position += new Vector2(0, -cameraSpeed * deltaTime);
+        if (m_InputManager.IsKeyDown(Scancode.ScancodeS))
+            m_MainCamera.Position += new Vector2(0, cameraSpeed * deltaTime);
+        if (m_InputManager.IsKeyDown(Scancode.ScancodeA))
+            m_MainCamera.Position += new Vector2(-cameraSpeed * deltaTime, 0);
+        if (m_InputManager.IsKeyDown(Scancode.ScancodeD))
+            m_MainCamera.Position += new Vector2(cameraSpeed * deltaTime, 0);   
+
         m_Game.Update();
     }
 

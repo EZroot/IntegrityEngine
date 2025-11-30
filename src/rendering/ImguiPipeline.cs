@@ -107,7 +107,6 @@ public class ImGuiPipeline : IImGuiPipeline
             m_SdlApi.GLMakeCurrent(m_WindowHandler, m_GlContext);
         }
     }
-    
     /// <summary>
     /// Maps SDL events to ImGui's internal Input/Output system.
     /// </summary>
@@ -121,100 +120,162 @@ public class ImGuiPipeline : IImGuiPipeline
         {
             case EventType.Keydown:
             case EventType.Keyup:
-                {
-                    bool down = (EventType)ev.Type == EventType.Keydown;
-                    ImGuiKey key = MapSDLKey(ev.Key.Keysym.Scancode); 
-                    
-                    if (key != ImGuiKey.None)
-                    {
-                        io.KeysData[(int)key].Down = (byte)(down ? 1 : 0);
-                    }
-                    
-                    io.KeyCtrl = (ev.Key.Keysym.Mod & (ushort)Keymod.Ctrl) != 0;
-                    io.KeyShift = (ev.Key.Keysym.Mod & (ushort)Keymod.Shift) != 0;
-                    io.KeyAlt = (ev.Key.Keysym.Mod & (ushort)Keymod.Alt) != 0;
-                    io.KeySuper = (ev.Key.Keysym.Mod & (ushort)Keymod.Gui) != 0;
-                }
-                break;
+            {
+                bool down = ev.Type == (uint)EventType.Keydown;
+                MapSDLKey(down, ev.Key.Keysym.Scancode);
+
+                io.KeyCtrl  = (ev.Key.Keysym.Mod & (ushort)Keymod.Ctrl)  != 0;
+                io.KeyShift = (ev.Key.Keysym.Mod & (ushort)Keymod.Shift) != 0;
+                io.KeyAlt   = (ev.Key.Keysym.Mod & (ushort)Keymod.Alt)   != 0;
+                io.KeySuper = (ev.Key.Keysym.Mod & (ushort)Keymod.Gui)   != 0;
+            }
+            break;
 
             case EventType.Textinput:
-                string text = System.Text.Encoding.UTF8.GetString(ev.Text.Text, 32); // SDL_TEXTINPUTEVENT_TEXT_SIZE is 32
+            {
+                string text = System.Text.Encoding.UTF8.GetString(ev.Text.Text, 32);
                 io.AddInputCharactersUTF8(text);
-                break;
-            
+            }
+            break;
+
             case EventType.Mousebuttondown:
             case EventType.Mousebuttonup:
+            {
+                bool down = (EventType)ev.Type == EventType.Mousebuttondown;
+                int button = (int)ev.Button.Button; 
+
+                if (button >= 1 && button <= 5)
                 {
-                    int button = (int)ev.Button.Button;
-                    bool down = (EventType)ev.Type == EventType.Mousebuttondown;
-                    
-                    if (button >= 1 && button <= 5)
-                    {
-                        io.MouseDown[button - 1] = down;
-                    }
+                    io.MouseDown[button - 1] = down;
                 }
-                break;
+            }
+            break;
 
             case EventType.Mousemotion:
+            {
                 io.MousePos = new Vector2(ev.Motion.X, ev.Motion.Y);
-                break;
+            }
+            break;
 
             case EventType.Mousewheel:
+            {
+                float wheelX = ev.Wheel.X;
+                float wheelY = ev.Wheel.Y;
+
+                if ((ev.Wheel.Direction & (uint)MouseWheelDirection.Flipped) != 0)
                 {
-                    float wheelX = ev.Wheel.X;
-                    float wheelY = ev.Wheel.Y;
-                    
-                    if ((ev.Wheel.Direction & (uint)MouseWheelDirection.Flipped) != 0)
-                    {
-                        wheelX *= -1.0f;
-                        wheelY *= -1.0f;
-                    }
-                    
-                    io.MouseWheelH += wheelX;
-                    io.MouseWheel += wheelY;
+                    wheelX = -wheelX;
+                    wheelY = -wheelY;
                 }
-                break;
-                
+
+                io.MouseWheelH += wheelX;
+                io.MouseWheel  += wheelY;
+            }
+            break;
+
             case EventType.Windowevent:
+            {
                 if (ev.Window.Event == (byte)WindowEventID.SizeChanged)
                 {
                     int w, h;
                     m_SdlApi!.GetWindowSize(m_WindowHandler, &w, &h);
                     io.DisplaySize = new Vector2(w, h);
                 }
-                break;
+            }
+            break;
         }
     }
     
-    private ImGuiKey MapSDLKey(Scancode scancode)
+    private unsafe void MapSDLKey(bool down, Scancode sc)
     {
-        return scancode switch
+        ImGuiIOPtr io = ImGui.GetIO();
+
+        ImGuiKey key = sc switch
         {
+            Scancode.ScancodeA => ImGuiKey.A,
+            Scancode.ScancodeB => ImGuiKey.B,
+            Scancode.ScancodeC => ImGuiKey.C,
+            Scancode.ScancodeD => ImGuiKey.D,
+            Scancode.ScancodeE => ImGuiKey.E,
+            Scancode.ScancodeF => ImGuiKey.F,
+            Scancode.ScancodeG => ImGuiKey.G,
+            Scancode.ScancodeH => ImGuiKey.H,
+            Scancode.ScancodeI => ImGuiKey.I,
+            Scancode.ScancodeJ => ImGuiKey.J,
+            Scancode.ScancodeK => ImGuiKey.K,
+            Scancode.ScancodeL => ImGuiKey.L,
+            Scancode.ScancodeM => ImGuiKey.M,
+            Scancode.ScancodeN => ImGuiKey.N,
+            Scancode.ScancodeO => ImGuiKey.O,
+            Scancode.ScancodeP => ImGuiKey.P,
+            Scancode.ScancodeQ => ImGuiKey.Q,
+            Scancode.ScancodeR => ImGuiKey.R,
+            Scancode.ScancodeS => ImGuiKey.S,
+            Scancode.ScancodeT => ImGuiKey.T,
+            Scancode.ScancodeU => ImGuiKey.U,
+            Scancode.ScancodeV => ImGuiKey.V,
+            Scancode.ScancodeW => ImGuiKey.W,
+            Scancode.ScancodeX => ImGuiKey.X,
+            Scancode.ScancodeY => ImGuiKey.Y,
+            Scancode.ScancodeZ => ImGuiKey.Z,
+
+            Scancode.Scancode1 => ImGuiKey._1,
+            Scancode.Scancode2 => ImGuiKey._2,
+            Scancode.Scancode3 => ImGuiKey._3,
+            Scancode.Scancode4 => ImGuiKey._4,
+            Scancode.Scancode5 => ImGuiKey._5,
+            Scancode.Scancode6 => ImGuiKey._6,
+            Scancode.Scancode7 => ImGuiKey._7,
+            Scancode.Scancode8 => ImGuiKey._8,
+            Scancode.Scancode9 => ImGuiKey._9,
+            Scancode.Scancode0 => ImGuiKey._0,
+
+            Scancode.ScancodeReturn => ImGuiKey.Enter,
+            Scancode.ScancodeEscape => ImGuiKey.Escape,
+            Scancode.ScancodeBackspace => ImGuiKey.Backspace,
             Scancode.ScancodeTab => ImGuiKey.Tab,
+            Scancode.ScancodeSpace => ImGuiKey.Space,
+
+            Scancode.ScancodeMinus => ImGuiKey.Minus,
+            Scancode.ScancodeEquals => ImGuiKey.Equal,
+            Scancode.ScancodeLeftbracket => ImGuiKey.LeftBracket,
+            Scancode.ScancodeRightbracket => ImGuiKey.RightBracket,
+            Scancode.ScancodeBackslash => ImGuiKey.Backslash,
+            Scancode.ScancodeSemicolon => ImGuiKey.Semicolon,
+            Scancode.ScancodeApostrophe => ImGuiKey.Apostrophe,
+            Scancode.ScancodeGrave => ImGuiKey.GraveAccent,
+            Scancode.ScancodeComma => ImGuiKey.Comma,
+            Scancode.ScancodePeriod => ImGuiKey.Period,
+            Scancode.ScancodeSlash => ImGuiKey.Slash,
+
             Scancode.ScancodeLeft => ImGuiKey.LeftArrow,
             Scancode.ScancodeRight => ImGuiKey.RightArrow,
             Scancode.ScancodeUp => ImGuiKey.UpArrow,
             Scancode.ScancodeDown => ImGuiKey.DownArrow,
-            Scancode.ScancodePageup => ImGuiKey.PageUp,
-            Scancode.ScancodePagedown => ImGuiKey.PageDown,
+
+            Scancode.ScancodeInsert => ImGuiKey.Insert,
             Scancode.ScancodeHome => ImGuiKey.Home,
             Scancode.ScancodeEnd => ImGuiKey.End,
+            Scancode.ScancodePageup => ImGuiKey.PageUp,
+            Scancode.ScancodePagedown => ImGuiKey.PageDown,
             Scancode.ScancodeDelete => ImGuiKey.Delete,
-            Scancode.ScancodeBackspace => ImGuiKey.Backspace,
-            Scancode.ScancodeReturn => ImGuiKey.Enter,
-            Scancode.ScancodeEscape => ImGuiKey.Escape,
-            Scancode.ScancodeA => ImGuiKey.A,
-            Scancode.ScancodeC => ImGuiKey.C,
-            Scancode.ScancodeV => ImGuiKey.V,
-            Scancode.ScancodeX => ImGuiKey.X,
-            Scancode.ScancodeY => ImGuiKey.Y,
-            Scancode.ScancodeZ => ImGuiKey.Z,
+
             Scancode.ScancodeLctrl => ImGuiKey.LeftCtrl,
-            Scancode.ScancodeRctrl => ImGuiKey.RightCtrl,
             Scancode.ScancodeLshift => ImGuiKey.LeftShift,
+            Scancode.ScancodeLalt => ImGuiKey.LeftAlt,
+            Scancode.ScancodeLgui => ImGuiKey.LeftSuper,
+            Scancode.ScancodeRctrl => ImGuiKey.RightCtrl,
             Scancode.ScancodeRshift => ImGuiKey.RightShift,
-            _ => ImGuiKey.None,
+            Scancode.ScancodeRalt => ImGuiKey.RightAlt,
+            Scancode.ScancodeRgui => ImGuiKey.RightSuper,
+
+            _ => ImGuiKey.None
         };
+
+        if (key == ImGuiKey.None)
+            return;
+
+        io.AddKeyEvent(key, down);
     }
 
     private uint CreateShaderProgram(string vertexPath, string fragmentPath)
