@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using ImGuiNET;
 using Silk.NET.SDL;
@@ -15,6 +16,7 @@ public class Engine
     private readonly IImGuiPipeline m_ImGuiPipe;
     private readonly ISceneManager m_SceneManager;
     private readonly IAudioManager m_AudioManager;
+    private Camera2D m_MainCamera;
     private bool m_IsRunning;
 
     // DEBUG TESTING
@@ -89,6 +91,8 @@ public class Engine
         // DEBUG TESTING
         m_testObject = Service.Get<IGameObjectFactory>()?.CreateGameObject("/home/ezroot/Repos/Integrity/DefaultEngineAssets/logo.png");
         // END DEBUG
+
+        m_MainCamera = new Camera2D(m_Settings.Data.WindowWidth, m_Settings.Data.WindowHeight);
     }
 
     private unsafe void HandleInput()
@@ -100,6 +104,7 @@ public class Engine
             {
                 int newW, newH;
                 m_SdlApi.GetWindowSize(m_WindowPipe.WindowHandler, &newW, &newH);
+                m_MainCamera.UpdateViewportSize(newW, newH);
                 m_RenderPipe.UpdateViewportSize(newW, newH); 
             }
             m_ImGuiPipe.ProcessEvents(ev);
@@ -115,6 +120,9 @@ public class Engine
     private void Render()
     {
         m_RenderPipe.RenderFrameStart();
+
+        Matrix4x4 cameraMatrix = m_MainCamera.GetViewProjectionMatrix(); 
+        m_RenderPipe.SetProjectionMatrix(in cameraMatrix);
 
         // DEBUG TESTING
         Debug.Assert(m_testObject != null, "Test texture is null in Engine Render.");

@@ -28,7 +28,6 @@ public class RenderPipeline : IRenderPipeline
     private readonly ClearBufferMask m_ClearBufferMask = ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit;
 
     private int m_ProjectionUniformLocation;
-    private Matrix4x4 m_ProjectionMatrix;
     
     public GL? GlApi => m_GlApi;
 
@@ -58,23 +57,7 @@ public class RenderPipeline : IRenderPipeline
 
         SetupQuadMesh();
 
-        m_ProjectionMatrix = Matrix4x4.CreateOrthographicOffCenter(
-            0, 
-            settings.Data.WindowWidth,
-            settings.Data.WindowHeight, 
-            0,                          // Top (makes Y=0 the top of the window)
-            -1.0f, 
-            1.0f
-        );
-
         m_ProjectionUniformLocation = m_GlApi.GetUniformLocation(m_ShaderProgramId, "projection");
-
-        m_GlApi.UseProgram(m_ShaderProgramId);
-        fixed(float* ptr = &m_ProjectionMatrix.M11)
-        {
-            m_GlApi.UniformMatrix4(m_ProjectionUniformLocation, 1, false, ptr);         
-        }
-        m_GlApi.UseProgram(0);
     }
 
     /// <summary>
@@ -121,32 +104,30 @@ public class RenderPipeline : IRenderPipeline
     }
 
     /// <summary>
-    /// Updates the OpenGL Viewport and Projection Matrix when the window size changes.
+    /// Updates the OpenGL Viewport. (Projection is handled externally by the Camera Manager).
     /// </summary>
     public unsafe void UpdateViewportSize(int width, int height)
     {
         Debug.Assert(m_GlApi != null, "GL API is null in RenderPipeline UpdateSize.");
-
-        // 1. Update Viewport
         m_GlApi.Viewport(0, 0, (uint)width, (uint)height);
+    }
 
-        // 2. Update Projection Matrix (Orthographic Off Center)
-        m_ProjectionMatrix = Matrix4x4.CreateOrthographicOffCenter(
-            0, 
-            width,
-            height, 
-            0, // Top (makes Y=0 the top of the window)
-            -1.0f, 
-            1.0f
-        );
-
-        // 3. Upload new Projection Matrix to the Shader
+    /// <summary>
+    /// Uploads the View-Projection Matrix from the active camera to the shader.
+    /// </summary>
+    /// <param name="matrix">The combined Matrix4x4 data (View * Projection).</param>
+    public unsafe void SetProjectionMatrix(in Matrix4x4 matrix)
+    {
+        Debug.Assert(m_GlApi != null, "GL API is null.");
+        
         m_GlApi.UseProgram(m_ShaderProgramId);
-        fixed(float* ptr = &m_ProjectionMatrix.M11)
+        
+        fixed(float* ptr = &matrix.M11)
         {
             m_GlApi.UniformMatrix4(m_ProjectionUniformLocation, 1, false, ptr);         
         }
-        m_GlApi.UseProgram(0);
+        
+        m_GlApi.UseProgram(0); 
     }
 
     private uint CreateShaderProgram(string vertexPath, string fragmentPath)
