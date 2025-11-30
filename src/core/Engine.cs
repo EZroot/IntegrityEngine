@@ -16,7 +16,10 @@ public class Engine
     private readonly IImGuiPipeline m_ImGuiPipe;
     private readonly ISceneManager m_SceneManager;
     private readonly IAudioManager m_AudioManager;
-    private Camera2D m_MainCamera;
+    private Camera2D? m_MainCamera;
+    // DEBUG
+    const float cameraSpeed = 300.0f; 
+    // END DEBUG
     private bool m_IsRunning;
 
     // DEBUG TESTING
@@ -68,7 +71,7 @@ public class Engine
     {
         await m_Settings.LoadSettingsAsync();
         Logger.Log($"Engine '{m_Settings.Data.EngineName}' version {m_Settings.Data.EngineVersion} initialized.",
-         Logger.LogSeverity.Info);
+        Logger.LogSeverity.Info);
     }
 
     private unsafe void Initialize()
@@ -107,26 +110,24 @@ public class Engine
             {
                 int newW, newH;
                 m_SdlApi.GetWindowSize(m_WindowPipe.WindowHandler, &newW, &newH);
-                m_MainCamera.UpdateViewportSize(newW, newH);
+                m_MainCamera!.UpdateViewportSize(newW, newH);
                 m_RenderPipe.UpdateViewportSize(newW, newH); 
             }
         }
     }
 
-    // DEBUG
-    const float cameraSpeed = 300.0f; 
-    // END DEBUG
+
     private void Update()
     {
         float deltaTime = 1.0f / 60.0f; 
         if (m_InputManager.IsKeyDown(Scancode.ScancodeW))
-            m_MainCamera.Position += new Vector2(0, -cameraSpeed * deltaTime);
+            m_MainCamera!.Position += new Vector2(0, -cameraSpeed * deltaTime);
         if (m_InputManager.IsKeyDown(Scancode.ScancodeS))
-            m_MainCamera.Position += new Vector2(0, cameraSpeed * deltaTime);
+            m_MainCamera!.Position += new Vector2(0, cameraSpeed * deltaTime);
         if (m_InputManager.IsKeyDown(Scancode.ScancodeA))
-            m_MainCamera.Position += new Vector2(-cameraSpeed * deltaTime, 0);
+            m_MainCamera!.Position += new Vector2(-cameraSpeed * deltaTime, 0);
         if (m_InputManager.IsKeyDown(Scancode.ScancodeD))
-            m_MainCamera.Position += new Vector2(cameraSpeed * deltaTime, 0);   
+            m_MainCamera!.Position += new Vector2(cameraSpeed * deltaTime, 0);   
 
         m_Game.Update();
     }
@@ -134,8 +135,8 @@ public class Engine
     private void Render()
     {
         m_RenderPipe.RenderFrameStart();
-
-        Matrix4x4 cameraMatrix = m_MainCamera.GetViewProjectionMatrix(); 
+        
+        Matrix4x4 cameraMatrix = m_MainCamera!.GetViewProjectionMatrix(); 
         m_RenderPipe.SetProjectionMatrix(in cameraMatrix);
 
         // DEBUG TESTING
