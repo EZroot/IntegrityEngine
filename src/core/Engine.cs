@@ -23,7 +23,7 @@ public class Engine
     private bool m_IsRunning;
 
     // DEBUG TESTING
-    private GameObject? m_testObject;
+    private SpriteObject? m_testObject;
     // END
 
     /// <summary>
@@ -92,7 +92,7 @@ public class Engine
         m_Game.Initialize();
 
         // DEBUG TESTING
-        m_testObject = Service.Get<IGameObjectFactory>()?.CreateGameObject("/home/ezroot/Repos/Integrity/DefaultEngineAssets/logo.png");
+        m_testObject = Service.Get<IGameObjectFactory>()?.CreateSpriteObject("/home/ezroot/Repos/Integrity/DefaultEngineAssets/logo.png");
         // END DEBUG
 
         m_MainCamera = new Camera2D(m_Settings.Data.WindowWidth, m_Settings.Data.WindowHeight);

@@ -65,10 +65,15 @@ public class RenderPipeline : IRenderPipeline
     /// </summary>
     /// <param name="sprite"></param>
     /// <param name="transform"></param>
-    public void DrawSprite(SpriteComponent sprite, TransformComponent transform)
+    public void DrawSprite(SpriteComponent? sprite, TransformComponent transform)
     {
         Debug.Assert(m_GlApi != null, "GL API is null.");
-
+        if(sprite == null)
+        {
+            Logger.Log("Trying to draw sprite with invalid component. No sprite component on game object!", Logger.LogSeverity.Error);
+            return;
+        }
+        
         m_GlApi.UseProgram(m_ShaderProgramId);
         sprite.Texture.Use(TextureUnit.Texture0);
 

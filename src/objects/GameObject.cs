@@ -4,14 +4,11 @@ public class GameObject
 {
     private readonly Dictionary<Type, IComponent> m_ComponentMap = new();
     public TransformComponent Transform { get; }
-    public SpriteComponent Sprite { get; }
 
-    public GameObject(GLTexture spriteGlTexture)
+    public GameObject()
     {
         Transform = new TransformComponent();
         AddComponent(Transform);
-        Sprite = new SpriteComponent(spriteGlTexture);
-        AddComponent(Sprite);
     }
 
     public void AddComponent(IComponent component)
@@ -24,5 +21,14 @@ public class GameObject
         }
         Logger.Log($"Adding component of type {type.Name} to GameObject", Logger.LogSeverity.Info);
         m_ComponentMap[type] = component;
+    }
+
+    public T GetComponent<T>() where T : IComponent
+    {
+        if (m_ComponentMap.TryGetValue(typeof(T), out var component))
+            return (T)component;
+
+        Logger.Log($"Component of type {typeof(T).Name} not found in GameObject.", Logger.LogSeverity.Warning);
+        return default!;
     }
 }
