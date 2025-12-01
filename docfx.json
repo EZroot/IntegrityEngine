@@ -1,0 +1,43 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": ["Integrity.csproj"],
+          "src": "."
+        }
+      ],
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "api/**.yml",
+          "toc.yml"
+        ]
+      },
+      {
+        "files": [
+          "**/*.md",
+          "toc.yml",
+          "*.yml"
+        ],
+        "exclude": [
+          "obj/**",
+          "_site/**",
+          "docfx.json"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": ["images/**"]
+      }
+    ],
+    "output": "_site",
+    "templates": ["default"],
+    "markdownEngineName": "markdig"
+  }
+}

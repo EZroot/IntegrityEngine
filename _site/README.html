@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Integrity SDL2/OpenGL 2D Engine </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Integrity SDL2/OpenGL 2D Engine ">
+    
+    
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="integrity-sdl2opengl-2d-engine">Integrity SDL2/OpenGL 2D Engine</h1>
+
+<p>A work-in-progress, modern 2D graphics engine built entirely in C# to explore and implement the <strong>OpenGL 3.3 Core Profile</strong> pipeline from the ground up.</p>
+<p>Integrity uses <strong>SDL2</strong> solely for cross-platform window management and input handling, separating the rendering concerns completely into a custom OpenGL rendering pipeline.</p>
+<hr>
+<h2 id="core-features">Core Features</h2>
+<ul>
+<li><strong>SDL2/C# Foundation:</strong> Utilizes the Silk.NET bindings for stable, cross-platform window and context creation.</li>
+<li><strong>OpenGL 3.3 Core:</strong> Enforces the use of modern VAOs, VBOs, and programmable shaders (GLSL 330).</li>
+<li><strong>2D Coordinate System:</strong> Implements a top-left origin (Y-down) orthographic projection, ideal for 2D game development.</li>
+<li><strong>Asset Pipeline:</strong> Dedicated managers (services) that handle loading image files (via <strong>StbImageSharp</strong>) and converting them directly into GPU-ready <strong>GLTexture</strong> resources.</li>
+</ul>
+<hr>
+<h2 id="getting-started">Getting Started</h2>
+<p>This project is structured as a series of pipelines and managers (<code>RenderPipeline</code>, <code>AssetManager</code>, etc.) to isolate engine dependencies.</p>
+<p>To run the engine, you will need:</p>
+<ol>
+<li><strong>.NET 8+ SDK</strong></li>
+<li><strong>SDL2 runtime libraries</strong> (managed via Silk.NET/your environment setup)</li>
+</ol>
+<h3 id="debug--testing">Debug &amp; Testing</h3>
+<p>The current setup includes a simple test in <code>Engine.cs</code> that draws a sample asset using the basic <strong>Translate * Scale</strong> Model matrix to confirm the projection and rendering pipeline are functional.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/EZroot/IntegrityEngine/blob/main/README.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

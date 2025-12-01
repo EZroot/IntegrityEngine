@@ -65,7 +65,7 @@ public class RenderPipeline : IRenderPipeline
     /// <summary>
     /// Draws multiple sprites using a single draw call by utilizing instanced rendering.
     /// </summary>
-    /// <param name="sprite">The sprite component containing the shared texture.</param>
+    /// <param name="texture">The GLTexture containing the shared texture.</param>
     /// <param name="modelMatrices">A list of Model matrices for all instances.</param>
     /// <param name="instanceCount">The number of sprites to draw.</param>
     public unsafe void DrawSpritesInstanced(GLTexture texture, in List<Matrix4x4> modelMatrices, int instanceCount)
@@ -94,28 +94,6 @@ public class RenderPipeline : IRenderPipeline
         m_GlApi.BindVertexArray(0);
         m_GlApi.BindTexture(TextureTarget.Texture2D, 0);
         m_GlApi.BindBuffer(GLEnum.ArrayBuffer, 0);
-    }
-
-    [Obsolete]
-    /// <summary>
-    /// Draws a sprite using its associated SpriteComponent for texture and TransformComponent for position, scale, and rotation.
-    /// Only use this if you HAVE to. We *STRICTLY* should be only using DrawSpriteInstaced
-    /// It is here only for testing purposes
-    /// </summary>
-    /// <param name="sprite"></param>
-    /// <param name="transform"></param>
-    public void DrawSprite(SpriteComponent? sprite, TransformComponent transform)
-    {
-        if (sprite == null)
-        {
-            Logger.Log("Trying to draw sprite with invalid component. No sprite component on game object!", Logger.LogSeverity.Error);
-            return;
-        }
-
-        // Build single model matrix and call instanced path with count=1
-        var model = MathHelper.Translation(transform.X, transform.Y, sprite.Texture.Width * transform.ScaleX, sprite.Texture.Height * transform.ScaleY);
-        var list = new List<Matrix4x4>(1) { model };
-        DrawSpritesInstanced(sprite.Texture, list, 1);
     }
 
     private unsafe void EnsureInstanceBufferCapacity(nuint requiredBytes)

@@ -42,7 +42,7 @@ public static class Logger
     }
 
     /// <summary>
-    /// Parses a string with <color=NAME> tags and writes the output to the console.
+    /// Parses a string with 'color=NAME' tags and writes the output to the console.
     /// Non-colored text is written in the default color.
     /// </summary>
     public static void WriteColored(string input)
