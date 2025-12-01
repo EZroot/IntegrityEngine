@@ -1,8 +1,5 @@
-using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Numerics;
-using System.Runtime.CompilerServices;
-using ImGuiNET;
 using Silk.NET.SDL;
 
 public class Engine
@@ -25,6 +22,7 @@ public class Engine
     // DEBUG
     const float cameraSpeed = 300.0f;
     // END DEBUG
+    private readonly Dictionary<GLTexture, List<Matrix4x4>> m_BatchMap = new();
     private bool m_IsRunning;
 
     // DEBUG TESTING
@@ -167,12 +165,36 @@ public class Engine
         if (m_SceneManager.CurrentScene != null)
         {
             var sceneGameObjects = m_SceneManager.CurrentScene.GetAllSpriteObjects();
-            for (var i = 0; i < sceneGameObjects.Count; i++)
+            m_BatchMap.Clear();
+
+            foreach (var obj in sceneGameObjects)
             {
-                var sceneObj = sceneGameObjects[i];
-                m_RenderPipe.DrawSprite(sceneObj.Sprite, sceneObj.Transform);
+                if (obj.Sprite == null) continue;
+
+                if (!m_BatchMap.TryGetValue(obj.Sprite.Texture, out var list))
+                {
+                    list = new List<Matrix4x4>();
+                    m_BatchMap[obj.Sprite.Texture] = list;
+                }
+
+                var model = MathHelper.Translation(
+                    obj.Transform.X, obj.Transform.Y,
+                    obj.Sprite.Texture.Width * obj.Transform.ScaleX,
+                    obj.Sprite.Texture.Height * obj.Transform.ScaleY
+                );
+
+                list.Add(model);
             }
+
+            foreach (var kvp in m_BatchMap)
+            {
+                var texture = kvp.Key;
+                var matrices = kvp.Value;
+                m_RenderPipe.DrawSpritesInstanced(texture, matrices, matrices.Count);
+            }
+
         }
+
         // END DEBUG
 
         m_Game.Render();

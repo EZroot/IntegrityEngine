@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Numerics;
+using System.Runtime.InteropServices;
 using Silk.NET.OpenGL;
 using Silk.NET.SDL;
 
@@ -22,6 +23,8 @@ public class RenderPipeline : IRenderPipeline
     private uint m_ShaderProgramId;
     private uint m_VaoId;
     private uint m_VboId;
+    private uint m_InstanceVboId;
+    private nuint m_InstanceBufferCapacityBytes = 0;
 
     private unsafe Window* m_WindowHandler;
     private readonly ClearBufferMask m_ClearBufferMask = ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit;
@@ -61,38 +64,72 @@ public class RenderPipeline : IRenderPipeline
     }
 
     /// <summary>
-    /// Draws a sprite using its associated SpriteComponent for texture and TransformComponent for position, scale, and rotation.
+    /// Draws multiple sprites using a single draw call by utilizing instanced rendering.
     /// </summary>
-    /// <param name="sprite"></param>
-    /// <param name="transform"></param>
-    public void DrawSprite(SpriteComponent? sprite, TransformComponent transform)
+    /// <param name="sprite">The sprite component containing the shared texture.</param>
+    /// <param name="modelMatrices">A list of Model matrices for all instances.</param>
+    /// <param name="instanceCount">The number of sprites to draw.</param>
+    public unsafe void DrawSpritesInstanced(GLTexture texture, in List<Matrix4x4> modelMatrices, int instanceCount)
     {
-        Debug.Assert(m_GlApi != null, "GL API is null.");
-        if (sprite == null)
-        {
-            Logger.Log("Trying to draw sprite with invalid component. No sprite component on game object!", Logger.LogSeverity.Error);
-            return;
-        }
+        if (instanceCount == 0 || m_GlApi == null) return;
 
         m_GlApi.UseProgram(m_ShaderProgramId);
-        sprite.Texture.Use(TextureUnit.Texture0);
+        texture.Use(TextureUnit.Texture0);
 
-        var model = MathHelper.Translation(transform.X, transform.Y, sprite.Texture.Width * transform.ScaleX, sprite.Texture.Height * transform.ScaleY);
-        int modelLoc = m_GlApi.GetUniformLocation(m_ShaderProgramId, "model");
-        unsafe
+        int dataSizeInBytes = instanceCount * sizeof(Matrix4x4);
+        EnsureInstanceBufferCapacity((nuint)dataSizeInBytes);
+
+        var span = CollectionsMarshal.AsSpan(modelMatrices).Slice(0, instanceCount);
+        fixed (Matrix4x4* dataPtr = &MemoryMarshal.GetReference(span))
         {
-            m_GlApi.UniformMatrix4(modelLoc, 1, false, (float*)&model);
+            m_GlApi.BindBuffer(GLEnum.ArrayBuffer, m_InstanceVboId);
+            m_GlApi.BufferSubData(GLEnum.ArrayBuffer, 0, (nuint)dataSizeInBytes, dataPtr);
         }
 
         int location = m_GlApi.GetUniformLocation(m_ShaderProgramId, "textureSampler");
         m_GlApi.Uniform1(location, 0);
 
         m_GlApi.BindVertexArray(m_VaoId);
-        m_GlApi.DrawArrays(PrimitiveType.Triangles, 0, 6);
+        m_GlApi.DrawArraysInstanced(PrimitiveType.Triangles, 0, 6, (uint)instanceCount);
 
-        // Clean up
         m_GlApi.BindVertexArray(0);
         m_GlApi.BindTexture(TextureTarget.Texture2D, 0);
+        m_GlApi.BindBuffer(GLEnum.ArrayBuffer, 0);
+    }
+
+    [Obsolete]
+    /// <summary>
+    /// Draws a sprite using its associated SpriteComponent for texture and TransformComponent for position, scale, and rotation.
+    /// Only use this if you HAVE to. We *STRICTLY* should be only using DrawSpriteInstaced
+    /// It is here only for testing purposes
+    /// </summary>
+    /// <param name="sprite"></param>
+    /// <param name="transform"></param>
+    public void DrawSprite(SpriteComponent? sprite, TransformComponent transform)
+    {
+        if (sprite == null)
+        {
+            Logger.Log("Trying to draw sprite with invalid component. No sprite component on game object!", Logger.LogSeverity.Error);
+            return;
+        }
+
+        // Build single model matrix and call instanced path with count=1
+        var model = MathHelper.Translation(transform.X, transform.Y, sprite.Texture.Width * transform.ScaleX, sprite.Texture.Height * transform.ScaleY);
+        var list = new List<Matrix4x4>(1) { model };
+        DrawSpritesInstanced(sprite.Texture, list, 1);
+    }
+
+    private unsafe void EnsureInstanceBufferCapacity(nuint requiredBytes)
+    {
+        if (requiredBytes <= m_InstanceBufferCapacityBytes)
+            return;
+
+        // Grow to at least requiredBytes, usually double the old size for amortized growth
+        nuint newCapacity = Math.Max(requiredBytes, m_InstanceBufferCapacityBytes == 0 ? requiredBytes : m_InstanceBufferCapacityBytes * 2);
+        m_GlApi!.BindBuffer(GLEnum.ArrayBuffer, m_InstanceVboId);
+        m_GlApi!.BufferData(GLEnum.ArrayBuffer, newCapacity, null, GLEnum.DynamicDraw);
+        m_GlApi!.BindBuffer(GLEnum.ArrayBuffer, 0);
+        m_InstanceBufferCapacityBytes = newCapacity;
     }
 
     public void RenderFrameStart()
@@ -172,38 +209,49 @@ public class RenderPipeline : IRenderPipeline
 
         m_VaoId = m_GlApi.GenVertexArray();
         m_VboId = m_GlApi.GenBuffer();
+        m_InstanceVboId = m_GlApi.GenBuffer();
 
         m_GlApi.BindVertexArray(m_VaoId);
-        m_GlApi.BindBuffer(GLEnum.ArrayBuffer, m_VboId);
 
+        m_GlApi.BindBuffer(GLEnum.ArrayBuffer, m_VboId);
         int vertexSizeInBytes = s_QuadVertices.Length * sizeof(float);
         fixed (float* v = s_QuadVertices)
         {
             m_GlApi.BufferData(GLEnum.ArrayBuffer, (nuint)vertexSizeInBytes, v, GLEnum.StaticDraw);
         }
 
-        int stride = 4 * sizeof(float);
-        m_GlApi.VertexAttribPointer(
-            0, // location in shader
-            2, // size (2 components: X, Y)
-            VertexAttribPointerType.Float,
-            false, // normalized
-            (uint)stride,
-            (void*)0 // offset from start of vertex (0 bytes)
-        );
+        int stride = 4 * sizeof(float); // 2 pos + 2 uv
+        m_GlApi.VertexAttribPointer(0, 2, VertexAttribPointerType.Float, false, (uint)stride, (void*)0);
         m_GlApi.EnableVertexAttribArray(0);
-
-        // Texture coordinate attribute (Layout location 1 in vertex shader)
-        m_GlApi.VertexAttribPointer(
-            1, // location in shader
-            2, // size (2 components: U, V)
-            VertexAttribPointerType.Float,
-            false, // normalized
-            (uint)stride,
-            (void*)(2 * sizeof(float)) // offset from start of vertex (2 floats * 4 bytes/float)
-        );
-
+        m_GlApi.VertexAttribPointer(1, 2, VertexAttribPointerType.Float, false, (uint)stride, (void*)(2 * sizeof(float)));
         m_GlApi.EnableVertexAttribArray(1);
+
+        m_GlApi.BindBuffer(GLEnum.ArrayBuffer, m_InstanceVboId);
+
+        // Buffer is dynamic but we just set this as an initial starting state of the buffer
+        const int initialInstances = 1024;
+        m_InstanceBufferCapacityBytes = (nuint)(initialInstances * sizeof(Matrix4x4));
+        m_GlApi.BufferData(GLEnum.ArrayBuffer, m_InstanceBufferCapacityBytes, null, GLEnum.DynamicDraw);
+
+        int matrixSize = sizeof(Matrix4x4);
+
+        // For System.Numerics.Matrix4x4 the memory layout is 4 Vector4s contiguous.
+        for (uint i = 0; i < 4; i++)
+        {
+            uint attribLocation = 2u + i; // 2,3,4,5
+            m_GlApi.EnableVertexAttribArray(attribLocation);
+            m_GlApi.VertexAttribPointer(
+                attribLocation,
+                4,
+                VertexAttribPointerType.Float,
+                false,
+                (uint)matrixSize,             // stride = size of Matrix4x4
+                (void*)(i * sizeof(Vector4))  // offset = i-th column (or row depending layout)
+            );
+            // Per-instance (crucial for instancing)
+            m_GlApi.VertexAttribDivisor(attribLocation, 1); 
+        }
+
         m_GlApi.BindBuffer(GLEnum.ArrayBuffer, 0);
         m_GlApi.BindVertexArray(0);
     }
