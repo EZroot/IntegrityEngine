@@ -95,7 +95,7 @@ public class Engine
 
         // DEBUG TESTING
         Scene defaultScene = new Scene("DefaultScene");
-        m_testObject = Service.Get<IGameObjectFactory>()?.CreateSpriteObject("/home/ezroot/Repos/Integrity/DefaultEngineAssets/logo.png");
+        m_testObject = Service.Get<IGameObjectFactory>()?.CreateSpriteObject("TestGameObject", "/home/ezroot/Repos/Integrity/DefaultEngineAssets/logo.png");
         if(m_testObject != null)
         {
             defaultScene.RegisterGameObject(m_testObject);
@@ -104,7 +104,7 @@ public class Engine
         m_SceneManager.LoadScene(defaultScene);
         // END DEBUG
 
-        Camera2D mainCamera = new Camera2D(m_Settings.Data.WindowWidth, m_Settings.Data.WindowHeight);
+        Camera2D mainCamera = new Camera2D("MainCamera", m_Settings.Data.WindowWidth, m_Settings.Data.WindowHeight);
         m_CameraManager.RegisterCamera(mainCamera);
     }
 
@@ -164,9 +164,8 @@ public class Engine
         m_Game.Render();
 
         m_ImGuiPipe.BeginFrame();
-        m_ImGuiPipe.Tools.DrawMenuBar(m_SceneManager, m_Settings);
-        m_ImGuiPipe.Tools.DrawEngineStatusTool(m_SceneManager, m_CameraManager, m_Settings);
-        // ImGui.ShowDemoWindow();
+        m_ImGuiPipe.Tools.DrawMenuBar(m_SceneManager, m_CameraManager, m_Settings);
+        m_ImGuiPipe.Tools.DrawTools(m_SceneManager, m_CameraManager, m_Settings);
         m_ImGuiPipe.EndFrame();
 
         m_RenderPipe.RenderFrameEnd();

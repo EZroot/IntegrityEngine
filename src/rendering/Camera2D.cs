@@ -3,15 +3,17 @@ using System.Numerics;
 public class Camera2D
 {
     public Guid Id { get; }
+    public string Name { get; }
     public Vector2 Position { get; set; } = Vector2.Zero;
     public float Zoom { get; set; } = 1.0f;
     
     private int m_Width;
     private int m_Height;
     
-    public Camera2D(int width, int height)
+    public Camera2D(string name, int width, int height)
     {
         Id = Guid.NewGuid();
+        Name = name;
         m_Width = width;
         m_Height = height;
     }

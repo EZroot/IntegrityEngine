@@ -11,9 +11,9 @@ public class GameObjectFactory : IGameObjectFactory
     /// </summary>
     /// <param name="assetPath">The file path used to retrieve the shared GLTexture resource.</param>
     /// <returns>A new GameObject instance.</returns>
-    public GameObject CreateGameObject(IComponent[]? componentsToAdd = null)
+    public GameObject CreateGameObject(string name, IComponent[]? componentsToAdd = null)
     {
-        GameObject obj = new GameObject();
+        GameObject obj = new GameObject(name);
         if(componentsToAdd != null)
         {
             foreach(var component in componentsToAdd)
@@ -29,10 +29,10 @@ public class GameObjectFactory : IGameObjectFactory
     /// </summary>
     /// <param name="assetPath">The file path used to retrieve the shared GLTexture resource.</param>
     /// <returns>A new GameObject instance.</returns>
-    public SpriteObject CreateSpriteObject(string assetPath, IComponent[]? componentsToAdd = null)
+    public SpriteObject CreateSpriteObject(string name, string assetPath, IComponent[]? componentsToAdd = null)
     {
         var texture = m_AssetManager.GetTexture(assetPath);
-        SpriteObject obj = new SpriteObject(texture);
+        SpriteObject obj = new SpriteObject(name, texture);
         if(componentsToAdd != null)
         {
             foreach(var component in componentsToAdd)

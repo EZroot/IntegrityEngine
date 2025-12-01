@@ -1,5 +1,5 @@
 public interface IGameObjectFactory : IService
 {
-    GameObject CreateGameObject(IComponent[]? componentsToAdd = null);
-    SpriteObject CreateSpriteObject(string assetPath, IComponent[]? componentsToAdd = null);
+    GameObject CreateGameObject(string name, IComponent[]? componentsToAdd = null);
+    SpriteObject CreateSpriteObject(string name, string assetPath, IComponent[]? componentsToAdd = null);
 }

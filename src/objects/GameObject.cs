@@ -5,10 +5,12 @@ public class GameObject
     private readonly Dictionary<Type, IComponent> m_ComponentMap = new();
     public TransformComponent Transform { get; }
     public Guid Id { get; }
+    public string Name { get; }
 
-    public GameObject()
+    public GameObject(string name)
     {
         Id = Guid.NewGuid();
+        Name = name;
         Transform = new TransformComponent();
         AddComponent(Transform);
     }
