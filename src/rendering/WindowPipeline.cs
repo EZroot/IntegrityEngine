@@ -30,7 +30,7 @@ public class WindowPipeline : IWindowPipeline
 
         m_GlContext = m_SdlApi.GLCreateContext(m_WindowHandler);
         m_SdlApi.GLMakeCurrent(m_WindowHandler, m_GlContext);
-        m_SdlApi.GLSetSwapInterval(1); // Vsync
+        m_SdlApi.GLSetSwapInterval(0); // Vsync
     }
 
     public bool ShouldClose()
