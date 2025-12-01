@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.CompilerServices;
@@ -16,6 +17,8 @@ public class Engine
     private readonly IImGuiPipeline m_ImGuiPipe;
     private readonly ISceneManager m_SceneManager;
     private readonly IAudioManager m_AudioManager;
+
+    private Scene? m_DefaultScene;
     private Camera2D? m_MainCamera;
     // DEBUG
     const float cameraSpeed = 300.0f; 
@@ -92,7 +95,14 @@ public class Engine
         m_Game.Initialize();
 
         // DEBUG TESTING
+        m_DefaultScene = new Scene("DefaultScene");
         m_testObject = Service.Get<IGameObjectFactory>()?.CreateSpriteObject("/home/ezroot/Repos/Integrity/DefaultEngineAssets/logo.png");
+        if(m_testObject != null)
+        {
+            m_DefaultScene.RegisterGameObject(m_testObject);
+        }
+        m_SceneManager.AddScene(m_DefaultScene);
+        m_SceneManager.LoadScene(m_DefaultScene);
         // END DEBUG
 
         m_MainCamera = new Camera2D(m_Settings.Data.WindowWidth, m_Settings.Data.WindowHeight);
@@ -140,10 +150,15 @@ public class Engine
         m_RenderPipe.SetProjectionMatrix(in cameraMatrix);
 
         // DEBUG TESTING
-        Debug.Assert(m_testObject != null, "Test texture is null in Engine Render.");
-        //TODO: Replace with proper sprite rendering system
-        // Such as m_SceneManager.GetActiveScene().GetAllObjects() or something similar
-        m_RenderPipe.DrawSprite(m_testObject.Sprite, m_testObject.Transform);
+        if(m_SceneManager.CurrentScene != null)
+        {
+            var sceneGameObjects = m_SceneManager.CurrentScene.GetAllSpriteObjects();
+            for(var i = 0; i < sceneGameObjects.Count; i++)
+            {
+                var sceneObj = sceneGameObjects[i];
+                m_RenderPipe.DrawSprite(sceneObj.Sprite, sceneObj.Transform);
+            }
+        }
         // END DEBUG
 
         m_Game.Render();
