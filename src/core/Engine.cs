@@ -106,6 +106,9 @@ public class Engine
         // DEBUG TESTING
         Scene defaultScene = new Scene("DefaultScene");
         m_testObject = m_GameObjectFactory.CreateSpriteObject("TestGameObject", "/home/ezroot/Repos/Integrity/DefaultEngineAssets/logo.png");
+        m_testObject.Transform.ScaleX = 0.25f;
+        m_testObject.Transform.ScaleY = 0.25f;
+
         if(m_testObject != null)
         {
             defaultScene.RegisterGameObject(m_testObject);
@@ -175,8 +178,8 @@ public class Engine
         m_Game.Render();
 
         m_ImGuiPipe.BeginFrame();
-        m_ImGuiPipe.Tools.DrawMenuBar(m_SceneManager, m_CameraManager, m_Settings);
-        m_ImGuiPipe.Tools.DrawTools(m_SceneManager, m_CameraManager, m_Settings);
+        m_ImGuiPipe.Tools.DrawMenuBar();
+        m_ImGuiPipe.Tools.DrawTools();
         m_ImGuiPipe.EndFrame();
 
         m_RenderPipe.RenderFrameEnd();

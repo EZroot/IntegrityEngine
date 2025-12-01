@@ -6,10 +6,16 @@ public class AssetManager : IAssetManager
 
     private readonly IRenderPipeline m_RenderPipeline;
     private readonly Dictionary<string, GLTexture> m_TextureCache = new();
+    private readonly Dictionary<string, AssetInfo> m_AssetCache = new();
 
     public AssetManager()
     {
         m_RenderPipeline = Service.Get<IRenderPipeline>() ?? throw new InvalidOperationException("RenderPipeline service is not available in ServiceLocator.");
+    }
+
+    public IReadOnlyDictionary<string, AssetInfo> GetLoadedAssets()
+    {
+        return m_AssetCache;
     }
 
     /// <summary>
@@ -25,7 +31,7 @@ public class AssetManager : IAssetManager
             return texture; 
         }
 
-        ImageData data = LoadAsset(assetPath);
+        ImageData data = LoadAsset<ImageData>(assetPath);
         if (data.PixelData == null)
         {
             throw new InvalidOperationException($"Asset not ready: {assetPath}");
@@ -36,7 +42,7 @@ public class AssetManager : IAssetManager
         return newTexture;
     }
 
-    private ImageData LoadAsset(string assetPath)
+    private T LoadAsset<T>(string assetPath) where T : struct
     {
         if(!File.Exists(assetPath))
         {
@@ -44,6 +50,20 @@ public class AssetManager : IAssetManager
             return default;
         }
         
+        if (typeof(T) == typeof(ImageData))
+        {
+            var sprite = (T)(object)LoadSprite(assetPath);
+            var imageData = (ImageData)(object)sprite;
+            m_AssetCache.Add(assetPath, new AssetInfo(assetPath, $"{typeof(ImageData)}", imageData.PixelData.Length));
+            return sprite;
+        }
+
+        Logger.Log($"Unsupported asset type requested: {typeof(T).FullName}", Logger.LogSeverity.Error);
+        return default;
+    }
+
+    private ImageData LoadSprite(string assetPath)
+    {
         using (var stream = File.OpenRead(assetPath))
         {
             var image = ImageResult.FromStream(stream, ColorComponents.RedGreenBlueAlpha);

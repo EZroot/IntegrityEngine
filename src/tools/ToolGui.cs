@@ -1,3 +1,4 @@
+using System.Numerics;
 using ImGuiNET;
 
 public class ToolGui
@@ -12,8 +13,6 @@ public class ToolGui
     private System.Numerics.Vector3 m_ClearColor = new(0.1f, 0.1f, 0.15f);
     private bool m_EngineStatusWindowOpened;
 
-
-
     public void DrawToolsUpdate(float deltaTime)
     {
         if(!m_CaptureMemory) return;
@@ -26,11 +25,11 @@ public class ToolGui
         }
     }
 
-    public void DrawTools(ISceneManager sceneManager, ICameraManager cameraManager, IEngineSettings engineSettings)
+    public void DrawTools()
     {
         if(m_EngineStatusWindowOpened)
         {
-            DrawEngineStatusTool(sceneManager, cameraManager, engineSettings);
+            DrawEngineStatusTool(Service.Get<ISceneManager>()!, Service.Get<ICameraManager>()!, Service.Get<IEngineSettings>()!);
         }
     }
     
@@ -42,90 +41,180 @@ public class ToolGui
             {
                 if (ImGui.BeginTabItem("Scene"))
                 {
-                    ImGui.Text($"Active Game Objects: {sceneManager.CurrentScene?.GetAllGameObjects().Count ?? 0}");
-                    ImGui.Text($"Active Sprite Objects: {sceneManager.CurrentScene?.GetAllSpriteObjects().Count ?? 0}");
-                    ImGui.Separator();
-                    ImGui.Text("Camera:" );
-                    if(cameraManager.MainCamera != null)
+                    var currentScene = sceneManager.CurrentScene;
+                    
+                    if (currentScene == null)
                     {
-                        var camera = cameraManager.MainCamera;
-                        if (ImGui.TreeNode(camera.Id.ToString(), $"{camera.Name} ({camera.Id.ToString()[..16]}...)"))
-                        {
-                            ImGui.Text($"Position: {camera.Position}");
-                            ImGui.Text($"Rotation: {camera.Zoom}");
-
-                            ImGui.TreePop(); 
-                        }
-                    }
-
-                    if(sceneManager.CurrentScene == null)
-                    {
-                        Logger.Log("Scene is null for some reason!", Logger.LogSeverity.Error);
+                        ImGui.TextColored(new Vector4(1.0f, 0.2f, 0.2f, 1.0f), "Error: No active scene loaded.");
+                        ImGui.EndTabItem();
                         return;
                     }
-                    ImGui.Separator();
-                    ImGui.Text($"Scene {sceneManager.CurrentScene.Name} ({sceneManager.CurrentScene.Id.ToString()[..16]}...)");
-                    ImGui.Separator();
-                    ImGui.Text("Scene Objects:");
-                    
-                    if (sceneManager.CurrentScene != null)
+
+                    ImGui.Text("Current Scene Details:");
+
+                    if (ImGui.BeginTable("SceneInfoTable", 2, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit))
                     {
-                        foreach (var obj in sceneManager.CurrentScene.GetAllGameObjects())
+                        ImGui.TableSetupColumn("Property", ImGuiTableColumnFlags.WidthFixed, 150.0f);
+                        ImGui.TableSetupColumn("Value", ImGuiTableColumnFlags.WidthStretch);
+                        ImGui.TableHeadersRow();
+                        ImGui.TableNextRow();
+                        ImGui.TableSetColumnIndex(0); ImGui.Text("Name");
+                        ImGui.TableSetColumnIndex(1); ImGui.TextColored(new Vector4(0.8f, 1.0f, 0.8f, 1.0f), $"{currentScene.Name}");  
+
+                        ImGui.TableNextRow();
+                        ImGui.TableSetColumnIndex(0); ImGui.Text("ID");
+                        ImGui.TableSetColumnIndex(1); ImGui.TextDisabled($"{currentScene.Id}");
+
+                        ImGui.TableNextRow();
+                        ImGui.TableSetColumnIndex(0); ImGui.Separator();
+                        ImGui.TableSetColumnIndex(1); ImGui.Separator();
+
+                        ImGui.TableNextRow();
+                        ImGui.TableSetColumnIndex(0); ImGui.Text("Total Game Objects");
+                        ImGui.TableSetColumnIndex(1); ImGui.Text($"{currentScene.GetAllGameObjects().Count}");
+
+                        ImGui.TableNextRow();
+                        ImGui.TableSetColumnIndex(0); ImGui.Text("Total Sprite Objects");
+                        ImGui.TableSetColumnIndex(1); ImGui.Text($"{currentScene.GetAllSpriteObjects().Count}");
+
+                        ImGui.EndTable();
+                    }
+                    
+                    ImGui.Spacing();
+                    ImGui.Separator();
+
+                    if (ImGui.CollapsingHeader("Main Camera Settings"))
+                    {
+                        if (cameraManager.MainCamera != null)
                         {
-                            if (ImGui.TreeNode(obj.Id.ToString(), $"{obj.Name} ({obj.Id.ToString()[..16]}...)"))
+                            var camera = cameraManager.MainCamera;
+                            
+                            ImGui.PushID(camera.GetHashCode());
+                            if (ImGui.TreeNodeEx("CameraDetails", ImGuiTreeNodeFlags.Bullet, $"Camera: {camera.Name}"))
                             {
-                                var componentMap = GetPrivateComponentMap(obj);
-                                if (componentMap != null)
-                                {
-                                    ImGui.Text("Components:");
-                                    foreach (var kvp in componentMap)
-                                    {
-                                        var component = kvp.Value;
-                                        var componentType = component.GetType();
-                                        string componentName = componentType.Name;
-                                        ImGui.PushID(component.GetHashCode()); 
-                                        if (ImGui.TreeNode(componentName))
-                                        {
-                                            var members = componentType.GetMembers(
-                                                System.Reflection.BindingFlags.Public | 
-                                                System.Reflection.BindingFlags.Instance
-                                            );
-                                            
-                                            foreach (var member in members)
-                                            {
-                                                if (member is System.Reflection.PropertyInfo property)
-                                                {
-                                                    if (property.CanRead)
-                                                    {
-                                                        var value = property.GetValue(component);
-                                                        ImGui.Text($"  {property.Name}: {value}");
-                                                    }
-                                                }
-                                                else if (member is System.Reflection.FieldInfo field)
-                                                {
-                                                    var value = field.GetValue(component);
-                                                    ImGui.Text($"  {field.Name}: {value}");
-                                                }
-                                            }
-                                            
-                                            ImGui.TreePop(); 
-                                        }
-                                        
-                                        ImGui.PopID(); 
-                                    }
-                                }
-                                
+                                DrawObjectProperties(camera, "MainCamera", null, null);
                                 ImGui.TreePop(); 
                             }
+                            ImGui.PopID();
+                        }
+                        else
+                        {
+                            ImGui.TextDisabled("Camera Manager: No Main Camera set.");
                         }
                     }
-                    else
-                    {
-                        ImGui.Text("No scene loaded.");
-                    }
+
+                    ImGui.Spacing();
+                    ImGui.Separator();
                     
+                    if (ImGui.CollapsingHeader("Scene Game Objects"))
+                    {
+                        if (ImGui.BeginChild("SceneObjectList", new Vector2(0, -1)))
+                        {
+                            foreach (var obj in currentScene.GetAllGameObjects())
+                            {
+                                if (ImGui.TreeNode(obj.Id.ToString(), $"{obj.Name} ({obj.Id.ToString()[..8]}...)"))
+                                {
+                                    var componentMap = GetPrivateComponentMap(obj);
+                                    if (componentMap != null)
+                                    {
+                                        ImGui.SeparatorText("Components"); 
+                                        
+                                        foreach (var kvp in componentMap)
+                                        {
+                                            var component = kvp.Value;
+                                            string componentName = component.GetType().Name;
+                                            
+                                            ImGui.PushID(component.GetHashCode()); 
+                                            DrawObjectProperties(component, componentName, null, null); 
+                                            
+                                            ImGui.PopID(); 
+                                        }
+                                    }
+                                    
+                                    ImGui.TreePop(); 
+                                }
+                            }
+                            ImGui.EndChild();
+                        }
+                    }
                     ImGui.EndTabItem();
                 }
+
+                if (ImGui.BeginTabItem("Assets"))
+                {
+                    var loadedAssets = Service.Get<IAssetManager>()!.GetLoadedAssets();
+
+                    ImGui.Text($"Asset Manager Status");
+                    ImGui.Separator();
+                    
+                    ImGui.Text($"Total Loaded Assets: {loadedAssets.Count}");
+                    ImGui.Spacing(); 
+
+                    if (ImGui.BeginTable("LoadedAssetTable", 3, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.Resizable))
+                    {
+                        ImGui.TableSetupColumn("Name / Details", ImGuiTableColumnFlags.WidthStretch, 0.5f);
+                        ImGui.TableSetupColumn("Type", ImGuiTableColumnFlags.WidthFixed, 100.0f);
+                        ImGui.TableSetupColumn("Size (MB)", ImGuiTableColumnFlags.WidthFixed, 100.0f);
+                        ImGui.TableHeadersRow();
+
+                        const float MB = 1024f * 1024f;
+                        foreach (var kvp in loadedAssets)
+                        {
+                            string path = kvp.Key;
+                            var assetInfo = kvp.Value;
+                            
+                            var glTexture = Service.Get<IAssetManager>()!.GetTexture(path);
+                            bool isTexture = assetInfo.Type.Equals("ImageData", StringComparison.OrdinalIgnoreCase) && glTexture.TextureId != IntPtr.Zero;
+
+                            ImGui.TableNextRow();
+                            ImGui.TableSetColumnIndex(0);
+                            ImGui.PushID(path); 
+                            
+                            ImGuiTreeNodeFlags flags = isTexture ? ImGuiTreeNodeFlags.None : ImGuiTreeNodeFlags.Leaf | ImGuiTreeNodeFlags.NoTreePushOnOpen;
+
+                            if (ImGui.TreeNodeEx(path, flags, path)) 
+                            {
+                                ImGui.Text($"Full Path: {path}");
+                                ImGui.Text($"Bytes: {assetInfo.MemoryFootprintBytes:N0}"); 
+                                if (isTexture)
+                                {
+                                    ImGui.Separator();
+                                    Vector2 previewSize = new Vector2(128, 128); 
+                                    float aspect = (float)glTexture.Width / glTexture.Height;
+                                    if (glTexture.Width > glTexture.Height)
+                                    {
+                                        previewSize.Y = previewSize.X / aspect;
+                                    }
+                                    else
+                                    {
+                                        previewSize.X = previewSize.Y * aspect;
+                                    }
+                                    ImGui.Image((nint)glTexture.TextureId, previewSize); 
+                                    ImGui.Text($"Dimensions: {glTexture.Width}x{glTexture.Height}");
+                                }
+                                if (isTexture)
+                                {
+                                    ImGui.TreePop();
+                                }
+                            }
+
+                            ImGui.PopID(); 
+                            
+                            ImGui.TableSetColumnIndex(1);
+                            ImGui.Text(assetInfo.Type);
+                            
+                            ImGui.TableSetColumnIndex(2);
+                            float sizeMB = assetInfo.MemoryFootprintBytes / MB;
+                            
+                            ImGui.Text($"{sizeMB:F2} MB");
+                        }
+
+                        ImGui.EndTable();
+                    }
+
+                    ImGui.EndTabItem();
+                }
+                
                 if (ImGui.BeginTabItem("Config"))
                 {
                     ImGui.Text("Graphics Settings:");
@@ -180,7 +269,7 @@ public class ToolGui
                     if (ImGui.BeginTable("MemoryTable", 3, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit))
                     {
                         ImGui.TableSetupColumn("Metric");
-                        ImGui.TableSetupColumn("Value (MB)", ImGuiTableColumnFlags.WidthFixed, 80.0f); // Fix width for alignment
+                        ImGui.TableSetupColumn("Value (MB)", ImGuiTableColumnFlags.WidthFixed, 80.0f);
                         ImGui.TableSetupColumn("Value (Bytes)");
                         ImGui.TableHeadersRow();
 
@@ -213,10 +302,11 @@ public class ToolGui
         }
     }
 
-    public void DrawMenuBar(ISceneManager sceneManager, ICameraManager cameraManager, IEngineSettings engineSettings)
+    public void DrawMenuBar()
     {
         if (ImGui.BeginMainMenuBar())
         {
+            var engineSettings = Service.Get<IEngineSettings>()!;
             if (ImGui.BeginMenu("Tools"))
             {
                 if (ImGui.MenuItem("Engine Status", "", ref m_EngineStatusWindowOpened))
@@ -256,5 +346,159 @@ public class ToolGui
         }
         
         return mapField.GetValue(obj) as Dictionary<Type, IComponent>;
+    }
+
+    private void DrawObjectProperties(object targetObject, string label, System.Reflection.MemberInfo? memberInfo = null, object? parentObject = null)
+    {
+        if (targetObject == null)
+        {
+            ImGui.TextDisabled($"{label}: (null)");
+            return;
+        }
+
+        Type targetType = targetObject.GetType();
+
+        if (targetType.IsPrimitive || targetType.IsEnum || targetType == typeof(string) || 
+            targetType == typeof(System.Numerics.Vector2) || targetType == typeof(System.Numerics.Vector3))
+        {
+            bool canWrite = false;
+            if (memberInfo is System.Reflection.PropertyInfo property)
+            {
+                canWrite = property.CanWrite;
+            }
+            else if (memberInfo is System.Reflection.FieldInfo)
+            {
+                canWrite = true; 
+            }
+
+            if (!canWrite || parentObject == null) 
+            {
+                ImGui.Text($"{label}: {targetObject}");
+                return;
+            }
+
+            if (targetType == typeof(bool))
+            {
+                bool value = (bool)targetObject;
+                if (ImGui.Checkbox(label, ref value))
+                {
+                    SetValue(memberInfo!, parentObject, value);
+                }
+            }
+            else if (targetType == typeof(int))
+            {
+                int value = (int)targetObject;
+                if (ImGui.InputInt(label, ref value))
+                {
+                    SetValue(memberInfo!, parentObject, value);
+                }
+            }
+            else if (targetType == typeof(float))
+            {
+                float value = (float)targetObject;
+                if (ImGui.InputFloat(label, ref value))
+                {
+                    SetValue(memberInfo!, parentObject, value);
+                }
+            }
+            else if (targetType == typeof(System.Numerics.Vector3))
+            {
+                System.Numerics.Vector3 value = (System.Numerics.Vector3)targetObject;
+                if (ImGui.InputFloat3(label, ref value))
+                {
+                    SetValue(memberInfo!, parentObject, value);
+                }
+            }
+            else if (targetType == typeof(string))
+            {
+                string value = (string)targetObject;
+                if (ImGui.InputText(label, ref value, 256)) 
+                {
+                    SetValue(memberInfo!, parentObject, value);
+                }
+            }
+            else
+            {
+                ImGui.Text($"{label}: {targetObject}");
+            }
+            
+            return;
+        }
+
+        if (ImGui.TreeNode(targetObject.GetHashCode().ToString(), $"{label} ({targetType.Name})"))
+        {
+            var members = targetType.GetMembers(
+                System.Reflection.BindingFlags.Public | 
+                System.Reflection.BindingFlags.Instance
+            );
+
+            foreach (var member in members)
+            {
+                if (member.Name is "GetType" or "ToString" or "Equals" or "GetHashCode")
+                {
+                    continue;
+                }
+
+                object? value = null;
+                Type? valueType = null;
+                string memberName = member.Name;
+                
+                if (member is System.Reflection.PropertyInfo property)
+                {
+                    if (property.CanRead)
+                    {
+                        value = property.GetValue(targetObject);
+                        valueType = property.PropertyType;
+                    }
+                }
+                else if (member is System.Reflection.FieldInfo field)
+                {
+                    value = field.GetValue(targetObject);
+                    valueType = field.FieldType;
+                }
+
+                if (value != null && valueType != null)
+                {
+                    ImGui.PushID(member.GetHashCode()); 
+                    
+                    DrawObjectProperties(value, memberName, member, targetObject);
+                    
+                    ImGui.PopID();
+                }
+            }
+            ImGui.TreePop();
+        }
+    }
+
+    /// <summary>
+    /// Sets the value of a property or field using reflection.
+    /// </summary>
+    private void SetValue(System.Reflection.MemberInfo member, object target, object newValue)
+    {
+        if (member is System.Reflection.PropertyInfo property)
+        {
+            if (property.CanWrite)
+            {
+                try
+                {
+                    property.SetValue(target, newValue);
+                }
+                catch (Exception ex)
+                {
+                    Logger.Log($"Failed to set property '{property.Name}': {ex.Message}", Logger.LogSeverity.Error);
+                }
+            }
+        }
+        else if (member is System.Reflection.FieldInfo field)
+        {
+            try
+            {
+                field.SetValue(target, newValue);
+            }
+            catch (Exception ex)
+            {
+                Logger.Log($"Failed to set field '{field.Name}': {ex.Message}", Logger.LogSeverity.Error);
+            }
+        }
     }
 }
