@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using Silk.NET.OpenGL;
 using Silk.NET.SDL;
 
 public class WindowPipeline : IWindowPipeline
@@ -30,6 +29,17 @@ public class WindowPipeline : IWindowPipeline
 
         m_GlContext = m_SdlApi.GLCreateContext(m_WindowHandler);
         m_SdlApi.GLMakeCurrent(m_WindowHandler, m_GlContext);
+        SetVSync(useVsync);
+    }
+
+    public void SetVSync(int useVsync)
+    {
+        if(m_SdlApi == null)
+        {
+            Logger.Log("Could not set Vsync. SDL API is null!", Logger.LogSeverity.Error);
+            return;
+        }
+
         m_SdlApi.GLSetSwapInterval(useVsync);
     }
 

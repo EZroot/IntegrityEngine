@@ -8,12 +8,12 @@ public class ToolGui
     private bool m_CaptureMemory;
     private MemoryMonitor.MemorySnapshot m_SnapshotCache;
 
-    private bool m_IsVsyncEnabled = true;
-    private float m_GlobalVolume = 0.5f;
-    private System.Numerics.Vector3 m_ClearColor = new(0.1f, 0.1f, 0.15f);
+    private bool m_IsVsyncEnabled;
+    private Vector3 m_ClearColor = new(0.1f, 0.1f, 0.15f);
     private bool m_EngineStatusWindowOpened;
     private bool m_MonitorWindowOpened;
     private bool m_ProfilerWindowOpened;
+    private bool m_SettingsWindowOpened;
 
     private const int HISTORY_LENGTH = 120;
     private readonly Queue<float> m_GCMemoryHistory = new Queue<float>(HISTORY_LENGTH);
@@ -79,6 +79,11 @@ public class ToolGui
         if (m_EngineStatusWindowOpened)
         {
             DrawEngineStatusTool(Service.Get<ISceneManager>()!, Service.Get<ICameraManager>()!);
+        }
+
+        if(m_SettingsWindowOpened)
+        {
+            DrawSettingsTool(Service.Get<IWindowPipeline>()!);
         }
     }
 
@@ -260,25 +265,37 @@ public class ToolGui
 
                     ImGui.EndTabItem();
                 }
+                ImGui.EndTabBar();
+            }
 
+            ImGui.End();
+        }
+    }
+
+    private void DrawSettingsTool(IWindowPipeline windowPipe)
+    {
+        if (ImGui.Begin("EngineSettings"))
+        {
+            if (ImGui.BeginTabBar("EngineTabSettings"))
+            {
                 if (ImGui.BeginTabItem("Config"))
                 {
                     ImGui.Text("Graphics Settings:");
 
                     if (ImGui.Checkbox("Enable V-Sync", ref m_IsVsyncEnabled))
                     {
-                        // m_RenderPipe.SetVsync(m_IsVsyncEnabled);
+                        windowPipe.SetVSync(m_IsVsyncEnabled == true ? 1 : 0);
                     }
 
                     ImGui.Spacing();
 
-                    ImGui.Text("Audio Settings:");
-                    if (ImGui.SliderFloat("Global Volume", ref m_GlobalVolume, 0.0f, 1.0f))
-                    {
-                        // m_AudioManager.SetGlobalVolume(m_GlobalVolume);
-                    }
+                    // ImGui.Text("Audio Settings:");
+                    // if (ImGui.SliderFloat("Global Volume", ref m_GlobalVolume, 0.0f, 1.0f))
+                    // {
+                    //     // m_AudioManager.SetGlobalVolume(m_GlobalVolume);
+                    // }
 
-                    ImGui.Spacing();
+                    // ImGui.Spacing();
                     ImGui.Separator();
                     ImGui.Text("Renderer:");
                     ImGui.Separator();
@@ -597,6 +614,9 @@ public class ToolGui
                 {
                 }
                 if (ImGui.MenuItem("Profiler", "", ref m_ProfilerWindowOpened))
+                {
+                }
+                if (ImGui.MenuItem("Settings", "", ref m_SettingsWindowOpened))
                 {
                 }
 

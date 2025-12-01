@@ -1,6 +1,5 @@
 using System.Diagnostics;
 using System.Numerics;
-using Silk.NET.OpenGL;
 using Silk.NET.SDL;
 
 public class Engine

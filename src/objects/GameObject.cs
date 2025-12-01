@@ -1,5 +1,3 @@
-using Silk.NET.OpenGL;
-
 public class GameObject
 {
     private readonly Dictionary<Type, IComponent> m_ComponentMap = new();

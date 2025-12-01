@@ -59,7 +59,6 @@ public class RenderPipeline : IRenderPipeline
         );
 
         SetupQuadMesh();
-
         m_ProjectionUniformLocation = m_GlApi.GetUniformLocation(m_ShaderProgramId, "projection");
     }
 
@@ -135,6 +134,9 @@ public class RenderPipeline : IRenderPipeline
     public void RenderFrameStart()
     {
         Debug.Assert(m_GlApi != null, "SDL API is not initialized in RenderPipeline.");
+        m_GlApi.Enable(EnableCap.Blend);
+        m_GlApi.BlendFunc(BlendingFactor.SrcAlpha, BlendingFactor.OneMinusSrcAlpha);
+        m_GlApi.DepthMask(true);
         m_GlApi.ClearColor(m_ClearColor);
         m_GlApi.Clear(m_ClearBufferMask);
     }
