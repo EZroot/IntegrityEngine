@@ -5,6 +5,8 @@ using Silk.NET.SDL;
 
 public class Engine
 {
+    private const float FPS_UPDATE_INTERVAL = 1.0f;
+
     private Sdl? m_SdlApi;
     private readonly Stopwatch m_Stopwatch;
 
@@ -26,6 +28,9 @@ public class Engine
 
     private readonly Dictionary<GLTexture, List<Matrix4x4>> m_RenderingBatchMap;
 
+    private int m_FrameCount;
+    private float m_FpsTimeAccumulator;
+    private float m_CurrentFps; // The stable, averaged FPS value
     private bool m_IsRunning;
 
     // DEBUG TESTING
@@ -74,6 +79,15 @@ public class Engine
             m_Stopwatch.Stop();
             float deltaTime = (float)m_Stopwatch.Elapsed.TotalSeconds;
             m_Stopwatch.Restart();
+            m_FrameCount++;
+            m_FpsTimeAccumulator += deltaTime;
+            if (m_FpsTimeAccumulator >= FPS_UPDATE_INTERVAL)
+            {
+                m_CurrentFps = m_FrameCount / m_FpsTimeAccumulator;
+                m_FrameCount = 0;
+                m_FpsTimeAccumulator = 0.0f;
+            }
+
             m_Profiler.StartCpuProfile("Cpu_Input");
             HandleInput();
             m_Profiler.StopCpuProfile("Cpu_Input");
@@ -96,8 +110,8 @@ public class Engine
     public async Task InitializeAsync()
     {
         await m_Settings.LoadSettingsAsync();
-        Logger.Log($"Engine '{m_Settings.Data.EngineName}' version {m_Settings.Data.EngineVersion} initialized.",
-        Logger.LogSeverity.Info);
+        Logger.Log($"Engine '{m_Settings.Data.EngineName}' version {m_Settings.Data.EngineVersion} initialized.", Logger.LogSeverity.Info);
+        Logger.Log($"Graphics Vsync='{m_Settings.Data.UseVsync}'", Logger.LogSeverity.Info);
     }
 
     private unsafe void Initialize()
@@ -110,8 +124,10 @@ public class Engine
 
         m_WindowPipe.InitializeWindow(m_SdlApi, m_Settings.Data.WindowTitle,
             m_Settings.Data.WindowWidth,
-            m_Settings.Data.WindowHeight
+            m_Settings.Data.WindowHeight,
+            m_Settings.Data.UseVsync
         );
+
         m_RenderPipe.InitializeRenderer(m_SdlApi, m_WindowPipe.WindowHandler);
         m_ImGuiPipe.Initialize(m_RenderPipe.GlApi!, m_SdlApi, m_WindowPipe.WindowHandler, m_WindowPipe.GlContext);
 
@@ -217,7 +233,7 @@ public class Engine
 
         m_Profiler.StartRenderProfile("Draw_ImGui");
         m_ImGuiPipe.BeginFrame();
-        m_ImGuiPipe.Tools.DrawMenuBar();
+        m_ImGuiPipe.Tools.DrawMenuBar(m_CurrentFps);
         m_ImGuiPipe.Tools.DrawTools(m_Profiler);
         m_ImGuiPipe.EndFrame();
         m_Profiler.StopRenderProfile("Draw_ImGui");

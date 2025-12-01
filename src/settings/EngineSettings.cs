@@ -11,6 +11,8 @@ public class EngineSettings : IEngineSettings
         public int WindowWidth { get; set; }
         public int WindowHeight { get; set; }
         public string WindowTitle { get; set; }
+        public int UseVsync { get; set; }
+
         public EngineSettingsData()
         {
             EngineName = "Integrity2D";
@@ -18,6 +20,7 @@ public class EngineSettings : IEngineSettings
             WindowWidth = 1280;
             WindowHeight = 720;
             WindowTitle = "Integrity Engine";
+            UseVsync = 0;
         }
     }
 
@@ -46,6 +49,12 @@ public class EngineSettings : IEngineSettings
             if (int.TryParse(heightStr, out int loadedHeight))
             {
                 tempSettings.WindowHeight = loadedHeight;
+            }
+
+            string vsyncStr = ParseSetting(content, "UseVsync", tempSettings.UseVsync.ToString());
+            if (int.TryParse(vsyncStr, out int loadedVsync))
+            {
+                tempSettings.UseVsync = loadedVsync;
             }
 
             if (tempSettings.WindowWidth <= 0) tempSettings.WindowWidth = new EngineSettingsData().WindowWidth;
@@ -82,6 +91,8 @@ public class EngineSettings : IEngineSettings
                 await writer.WriteLineAsync($"WindowWidth={data.WindowWidth}");
                 await writer.WriteLineAsync($"WindowHeight={data.WindowHeight}");
                 await writer.WriteLineAsync($"WindowTitle={data.WindowTitle}");
+                await writer.WriteLineAsync($"[Graphics]");
+                await writer.WriteLineAsync($"UseVsync={data.UseVsync}");
             }
 
             Logger.Log($"Settings saved to {path}.", Logger.LogSeverity.Info);

@@ -583,7 +583,7 @@ public class ToolGui
         }
     }
 
-    public void DrawMenuBar()
+    public void DrawMenuBar(float fps)
     {
         if (ImGui.BeginMainMenuBar())
         {
@@ -604,7 +604,7 @@ public class ToolGui
             }
             ImGui.Separator();
 
-            string statusText = $"{engineSettings.Data.EngineName} - {engineSettings.Data.EngineVersion}({BuildInfo.BuildNumber}) OS: {Environment.OSVersion} ({DateTime.Now:d} {DateTime.Now:t})";
+            string statusText = $"FPS({fps}) {engineSettings.Data.EngineName} - {engineSettings.Data.EngineVersion}({BuildInfo.BuildNumber}) OS: {Environment.OSVersion} ({DateTime.Now:d} {DateTime.Now:t})";
             float menuBarWidth = ImGui.GetWindowWidth();
             float textWidth = ImGui.CalcTextSize(statusText).X;
             ImGui.SetCursorPosX(menuBarWidth - textWidth - ImGui.GetStyle().ItemSpacing.X);

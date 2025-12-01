@@ -13,7 +13,7 @@ public class WindowPipeline : IWindowPipeline
     public unsafe Window* WindowHandler => m_WindowHandler;
     public unsafe void* GlContext => m_GlContext;
 
-    public unsafe void InitializeWindow(Sdl sdlApi, string title, int width, int height)
+    public unsafe void InitializeWindow(Sdl sdlApi, string title, int width, int height, int useVsync)
     {
         m_SdlApi = sdlApi;
 
@@ -30,7 +30,7 @@ public class WindowPipeline : IWindowPipeline
 
         m_GlContext = m_SdlApi.GLCreateContext(m_WindowHandler);
         m_SdlApi.GLMakeCurrent(m_WindowHandler, m_GlContext);
-        m_SdlApi.GLSetSwapInterval(0); // Vsync
+        m_SdlApi.GLSetSwapInterval(useVsync);
     }
 
     public bool ShouldClose()
