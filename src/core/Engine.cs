@@ -8,6 +8,8 @@ using Silk.NET.SDL;
 public class Engine
 {
     private Sdl? m_SdlApi;
+    private readonly Stopwatch m_Stopwatch;
+
     private readonly IGame m_Game;
     private readonly IEngineSettings m_Settings;
     private readonly IAssetManager m_AssetManager;
@@ -18,6 +20,7 @@ public class Engine
     private readonly ISceneManager m_SceneManager;
     private readonly IAudioManager m_AudioManager;
     private readonly ICameraManager m_CameraManager;
+    private readonly IGameObjectFactory m_GameObjectFactory;
 
     // DEBUG
     const float cameraSpeed = 300.0f; 
@@ -35,6 +38,8 @@ public class Engine
     /// <exception cref="Exception"></exception>
     public Engine(IGame game)
     {
+        m_Stopwatch = new Stopwatch();
+
         m_Settings = Service.Get<IEngineSettings>() ?? throw new Exception("Engine Settings service not found.");
         m_AssetManager = Service.Get<IAssetManager>() ?? throw new Exception("Asset Manager service not found.");
         m_InputManager = Service.Get<IInputManager>() ?? throw new Exception("Input Manager service not found.");
@@ -44,6 +49,8 @@ public class Engine
         m_SceneManager = Service.Get<ISceneManager>() ?? throw new Exception("Scene Manager service not found.");
         m_AudioManager = Service.Get<IAudioManager>() ?? throw new Exception("Audio Manager service not found.");
         m_CameraManager = Service.Get<ICameraManager>() ?? throw new Exception("Camera Manager service not found.");
+        m_GameObjectFactory = Service.Get<IGameObjectFactory>() ?? throw new Exception("GameObjectFactory service not found.");
+
         m_Game = game;
     }
 
@@ -53,12 +60,15 @@ public class Engine
     public void Run()
     {
         Initialize();
-        
+        m_Stopwatch.Start();
         m_IsRunning = true;
         while(m_IsRunning)
         {
+            long elapsedTicks = m_Stopwatch.ElapsedTicks;
+            m_Stopwatch.Restart(); 
+            float deltaTime = (float)elapsedTicks / Stopwatch.Frequency;
             HandleInput();
-            Update();
+            Update(deltaTime);
             Render();
         }
 
@@ -95,7 +105,7 @@ public class Engine
 
         // DEBUG TESTING
         Scene defaultScene = new Scene("DefaultScene");
-        m_testObject = Service.Get<IGameObjectFactory>()?.CreateSpriteObject("TestGameObject", "/home/ezroot/Repos/Integrity/DefaultEngineAssets/logo.png");
+        m_testObject = m_GameObjectFactory.CreateSpriteObject("TestGameObject", "/home/ezroot/Repos/Integrity/DefaultEngineAssets/logo.png");
         if(m_testObject != null)
         {
             defaultScene.RegisterGameObject(m_testObject);
@@ -127,9 +137,8 @@ public class Engine
     }
 
 
-    private void Update()
+    private void Update(float deltaTime)
     {
-        float deltaTime = 1.0f / 60.0f; 
         if (m_InputManager.IsKeyDown(Scancode.ScancodeW))
             m_CameraManager.MainCamera!.Position += new Vector2(0, -cameraSpeed * deltaTime);
         if (m_InputManager.IsKeyDown(Scancode.ScancodeS))
@@ -139,7 +148,7 @@ public class Engine
         if (m_InputManager.IsKeyDown(Scancode.ScancodeD))
             m_CameraManager.MainCamera!.Position += new Vector2(cameraSpeed * deltaTime, 0);   
 
-        m_Game.Update();
+        m_Game.Update(deltaTime);
     }
 
     private void Render()
@@ -166,6 +175,7 @@ public class Engine
         m_ImGuiPipe.BeginFrame();
         m_ImGuiPipe.Tools.DrawMenuBar(m_SceneManager, m_CameraManager, m_Settings);
         m_ImGuiPipe.Tools.DrawTools(m_SceneManager, m_CameraManager, m_Settings);
+        ImGui.ShowDemoWindow();
         m_ImGuiPipe.EndFrame();
 
         m_RenderPipe.RenderFrameEnd();

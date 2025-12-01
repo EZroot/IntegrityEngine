@@ -25,8 +25,8 @@ public class ImGuiPipeline : IImGuiPipeline
     private int m_AttribLocationUV;
     private int m_AttribLocationColor;
 
-    private ToolGui m_Tools;
-    public ToolGui Tools => m_Tools;
+    private ToolGui? m_Tools;
+    public ToolGui Tools => m_Tools!;
 
     public unsafe void Initialize(GL glApi, Sdl sdlApi, Window* windowHandler, void* glContext)
     {

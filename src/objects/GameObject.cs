@@ -23,7 +23,7 @@ public class GameObject
             Logger.Log($"Component of type {type.Name} already exists in GameObject! Will skip this component", Logger.LogSeverity.Warning);
             return;
         }
-        Logger.Log($"Adding component of type {type.Name} to GameObject", Logger.LogSeverity.Info);
+        Logger.Log($"Adding component of type {type.Name} to GameObject ({Name})", Logger.LogSeverity.Info);
         m_ComponentMap[type] = component;
     }
 
@@ -32,7 +32,7 @@ public class GameObject
         if (m_ComponentMap.TryGetValue(typeof(T), out var component))
             return (T)component;
 
-        Logger.Log($"Component of type {typeof(T).Name} not found in GameObject.", Logger.LogSeverity.Warning);
+        Logger.Log($"Component of type {typeof(T).Name} not found in GameObject ({Name}).", Logger.LogSeverity.Warning);
         return default!;
     }
 }

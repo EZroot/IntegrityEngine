@@ -5,7 +5,7 @@ public class DefaultGame : IGame
         Logger.Log("DefaultGame initialized.", Logger.LogSeverity.Info);
     }
 
-    public void Update()
+    public void Update(float deltaTime)
     {
         // Game update logic goes here
     }

@@ -1,7 +1,7 @@
 public interface IGame
 {
     void Initialize();
-    void Update();
+    void Update(float deltaTime);
     void Render();
     void Cleanup();
 }
