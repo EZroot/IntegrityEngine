@@ -28,7 +28,7 @@ public class AssetManager : IAssetManager
     {
         if (m_TextureCache.TryGetValue(assetPath, out GLTexture? texture))
         {
-            return texture; 
+            return texture;
         }
 
         ImageData data = LoadAsset<ImageData>(assetPath);
@@ -37,19 +37,19 @@ public class AssetManager : IAssetManager
             throw new InvalidOperationException($"Asset not ready: {assetPath}");
         }
         var glApi = m_RenderPipeline.GlApi ?? throw new InvalidOperationException("OpenGL API is not initialized in RenderPipeline.");
-        GLTexture newTexture = new GLTexture(glApi, data); 
+        GLTexture newTexture = new GLTexture(glApi, data);
         m_TextureCache.Add(assetPath, newTexture);
         return newTexture;
     }
 
     private T LoadAsset<T>(string assetPath) where T : struct
     {
-        if(!File.Exists(assetPath))
+        if (!File.Exists(assetPath))
         {
             Logger.Log($"Asset not found at path: {assetPath}", Logger.LogSeverity.Error);
             return default;
         }
-        
+
         if (typeof(T) == typeof(ImageData))
         {
             var sprite = (T)(object)LoadSprite(assetPath);
@@ -68,7 +68,7 @@ public class AssetManager : IAssetManager
         {
             var image = ImageResult.FromStream(stream, ColorComponents.RedGreenBlueAlpha);
             Logger.Log($"Asset loaded: {image.Width}x{image.Height}, {image.Data.Length} bytes", Logger.LogSeverity.Info);
-            if(image.Data == null)
+            if (image.Data == null)
             {
                 Logger.Log($"Failed to load image data from asset at path: {assetPath}", Logger.LogSeverity.Error);
                 return default;

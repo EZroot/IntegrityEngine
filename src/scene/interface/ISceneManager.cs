@@ -1,4 +1,4 @@
-public interface ISceneManager : IService 
+public interface ISceneManager : IService
 {
     Scene? CurrentScene { get; }
     public void LoadScene(Scene scene);

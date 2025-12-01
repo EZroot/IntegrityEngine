@@ -18,11 +18,11 @@ public class SceneManager : ISceneManager
         {
             UnloadScene(m_CurrentScene);
         }
-        
+
         m_CurrentScene = scene;
         Logger.Log($"Activating scene: {scene.Name} ({scene.Id})");
-        
-        scene.Initialize(); 
+
+        scene.Initialize();
     }
 
     /// <summary>
@@ -35,7 +35,7 @@ public class SceneManager : ISceneManager
             m_CurrentScene = null;
         }
 
-        scene.Cleanup(); 
+        scene.Cleanup();
         Logger.Log($"Unloaded and removed scene: {scene.Name} ({scene.Id})");
     }
 
@@ -47,7 +47,7 @@ public class SceneManager : ISceneManager
 
     public Scene? GetScene(Guid id)
     {
-        if(m_SceneMap.TryGetValue(id, out var val))
+        if (m_SceneMap.TryGetValue(id, out var val))
         {
             return val;
         }

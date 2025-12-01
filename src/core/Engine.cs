@@ -23,7 +23,7 @@ public class Engine
     private readonly IGameObjectFactory m_GameObjectFactory;
 
     // DEBUG
-    const float cameraSpeed = 300.0f; 
+    const float cameraSpeed = 300.0f;
     // END DEBUG
     private bool m_IsRunning;
 
@@ -62,10 +62,10 @@ public class Engine
         Initialize();
         m_Stopwatch.Start();
         m_IsRunning = true;
-        while(m_IsRunning)
+        while (m_IsRunning)
         {
             long elapsedTicks = m_Stopwatch.ElapsedTicks;
-            m_Stopwatch.Restart(); 
+            m_Stopwatch.Restart();
             float deltaTime = (float)elapsedTicks / Stopwatch.Frequency;
             HandleInput();
             Update(deltaTime);
@@ -91,11 +91,11 @@ public class Engine
         m_SdlApi = Sdl.GetApi();
         if (m_SdlApi.Init(Sdl.InitVideo) < 0)
             throw new Exception("Failed to initialize SDL Video subsystem.");
-            
+
         Logger.Log("SDL Video subsystem initialized.", Logger.LogSeverity.Info);
 
-        m_WindowPipe.InitializeWindow(m_SdlApi, m_Settings.Data.WindowTitle, 
-            m_Settings.Data.WindowWidth, 
+        m_WindowPipe.InitializeWindow(m_SdlApi, m_Settings.Data.WindowTitle,
+            m_Settings.Data.WindowWidth,
             m_Settings.Data.WindowHeight
         );
         m_RenderPipe.InitializeRenderer(m_SdlApi, m_WindowPipe.WindowHandler);
@@ -109,7 +109,7 @@ public class Engine
         m_testObject.Transform.ScaleX = 0.25f;
         m_testObject.Transform.ScaleY = 0.25f;
 
-        if(m_testObject != null)
+        if (m_testObject != null)
         {
             defaultScene.RegisterGameObject(m_testObject);
         }
@@ -124,17 +124,17 @@ public class Engine
     private unsafe void HandleInput()
     {
         Event ev;
-        while (m_SdlApi!.PollEvent(&ev) != 0) 
+        while (m_SdlApi!.PollEvent(&ev) != 0)
         {
             m_ImGuiPipe.ProcessEvents(ev);
-            m_InputManager.ProcessInput(ev); 
+            m_InputManager.ProcessInput(ev);
 
             if ((EventType)ev.Type == EventType.Windowevent && ev.Window.Event == (byte)WindowEventID.SizeChanged)
             {
                 int newW, newH;
                 m_SdlApi.GetWindowSize(m_WindowPipe.WindowHandler, &newW, &newH);
                 m_CameraManager.MainCamera!.UpdateViewportSize(newW, newH);
-                m_RenderPipe.UpdateViewportSize(newW, newH); 
+                m_RenderPipe.UpdateViewportSize(newW, newH);
             }
         }
     }
@@ -151,7 +151,7 @@ public class Engine
         if (m_InputManager.IsKeyDown(Scancode.ScancodeA))
             m_CameraManager.MainCamera!.Position += new Vector2(-cameraSpeed * deltaTime, 0);
         if (m_InputManager.IsKeyDown(Scancode.ScancodeD))
-            m_CameraManager.MainCamera!.Position += new Vector2(cameraSpeed * deltaTime, 0);   
+            m_CameraManager.MainCamera!.Position += new Vector2(cameraSpeed * deltaTime, 0);
 
         m_Game.Update(deltaTime);
     }
@@ -159,15 +159,15 @@ public class Engine
     private void Render()
     {
         m_RenderPipe.RenderFrameStart();
-        
-        Matrix4x4 cameraMatrix = m_CameraManager.MainCamera!.GetViewProjectionMatrix(); 
+
+        Matrix4x4 cameraMatrix = m_CameraManager.MainCamera!.GetViewProjectionMatrix();
         m_RenderPipe.SetProjectionMatrix(in cameraMatrix);
 
         // DEBUG TESTING
-        if(m_SceneManager.CurrentScene != null)
+        if (m_SceneManager.CurrentScene != null)
         {
             var sceneGameObjects = m_SceneManager.CurrentScene.GetAllSpriteObjects();
-            for(var i = 0; i < sceneGameObjects.Count; i++)
+            for (var i = 0; i < sceneGameObjects.Count; i++)
             {
                 var sceneObj = sceneGameObjects[i];
                 m_RenderPipe.DrawSprite(sceneObj.Sprite, sceneObj.Transform);

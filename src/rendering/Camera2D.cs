@@ -6,10 +6,10 @@ public class Camera2D
     public string Name { get; }
     public Vector2 Position { get; set; } = Vector2.Zero;
     public float Zoom { get; set; } = 1.0f;
-    
+
     private int m_Width;
     private int m_Height;
-    
+
     public Camera2D(string name, int width, int height)
     {
         Id = Guid.NewGuid();
@@ -34,17 +34,17 @@ public class Camera2D
     {
         float scaledWidth = m_Width / Zoom;
         float scaledHeight = m_Height / Zoom;
-        
+
         Matrix4x4 projection = Matrix4x4.CreateOrthographicOffCenter(
-            0, 
+            0,
             scaledWidth,
-            scaledHeight, 
-            0, 
-            -1.0f, 
+            scaledHeight,
+            0,
+            -1.0f,
             1.0f
         );
-        
+
         Matrix4x4 view = Matrix4x4.CreateTranslation(-Position.X, -Position.Y, 0);
-        return view * projection; 
+        return view * projection;
     }
 }

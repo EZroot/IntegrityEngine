@@ -6,7 +6,7 @@ public class GLTexture
     public uint TextureId { get; private set; }
     public int Width { get; }
     public int Height { get; }
-    
+
     private readonly GL m_GlApi;
 
     public GLTexture(GL glApi, ImageData imageData)
@@ -14,14 +14,14 @@ public class GLTexture
         m_GlApi = glApi;
         Width = imageData.Width;
         Height = imageData.Height;
-        
+
         TextureId = CreateTexture(imageData);
     }
 
     private unsafe uint CreateTexture(ImageData imageData)
     {
         uint textureId = m_GlApi.GenTexture();
-        
+
         m_GlApi.BindTexture(TextureTarget.Texture2D, textureId);
 
         // Basic Linear filtering and edge wrapping
@@ -36,27 +36,27 @@ public class GLTexture
             m_GlApi.TexImage2D(
                 TextureTarget.Texture2D,
                 0, // mipmap level
-                (int)InternalFormat.Rgba, 
+                (int)InternalFormat.Rgba,
                 (uint)imageData.Width,
                 (uint)imageData.Height,
                 0, // border
                 PixelFormat.Rgba,
-                PixelType.UnsignedByte, 
+                PixelType.UnsignedByte,
                 ptr
             );
         }
 
         m_GlApi.GenerateMipmap(TextureTarget.Texture2D);
-        m_GlApi.BindTexture(TextureTarget.Texture2D, 0); 
+        m_GlApi.BindTexture(TextureTarget.Texture2D, 0);
         return textureId;
     }
-    
+
     public void Use(TextureUnit unit = TextureUnit.Texture0)
     {
         m_GlApi.ActiveTexture(unit);
         m_GlApi.BindTexture(TextureTarget.Texture2D, TextureId);
     }
-    
+
     public void Dispose()
     {
         m_GlApi.DeleteTexture(TextureId);

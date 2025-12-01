@@ -48,30 +48,30 @@ public static class Logger
     public static void WriteColored(string input)
     {
         string remaining = input;
-        
+
         while (remaining.Length > 0)
         {
             int startIndex = remaining.IndexOf("<color=");
-            
-            if (startIndex == -1) 
+
+            if (startIndex == -1)
             {
                 Console.Write(remaining);
                 break;
             }
-            
-            if (startIndex > 0) 
+
+            if (startIndex > 0)
             {
                 Console.Write(remaining[..startIndex]);
             }
 
             int colorTagEnd = remaining.IndexOf('>', startIndex);
-            if (colorTagEnd == -1) break; 
+            if (colorTagEnd == -1) break;
 
             string tagContent = remaining.Substring(startIndex + 7, colorTagEnd - (startIndex + 7));
             string colorName = tagContent.Trim().ToLower();
 
             int closeTagStart = remaining.IndexOf("</color>", colorTagEnd);
-            if (closeTagStart == -1) break; 
+            if (closeTagStart == -1) break;
 
             string coloredText = remaining.Substring(colorTagEnd + 1, closeTagStart - (colorTagEnd + 1));
 
@@ -83,7 +83,7 @@ public static class Logger
             }
             else
             {
-                Console.Write(coloredText); 
+                Console.Write(coloredText);
             }
 
             remaining = remaining.Substring(closeTagStart + "</color>".Length);

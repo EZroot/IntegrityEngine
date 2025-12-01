@@ -28,7 +28,7 @@ public class RenderPipeline : IRenderPipeline
     private System.Drawing.Color m_ClearColor = System.Drawing.Color.CornflowerBlue;
 
     private int m_ProjectionUniformLocation;
-    
+
     public GL? GlApi => m_GlApi;
 
     /// <summary>
@@ -41,7 +41,7 @@ public class RenderPipeline : IRenderPipeline
         m_SdlApi = sdlApi;
         m_WindowHandler = window;
         m_GlApi = GL.GetApi(GetProcAddress);
-        if(m_GlApi == null)
+        if (m_GlApi == null)
         {
             throw new Exception("Failed to initialize OpenGL API in RenderPipeline.");
         }
@@ -51,7 +51,7 @@ public class RenderPipeline : IRenderPipeline
         UpdateViewportSize(settings.Data.WindowWidth, settings.Data.WindowHeight);
 
         m_ShaderProgramId = CreateShaderProgram(
-            Path.Combine(EngineSettings.SHADER_DIR, "default.vert"), 
+            Path.Combine(EngineSettings.SHADER_DIR, "default.vert"),
             Path.Combine(EngineSettings.SHADER_DIR, "default.frag")
         );
 
@@ -68,12 +68,12 @@ public class RenderPipeline : IRenderPipeline
     public void DrawSprite(SpriteComponent? sprite, TransformComponent transform)
     {
         Debug.Assert(m_GlApi != null, "GL API is null.");
-        if(sprite == null)
+        if (sprite == null)
         {
             Logger.Log("Trying to draw sprite with invalid component. No sprite component on game object!", Logger.LogSeverity.Error);
             return;
         }
-        
+
         m_GlApi.UseProgram(m_ShaderProgramId);
         sprite.Texture.Use(TextureUnit.Texture0);
 
@@ -81,11 +81,11 @@ public class RenderPipeline : IRenderPipeline
         int modelLoc = m_GlApi.GetUniformLocation(m_ShaderProgramId, "model");
         unsafe
         {
-            m_GlApi.UniformMatrix4(modelLoc, 1, false, (float*)&model); 
+            m_GlApi.UniformMatrix4(modelLoc, 1, false, (float*)&model);
         }
 
         int location = m_GlApi.GetUniformLocation(m_ShaderProgramId, "textureSampler");
-        m_GlApi.Uniform1(location, 0); 
+        m_GlApi.Uniform1(location, 0);
 
         m_GlApi.BindVertexArray(m_VaoId);
         m_GlApi.DrawArrays(PrimitiveType.Triangles, 0, 6);
@@ -124,15 +124,15 @@ public class RenderPipeline : IRenderPipeline
     public unsafe void SetProjectionMatrix(in Matrix4x4 matrix)
     {
         Debug.Assert(m_GlApi != null, "GL API is null.");
-        
+
         m_GlApi.UseProgram(m_ShaderProgramId);
-        
-        fixed(float* ptr = &matrix.M11)
+
+        fixed (float* ptr = &matrix.M11)
         {
-            m_GlApi.UniformMatrix4(m_ProjectionUniformLocation, 1, false, ptr);         
+            m_GlApi.UniformMatrix4(m_ProjectionUniformLocation, 1, false, ptr);
         }
-        
-        m_GlApi.UseProgram(0); 
+
+        m_GlApi.UseProgram(0);
     }
 
     public void SetClearColor(System.Drawing.Color color)
@@ -166,7 +166,7 @@ public class RenderPipeline : IRenderPipeline
         return shaderProgram;
     }
 
-     private unsafe void SetupQuadMesh()
+    private unsafe void SetupQuadMesh()
     {
         Debug.Assert(m_GlApi != null, "OpenGL API is null when setting up quad mesh.");
 
@@ -175,7 +175,7 @@ public class RenderPipeline : IRenderPipeline
 
         m_GlApi.BindVertexArray(m_VaoId);
         m_GlApi.BindBuffer(GLEnum.ArrayBuffer, m_VboId);
-        
+
         int vertexSizeInBytes = s_QuadVertices.Length * sizeof(float);
         fixed (float* v = s_QuadVertices)
         {
@@ -208,9 +208,9 @@ public class RenderPipeline : IRenderPipeline
         m_GlApi.BindVertexArray(0);
     }
 
-    private unsafe IntPtr GetProcAddress(string procName) 
-    { 
+    private unsafe IntPtr GetProcAddress(string procName)
+    {
         Debug.Assert(m_SdlApi != null, "SDL Api is null when getting proc address!");
-        return (IntPtr)m_SdlApi.GLGetProcAddress(procName); 
+        return (IntPtr)m_SdlApi.GLGetProcAddress(procName);
     }
 }

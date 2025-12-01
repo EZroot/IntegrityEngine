@@ -25,7 +25,7 @@ public class Scene
     public void Initialize()
     {
         Logger.Log($"Initializing scene: {Name}");
-        
+
         foreach (var obj in m_GameObjectsList)
         {
             // obj.Initialize(); 
@@ -57,7 +57,7 @@ public class Scene
     public void Cleanup()
     {
         Logger.Log($"Cleaning up scene: {Name}");
-        
+
         // Iterate backwards to future proof for list removal if needed
         for (int i = m_GameObjectsList.Count - 1; i >= 0; i--)
         {

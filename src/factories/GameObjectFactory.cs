@@ -14,9 +14,9 @@ public class GameObjectFactory : IGameObjectFactory
     public GameObject CreateGameObject(string name, IComponent[]? componentsToAdd = null)
     {
         GameObject obj = new GameObject(name);
-        if(componentsToAdd != null)
+        if (componentsToAdd != null)
         {
-            foreach(var component in componentsToAdd)
+            foreach (var component in componentsToAdd)
             {
                 obj.AddComponent(component);
             }
@@ -33,9 +33,9 @@ public class GameObjectFactory : IGameObjectFactory
     {
         var texture = m_AssetManager.GetTexture(assetPath);
         SpriteObject obj = new SpriteObject(name, texture);
-        if(componentsToAdd != null)
+        if (componentsToAdd != null)
         {
-            foreach(var component in componentsToAdd)
+            foreach (var component in componentsToAdd)
             {
                 obj.AddComponent(component);
             }

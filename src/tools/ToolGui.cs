@@ -15,24 +15,24 @@ public class ToolGui
 
     public void DrawToolsUpdate(float deltaTime)
     {
-        if(!m_CaptureMemory) return;
-        m_TimeSinceLastMemoryUpdate += deltaTime; 
+        if (!m_CaptureMemory) return;
+        m_TimeSinceLastMemoryUpdate += deltaTime;
         if (m_TimeSinceLastMemoryUpdate >= MEMORY_UPDATE_INTERVAL)
         {
-            m_SnapshotCache = MemoryMonitor.LogMemoryUsage(); 
-            
-            m_TimeSinceLastMemoryUpdate -= MEMORY_UPDATE_INTERVAL; 
+            m_SnapshotCache = MemoryMonitor.LogMemoryUsage();
+
+            m_TimeSinceLastMemoryUpdate -= MEMORY_UPDATE_INTERVAL;
         }
     }
 
     public void DrawTools()
     {
-        if(m_EngineStatusWindowOpened)
+        if (m_EngineStatusWindowOpened)
         {
             DrawEngineStatusTool(Service.Get<ISceneManager>()!, Service.Get<ICameraManager>()!, Service.Get<IEngineSettings>()!);
         }
     }
-    
+
     private void DrawEngineStatusTool(ISceneManager sceneManager, ICameraManager cameraManager, IEngineSettings engineSettings)
     {
         if (ImGui.Begin("Engine Status & Debug"))
@@ -42,7 +42,7 @@ public class ToolGui
                 if (ImGui.BeginTabItem("Scene"))
                 {
                     var currentScene = sceneManager.CurrentScene;
-                    
+
                     if (currentScene == null)
                     {
                         ImGui.TextColored(new Vector4(1.0f, 0.2f, 0.2f, 1.0f), "Error: No active scene loaded.");
@@ -59,7 +59,7 @@ public class ToolGui
                         ImGui.TableHeadersRow();
                         ImGui.TableNextRow();
                         ImGui.TableSetColumnIndex(0); ImGui.Text("Name");
-                        ImGui.TableSetColumnIndex(1); ImGui.TextColored(new Vector4(0.8f, 1.0f, 0.8f, 1.0f), $"{currentScene.Name}");  
+                        ImGui.TableSetColumnIndex(1); ImGui.TextColored(new Vector4(0.8f, 1.0f, 0.8f, 1.0f), $"{currentScene.Name}");
 
                         ImGui.TableNextRow();
                         ImGui.TableSetColumnIndex(0); ImGui.Text("ID");
@@ -79,7 +79,7 @@ public class ToolGui
 
                         ImGui.EndTable();
                     }
-                    
+
                     ImGui.Spacing();
                     ImGui.Separator();
 
@@ -88,12 +88,12 @@ public class ToolGui
                         if (cameraManager.MainCamera != null)
                         {
                             var camera = cameraManager.MainCamera;
-                            
+
                             ImGui.PushID(camera.GetHashCode());
                             if (ImGui.TreeNodeEx("CameraDetails", ImGuiTreeNodeFlags.Bullet, $"Camera: {camera.Name}"))
                             {
                                 DrawObjectProperties(camera, "MainCamera", null, null);
-                                ImGui.TreePop(); 
+                                ImGui.TreePop();
                             }
                             ImGui.PopID();
                         }
@@ -105,7 +105,7 @@ public class ToolGui
 
                     ImGui.Spacing();
                     ImGui.Separator();
-                    
+
                     if (ImGui.CollapsingHeader("Scene Game Objects"))
                     {
                         if (ImGui.BeginChild("SceneObjectList", new Vector2(0, -1)))
@@ -117,21 +117,21 @@ public class ToolGui
                                     var componentMap = GetPrivateComponentMap(obj);
                                     if (componentMap != null)
                                     {
-                                        ImGui.SeparatorText("Components"); 
-                                        
+                                        ImGui.SeparatorText("Components");
+
                                         foreach (var kvp in componentMap)
                                         {
                                             var component = kvp.Value;
                                             string componentName = component.GetType().Name;
-                                            
-                                            ImGui.PushID(component.GetHashCode()); 
-                                            DrawObjectProperties(component, componentName, null, null); 
-                                            
-                                            ImGui.PopID(); 
+
+                                            ImGui.PushID(component.GetHashCode());
+                                            DrawObjectProperties(component, componentName, null, null);
+
+                                            ImGui.PopID();
                                         }
                                     }
-                                    
-                                    ImGui.TreePop(); 
+
+                                    ImGui.TreePop();
                                 }
                             }
                             ImGui.EndChild();
@@ -146,9 +146,9 @@ public class ToolGui
 
                     ImGui.Text($"Asset Manager Status");
                     ImGui.Separator();
-                    
+
                     ImGui.Text($"Total Loaded Assets: {loadedAssets.Count}");
-                    ImGui.Spacing(); 
+                    ImGui.Spacing();
 
                     if (ImGui.BeginTable("LoadedAssetTable", 3, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.Resizable))
                     {
@@ -162,24 +162,24 @@ public class ToolGui
                         {
                             string path = kvp.Key;
                             var assetInfo = kvp.Value;
-                            
+
                             var glTexture = Service.Get<IAssetManager>()!.GetTexture(path);
                             bool isTexture = assetInfo.Type.Equals("ImageData", StringComparison.OrdinalIgnoreCase) && glTexture.TextureId != IntPtr.Zero;
 
                             ImGui.TableNextRow();
                             ImGui.TableSetColumnIndex(0);
-                            ImGui.PushID(path); 
-                            
+                            ImGui.PushID(path);
+
                             ImGuiTreeNodeFlags flags = isTexture ? ImGuiTreeNodeFlags.None : ImGuiTreeNodeFlags.Leaf | ImGuiTreeNodeFlags.NoTreePushOnOpen;
 
-                            if (ImGui.TreeNodeEx(path, flags, path)) 
+                            if (ImGui.TreeNodeEx(path, flags, path))
                             {
                                 ImGui.Text($"Full Path: {path}");
-                                ImGui.Text($"Bytes: {assetInfo.MemoryFootprintBytes:N0}"); 
+                                ImGui.Text($"Bytes: {assetInfo.MemoryFootprintBytes:N0}");
                                 if (isTexture)
                                 {
                                     ImGui.Separator();
-                                    Vector2 previewSize = new Vector2(128, 128); 
+                                    Vector2 previewSize = new Vector2(128, 128);
                                     float aspect = (float)glTexture.Width / glTexture.Height;
                                     if (glTexture.Width > glTexture.Height)
                                     {
@@ -189,7 +189,7 @@ public class ToolGui
                                     {
                                         previewSize.X = previewSize.Y * aspect;
                                     }
-                                    ImGui.Image((nint)glTexture.TextureId, previewSize); 
+                                    ImGui.Image((nint)glTexture.TextureId, previewSize);
                                     ImGui.Text($"Dimensions: {glTexture.Width}x{glTexture.Height}");
                                 }
                                 if (isTexture)
@@ -198,14 +198,14 @@ public class ToolGui
                                 }
                             }
 
-                            ImGui.PopID(); 
-                            
+                            ImGui.PopID();
+
                             ImGui.TableSetColumnIndex(1);
                             ImGui.Text(assetInfo.Type);
-                            
+
                             ImGui.TableSetColumnIndex(2);
                             float sizeMB = assetInfo.MemoryFootprintBytes / MB;
-                            
+
                             ImGui.Text($"{sizeMB:F2} MB");
                         }
 
@@ -214,24 +214,24 @@ public class ToolGui
 
                     ImGui.EndTabItem();
                 }
-                
+
                 if (ImGui.BeginTabItem("Config"))
                 {
                     ImGui.Text("Graphics Settings:");
-                    
+
                     if (ImGui.Checkbox("Enable V-Sync", ref m_IsVsyncEnabled))
                     {
                         // m_RenderPipe.SetVsync(m_IsVsyncEnabled);
                     }
-                    
-                    ImGui.Spacing(); 
-                    
+
+                    ImGui.Spacing();
+
                     ImGui.Text("Audio Settings:");
                     if (ImGui.SliderFloat("Global Volume", ref m_GlobalVolume, 0.0f, 1.0f))
                     {
                         // m_AudioManager.SetGlobalVolume(m_GlobalVolume);
                     }
-                    
+
                     ImGui.Spacing();
                     ImGui.Separator();
                     ImGui.Text("Renderer:");
@@ -252,7 +252,7 @@ public class ToolGui
                 if (ImGui.BeginTabItem("Monitor"))
                 {
                     ImGui.Text("Memory Monitor:");
-                    
+
                     if (ImGui.Button("Force GC Collection"))
                     {
                         GC.Collect();
@@ -265,7 +265,7 @@ public class ToolGui
                     }
                     ImGui.Separator();
                     ImGui.Text("Current Metrics (Auto-Updating):");
-                    
+
                     if (ImGui.BeginTable("MemoryTable", 3, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit))
                     {
                         ImGui.TableSetupColumn("Metric");
@@ -276,15 +276,15 @@ public class ToolGui
                         void DrawMemoryRow(string label, float mbValue, long byteValue)
                         {
                             ImGui.TableNextRow();
-                            
+
                             ImGui.TableSetColumnIndex(0);
                             ImGui.Text(label);
-                            
+
                             ImGui.TableSetColumnIndex(1);
                             ImGui.TextDisabled($"{mbValue:F2}");
-                            
+
                             ImGui.TableSetColumnIndex(2);
-                            ImGui.Text($"{byteValue:N0}"); 
+                            ImGui.Text($"{byteValue:N0}");
                         }
 
                         DrawMemoryRow("GC Heap", m_SnapshotCache.ManagedHeapSizeMB, m_SnapshotCache.ManagedHeapSizeBytes);
@@ -334,8 +334,8 @@ public class ToolGui
     private Dictionary<Type, IComponent>? GetPrivateComponentMap(GameObject obj)
     {
         var mapField = typeof(GameObject).GetField(
-            "m_ComponentMap", 
-            System.Reflection.BindingFlags.NonPublic | 
+            "m_ComponentMap",
+            System.Reflection.BindingFlags.NonPublic |
             System.Reflection.BindingFlags.Instance
         );
 
@@ -344,7 +344,7 @@ public class ToolGui
             Logger.Log("Failed to find private m_ComponentMap field.", Logger.LogSeverity.Error);
             return null;
         }
-        
+
         return mapField.GetValue(obj) as Dictionary<Type, IComponent>;
     }
 
@@ -358,7 +358,7 @@ public class ToolGui
 
         Type targetType = targetObject.GetType();
 
-        if (targetType.IsPrimitive || targetType.IsEnum || targetType == typeof(string) || 
+        if (targetType.IsPrimitive || targetType.IsEnum || targetType == typeof(string) ||
             targetType == typeof(System.Numerics.Vector2) || targetType == typeof(System.Numerics.Vector3))
         {
             bool canWrite = false;
@@ -368,10 +368,10 @@ public class ToolGui
             }
             else if (memberInfo is System.Reflection.FieldInfo)
             {
-                canWrite = true; 
+                canWrite = true;
             }
 
-            if (!canWrite || parentObject == null) 
+            if (!canWrite || parentObject == null)
             {
                 ImGui.Text($"{label}: {targetObject}");
                 return;
@@ -412,7 +412,7 @@ public class ToolGui
             else if (targetType == typeof(string))
             {
                 string value = (string)targetObject;
-                if (ImGui.InputText(label, ref value, 256)) 
+                if (ImGui.InputText(label, ref value, 256))
                 {
                     SetValue(memberInfo!, parentObject, value);
                 }
@@ -421,14 +421,14 @@ public class ToolGui
             {
                 ImGui.Text($"{label}: {targetObject}");
             }
-            
+
             return;
         }
 
         if (ImGui.TreeNode(targetObject.GetHashCode().ToString(), $"{label} ({targetType.Name})"))
         {
             var members = targetType.GetMembers(
-                System.Reflection.BindingFlags.Public | 
+                System.Reflection.BindingFlags.Public |
                 System.Reflection.BindingFlags.Instance
             );
 
@@ -442,7 +442,7 @@ public class ToolGui
                 object? value = null;
                 Type? valueType = null;
                 string memberName = member.Name;
-                
+
                 if (member is System.Reflection.PropertyInfo property)
                 {
                     if (property.CanRead)
@@ -459,10 +459,10 @@ public class ToolGui
 
                 if (value != null && valueType != null)
                 {
-                    ImGui.PushID(member.GetHashCode()); 
-                    
+                    ImGui.PushID(member.GetHashCode());
+
                     DrawObjectProperties(value, memberName, member, targetObject);
-                    
+
                     ImGui.PopID();
                 }
             }

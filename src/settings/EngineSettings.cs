@@ -20,7 +20,7 @@ public class EngineSettings : IEngineSettings
             WindowTitle = "Integrity Engine";
         }
     }
-    
+
     private EngineSettingsData m_SettingsData = new EngineSettingsData();
     public EngineSettingsData Data => m_SettingsData;
 
@@ -28,7 +28,7 @@ public class EngineSettings : IEngineSettings
     {
         string path = Path.Combine(AppContext.BaseDirectory, FILENAME_ENGINE_SETTINGS);
         var tempSettings = m_SettingsData;
-        
+
         try
         {
             string content = await File.ReadAllTextAsync(path);
@@ -47,7 +47,7 @@ public class EngineSettings : IEngineSettings
             {
                 tempSettings.WindowHeight = loadedHeight;
             }
-            
+
             if (tempSettings.WindowWidth <= 0) tempSettings.WindowWidth = new EngineSettingsData().WindowWidth;
             if (tempSettings.WindowHeight <= 0) tempSettings.WindowHeight = new EngineSettingsData().WindowHeight;
 
@@ -56,21 +56,21 @@ public class EngineSettings : IEngineSettings
         catch (FileNotFoundException)
         {
             Logger.Log($"Settings file not found at {path}. Recreating the engine settings.", Logger.LogSeverity.Warning);
-            await SaveSettingsAsync(); 
+            await SaveSettingsAsync();
         }
         catch (Exception ex)
         {
             Logger.Log($"Error loading settings: {ex.Message}. Using defaults.", Logger.LogSeverity.Error);
-            await SaveSettingsAsync(); 
+            await SaveSettingsAsync();
         }
     }
 
     public async Task SaveSettingsAsync()
     {
         string path = Path.Combine(AppContext.BaseDirectory, FILENAME_ENGINE_SETTINGS);
-        
+
         var data = m_SettingsData;
-        
+
         try
         {
             using (var writer = new StreamWriter(path, false))
@@ -92,12 +92,12 @@ public class EngineSettings : IEngineSettings
         }
     }
 
-    
+
     // Helper method to parse INI key/value pairs
     private string ParseSetting(string content, string key, string defaultValue)
     {
         var lines = content.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-        
+
         foreach (var line in lines)
         {
             if (line.StartsWith(";") || line.StartsWith("#") || string.IsNullOrWhiteSpace(line) || line.StartsWith("["))

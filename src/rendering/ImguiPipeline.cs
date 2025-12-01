@@ -13,7 +13,7 @@ public class ImGuiPipeline : IImGuiPipeline
     private unsafe void* m_GlContext;
     private Sdl? m_SdlApi;
     private unsafe Window* m_WindowHandler;
-    
+
     private double m_Time = 0.0;
     private bool m_IsInitialized = false;
     private uint m_ProgramId;
@@ -37,9 +37,9 @@ public class ImGuiPipeline : IImGuiPipeline
 
         m_Context = ImGui.CreateContext();
         ImGui.SetCurrentContext(m_Context);
-        
+
         ImGuiIOPtr io = ImGui.GetIO();
-        
+
         int w, h;
         m_SdlApi.GetWindowSize(windowHandler, &w, &h);
         io.DisplaySize = new Vector2(w, h);
@@ -48,8 +48,8 @@ public class ImGuiPipeline : IImGuiPipeline
         io.ConfigFlags |= ImGuiConfigFlags.ViewportsEnable;
 
         io.Fonts.GetTexDataAsRGBA32(out IntPtr pixels, out int width, out int height, out int bytesPerPixel);
-        
-        uint fontTexture = m_GlApi.GenTexture(); 
+
+        uint fontTexture = m_GlApi.GenTexture();
         m_GlApi.BindTexture(TextureTarget.Texture2D, fontTexture);
         m_GlApi.PixelStore(PixelStoreParameter.UnpackAlignment, 1);
 
@@ -60,10 +60,10 @@ public class ImGuiPipeline : IImGuiPipeline
 
         m_GlApi.TexImage2D(GLEnum.Texture2D, 0, (int)PixelFormat.Rgba,
             (uint)width, (uint)height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, (void*)pixels);
-        
+
         io.Fonts.SetTexID((IntPtr)fontTexture);
         io.Fonts.ClearTexData();
-        
+
         ImGui.StyleColorsDark();
 
         SetupRenderResources();
@@ -82,11 +82,12 @@ public class ImGuiPipeline : IImGuiPipeline
         m_Time = currentTime;
 
         int w, h;
-        unsafe {
+        unsafe
+        {
             m_SdlApi!.GetWindowSize(m_WindowHandler, &w, &h);
             io.DisplaySize = new Vector2(w, h);
         }
-        
+
         ImGui.NewFrame();
     }
 
@@ -96,11 +97,11 @@ public class ImGuiPipeline : IImGuiPipeline
 
         ImGui.Render();
         ImDrawDataPtr drawData = ImGui.GetDrawData();
-        
+
         RenderDrawDataOpenGL(drawData);
 
         ImGui.EndFrame();
-        
+
         if (ImGui.GetIO().ConfigFlags.HasFlag(ImGuiConfigFlags.ViewportsEnable))
         {
             ImGui.UpdatePlatformWindows();
@@ -122,72 +123,72 @@ public class ImGuiPipeline : IImGuiPipeline
         {
             case EventType.Keydown:
             case EventType.Keyup:
-            {
-                bool down = ev.Type == (uint)EventType.Keydown;
-                MapSDLKey(down, ev.Key.Keysym.Scancode);
+                {
+                    bool down = ev.Type == (uint)EventType.Keydown;
+                    MapSDLKey(down, ev.Key.Keysym.Scancode);
 
-                io.KeyCtrl  = (ev.Key.Keysym.Mod & (ushort)Keymod.Ctrl)  != 0;
-                io.KeyShift = (ev.Key.Keysym.Mod & (ushort)Keymod.Shift) != 0;
-                io.KeyAlt   = (ev.Key.Keysym.Mod & (ushort)Keymod.Alt)   != 0;
-                io.KeySuper = (ev.Key.Keysym.Mod & (ushort)Keymod.Gui)   != 0;
-            }
-            break;
+                    io.KeyCtrl = (ev.Key.Keysym.Mod & (ushort)Keymod.Ctrl) != 0;
+                    io.KeyShift = (ev.Key.Keysym.Mod & (ushort)Keymod.Shift) != 0;
+                    io.KeyAlt = (ev.Key.Keysym.Mod & (ushort)Keymod.Alt) != 0;
+                    io.KeySuper = (ev.Key.Keysym.Mod & (ushort)Keymod.Gui) != 0;
+                }
+                break;
 
             case EventType.Textinput:
-            {
-                string text = System.Text.Encoding.UTF8.GetString(ev.Text.Text, 32);
-                io.AddInputCharactersUTF8(text);
-            }
-            break;
+                {
+                    string text = System.Text.Encoding.UTF8.GetString(ev.Text.Text, 32);
+                    io.AddInputCharactersUTF8(text);
+                }
+                break;
 
             case EventType.Mousebuttondown:
             case EventType.Mousebuttonup:
-            {
-                bool down = (EventType)ev.Type == EventType.Mousebuttondown;
-                int button = (int)ev.Button.Button; 
-
-                if (button >= 1 && button <= 5)
                 {
-                    io.MouseDown[button - 1] = down;
+                    bool down = (EventType)ev.Type == EventType.Mousebuttondown;
+                    int button = (int)ev.Button.Button;
+
+                    if (button >= 1 && button <= 5)
+                    {
+                        io.MouseDown[button - 1] = down;
+                    }
                 }
-            }
-            break;
+                break;
 
             case EventType.Mousemotion:
-            {
-                io.MousePos = new Vector2(ev.Motion.X, ev.Motion.Y);
-            }
-            break;
+                {
+                    io.MousePos = new Vector2(ev.Motion.X, ev.Motion.Y);
+                }
+                break;
 
             case EventType.Mousewheel:
-            {
-                float wheelX = ev.Wheel.X;
-                float wheelY = ev.Wheel.Y;
-
-                if ((ev.Wheel.Direction & (uint)MouseWheelDirection.Flipped) != 0)
                 {
-                    wheelX = -wheelX;
-                    wheelY = -wheelY;
-                }
+                    float wheelX = ev.Wheel.X;
+                    float wheelY = ev.Wheel.Y;
 
-                io.MouseWheelH += wheelX;
-                io.MouseWheel  += wheelY;
-            }
-            break;
+                    if ((ev.Wheel.Direction & (uint)MouseWheelDirection.Flipped) != 0)
+                    {
+                        wheelX = -wheelX;
+                        wheelY = -wheelY;
+                    }
+
+                    io.MouseWheelH += wheelX;
+                    io.MouseWheel += wheelY;
+                }
+                break;
 
             case EventType.Windowevent:
-            {
-                if (ev.Window.Event == (byte)WindowEventID.SizeChanged)
                 {
-                    int w, h;
-                    m_SdlApi!.GetWindowSize(m_WindowHandler, &w, &h);
-                    io.DisplaySize = new Vector2(w, h);
+                    if (ev.Window.Event == (byte)WindowEventID.SizeChanged)
+                    {
+                        int w, h;
+                        m_SdlApi!.GetWindowSize(m_WindowHandler, &w, &h);
+                        io.DisplaySize = new Vector2(w, h);
+                    }
                 }
-            }
-            break;
+                break;
         }
     }
-    
+
     private unsafe void MapSDLKey(bool down, Scancode sc)
     {
         ImGuiIOPtr io = ImGui.GetIO();
@@ -283,13 +284,13 @@ public class ImGuiPipeline : IImGuiPipeline
     private uint CreateShaderProgram(string vertexPath, string fragmentPath)
     {
         Debug.Assert(m_GlApi != null, "OpenGL API is null when creating shader program.");
-        
+
         var vertexSource = File.ReadAllText(vertexPath);
         var fragmentSource = File.ReadAllText(fragmentPath);
         uint vertexShader = m_GlApi.CreateShader(ShaderType.VertexShader);
         m_GlApi.ShaderSource(vertexShader, vertexSource);
         m_GlApi.CompileShader(vertexShader);
-        
+
         uint fragmentShader = m_GlApi.CreateShader(ShaderType.FragmentShader);
         m_GlApi.ShaderSource(fragmentShader, fragmentSource);
         m_GlApi.CompileShader(fragmentShader);
@@ -311,35 +312,35 @@ public class ImGuiPipeline : IImGuiPipeline
         Debug.Assert(m_GlApi != null, "OpenGL API is null when setting up ImGui resources.");
 
         m_ProgramId = CreateShaderProgram(
-            Path.Combine(EngineSettings.SHADER_DIR, "imgui.vert"), 
+            Path.Combine(EngineSettings.SHADER_DIR, "imgui.vert"),
             Path.Combine(EngineSettings.SHADER_DIR, "imgui.frag")
         );
-        
+
         m_AttribLocationPos = m_GlApi.GetAttribLocation(m_ProgramId, "in_position");
         m_AttribLocationUV = m_GlApi.GetAttribLocation(m_ProgramId, "in_uv");
         m_AttribLocationColor = m_GlApi.GetAttribLocation(m_ProgramId, "in_color");
         m_ProjUniformLocation = m_GlApi.GetUniformLocation(m_ProgramId, "projection");
-        
+
         m_VaoId = m_GlApi.GenVertexArray();
         m_VboId = m_GlApi.GenBuffer();
         m_EboId = m_GlApi.GenBuffer();
-        
+
         m_GlApi.BindVertexArray(m_VaoId);
-        
+
         m_GlApi.BindBuffer(BufferTargetARB.ArrayBuffer, m_VboId);
         m_GlApi.BufferData(BufferTargetARB.ArrayBuffer, (nuint)1, null, BufferUsageARB.DynamicDraw);
-        
+
         m_GlApi.BindBuffer(BufferTargetARB.ElementArrayBuffer, m_EboId);
         m_GlApi.BufferData(BufferTargetARB.ElementArrayBuffer, (nuint)1, null, BufferUsageARB.DynamicDraw);
 
         int stride = sizeof(ImDrawVert);
-        
+
         m_GlApi.EnableVertexAttribArray((uint)m_AttribLocationPos);
         m_GlApi.VertexAttribPointer((uint)m_AttribLocationPos, 2, VertexAttribPointerType.Float, false, (uint)stride, (void*)0);
-        
+
         m_GlApi.EnableVertexAttribArray((uint)m_AttribLocationUV);
         m_GlApi.VertexAttribPointer((uint)m_AttribLocationUV, 2, VertexAttribPointerType.Float, false, (uint)stride, (void*)(2 * sizeof(float)));
-        
+
         m_GlApi.EnableVertexAttribArray((uint)m_AttribLocationColor);
         m_GlApi.VertexAttribPointer((uint)m_AttribLocationColor, 4, VertexAttribPointerType.UnsignedByte, true, (uint)stride, (void*)(4 * sizeof(float)));
 
@@ -347,7 +348,7 @@ public class ImGuiPipeline : IImGuiPipeline
         m_GlApi.BindBuffer(BufferTargetARB.ArrayBuffer, 0);
         m_GlApi.BindBuffer(BufferTargetARB.ElementArrayBuffer, 0);
     }
-    
+
     /// <summary>
     /// Executes all OpenGL draw calls based on the generated ImGui draw data.
     /// </summary>
@@ -355,7 +356,7 @@ public class ImGuiPipeline : IImGuiPipeline
     {
         Debug.Assert(m_GlApi != null, "GL API is null in RenderDrawDataOpenGL.");
         if (drawData.CmdListsCount == 0 || m_GlApi == null) return;
-        
+
         if (drawData.DisplaySize.X <= 0.0f || drawData.DisplaySize.Y <= 0.0f) return;
 
         m_GlApi.Enable(EnableCap.Blend);
@@ -369,22 +370,22 @@ public class ImGuiPipeline : IImGuiPipeline
         m_GlApi.PolygonMode(GLEnum.FrontAndBack, PolygonMode.Fill);
 
         m_GlApi.Viewport(0, 0, (uint)drawData.DisplaySize.X, (uint)drawData.DisplaySize.Y);
-        
+
         float L = drawData.DisplayPos.X;
         float R = drawData.DisplayPos.X + drawData.DisplaySize.X;
         float T = drawData.DisplayPos.Y;
         float B = drawData.DisplayPos.Y + drawData.DisplaySize.Y;
-        
+
         Matrix4x4 orthoProjection = new Matrix4x4(
             2.0f / (R - L), 0.0f, 0.0f, 0.0f,
             0.0f, 2.0f / (T - B), 0.0f, 0.0f,
             0.0f, 0.0f, -1.0f, 0.0f,
             (R + L) / (L - R), (T + B) / (B - T), 0.0f, 1.0f
         );
-        
+
         m_GlApi.UseProgram(m_ProgramId);
         m_GlApi.Uniform1(m_GlApi.GetUniformLocation(m_ProgramId, "textureSampler"), 0);
-        
+
         float[] projectionArray = new float[]
         {
             orthoProjection.M11, orthoProjection.M12, orthoProjection.M13, orthoProjection.M14,
@@ -396,9 +397,9 @@ public class ImGuiPipeline : IImGuiPipeline
         {
             m_GlApi.UniformMatrix4(m_ProjUniformLocation, 1, false, ptr);
         }
-        
+
         m_GlApi.BindVertexArray(m_VaoId);
-        
+
         for (int n = 0; n < drawData.CmdListsCount; n++)
         {
             ImDrawListPtr cmdList = drawData.CmdLists[n];
@@ -408,29 +409,29 @@ public class ImGuiPipeline : IImGuiPipeline
 
             m_GlApi.BindBuffer(BufferTargetARB.ElementArrayBuffer, m_EboId);
             m_GlApi.BufferData(BufferTargetARB.ElementArrayBuffer, (nuint)(cmdList.IdxBuffer.Size * sizeof(ushort)), (void*)cmdList.IdxBuffer.Data, BufferUsageARB.StreamDraw);
-            
+
             for (int i = 0; i < cmdList.CmdBuffer.Size; i++)
             {
                 ImDrawCmdPtr cmd = cmdList.CmdBuffer[i];
-                
+
                 if (cmd.UserCallback != IntPtr.Zero)
                 {
                     continue;
                 }
-                
+
                 float clipX = cmd.ClipRect.X - drawData.DisplayPos.X;
                 float clipY = cmd.ClipRect.Y - drawData.DisplayPos.Y;
                 float clipW = cmd.ClipRect.Z - clipX;
                 float clipH = cmd.ClipRect.W - clipY;
-                
+
                 if (clipW <= 0.0f || clipH <= 0.0f) continue;
-                
+
                 m_GlApi.Scissor((int)clipX, (int)(drawData.DisplaySize.Y - clipY - clipH), (uint)clipW, (uint)clipH);
                 m_GlApi.BindTexture(TextureTarget.Texture2D, (uint)cmd.TextureId.ToInt32());
                 m_GlApi.DrawElements(PrimitiveType.Triangles, cmd.ElemCount, DrawElementsType.UnsignedShort, (void*)(cmd.IdxOffset * sizeof(ushort)));
             }
         }
-        
+
         // Engine state restore
         m_GlApi.UseProgram(0);
         m_GlApi.BindVertexArray(0);

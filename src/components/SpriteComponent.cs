@@ -1,7 +1,7 @@
 
 public class SpriteComponent : IComponent
 {
-    public GLTexture Texture { get; } 
+    public GLTexture Texture { get; }
     public Rect SourceRect { get; set; }
 
     public SpriteComponent(GLTexture texture)

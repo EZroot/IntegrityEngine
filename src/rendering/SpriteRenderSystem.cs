@@ -1,7 +1,7 @@
 public class SpriteRenderSystem
 {
-    private readonly List<SpriteObject> m_SpriteObjectList = new(); 
-    
+    private readonly List<SpriteObject> m_SpriteObjectList = new();
+
     public List<SpriteObject> SpriteObjectList => m_SpriteObjectList;
     public void RegisterObject(GameObject obj)
     {
