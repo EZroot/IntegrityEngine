@@ -3,11 +3,145 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
-      "type": "Conceptual",
-      "source_relative_path": "README.md",
+      "type": "Resource",
+      "source_relative_path": "DefaultEngineAssets/blue_face.png",
+      "output": {
+        "resource": {
+          "relative_path": "DefaultEngineAssets/blue_face.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "DefaultEngineAssets/logo.png",
+      "output": {
+        "resource": {
+          "relative_path": "DefaultEngineAssets/logo.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "DefaultEngineAssets/pink_face.png",
+      "output": {
+        "resource": {
+          "relative_path": "DefaultEngineAssets/pink_face.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "DefaultEngineAssets/shaders/default.frag",
+      "output": {
+        "resource": {
+          "relative_path": "DefaultEngineAssets/shaders/default.frag"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "DefaultEngineAssets/shaders/default.vert",
+      "output": {
+        "resource": {
+          "relative_path": "DefaultEngineAssets/shaders/default.vert"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "DefaultEngineAssets/shaders/imgui.frag",
+      "output": {
+        "resource": {
+          "relative_path": "DefaultEngineAssets/shaders/imgui.frag"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "DefaultEngineAssets/shaders/imgui.vert",
+      "output": {
+        "resource": {
+          "relative_path": "DefaultEngineAssets/shaders/imgui.vert"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "DefaultEngineAssets/yellow_face.png",
+      "output": {
+        "resource": {
+          "relative_path": "DefaultEngineAssets/yellow_face.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIGTITS.Tits.yml",
       "output": {
         ".html": {
-          "relative_path": "README.html"
+          "relative_path": "api/BIGTITS.Tits.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BIGTITS.Tits",
+      "Summary": "<p sourcefile=\"api/BIGTITS.Tits.yml\" sourcestartlinenumber=\"1\">Tits class to measure tits</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BIGTITS.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BIGTITS.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BIGTITS",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
       "version": ""

@@ -3,40 +3,47 @@
     {
       "src": [
         {
-          "files": ["Integrity.csproj"],
-          "src": "."
+          "files": ["bin/Release/net8.0/Integrity.dll"]
         }
       ],
-      "dest": "api"
+      "dest": "api",
+      "properties": {
+        "Configuration": "Release",
+        "DocumentAssembliesWith": "System.Object"
+      },
+      "filter": "filter.yml"
     }
   ],
   "build": {
     "content": [
       {
         "files": [
-          "api/**.yml",
+          "index.md",
           "toc.yml"
+        ],
+        "exclude": [
+          "README.md",
+          "obj/**",
+          "_site/**"
         ]
       },
       {
         "files": [
-          "**/*.md",
-          "toc.yml",
-          "*.yml"
-        ],
-        "exclude": [
-          "obj/**",
-          "_site/**",
-          "docfx.json"
+          "api/toc.yml",
+          "api/**/*.yml"
         ]
       }
     ],
     "resource": [
       {
-        "files": ["images/**"]
+        "files": ["DefaultEngineAssets/**"]
       }
     ],
-    "output": "_site",
+    "globalMetadata": {
+      "_disableGitFeatures": true
+    },
+    "overwrite": [],
+    "dest": "_site",
     "templates": ["default"],
     "markdownEngineName": "markdig"
   }

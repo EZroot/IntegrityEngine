@@ -1,3 +1,45 @@
 ### YamlMime:XRefMap
 sorted: true
-references: []
+references:
+- uid: BIGTITS
+  name: BIGTITS
+  href: api/BIGTITS.html
+  commentId: N:BIGTITS
+  fullName: BIGTITS
+  nameWithType: BIGTITS
+- uid: BIGTITS.Tits
+  name: Tits
+  href: api/BIGTITS.Tits.html
+  commentId: T:BIGTITS.Tits
+  fullName: BIGTITS.Tits
+  nameWithType: Tits
+- uid: BIGTITS.Tits.#ctor
+  name: Tits()
+  href: api/BIGTITS.Tits.html#BIGTITS_Tits__ctor
+  commentId: M:BIGTITS.Tits.#ctor
+  name.vb: New()
+  fullName: BIGTITS.Tits.Tits()
+  fullName.vb: BIGTITS.Tits.New()
+  nameWithType: Tits.Tits()
+  nameWithType.vb: Tits.New()
+- uid: BIGTITS.Tits.#ctor*
+  name: Tits
+  href: api/BIGTITS.Tits.html#BIGTITS_Tits__ctor_
+  commentId: Overload:BIGTITS.Tits.#ctor
+  name.vb: New
+  fullName: BIGTITS.Tits.Tits
+  fullName.vb: BIGTITS.Tits.New
+  nameWithType: Tits.Tits
+  nameWithType.vb: Tits.New
+- uid: BIGTITS.Tits.GetTits
+  name: GetTits()
+  href: api/BIGTITS.Tits.html#BIGTITS_Tits_GetTits
+  commentId: M:BIGTITS.Tits.GetTits
+  fullName: BIGTITS.Tits.GetTits()
+  nameWithType: Tits.GetTits()
+- uid: BIGTITS.Tits.GetTits*
+  name: GetTits
+  href: api/BIGTITS.Tits.html#BIGTITS_Tits_GetTits_
+  commentId: Overload:BIGTITS.Tits.GetTits
+  fullName: BIGTITS.Tits.GetTits
+  nameWithType: Tits.GetTits

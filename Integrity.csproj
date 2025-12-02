@@ -3,10 +3,6 @@
   <Target Name="PreBuild" BeforeTargets="BeforeBuild">
       <Exec Command="bash src/scripts/increment_build_number.sh" />
   </Target>
-  
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(SkipDocBuild)' != 'true'">
-      <Exec Command="bash src/scripts/doc_build.sh" />
-  </Target>
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>

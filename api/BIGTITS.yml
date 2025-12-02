@@ -1,0 +1,24 @@
+### YamlMime:ManagedReference
+items:
+- uid: BIGTITS
+  commentId: N:BIGTITS
+  id: BIGTITS
+  children:
+  - BIGTITS.Tits
+  langs:
+  - csharp
+  - vb
+  name: BIGTITS
+  nameWithType: BIGTITS
+  fullName: BIGTITS
+  type: Namespace
+  assemblies:
+  - Integrity
+references:
+- uid: BIGTITS.Tits
+  commentId: T:BIGTITS.Tits
+  isExternal: true
+  href: BIGTITS.Tits.html
+  name: Tits
+  nameWithType: Tits
+  fullName: BIGTITS.Tits

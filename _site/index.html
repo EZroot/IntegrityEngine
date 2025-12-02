@@ -5,17 +5,17 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Integrity SDL2/OpenGL 2D Engine </title>
+      <title>Integrity Engine Documentation </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Integrity SDL2/OpenGL 2D Engine ">
+      <meta name="title" content="Integrity Engine Documentation ">
     
     
       <link rel="shortcut icon" href="favicon.ico">
       <link rel="stylesheet" href="styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="styles/docfx.css">
       <link rel="stylesheet" href="styles/main.css">
-      <meta property="docfx:navrel" content="">
-      <meta property="docfx:tocrel" content="">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
     
     
     
@@ -60,28 +60,10 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="integrity-sdl2opengl-2d-engine">Integrity SDL2/OpenGL 2D Engine</h1>
+<h1 id="integrity-engine-documentation">Integrity Engine Documentation</h1>
 
-<p>A work-in-progress, modern 2D graphics engine built entirely in C# to explore and implement the <strong>OpenGL 3.3 Core Profile</strong> pipeline from the ground up.</p>
-<p>Integrity uses <strong>SDL2</strong> solely for cross-platform window management and input handling, separating the rendering concerns completely into a custom OpenGL rendering pipeline.</p>
-<hr>
-<h2 id="core-features">Core Features</h2>
-<ul>
-<li><strong>SDL2/C# Foundation:</strong> Utilizes the Silk.NET bindings for stable, cross-platform window and context creation.</li>
-<li><strong>OpenGL 3.3 Core:</strong> Enforces the use of modern VAOs, VBOs, and programmable shaders (GLSL 330).</li>
-<li><strong>2D Coordinate System:</strong> Implements a top-left origin (Y-down) orthographic projection, ideal for 2D game development.</li>
-<li><strong>Asset Pipeline:</strong> Dedicated managers (services) that handle loading image files (via <strong>StbImageSharp</strong>) and converting them directly into GPU-ready <strong>GLTexture</strong> resources.</li>
-</ul>
-<hr>
-<h2 id="getting-started">Getting Started</h2>
-<p>This project is structured as a series of pipelines and managers (<code>RenderPipeline</code>, <code>AssetManager</code>, etc.) to isolate engine dependencies.</p>
-<p>To run the engine, you will need:</p>
-<ol>
-<li><strong>.NET 8+ SDK</strong></li>
-<li><strong>SDL2 runtime libraries</strong> (managed via Silk.NET/your environment setup)</li>
-</ol>
-<h3 id="debug--testing">Debug &amp; Testing</h3>
-<p>The current setup includes a simple test in <code>Engine.cs</code> that draws a sample asset using the basic <strong>Translate * Scale</strong> Model matrix to confirm the projection and rendering pipeline are functional.</p>
+<p>Welcome to the Integrity Engine API.</p>
+<p>Use the sidebar to browse namespaces, classes, and members.</p>
 
 </article>
           </div>
@@ -91,7 +73,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/EZroot/IntegrityEngine/blob/main/README.md/#L1" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/EZroot/IntegrityEngine/blob/main/index.md/#L1" class="contribution-link">Edit this page</a>
                   </li>
                 </ul>
               </div>
