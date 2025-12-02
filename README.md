@@ -1,22 +1,24 @@
-# Integrity 2D - SDL2/Opengl Engine
+# Integrity 2D - SDL2/OpenGL Engine
 
 A work-in-progress, modern 2D graphics engine built entirely in **C#** to explore and implement the **OpenGL 3.3 Core Profile** pipeline from the ground up.
 
 Integrity utilizes **SDL2** (via Silk.NET) solely for cross-platform window management and input handling, separating the rendering concerns completely into a custom OpenGL rendering pipeline.
 
+[![Integrity 2D Documentation](https://img.shields.io/badge/Documentation-Integrity%202D-blue.svg)](https://ezroot.github.io/Integrity2D/)
+
 ---
 
 ## Core Architecture & Design
 
-The engine is built on a strong **Service-Oriented Architecture (SOA)**, relying on the **Service Locator** pattern to manage engine subsystems (`AssetManager`, `RenderPipeline`, `SceneManager`, etc.). This promotes loose coupling and testability.
+The engine is built on a strong **Service-Oriented Architecture (SOA)**, relying on the **Service Locator** pattern to manage engine subsystems. This promotes **loose coupling** and **testability** across all major components.
 
-### Key Components:
+### 🔑 Key Components
 
 * **Service Locator:** The central `Service.Get<T>()` mechanism is used to resolve all engine dependencies, including:
     * `IAssetManager`: Handles asset caching and loading.
     * `IRenderPipeline`: Manages all OpenGL interaction.
     * `ICameraManager`: Controls the current world view.
-* **Main Loop (`Engine.Run()`):** Explicitly handles timing (`deltaTime`), profiling (`IProfiler`), and delegating work to the separate `HandleInput()`, `Update()`, and `Render()` methods.
+* **Main Loop (`Engine.Run()`):** Explicitly handles timing (`deltaTime`), profiling (`IProfiler`), and delegates work to the separate `HandleInput()`, `Update()`, and `Render()` methods.
 
 ---
 
@@ -24,7 +26,7 @@ The engine is built on a strong **Service-Oriented Architecture (SOA)**, relying
 
 Integrity's greatest focus is on high-performance 2D rendering using modern graphics techniques.
 
-### Core Features:
+### Core Features
 
 * **OpenGL 3.3 Core:** Enforces the use of modern VAOs, VBOs, and programmable shaders (GLSL 330).
 * **Instanced Rendering (Batching):** All sprite rendering is performed using hardware **instancing**. During the `Render()` loop, objects are grouped by their **`GLTexture`** into the `m_RenderingBatchMap`, and then drawn in a single, highly efficient `DrawSpritesInstanced` call.
@@ -38,6 +40,9 @@ Integrity's greatest focus is on high-performance 2D rendering using modern grap
 
 This project is structured as a series of pipelines and managers.
 
+Dive deeper into the Integrity Engine architecture, detailed component guides, and advanced usage examples in the **official documentation**:
+[**Integrity 2D Documentation (ezroot.github.io/Integrity2D/)**](https://ezroot.github.io/Integrity2D/)
+
 ### Requirements
 
 1.  **.NET 8+ SDK**
@@ -46,7 +51,6 @@ This project is structured as a series of pipelines and managers.
 ### Example: Scene Setup
 
 New game objects are instantiated via the factory and registered with the active scene to be rendered automatically.
-
 
 ```csharp
 // Inside Engine.Initialize() (Will become IGame.Initialize() later)
@@ -75,3 +79,36 @@ sceneManager.CurrentScene.RegisterGameObject(playerSprite);
 m_SceneManager.AddScene(defaultScene);
 m_SceneManager.LoadScene(defaultScene);
 ```
+---
+
+## Contributing
+
+We welcome contributions to the Integrity 2D Engine! Whether you are fixing a bug, improving documentation, or adding a new feature, your help is appreciated.
+
+### How to Contribute
+
+1.  **Fork** the repository.
+2.  **Clone** your forked repository locally.
+3.  Create a new feature branch (`git checkout -b feature/my-new-feature`).
+4.  Make your changes and ensure the existing tests (if any) pass.
+5.  **Commit** your changes with clear, descriptive commit messages.
+6.  **Push** your branch to your fork (`git push origin feature/my-new-feature`).
+7.  Open a **Pull Request (PR)** against the `main` branch of this repository, describing the changes you've made.
+
+### Code Style
+
+* We primarily follow **C# convention** and general best practices. (But we prefer **m_PascalCase** over the conventional **_camelCase** for private fields that are object references or services)
+* **Service Locator** usage should be limited to `Service.Get<T>()` to retrieve engine subsystems.* Please ensure code is well-commented, especially for complex rendering or architecture logic.
+
+For more detailed contribution guidelines, please see the separate **[CONTRIBUTING.md](CONTRIBUTING.md)** file in the repository (recommended).
+
+## Found a Bug?
+
+If you encounter a bug or unexpected behavior:
+
+1.  **Check Existing Issues:** Search the repository's [Issues] page to see if the problem has already been reported.
+2.  **Open a New Issue:** If it's a new issue, please open a new bug report.
+    * **Be Descriptive:** Include a clear and concise title.
+    * **Steps to Reproduce:** Detail the exact steps to recreate the bug.
+    * **Expected vs. Actual Behavior:** Explain what you expected to happen and what actually occurred.
+    * **Environment:** Note your operating system and .NET SDK version.
