@@ -43,6 +43,41 @@ This project is structured as a series of pipelines and managers.
 Dive deeper into the Integrity Engine architecture, detailed component guides, and advanced usage examples in the **official documentation**:
 [**Integrity 2D Documentation (ezroot.github.io/Integrity2D/)**](https://ezroot.github.io/Integrity2D/)
 
+That's an excellent, detailed README.md for your engine! To best showcase your new IntegrityGameDemo and its screenshot without diluting the engine's architectural focus, the ideal place to add it is in a new section focused on Usage and Examples.
+
+I recommend adding a section titled "4. 🕹️ Usage & Examples" or "4. Game Demo" immediately before the "Contributing" section.
+
+Here is the revised structure with the new section and its content:
+
+Recommended Placement and Content
+
+Place the new section right after "Getting Started" and before "Contributing".
+
+New Section:
+
+Markdown
+
+---
+
+## 4. Usage & Examples
+
+The best way to understand the engine's minimal boilerplate and high-performance capabilities is through a working game project.
+
+### IntegrityGameDemo Showcase
+
+Our primary example project showcases scene setup, input handling, and the engine's draw call efficiency by instancing over 10,000 sprites.
+
+<img src="Screenshots/screenshot_0.png" width="600" alt="IntegrityGameDemo Screenshot showing 10,000 sprites on screen."/>
+
+* **View the Demo Repository:** [https://github.com/EZroot/IntegrityGameDemo](https://github.com/EZroot/IntegrityGameDemo)
+* **Key Features Demonstrated:**
+    * **Service Locator:** Accessing `IInputManager`, `ICameraManager`, and `IGameObjectFactory`.
+    * **Asset Management:** Loading assets via relative paths.
+    * **Stress Testing:** High-performance instanced rendering of 10,000+ objects.
+    * **Camera Control:** Simple WASD movement implemented in the game loop.
+
+---
+
 ### Requirements
 
 1.  **.NET 8+ SDK**
