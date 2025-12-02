@@ -17,7 +17,7 @@ items:
   fullName: Integrity.Interface.IGame
   type: Interface
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/core/interface/IGame.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/core/interface/IGame.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -36,7 +36,7 @@ items:
   fullName: Integrity.Interface.IGame.Initialize()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/core/interface/IGame.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/core/interface/IGame.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -56,7 +56,7 @@ items:
   fullName: Integrity.Interface.IGame.Update(float)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/core/interface/IGame.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/core/interface/IGame.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -82,7 +82,7 @@ items:
   fullName: Integrity.Interface.IGame.Render()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/core/interface/IGame.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/core/interface/IGame.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -102,7 +102,7 @@ items:
   fullName: Integrity.Interface.IGame.Cleanup()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/core/interface/IGame.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/core/interface/IGame.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface

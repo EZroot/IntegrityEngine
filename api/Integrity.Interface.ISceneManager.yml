@@ -19,7 +19,7 @@ items:
   fullName: Integrity.Interface.ISceneManager
   type: Interface
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/scenes/interface/ISceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/interface/ISceneManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -38,7 +38,7 @@ items:
   fullName: Integrity.Interface.ISceneManager.LoadScene(Integrity.Scenes.Scene)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/scenes/interface/ISceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/interface/ISceneManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -61,7 +61,7 @@ items:
   fullName: Integrity.Interface.ISceneManager.UnloadScene(Integrity.Scenes.Scene)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/scenes/interface/ISceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/interface/ISceneManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -84,7 +84,7 @@ items:
   fullName: Integrity.Interface.ISceneManager.AddScene(Integrity.Scenes.Scene)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/scenes/interface/ISceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/interface/ISceneManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -107,7 +107,7 @@ items:
   fullName: Integrity.Interface.ISceneManager.GetScene(System.Guid)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/scenes/interface/ISceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/interface/ISceneManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -132,7 +132,7 @@ items:
   fullName: Integrity.Interface.ISceneManager.GetScene(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/scenes/interface/ISceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/interface/ISceneManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -160,7 +160,7 @@ items:
   fullName: Integrity.Interface.ISceneManager.CurrentScene
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/scenes/interface/ISceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/interface/ISceneManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface

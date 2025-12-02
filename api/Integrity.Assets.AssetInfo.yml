@@ -17,7 +17,7 @@ items:
   fullName: Integrity.Assets.AssetInfo
   type: Struct
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/assets/AssetInfo.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/AssetInfo.cs
   assemblies:
   - Integrity
   namespace: Integrity.Assets
@@ -43,7 +43,7 @@ items:
   fullName: Integrity.Assets.AssetInfo.AssetInfo(string, string, long)
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/assets/AssetInfo.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/AssetInfo.cs
   assemblies:
   - Integrity
   namespace: Integrity.Assets
@@ -73,7 +73,7 @@ items:
   fullName: Integrity.Assets.AssetInfo.AssetPath
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/assets/AssetInfo.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/AssetInfo.cs
   assemblies:
   - Integrity
   namespace: Integrity.Assets
@@ -96,7 +96,7 @@ items:
   fullName: Integrity.Assets.AssetInfo.Type
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/assets/AssetInfo.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/AssetInfo.cs
   assemblies:
   - Integrity
   namespace: Integrity.Assets
@@ -119,7 +119,7 @@ items:
   fullName: Integrity.Assets.AssetInfo.MemoryFootprintBytes
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/assets/AssetInfo.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/AssetInfo.cs
   assemblies:
   - Integrity
   namespace: Integrity.Assets

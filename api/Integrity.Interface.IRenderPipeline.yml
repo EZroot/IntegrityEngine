@@ -21,7 +21,7 @@ items:
   fullName: Integrity.Interface.IRenderPipeline
   type: Interface
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/interface/IRenderPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IRenderPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -40,7 +40,7 @@ items:
   fullName: Integrity.Interface.IRenderPipeline.InitializeRenderer(Silk.NET.SDL.Sdl, Silk.NET.SDL.Window*)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/interface/IRenderPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IRenderPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -65,7 +65,7 @@ items:
   fullName: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.GLTexture, in System.Collections.Generic.List<System.Numerics.Matrix4x4>, int)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/interface/IRenderPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IRenderPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -95,7 +95,7 @@ items:
   fullName: Integrity.Interface.IRenderPipeline.RenderFrameStart()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/interface/IRenderPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IRenderPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -115,7 +115,7 @@ items:
   fullName: Integrity.Interface.IRenderPipeline.RenderFrameEnd()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/interface/IRenderPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IRenderPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -135,7 +135,7 @@ items:
   fullName: Integrity.Interface.IRenderPipeline.UpdateViewportSize(int, int)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/interface/IRenderPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IRenderPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -163,7 +163,7 @@ items:
   fullName: Integrity.Interface.IRenderPipeline.SetProjectionMatrix(in System.Numerics.Matrix4x4)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/interface/IRenderPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IRenderPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -189,7 +189,7 @@ items:
   fullName: Integrity.Interface.IRenderPipeline.SetClearColor(System.Drawing.Color)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/interface/IRenderPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IRenderPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -212,7 +212,7 @@ items:
   fullName: Integrity.Interface.IRenderPipeline.GlApi
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/interface/IRenderPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IRenderPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface

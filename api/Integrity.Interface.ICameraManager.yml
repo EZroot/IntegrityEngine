@@ -15,7 +15,7 @@ items:
   fullName: Integrity.Interface.ICameraManager
   type: Interface
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/interface/ICameraManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/ICameraManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -34,7 +34,7 @@ items:
   fullName: Integrity.Interface.ICameraManager.RegisterCamera(Integrity.Rendering.Camera2D)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/interface/ICameraManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/ICameraManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -57,7 +57,7 @@ items:
   fullName: Integrity.Interface.ICameraManager.MainCamera
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/interface/ICameraManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/ICameraManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface

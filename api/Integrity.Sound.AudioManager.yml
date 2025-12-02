@@ -16,7 +16,7 @@ items:
   fullName: Integrity.Sound.AudioManager
   type: Class
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/sound/AudioManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/sound/AudioManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Sound
@@ -48,7 +48,7 @@ items:
   fullName: Integrity.Sound.AudioManager.InitializeAudio()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/sound/AudioManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/sound/AudioManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Sound
@@ -71,7 +71,7 @@ items:
   fullName: Integrity.Sound.AudioManager.PlaySound(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/sound/AudioManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/sound/AudioManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Sound
@@ -100,7 +100,7 @@ items:
   fullName: Integrity.Sound.AudioManager.AudioManager()
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/sound/AudioManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/sound/AudioManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Sound

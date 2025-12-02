@@ -21,7 +21,7 @@ items:
   fullName: Integrity.Scenes.SceneManager
   type: Class
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/scenes/SceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/SceneManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Scenes
@@ -53,7 +53,7 @@ items:
   fullName: Integrity.Scenes.SceneManager.m_SceneMap
   type: Field
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/scenes/SceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/SceneManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Scenes
@@ -74,7 +74,7 @@ items:
   fullName: Integrity.Scenes.SceneManager.SceneManager()
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/scenes/SceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/SceneManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Scenes
@@ -97,7 +97,7 @@ items:
   fullName: Integrity.Scenes.SceneManager.LoadScene(Integrity.Scenes.Scene)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/scenes/SceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/SceneManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Scenes
@@ -124,7 +124,7 @@ items:
   fullName: Integrity.Scenes.SceneManager.UnloadScene(Integrity.Scenes.Scene)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/scenes/SceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/SceneManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Scenes
@@ -151,7 +151,7 @@ items:
   fullName: Integrity.Scenes.SceneManager.AddScene(Integrity.Scenes.Scene)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/scenes/SceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/SceneManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Scenes
@@ -177,7 +177,7 @@ items:
   fullName: Integrity.Scenes.SceneManager.GetScene(System.Guid)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/scenes/SceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/SceneManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Scenes
@@ -205,7 +205,7 @@ items:
   fullName: Integrity.Scenes.SceneManager.GetScene(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/scenes/SceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/SceneManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Scenes
@@ -236,7 +236,7 @@ items:
   fullName: Integrity.Scenes.SceneManager.CurrentScene
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/scenes/SceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/SceneManager.cs
   assemblies:
   - Integrity
   namespace: Integrity.Scenes

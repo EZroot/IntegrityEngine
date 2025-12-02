@@ -20,7 +20,7 @@ items:
   fullName: Integrity.Settings.EngineSettings.EngineSettingsData
   type: Struct
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
   assemblies:
   - Integrity
   namespace: Integrity.Settings
@@ -46,7 +46,7 @@ items:
   fullName: Integrity.Settings.EngineSettings.EngineSettingsData.EngineSettingsData()
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
   assemblies:
   - Integrity
   namespace: Integrity.Settings
@@ -69,7 +69,7 @@ items:
   fullName: Integrity.Settings.EngineSettings.EngineSettingsData.EngineName
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
   assemblies:
   - Integrity
   namespace: Integrity.Settings
@@ -92,7 +92,7 @@ items:
   fullName: Integrity.Settings.EngineSettings.EngineSettingsData.EngineVersion
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
   assemblies:
   - Integrity
   namespace: Integrity.Settings
@@ -115,7 +115,7 @@ items:
   fullName: Integrity.Settings.EngineSettings.EngineSettingsData.WindowWidth
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
   assemblies:
   - Integrity
   namespace: Integrity.Settings
@@ -138,7 +138,7 @@ items:
   fullName: Integrity.Settings.EngineSettings.EngineSettingsData.WindowHeight
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
   assemblies:
   - Integrity
   namespace: Integrity.Settings
@@ -161,7 +161,7 @@ items:
   fullName: Integrity.Settings.EngineSettings.EngineSettingsData.WindowTitle
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
   assemblies:
   - Integrity
   namespace: Integrity.Settings
@@ -184,7 +184,7 @@ items:
   fullName: Integrity.Settings.EngineSettings.EngineSettingsData.UseVsync
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
   assemblies:
   - Integrity
   namespace: Integrity.Settings

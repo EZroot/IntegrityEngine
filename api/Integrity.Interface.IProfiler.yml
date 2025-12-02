@@ -23,7 +23,7 @@ items:
   fullName: Integrity.Interface.IProfiler
   type: Interface
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -42,7 +42,7 @@ items:
   fullName: Integrity.Interface.IProfiler.InitializeRenderProfiler(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -68,7 +68,7 @@ items:
   fullName: Integrity.Interface.IProfiler.StartRenderProfile(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -94,7 +94,7 @@ items:
   fullName: Integrity.Interface.IProfiler.StopRenderProfile(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -120,7 +120,7 @@ items:
   fullName: Integrity.Interface.IProfiler.GetRenderProfile(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -148,7 +148,7 @@ items:
   fullName: Integrity.Interface.IProfiler.StartCpuProfile(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -174,7 +174,7 @@ items:
   fullName: Integrity.Interface.IProfiler.StopCpuProfile(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -200,7 +200,7 @@ items:
   fullName: Integrity.Interface.IProfiler.GetCpuProfile(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -228,7 +228,7 @@ items:
   fullName: Integrity.Interface.IProfiler.Cleanup()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -248,7 +248,7 @@ items:
   fullName: Integrity.Interface.IProfiler.RenderProfileResults
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface
@@ -271,7 +271,7 @@ items:
   fullName: Integrity.Interface.IProfiler.CpuProfileResults
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
   assemblies:
   - Integrity
   namespace: Integrity.Interface

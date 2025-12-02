@@ -20,7 +20,7 @@ items:
   fullName: Integrity.Rendering.ImGuiPipeline
   type: Class
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/ImguiPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/ImguiPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Rendering
@@ -52,7 +52,7 @@ items:
   fullName: Integrity.Rendering.ImGuiPipeline.Initialize(Silk.NET.OpenGL.GL, Silk.NET.SDL.Sdl, Silk.NET.SDL.Window*, void*)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/ImguiPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/ImguiPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Rendering
@@ -87,7 +87,7 @@ items:
   fullName: Integrity.Rendering.ImGuiPipeline.BeginFrame()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/ImguiPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/ImguiPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Rendering
@@ -110,7 +110,7 @@ items:
   fullName: Integrity.Rendering.ImGuiPipeline.EndFrame()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/ImguiPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/ImguiPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Rendering
@@ -133,7 +133,7 @@ items:
   fullName: Integrity.Rendering.ImGuiPipeline.ProcessEvents(Silk.NET.SDL.Event)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/ImguiPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/ImguiPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Rendering
@@ -160,7 +160,7 @@ items:
   fullName: Integrity.Rendering.ImGuiPipeline.RenderDrawDataOpenGL(ImGuiNET.ImDrawDataPtr)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/ImguiPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/ImguiPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Rendering
@@ -185,7 +185,7 @@ items:
   fullName: Integrity.Rendering.ImGuiPipeline.ImGuiPipeline()
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/ImguiPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/ImguiPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Rendering
@@ -208,7 +208,7 @@ items:
   fullName: Integrity.Rendering.ImGuiPipeline.Tools
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/ImguiPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/ImguiPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Rendering

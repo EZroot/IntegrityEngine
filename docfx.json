@@ -45,6 +45,7 @@
     "overwrite": [],
     "dest": "docs",
     "templates": ["default"],
-    "markdownEngineName": "markdig"
+    "markdownEngineName": "markdig",
+    "baseurl": "/Integrity2D/"
   }
 }

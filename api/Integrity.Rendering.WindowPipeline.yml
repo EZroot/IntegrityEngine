@@ -19,7 +19,7 @@ items:
   fullName: Integrity.Rendering.WindowPipeline
   type: Class
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/WindowPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/WindowPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Rendering
@@ -51,7 +51,7 @@ items:
   fullName: Integrity.Rendering.WindowPipeline.InitializeWindow(Silk.NET.SDL.Sdl, string, int, int, int)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/WindowPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/WindowPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Rendering
@@ -88,7 +88,7 @@ items:
   fullName: Integrity.Rendering.WindowPipeline.SetVSync(int)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/WindowPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/WindowPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Rendering
@@ -117,7 +117,7 @@ items:
   fullName: Integrity.Rendering.WindowPipeline.ShouldClose()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/WindowPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/WindowPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Rendering
@@ -142,7 +142,7 @@ items:
   fullName: Integrity.Rendering.WindowPipeline.WindowPipeline()
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/WindowPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/WindowPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Rendering
@@ -165,7 +165,7 @@ items:
   fullName: Integrity.Rendering.WindowPipeline.WindowHandler
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/WindowPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/WindowPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Rendering
@@ -191,7 +191,7 @@ items:
   fullName: Integrity.Rendering.WindowPipeline.GlContext
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/0f88b9d5c54189c75ea5b22f47809407b748a4c8/src/rendering/WindowPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/WindowPipeline.cs
   assemblies:
   - Integrity
   namespace: Integrity.Rendering
