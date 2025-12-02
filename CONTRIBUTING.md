@@ -1,4 +1,4 @@
-# 🤝 Contributing to Integrity 2D Engine
+# Contributing to Integrity 2D Engine
 
 We welcome and appreciate all forms of contribution to the Integrity 2D Engine, from code and documentation improvements to bug reports and feature suggestions!
 

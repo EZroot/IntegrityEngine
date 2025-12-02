@@ -12,7 +12,7 @@ Integrity utilizes **SDL2** (via Silk.NET) solely for cross-platform window mana
 
 The engine is built on a strong **Service-Oriented Architecture (SOA)**, relying on the **Service Locator** pattern to manage engine subsystems. This promotes **loose coupling** and **testability** across all major components.
 
-### 🔑 Key Components
+### Key Components
 
 * **Service Locator:** The central `Service.Get<T>()` mechanism is used to resolve all engine dependencies, including:
     * `IAssetManager`: Handles asset caching and loading.
