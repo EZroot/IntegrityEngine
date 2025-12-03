@@ -65,4 +65,4 @@ m_SceneManager.LoadScene(defaultScene);
 
 ## Contributing
 
-For more detailed contribution guidelines, please see the separate **[CONTRIBUTING.md](CONTRIBUTING.md)** file in the repository (recommended).
+For more detailed contribution guidelines, please see the separate **[CONTRIBUTING.md](CONTRIBUTING.md)** file in the repository.
