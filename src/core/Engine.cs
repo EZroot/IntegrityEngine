@@ -13,6 +13,7 @@ public class Engine
 
     private readonly IGame m_Game;
     private readonly IEngineSettings m_Settings;
+    private readonly IAudioManager m_AudioManager;
     private readonly IInputManager m_InputManager;
     private readonly IWindowPipeline m_WindowPipe;
     private readonly IRenderPipeline m_RenderPipe;
@@ -36,6 +37,7 @@ public class Engine
         m_Stopwatch = new Stopwatch();
 
         m_Settings = Service.Get<IEngineSettings>() ?? throw new Exception("Engine Settings service not found.");
+        m_AudioManager = Service.Get<IAudioManager>() ?? throw new Exception("Audio Manager service not found.");
         m_InputManager = Service.Get<IInputManager>() ?? throw new Exception("Input Manager service not found.");
         m_WindowPipe = Service.Get<IWindowPipeline>() ?? throw new Exception("Window Pipeline service not found.");
         m_RenderPipe = Service.Get<IRenderPipeline>() ?? throw new Exception("Render Pipeline service not found.");
@@ -104,6 +106,7 @@ public class Engine
 
         m_RenderPipe.InitializeRenderer(m_SdlApi, m_WindowPipe.WindowHandler);
         m_ImGuiPipe.Initialize(m_RenderPipe.GlApi!, m_SdlApi, m_WindowPipe.WindowHandler, m_WindowPipe.GlContext);
+        m_AudioManager.Initialize();
 
         m_Game.Initialize();
 
