@@ -2,16 +2,7 @@
 
 A work-in-progress, modern 2D graphics engine built entirely in **C#** to explore and implement the **OpenGL 3.3 Core Profile** pipeline from the ground up.
 
-Integrity utilizes **SDL2** (via Silk.NET) solely for cross-platform window management and input handling, separating the rendering concerns completely into a custom OpenGL rendering pipeline.
-
 [![Integrity 2D Documentation](https://img.shields.io/badge/Documentation-Integrity%202D-blue.svg)](https://ezroot.github.io/Integrity2D/)
-
----
-
-## Docs
-
-Dive deeper into the Integrity Engine architecture, detailed component guides, and advanced usage examples in the **official documentation**:
-[**Integrity 2D Documentation (ezroot.github.io/Integrity2D/)**](https://ezroot.github.io/Integrity2D/)
 
 ---
 
