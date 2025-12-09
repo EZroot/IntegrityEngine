@@ -15,9 +15,4 @@ public class TransformComponent : IComponent
         ScaleX = 1;
         ScaleY = 1;
     }
-
-    public void Shutdown()
-    {
-        // No resources to clean up
-    }
 }

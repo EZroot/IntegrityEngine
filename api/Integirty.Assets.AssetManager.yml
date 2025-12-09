@@ -100,18 +100,18 @@ items:
   assemblies:
   - Integrity
   namespace: Integirty.Assets
-  summary: Retrieves a GLTexture for the specified asset path, loading and caching it if necessary.
+  summary: Retrieves a Texture for the specified asset path, loading and caching it if necessary.
   example: []
   syntax:
-    content: public GLTexture GetTexture(string assetPath)
+    content: public Texture GetTexture(string assetPath)
     parameters:
     - id: assetPath
       type: System.String
       description: ''
     return:
-      type: Integrity.Assets.GLTexture
+      type: Integrity.Assets.Texture
       description: ''
-    content.vb: Public Function GetTexture(assetPath As String) As GLTexture
+    content.vb: Public Function GetTexture(assetPath As String) As Texture
   overload: Integirty.Assets.AssetManager.GetTexture*
   exceptions:
   - type: System.InvalidOperationException
@@ -645,14 +645,14 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: Integrity.Assets.GLTexture
-  commentId: T:Integrity.Assets.GLTexture
+- uid: Integrity.Assets.Texture
+  commentId: T:Integrity.Assets.Texture
   parent: Integrity.Assets
   isExternal: true
-  href: Integrity.Assets.GLTexture.html
-  name: GLTexture
-  nameWithType: GLTexture
-  fullName: Integrity.Assets.GLTexture
+  href: Integrity.Assets.Texture.html
+  name: Texture
+  nameWithType: Texture
+  fullName: Integrity.Assets.Texture
 - uid: Integrity.Assets
   commentId: N:Integrity.Assets
   isExternal: true

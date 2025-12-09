@@ -11,7 +11,7 @@ public class AssetManager : IAssetManager
     private const int COLOR_CHANNELS_RGBA = 4;
 
     private readonly IRenderPipeline m_RenderPipeline;
-    private readonly Dictionary<string, GLTexture> m_TextureCache = new();
+    private readonly Dictionary<string, Texture> m_TextureCache = new();
     private readonly Dictionary<string, AssetInfo> m_AssetCache = new();
 
     public AssetManager()
@@ -25,14 +25,14 @@ public class AssetManager : IAssetManager
     }
 
     /// <summary>
-    /// Retrieves a GLTexture for the specified asset path, loading and caching it if necessary.
+    /// Retrieves a Texture for the specified asset path, loading and caching it if necessary.
     /// </summary>
     /// <param name="assetPath"></param>
     /// <returns></returns>
     /// <exception cref="InvalidOperationException"></exception>
-    public GLTexture GetTexture(string assetPath)
+    public Texture GetTexture(string assetPath)
     {
-        if (m_TextureCache.TryGetValue(assetPath, out GLTexture? texture))
+        if (m_TextureCache.TryGetValue(assetPath, out Texture? texture))
         {
             return texture;
         }
@@ -43,7 +43,7 @@ public class AssetManager : IAssetManager
             throw new InvalidOperationException($"Asset not ready: {assetPath}");
         }
         var glApi = m_RenderPipeline.GlApi ?? throw new InvalidOperationException("OpenGL API is not initialized in RenderPipeline.");
-        GLTexture newTexture = new GLTexture(glApi, data);
+        Texture newTexture = new Texture(glApi, data);
         m_TextureCache.Add(assetPath, newTexture);
         return newTexture;
     }

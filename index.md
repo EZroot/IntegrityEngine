@@ -12,7 +12,7 @@ The Integrity Engine is structured around several core services. Use the **sideb
 | :--- | :--- | :--- |
 | **Integrity.Core** | Engine startup, services, and the main game loop (`Engine`). | `Engine`, `Service`, `IGame` |
 | **Integrity.Assets** | Asset loading, caching, and management. | `IAssetManager` |
-| **Integrity.Rendering** | Graphics pipeline, textures, and rendering utilities. | `IRenderPipeline`, `GLTexture`, `Camera2D` |
+| **Integrity.Rendering** | Graphics pipeline, textures, and rendering utilities. | `IRenderPipeline`, `Texture`, `Camera2D` |
 | **Integrity.Scenes** | Game scene management and hierarchy of objects. | `ISceneManager`, `Scene` |
 | **Integrity.Interface** | Component factory and basic game object structure. | `IGameObjectFactory`, `ISpriteObject` |
 

@@ -14,8 +14,8 @@ items:
   - uid: Integrity.Assets.AssetInfo
     name: AssetInfo
     type: Struct
-  - uid: Integrity.Assets.GLTexture
-    name: GLTexture
+  - uid: Integrity.Assets.Texture
+    name: Texture
     type: Class
   - uid: Integrity.Assets.ImageData
     name: ImageData

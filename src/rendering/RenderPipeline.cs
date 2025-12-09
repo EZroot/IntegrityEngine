@@ -1,7 +1,6 @@
 using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.InteropServices;
-using Integrity.Assets;
 using Integrity.Core;
 using Integrity.Interface;
 using Integrity.Settings;
@@ -28,8 +27,12 @@ public class RenderPipeline : IRenderPipeline
     private uint m_ShaderProgramId;
     private uint m_VaoId;
     private uint m_VboId;
+
     private uint m_InstanceVboId;
     private nuint m_InstanceBufferCapacityBytes = 0;
+
+    private uint m_UvRectVboId; 
+    private nuint m_UvBufferCapacityBytes = 0;
 
     private unsafe Window* m_WindowHandler;
     private readonly ClearBufferMask m_ClearBufferMask = ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit;
@@ -70,24 +73,36 @@ public class RenderPipeline : IRenderPipeline
     /// <summary>
     /// Draws multiple sprites using a single draw call by utilizing instanced rendering.
     /// </summary>
-    /// <param name="texture">The GLTexture containing the shared texture.</param>
+    /// <param name="texture">The Texture containing the shared texture.</param>
     /// <param name="modelMatrices">A list of Model matrices for all instances.</param>
+    /// <param name="uvRects">A list of UV coordinates for atlas.</param>
     /// <param name="instanceCount">The number of sprites to draw.</param>
-    public unsafe void DrawSpritesInstanced(GLTexture texture, in List<Matrix4x4> modelMatrices, int instanceCount)
+    public unsafe void DrawSpritesInstanced(Assets.Texture texture, in List<Matrix4x4> modelMatrices, in List<Vector4> uvRects, int instanceCount)
     {
         if (instanceCount == 0 || m_GlApi == null) return;
 
         m_GlApi.UseProgram(m_ShaderProgramId);
         texture.Use(TextureUnit.Texture0);
 
-        int dataSizeInBytes = instanceCount * sizeof(Matrix4x4);
-        EnsureInstanceBufferCapacity((nuint)dataSizeInBytes);
+        int modelDataSizeInBytes = instanceCount * sizeof(Matrix4x4);
+        EnsureBufferCapacity((nuint)modelDataSizeInBytes, m_InstanceVboId, ref m_InstanceBufferCapacityBytes);
+        int uvDataSizeInBytes = instanceCount * sizeof(Vector4);
+        EnsureBufferCapacity((nuint)uvDataSizeInBytes, m_UvRectVboId, ref m_UvBufferCapacityBytes);
 
-        var span = CollectionsMarshal.AsSpan(modelMatrices).Slice(0, instanceCount);
-        fixed (Matrix4x4* dataPtr = &MemoryMarshal.GetReference(span))
+        // Position
+        var modelSpan = CollectionsMarshal.AsSpan(modelMatrices).Slice(0, instanceCount);
+        fixed (Matrix4x4* dataPtr = &MemoryMarshal.GetReference(modelSpan))
         {
             m_GlApi.BindBuffer(GLEnum.ArrayBuffer, m_InstanceVboId);
-            m_GlApi.BufferSubData(GLEnum.ArrayBuffer, 0, (nuint)dataSizeInBytes, dataPtr);
+            m_GlApi.BufferSubData(GLEnum.ArrayBuffer, 0, (nuint)modelDataSizeInBytes, dataPtr);
+        }
+        
+        // UV
+        var uvSpan = CollectionsMarshal.AsSpan(uvRects).Slice(0, instanceCount);
+        fixed (Vector4* uvDataPtr = &MemoryMarshal.GetReference(uvSpan))
+        {
+            m_GlApi.BindBuffer(GLEnum.ArrayBuffer, m_UvRectVboId);
+            m_GlApi.BufferSubData(GLEnum.ArrayBuffer, 0, (nuint)uvDataSizeInBytes, uvDataPtr);
         }
 
         int location = m_GlApi.GetUniformLocation(m_ShaderProgramId, "textureSampler");
@@ -101,17 +116,18 @@ public class RenderPipeline : IRenderPipeline
         m_GlApi.BindBuffer(GLEnum.ArrayBuffer, 0);
     }
 
-    private unsafe void EnsureInstanceBufferCapacity(nuint requiredBytes)
+    private unsafe void EnsureBufferCapacity(nuint requiredBytes, uint vboId, ref nuint currentCapacity)
     {
-        if (requiredBytes <= m_InstanceBufferCapacityBytes)
+        if (requiredBytes <= currentCapacity)
             return;
 
-        // Grow to at least requiredBytes, usually double the old size for amortized growth
-        nuint newCapacity = Math.Max(requiredBytes, m_InstanceBufferCapacityBytes == 0 ? requiredBytes : m_InstanceBufferCapacityBytes * 2);
-        m_GlApi!.BindBuffer(GLEnum.ArrayBuffer, m_InstanceVboId);
+        nuint newCapacity = Math.Max(requiredBytes, currentCapacity == 0 ? requiredBytes : currentCapacity * 2);
+
+        m_GlApi!.BindBuffer(GLEnum.ArrayBuffer, vboId);
         m_GlApi!.BufferData(GLEnum.ArrayBuffer, newCapacity, null, GLEnum.DynamicDraw);
         m_GlApi!.BindBuffer(GLEnum.ArrayBuffer, 0);
-        m_InstanceBufferCapacityBytes = newCapacity;
+
+        currentCapacity = newCapacity;
     }
 
     public void RenderFrameStart()
@@ -195,6 +211,7 @@ public class RenderPipeline : IRenderPipeline
         m_VaoId = m_GlApi.GenVertexArray();
         m_VboId = m_GlApi.GenBuffer();
         m_InstanceVboId = m_GlApi.GenBuffer();
+        m_UvRectVboId = m_GlApi.GenBuffer();
 
         m_GlApi.BindVertexArray(m_VaoId);
 
@@ -205,7 +222,7 @@ public class RenderPipeline : IRenderPipeline
             m_GlApi.BufferData(GLEnum.ArrayBuffer, (nuint)vertexSizeInBytes, v, GLEnum.StaticDraw);
         }
 
-        int stride = 4 * sizeof(float); // 2 pos + 2 uv
+        int stride = 4 * sizeof(float); 
         m_GlApi.VertexAttribPointer(0, 2, VertexAttribPointerType.Float, false, (uint)stride, (void*)0);
         m_GlApi.EnableVertexAttribArray(0);
         m_GlApi.VertexAttribPointer(1, 2, VertexAttribPointerType.Float, false, (uint)stride, (void*)(2 * sizeof(float)));
@@ -213,14 +230,13 @@ public class RenderPipeline : IRenderPipeline
 
         m_GlApi.BindBuffer(GLEnum.ArrayBuffer, m_InstanceVboId);
 
-        // Buffer is dynamic but we just set this as an initial starting state of the buffer
+        // Buffer is dynamic but we just set this as an initial 
         const int initialInstances = 1024;
         m_InstanceBufferCapacityBytes = (nuint)(initialInstances * sizeof(Matrix4x4));
         m_GlApi.BufferData(GLEnum.ArrayBuffer, m_InstanceBufferCapacityBytes, null, GLEnum.DynamicDraw);
 
         int matrixSize = sizeof(Matrix4x4);
 
-        // For System.Numerics.Matrix4x4 the memory layout is 4 Vector4s contiguous.
         for (uint i = 0; i < 4; i++)
         {
             uint attribLocation = 2u + i; // 2,3,4,5
@@ -233,9 +249,28 @@ public class RenderPipeline : IRenderPipeline
                 (uint)matrixSize,             // stride = size of Matrix4x4
                 (void*)(i * sizeof(Vector4))  // offset = i-th column (or row depending layout)
             );
-            // Per-instance (crucial for instancing)
             m_GlApi.VertexAttribDivisor(attribLocation, 1);
         }
+
+        m_GlApi.BindBuffer(GLEnum.ArrayBuffer, m_UvRectVboId);
+
+        // UV rect buffer (atlas)
+        m_UvBufferCapacityBytes = (nuint)(initialInstances * sizeof(Vector4));
+        m_GlApi.BufferData(GLEnum.ArrayBuffer, m_UvBufferCapacityBytes, null, GLEnum.DynamicDraw);
+
+        uint uvRectAttribLocation = 6u;
+        int uvRectSize = sizeof(Vector4);
+
+        m_GlApi.EnableVertexAttribArray(uvRectAttribLocation);
+        m_GlApi.VertexAttribPointer(
+            uvRectAttribLocation,
+            4, 
+            VertexAttribPointerType.Float,
+            false,
+            (uint)uvRectSize,
+            (void*)0
+        );
+        m_GlApi.VertexAttribDivisor(uvRectAttribLocation, 1);
 
         m_GlApi.BindBuffer(GLEnum.ArrayBuffer, 0);
         m_GlApi.BindVertexArray(0);

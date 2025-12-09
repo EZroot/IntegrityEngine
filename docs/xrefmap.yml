@@ -124,90 +124,90 @@ references:
   commentId: Overload:Integrity.Assets.AssetInfo.Type
   fullName: Integrity.Assets.AssetInfo.Type
   nameWithType: AssetInfo.Type
-- uid: Integrity.Assets.GLTexture
-  name: GLTexture
-  href: api/Integrity.Assets.GLTexture.html
-  commentId: T:Integrity.Assets.GLTexture
-  fullName: Integrity.Assets.GLTexture
-  nameWithType: GLTexture
-- uid: Integrity.Assets.GLTexture.#ctor(Silk.NET.OpenGL.GL,Integrity.Assets.ImageData)
-  name: GLTexture(GL, ImageData)
-  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_GLTexture__ctor_Silk_NET_OpenGL_GL_Integrity_Assets_ImageData_
-  commentId: M:Integrity.Assets.GLTexture.#ctor(Silk.NET.OpenGL.GL,Integrity.Assets.ImageData)
+- uid: Integrity.Assets.Texture
+  name: Texture
+  href: api/Integrity.Assets.Texture.html
+  commentId: T:Integrity.Assets.Texture
+  fullName: Integrity.Assets.Texture
+  nameWithType: Texture
+- uid: Integrity.Assets.Texture.#ctor(Silk.NET.OpenGL.GL,Integrity.Assets.ImageData)
+  name: Texture(GL, ImageData)
+  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture__ctor_Silk_NET_OpenGL_GL_Integrity_Assets_ImageData_
+  commentId: M:Integrity.Assets.Texture.#ctor(Silk.NET.OpenGL.GL,Integrity.Assets.ImageData)
   name.vb: New(GL, ImageData)
-  fullName: Integrity.Assets.GLTexture.GLTexture(Silk.NET.OpenGL.GL, Integrity.Assets.ImageData)
-  fullName.vb: Integrity.Assets.GLTexture.New(Silk.NET.OpenGL.GL, Integrity.Assets.ImageData)
-  nameWithType: GLTexture.GLTexture(GL, ImageData)
-  nameWithType.vb: GLTexture.New(GL, ImageData)
-- uid: Integrity.Assets.GLTexture.#ctor*
-  name: GLTexture
-  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_GLTexture__ctor_
-  commentId: Overload:Integrity.Assets.GLTexture.#ctor
+  fullName: Integrity.Assets.Texture.Texture(Silk.NET.OpenGL.GL, Integrity.Assets.ImageData)
+  fullName.vb: Integrity.Assets.Texture.New(Silk.NET.OpenGL.GL, Integrity.Assets.ImageData)
+  nameWithType: Texture.Texture(GL, ImageData)
+  nameWithType.vb: Texture.New(GL, ImageData)
+- uid: Integrity.Assets.Texture.#ctor*
+  name: Texture
+  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture__ctor_
+  commentId: Overload:Integrity.Assets.Texture.#ctor
   name.vb: New
-  fullName: Integrity.Assets.GLTexture.GLTexture
-  fullName.vb: Integrity.Assets.GLTexture.New
-  nameWithType: GLTexture.GLTexture
-  nameWithType.vb: GLTexture.New
-- uid: Integrity.Assets.GLTexture.Dispose
+  fullName: Integrity.Assets.Texture.Texture
+  fullName.vb: Integrity.Assets.Texture.New
+  nameWithType: Texture.Texture
+  nameWithType.vb: Texture.New
+- uid: Integrity.Assets.Texture.Dispose
   name: Dispose()
-  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_GLTexture_Dispose
-  commentId: M:Integrity.Assets.GLTexture.Dispose
-  fullName: Integrity.Assets.GLTexture.Dispose()
-  nameWithType: GLTexture.Dispose()
-- uid: Integrity.Assets.GLTexture.Dispose*
+  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_Dispose
+  commentId: M:Integrity.Assets.Texture.Dispose
+  fullName: Integrity.Assets.Texture.Dispose()
+  nameWithType: Texture.Dispose()
+- uid: Integrity.Assets.Texture.Dispose*
   name: Dispose
-  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_GLTexture_Dispose_
-  commentId: Overload:Integrity.Assets.GLTexture.Dispose
-  fullName: Integrity.Assets.GLTexture.Dispose
-  nameWithType: GLTexture.Dispose
-- uid: Integrity.Assets.GLTexture.Height
+  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_Dispose_
+  commentId: Overload:Integrity.Assets.Texture.Dispose
+  fullName: Integrity.Assets.Texture.Dispose
+  nameWithType: Texture.Dispose
+- uid: Integrity.Assets.Texture.Height
   name: Height
-  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_GLTexture_Height
-  commentId: P:Integrity.Assets.GLTexture.Height
-  fullName: Integrity.Assets.GLTexture.Height
-  nameWithType: GLTexture.Height
-- uid: Integrity.Assets.GLTexture.Height*
+  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_Height
+  commentId: P:Integrity.Assets.Texture.Height
+  fullName: Integrity.Assets.Texture.Height
+  nameWithType: Texture.Height
+- uid: Integrity.Assets.Texture.Height*
   name: Height
-  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_GLTexture_Height_
-  commentId: Overload:Integrity.Assets.GLTexture.Height
-  fullName: Integrity.Assets.GLTexture.Height
-  nameWithType: GLTexture.Height
-- uid: Integrity.Assets.GLTexture.TextureId
+  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_Height_
+  commentId: Overload:Integrity.Assets.Texture.Height
+  fullName: Integrity.Assets.Texture.Height
+  nameWithType: Texture.Height
+- uid: Integrity.Assets.Texture.TextureId
   name: TextureId
-  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_GLTexture_TextureId
-  commentId: P:Integrity.Assets.GLTexture.TextureId
-  fullName: Integrity.Assets.GLTexture.TextureId
-  nameWithType: GLTexture.TextureId
-- uid: Integrity.Assets.GLTexture.TextureId*
+  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_TextureId
+  commentId: P:Integrity.Assets.Texture.TextureId
+  fullName: Integrity.Assets.Texture.TextureId
+  nameWithType: Texture.TextureId
+- uid: Integrity.Assets.Texture.TextureId*
   name: TextureId
-  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_GLTexture_TextureId_
-  commentId: Overload:Integrity.Assets.GLTexture.TextureId
-  fullName: Integrity.Assets.GLTexture.TextureId
-  nameWithType: GLTexture.TextureId
-- uid: Integrity.Assets.GLTexture.Use(Silk.NET.OpenGL.TextureUnit)
+  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_TextureId_
+  commentId: Overload:Integrity.Assets.Texture.TextureId
+  fullName: Integrity.Assets.Texture.TextureId
+  nameWithType: Texture.TextureId
+- uid: Integrity.Assets.Texture.Use(Silk.NET.OpenGL.TextureUnit)
   name: Use(TextureUnit)
-  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_GLTexture_Use_Silk_NET_OpenGL_TextureUnit_
-  commentId: M:Integrity.Assets.GLTexture.Use(Silk.NET.OpenGL.TextureUnit)
-  fullName: Integrity.Assets.GLTexture.Use(Silk.NET.OpenGL.TextureUnit)
-  nameWithType: GLTexture.Use(TextureUnit)
-- uid: Integrity.Assets.GLTexture.Use*
+  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_Use_Silk_NET_OpenGL_TextureUnit_
+  commentId: M:Integrity.Assets.Texture.Use(Silk.NET.OpenGL.TextureUnit)
+  fullName: Integrity.Assets.Texture.Use(Silk.NET.OpenGL.TextureUnit)
+  nameWithType: Texture.Use(TextureUnit)
+- uid: Integrity.Assets.Texture.Use*
   name: Use
-  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_GLTexture_Use_
-  commentId: Overload:Integrity.Assets.GLTexture.Use
-  fullName: Integrity.Assets.GLTexture.Use
-  nameWithType: GLTexture.Use
-- uid: Integrity.Assets.GLTexture.Width
+  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_Use_
+  commentId: Overload:Integrity.Assets.Texture.Use
+  fullName: Integrity.Assets.Texture.Use
+  nameWithType: Texture.Use
+- uid: Integrity.Assets.Texture.Width
   name: Width
-  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_GLTexture_Width
-  commentId: P:Integrity.Assets.GLTexture.Width
-  fullName: Integrity.Assets.GLTexture.Width
-  nameWithType: GLTexture.Width
-- uid: Integrity.Assets.GLTexture.Width*
+  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_Width
+  commentId: P:Integrity.Assets.Texture.Width
+  fullName: Integrity.Assets.Texture.Width
+  nameWithType: Texture.Width
+- uid: Integrity.Assets.Texture.Width*
   name: Width
-  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_GLTexture_Width_
-  commentId: Overload:Integrity.Assets.GLTexture.Width
-  fullName: Integrity.Assets.GLTexture.Width
-  nameWithType: GLTexture.Width
+  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_Width_
+  commentId: Overload:Integrity.Assets.Texture.Width
+  fullName: Integrity.Assets.Texture.Width
+  nameWithType: Texture.Width
 - uid: Integrity.Assets.ImageData
   name: ImageData
   href: api/Integrity.Assets.ImageData.html
@@ -268,15 +268,15 @@ references:
   commentId: T:Integrity.Components.SpriteComponent
   fullName: Integrity.Components.SpriteComponent
   nameWithType: SpriteComponent
-- uid: Integrity.Components.SpriteComponent.#ctor(Integrity.Assets.GLTexture)
-  name: SpriteComponent(GLTexture)
-  href: api/Integrity.Components.SpriteComponent.html#Integrity_Components_SpriteComponent__ctor_Integrity_Assets_GLTexture_
-  commentId: M:Integrity.Components.SpriteComponent.#ctor(Integrity.Assets.GLTexture)
-  name.vb: New(GLTexture)
-  fullName: Integrity.Components.SpriteComponent.SpriteComponent(Integrity.Assets.GLTexture)
-  fullName.vb: Integrity.Components.SpriteComponent.New(Integrity.Assets.GLTexture)
-  nameWithType: SpriteComponent.SpriteComponent(GLTexture)
-  nameWithType.vb: SpriteComponent.New(GLTexture)
+- uid: Integrity.Components.SpriteComponent.#ctor(Integrity.Assets.Texture)
+  name: SpriteComponent(Texture)
+  href: api/Integrity.Components.SpriteComponent.html#Integrity_Components_SpriteComponent__ctor_Integrity_Assets_Texture_
+  commentId: M:Integrity.Components.SpriteComponent.#ctor(Integrity.Assets.Texture)
+  name.vb: New(Texture)
+  fullName: Integrity.Components.SpriteComponent.SpriteComponent(Integrity.Assets.Texture)
+  fullName.vb: Integrity.Components.SpriteComponent.New(Integrity.Assets.Texture)
+  nameWithType: SpriteComponent.SpriteComponent(Texture)
+  nameWithType.vb: SpriteComponent.New(Texture)
 - uid: Integrity.Components.SpriteComponent.#ctor*
   name: SpriteComponent
   href: api/Integrity.Components.SpriteComponent.html#Integrity_Components_SpriteComponent__ctor_
@@ -1108,15 +1108,15 @@ references:
   commentId: T:Integrity.Interface.IRenderPipeline
   fullName: Integrity.Interface.IRenderPipeline
   nameWithType: IRenderPipeline
-- uid: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.GLTexture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
-  name: DrawSpritesInstanced(GLTexture, in List<Matrix4x4>, int)
-  href: api/Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_DrawSpritesInstanced_Integrity_Assets_GLTexture_System_Collections_Generic_List_System_Numerics_Matrix4x4___System_Int32_
-  commentId: M:Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.GLTexture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
-  name.vb: DrawSpritesInstanced(GLTexture, List(Of Matrix4x4), Integer)
-  fullName: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.GLTexture, in System.Collections.Generic.List<System.Numerics.Matrix4x4>, int)
-  fullName.vb: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.GLTexture, System.Collections.Generic.List(Of System.Numerics.Matrix4x4), Integer)
-  nameWithType: IRenderPipeline.DrawSpritesInstanced(GLTexture, in List<Matrix4x4>, int)
-  nameWithType.vb: IRenderPipeline.DrawSpritesInstanced(GLTexture, List(Of Matrix4x4), Integer)
+- uid: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
+  name: DrawSpritesInstanced(Texture, in List<Matrix4x4>, int)
+  href: api/Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_DrawSpritesInstanced_Integrity_Assets_Texture_System_Collections_Generic_List_System_Numerics_Matrix4x4___System_Int32_
+  commentId: M:Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
+  name.vb: DrawSpritesInstanced(Texture, List(Of Matrix4x4), Integer)
+  fullName: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture, in System.Collections.Generic.List<System.Numerics.Matrix4x4>, int)
+  fullName.vb: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture, System.Collections.Generic.List(Of System.Numerics.Matrix4x4), Integer)
+  nameWithType: IRenderPipeline.DrawSpritesInstanced(Texture, in List<Matrix4x4>, int)
+  nameWithType.vb: IRenderPipeline.DrawSpritesInstanced(Texture, List(Of Matrix4x4), Integer)
 - uid: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced*
   name: DrawSpritesInstanced
   href: api/Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_DrawSpritesInstanced_
@@ -1519,15 +1519,15 @@ references:
   commentId: T:Integrity.Objects.SpriteObject
   fullName: Integrity.Objects.SpriteObject
   nameWithType: SpriteObject
-- uid: Integrity.Objects.SpriteObject.#ctor(System.String,Integrity.Assets.GLTexture)
-  name: SpriteObject(string, GLTexture)
-  href: api/Integrity.Objects.SpriteObject.html#Integrity_Objects_SpriteObject__ctor_System_String_Integrity_Assets_GLTexture_
-  commentId: M:Integrity.Objects.SpriteObject.#ctor(System.String,Integrity.Assets.GLTexture)
-  name.vb: New(String, GLTexture)
-  fullName: Integrity.Objects.SpriteObject.SpriteObject(string, Integrity.Assets.GLTexture)
-  fullName.vb: Integrity.Objects.SpriteObject.New(String, Integrity.Assets.GLTexture)
-  nameWithType: SpriteObject.SpriteObject(string, GLTexture)
-  nameWithType.vb: SpriteObject.New(String, GLTexture)
+- uid: Integrity.Objects.SpriteObject.#ctor(System.String,Integrity.Assets.Texture)
+  name: SpriteObject(string, Texture)
+  href: api/Integrity.Objects.SpriteObject.html#Integrity_Objects_SpriteObject__ctor_System_String_Integrity_Assets_Texture_
+  commentId: M:Integrity.Objects.SpriteObject.#ctor(System.String,Integrity.Assets.Texture)
+  name.vb: New(String, Texture)
+  fullName: Integrity.Objects.SpriteObject.SpriteObject(string, Integrity.Assets.Texture)
+  fullName.vb: Integrity.Objects.SpriteObject.New(String, Integrity.Assets.Texture)
+  nameWithType: SpriteObject.SpriteObject(string, Texture)
+  nameWithType.vb: SpriteObject.New(String, Texture)
 - uid: Integrity.Objects.SpriteObject.#ctor*
   name: SpriteObject
   href: api/Integrity.Objects.SpriteObject.html#Integrity_Objects_SpriteObject__ctor_
@@ -1825,15 +1825,15 @@ references:
   fullName.vb: Integrity.Rendering.RenderPipeline.New
   nameWithType: RenderPipeline.RenderPipeline
   nameWithType.vb: RenderPipeline.New
-- uid: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.GLTexture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
-  name: DrawSpritesInstanced(GLTexture, in List<Matrix4x4>, int)
-  href: api/Integrity.Rendering.RenderPipeline.html#Integrity_Rendering_RenderPipeline_DrawSpritesInstanced_Integrity_Assets_GLTexture_System_Collections_Generic_List_System_Numerics_Matrix4x4___System_Int32_
-  commentId: M:Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.GLTexture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
-  name.vb: DrawSpritesInstanced(GLTexture, List(Of Matrix4x4), Integer)
-  fullName: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.GLTexture, in System.Collections.Generic.List<System.Numerics.Matrix4x4>, int)
-  fullName.vb: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.GLTexture, System.Collections.Generic.List(Of System.Numerics.Matrix4x4), Integer)
-  nameWithType: RenderPipeline.DrawSpritesInstanced(GLTexture, in List<Matrix4x4>, int)
-  nameWithType.vb: RenderPipeline.DrawSpritesInstanced(GLTexture, List(Of Matrix4x4), Integer)
+- uid: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
+  name: DrawSpritesInstanced(Texture, in List<Matrix4x4>, int)
+  href: api/Integrity.Rendering.RenderPipeline.html#Integrity_Rendering_RenderPipeline_DrawSpritesInstanced_Integrity_Assets_Texture_System_Collections_Generic_List_System_Numerics_Matrix4x4___System_Int32_
+  commentId: M:Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
+  name.vb: DrawSpritesInstanced(Texture, List(Of Matrix4x4), Integer)
+  fullName: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture, in System.Collections.Generic.List<System.Numerics.Matrix4x4>, int)
+  fullName.vb: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture, System.Collections.Generic.List(Of System.Numerics.Matrix4x4), Integer)
+  nameWithType: RenderPipeline.DrawSpritesInstanced(Texture, in List<Matrix4x4>, int)
+  nameWithType.vb: RenderPipeline.DrawSpritesInstanced(Texture, List(Of Matrix4x4), Integer)
 - uid: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced*
   name: DrawSpritesInstanced
   href: api/Integrity.Rendering.RenderPipeline.html#Integrity_Rendering_RenderPipeline_DrawSpritesInstanced_

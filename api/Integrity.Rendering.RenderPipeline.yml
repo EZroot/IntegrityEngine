@@ -6,7 +6,7 @@ items:
   parent: Integrity.Rendering
   children:
   - Integrity.Rendering.RenderPipeline.#ctor
-  - Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.GLTexture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
+  - Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
   - Integrity.Rendering.RenderPipeline.GlApi
   - Integrity.Rendering.RenderPipeline.InitializeRenderer(Silk.NET.SDL.Sdl,Silk.NET.SDL.Window*)
   - Integrity.Rendering.RenderPipeline.RenderFrameEnd
@@ -73,16 +73,16 @@ items:
   overload: Integrity.Rendering.RenderPipeline.InitializeRenderer*
   implements:
   - Integrity.Interface.IRenderPipeline.InitializeRenderer(Silk.NET.SDL.Sdl,Silk.NET.SDL.Window*)
-- uid: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.GLTexture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
-  commentId: M:Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.GLTexture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
-  id: DrawSpritesInstanced(Integrity.Assets.GLTexture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
+- uid: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
+  commentId: M:Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
+  id: DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
   parent: Integrity.Rendering.RenderPipeline
   langs:
   - csharp
   - vb
-  name: DrawSpritesInstanced(GLTexture, in List<Matrix4x4>, int)
-  nameWithType: RenderPipeline.DrawSpritesInstanced(GLTexture, in List<Matrix4x4>, int)
-  fullName: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.GLTexture, in System.Collections.Generic.List<System.Numerics.Matrix4x4>, int)
+  name: DrawSpritesInstanced(Texture, in List<Matrix4x4>, int)
+  nameWithType: RenderPipeline.DrawSpritesInstanced(Texture, in List<Matrix4x4>, int)
+  fullName: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture, in System.Collections.Generic.List<System.Numerics.Matrix4x4>, int)
   type: Method
   source:
     href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/RenderPipeline.cs
@@ -92,22 +92,22 @@ items:
   summary: Draws multiple sprites using a single draw call by utilizing instanced rendering.
   example: []
   syntax:
-    content: public void DrawSpritesInstanced(GLTexture texture, in List<Matrix4x4> modelMatrices, int instanceCount)
+    content: public void DrawSpritesInstanced(Texture texture, in List<Matrix4x4> modelMatrices, int instanceCount)
     parameters:
     - id: texture
-      type: Integrity.Assets.GLTexture
-      description: The GLTexture containing the shared texture.
+      type: Integrity.Assets.Texture
+      description: The Texture containing the shared texture.
     - id: modelMatrices
       type: System.Collections.Generic.List{System.Numerics.Matrix4x4}
       description: A list of Model matrices for all instances.
     - id: instanceCount
       type: System.Int32
       description: The number of sprites to draw.
-    content.vb: Public Sub DrawSpritesInstanced(texture As GLTexture, modelMatrices As List(Of Matrix4x4), instanceCount As Integer)
+    content.vb: Public Sub DrawSpritesInstanced(texture As Texture, modelMatrices As List(Of Matrix4x4), instanceCount As Integer)
   overload: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced*
-  nameWithType.vb: RenderPipeline.DrawSpritesInstanced(GLTexture, List(Of Matrix4x4), Integer)
-  fullName.vb: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.GLTexture, System.Collections.Generic.List(Of System.Numerics.Matrix4x4), Integer)
-  name.vb: DrawSpritesInstanced(GLTexture, List(Of Matrix4x4), Integer)
+  nameWithType.vb: RenderPipeline.DrawSpritesInstanced(Texture, List(Of Matrix4x4), Integer)
+  fullName.vb: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture, System.Collections.Generic.List(Of System.Numerics.Matrix4x4), Integer)
+  name.vb: DrawSpritesInstanced(Texture, List(Of Matrix4x4), Integer)
 - uid: Integrity.Rendering.RenderPipeline.RenderFrameStart
   commentId: M:Integrity.Rendering.RenderPipeline.RenderFrameStart
   id: RenderFrameStart
@@ -700,18 +700,18 @@ references:
 - uid: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced*
   commentId: Overload:Integrity.Rendering.RenderPipeline.DrawSpritesInstanced
   isExternal: true
-  href: Integrity.Rendering.RenderPipeline.html#Integrity_Rendering_RenderPipeline_DrawSpritesInstanced_Integrity_Assets_GLTexture_System_Collections_Generic_List_System_Numerics_Matrix4x4___System_Int32_
+  href: Integrity.Rendering.RenderPipeline.html#Integrity_Rendering_RenderPipeline_DrawSpritesInstanced_Integrity_Assets_Texture_System_Collections_Generic_List_System_Numerics_Matrix4x4___System_Int32_
   name: DrawSpritesInstanced
   nameWithType: RenderPipeline.DrawSpritesInstanced
   fullName: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced
-- uid: Integrity.Assets.GLTexture
-  commentId: T:Integrity.Assets.GLTexture
+- uid: Integrity.Assets.Texture
+  commentId: T:Integrity.Assets.Texture
   parent: Integrity.Assets
   isExternal: true
-  href: Integrity.Assets.GLTexture.html
-  name: GLTexture
-  nameWithType: GLTexture
-  fullName: Integrity.Assets.GLTexture
+  href: Integrity.Assets.Texture.html
+  name: Texture
+  nameWithType: Texture
+  fullName: Integrity.Assets.Texture
 - uid: System.Collections.Generic.List{System.Numerics.Matrix4x4}
   commentId: T:System.Collections.Generic.List{System.Numerics.Matrix4x4}
   parent: System.Collections.Generic

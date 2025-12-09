@@ -5,7 +5,7 @@ items:
   id: Integrity.Assets
   children:
   - Integrity.Assets.AssetInfo
-  - Integrity.Assets.GLTexture
+  - Integrity.Assets.Texture
   - Integrity.Assets.ImageData
   langs:
   - csharp
@@ -24,14 +24,14 @@ references:
   name: AssetInfo
   nameWithType: AssetInfo
   fullName: Integrity.Assets.AssetInfo
-- uid: Integrity.Assets.GLTexture
-  commentId: T:Integrity.Assets.GLTexture
+- uid: Integrity.Assets.Texture
+  commentId: T:Integrity.Assets.Texture
   parent: Integrity.Assets
   isExternal: true
-  href: Integrity.Assets.GLTexture.html
-  name: GLTexture
-  nameWithType: GLTexture
-  fullName: Integrity.Assets.GLTexture
+  href: Integrity.Assets.Texture.html
+  name: Texture
+  nameWithType: Texture
+  fullName: Integrity.Assets.Texture
 - uid: Integrity.Assets.ImageData
   commentId: T:Integrity.Assets.ImageData
   parent: Integrity.Assets

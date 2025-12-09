@@ -19,6 +19,7 @@ public class ToolGui
     private bool m_MonitorWindowOpened;
     private bool m_ProfilerWindowOpened;
     private bool m_SettingsWindowOpened;
+    private bool m_AssetsWindowOpened;
 
     private const int HISTORY_LENGTH = 120;
     private readonly Queue<float> m_GCMemoryHistory = new Queue<float>(HISTORY_LENGTH);
@@ -86,15 +87,23 @@ public class ToolGui
             DrawEngineStatusTool(Service.Get<ISceneManager>()!, Service.Get<ICameraManager>()!);
         }
 
+        if(m_AssetsWindowOpened)
+        {
+            DrawAssets();
+        }
+
         if(m_SettingsWindowOpened)
         {
             DrawSettingsTool(Service.Get<IWindowPipeline>()!);
         }
     }
 
-    private void DrawEngineStatusTool(ISceneManager sceneManager, ICameraManager cameraManager)
+public void DrawEngineStatusTool(ISceneManager sceneManager, ICameraManager cameraManager)
     {
-        if (ImGui.Begin("Engine Status & Debug"))
+        // Must implement these in your code if they are not already.
+        // I've provided placeholder implementations below.
+        
+        if (ImGui.Begin("Inspector"))
         {
             if (ImGui.BeginTabBar("EngineTabs"))
             {
@@ -106,6 +115,8 @@ public class ToolGui
                     {
                         ImGui.TextColored(new Vector4(1.0f, 0.2f, 0.2f, 1.0f), "Error: No active scene loaded.");
                         ImGui.EndTabItem();
+                        ImGui.EndTabBar(); // Clean up if we return early
+                        ImGui.End(); // Clean up if we return early
                         return;
                     }
 
@@ -116,10 +127,13 @@ public class ToolGui
                         ImGui.TableSetupColumn("Property", ImGuiTableColumnFlags.WidthFixed, 150.0f);
                         ImGui.TableSetupColumn("Value", ImGuiTableColumnFlags.WidthStretch);
                         ImGui.TableHeadersRow();
+                        
+                        // Scene Name
                         ImGui.TableNextRow();
                         ImGui.TableSetColumnIndex(0); ImGui.Text("Name");
                         ImGui.TableSetColumnIndex(1); ImGui.TextColored(new Vector4(0.8f, 1.0f, 0.8f, 1.0f), $"{currentScene.Name}");
 
+                        // Scene ID
                         ImGui.TableNextRow();
                         ImGui.TableSetColumnIndex(0); ImGui.Text("ID");
                         ImGui.TableSetColumnIndex(1); ImGui.TextDisabled($"{currentScene.Id}");
@@ -128,10 +142,12 @@ public class ToolGui
                         ImGui.TableSetColumnIndex(0); ImGui.Separator();
                         ImGui.TableSetColumnIndex(1); ImGui.Separator();
 
+                        // Total Game Objects
                         ImGui.TableNextRow();
                         ImGui.TableSetColumnIndex(0); ImGui.Text("Total Game Objects");
                         ImGui.TableSetColumnIndex(1); ImGui.Text($"{currentScene.GetAllGameObjects().Count}");
 
+                        // Total Sprite Objects
                         ImGui.TableNextRow();
                         ImGui.TableSetColumnIndex(0); ImGui.Text("Total Sprite Objects");
                         ImGui.TableSetColumnIndex(1); ImGui.Text($"{currentScene.GetAllSpriteObjects().Count}");
@@ -149,7 +165,8 @@ public class ToolGui
                             var camera = cameraManager.MainCamera;
 
                             ImGui.PushID(camera.GetHashCode());
-                            if (ImGui.TreeNodeEx("CameraDetails", ImGuiTreeNodeFlags.Bullet, $"Camera: {camera.Name}"))
+                            // NOTE: Assuming your Camera class implements IComponent or is compatible with DrawObjectProperties
+                            if (ImGui.TreeNodeEx("CameraDetails", ImGuiTreeNodeFlags.Bullet | ImGuiTreeNodeFlags.DefaultOpen, $"Camera: {camera.Name}"))
                             {
                                 DrawObjectProperties(camera, "MainCamera", null, null);
                                 ImGui.TreePop();
@@ -167,13 +184,18 @@ public class ToolGui
 
                     if (ImGui.CollapsingHeader("Scene Game Objects"))
                     {
-                        if (ImGui.BeginChild("SceneObjectList", new Vector2(0, -1)))
+                        // Use a fixed height or ImGui.GetContentRegionAvail().Y for better layout
+                        if (ImGui.BeginChild("SceneObjectList", new Vector2(0, ImGui.GetContentRegionAvail().Y)))
                         {
                             foreach (var obj in currentScene.GetAllGameObjects())
                             {
+                                // Use PushID to ensure unique ImGui IDs inside the loop
+                                ImGui.PushID(obj.Id.ToString()); 
+                                
                                 if (ImGui.TreeNode(obj.Id.ToString(), $"{obj.Name} ({obj.Id.ToString()[..8]}...)"))
                                 {
-                                    var componentMap = GetPrivateComponentMap(obj);
+                                    // Calls the helper function
+                                    var componentMap = GetPrivateComponentMap(obj); 
                                     if (componentMap != null)
                                     {
                                         ImGui.SeparatorText("Components");
@@ -192,90 +214,121 @@ public class ToolGui
 
                                     ImGui.TreePop();
                                 }
+                                ImGui.PopID(); // Pop the GameObject ID
                             }
                             ImGui.EndChild();
                         }
                     }
-                    ImGui.EndTabItem();
+                    ImGui.EndTabItem(); // END "Scene"
                 }
-
-                if (ImGui.BeginTabItem("Assets"))
-                {
-                    var loadedAssets = Service.Get<IAssetManager>()!.GetLoadedAssets();
-
-                    ImGui.Text($"Asset Manager Status");
-                    ImGui.Separator();
-
-                    ImGui.Text($"Total Loaded Assets: {loadedAssets.Count}");
-                    ImGui.Spacing();
-
-                    if (ImGui.BeginTable("LoadedAssetTable", 3, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.Resizable))
-                    {
-                        ImGui.TableSetupColumn("Name / Details", ImGuiTableColumnFlags.WidthStretch, 0.5f);
-                        ImGui.TableSetupColumn("Type", ImGuiTableColumnFlags.WidthFixed, 100.0f);
-                        ImGui.TableSetupColumn("Size (MB)", ImGuiTableColumnFlags.WidthFixed, 100.0f);
-                        ImGui.TableHeadersRow();
-
-                        const float MB = 1024f * 1024f;
-                        foreach (var kvp in loadedAssets)
-                        {
-                            string path = kvp.Key;
-                            var assetInfo = kvp.Value;
-
-                            var glTexture = Service.Get<IAssetManager>()!.GetTexture(path);
-                            bool isTexture = assetInfo.Type.Equals("ImageData", StringComparison.OrdinalIgnoreCase) && glTexture.TextureId != IntPtr.Zero;
-
-                            ImGui.TableNextRow();
-                            ImGui.TableSetColumnIndex(0);
-                            ImGui.PushID(path);
-
-                            ImGuiTreeNodeFlags flags = isTexture ? ImGuiTreeNodeFlags.None : ImGuiTreeNodeFlags.Leaf | ImGuiTreeNodeFlags.NoTreePushOnOpen;
-
-                            if (ImGui.TreeNodeEx(path, flags, path))
-                            {
-                                ImGui.Text($"Full Path: {path}");
-                                ImGui.Text($"Bytes: {assetInfo.MemoryFootprintBytes:N0}");
-                                if (isTexture)
-                                {
-                                    ImGui.Separator();
-                                    Vector2 previewSize = new Vector2(128, 128);
-                                    float aspect = (float)glTexture.Width / glTexture.Height;
-                                    if (glTexture.Width > glTexture.Height)
-                                    {
-                                        previewSize.Y = previewSize.X / aspect;
-                                    }
-                                    else
-                                    {
-                                        previewSize.X = previewSize.Y * aspect;
-                                    }
-                                    ImGui.Image((nint)glTexture.TextureId, previewSize);
-                                    ImGui.Text($"Dimensions: {glTexture.Width}x{glTexture.Height}");
-                                }
-                                ImGui.TreePop();
-                            }
-
-                            ImGui.PopID();
-
-                            ImGui.TableSetColumnIndex(1);
-                            ImGui.Text(assetInfo.Type);
-
-                            ImGui.TableSetColumnIndex(2);
-                            float sizeMB = assetInfo.MemoryFootprintBytes / MB;
-
-                            ImGui.Text($"{sizeMB:F2} MB");
-                        }
-
-                        ImGui.EndTable();
-                    }
-
-                    ImGui.EndTabItem();
-                }
-                ImGui.EndTabBar();
+                ImGui.EndTabBar(); // END "EngineTabs"
             }
 
-            ImGui.End();
+            ImGui.End(); // END "Inspector"
         }
     }
+
+    //-------------------------------------------------------------------------
+    // REQUIRED HELPER FUNCTIONS (Placeholder/Example Implementations)
+    //-------------------------------------------------------------------------
+    
+
+
+private void DrawAssets()
+{
+    // 1. Begin the Tab Bar
+    if (ImGui.BeginTabBar("AssetManagerTabBar"))
+    {
+        // 2. Begin the Tab Item (This is the line that previously caused the error)
+        if (ImGui.BeginTabItem("Assets"))
+        {
+            var assetManager = Service.Get<IAssetManager>();
+            
+            // Check if the service exists before accessing it
+            if (assetManager != null)
+            {
+                var loadedAssets = assetManager.GetLoadedAssets();
+
+                ImGui.Text($"Asset Manager Status");
+                ImGui.Separator();
+
+                ImGui.Text($"Total Loaded Assets: {loadedAssets.Count}");
+                ImGui.Spacing();
+
+                if (ImGui.BeginTable("LoadedAssetTable", 3, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.Resizable))
+                {
+                    ImGui.TableSetupColumn("Name / Details", ImGuiTableColumnFlags.WidthStretch, 0.5f);
+                    ImGui.TableSetupColumn("Type", ImGuiTableColumnFlags.WidthFixed, 100.0f);
+                    ImGui.TableSetupColumn("Size (MB)", ImGuiTableColumnFlags.WidthFixed, 100.0f);
+                    ImGui.TableHeadersRow();
+
+                    const float MB = 1024f * 1024f;
+                    foreach (var kvp in loadedAssets)
+                    {
+                        string path = kvp.Key;
+                        var assetInfo = kvp.Value;
+
+                        // Ensure GetTexture and TextureId access is safe if assetInfo.Type is "ImageData"
+                        bool isTexture = assetInfo.Type.Equals("ImageData", StringComparison.OrdinalIgnoreCase);
+                        Assets.Texture glTexture = isTexture ? assetManager.GetTexture(path) : null;
+                        
+                        // Check if texture is valid before trying to draw/access properties
+                        bool textureValid = isTexture && glTexture != null && glTexture.TextureId != IntPtr.Zero;
+
+                        ImGui.TableNextRow();
+                        ImGui.TableSetColumnIndex(0);
+                        ImGui.PushID(path);
+
+                        ImGuiTreeNodeFlags flags = textureValid ? ImGuiTreeNodeFlags.None : ImGuiTreeNodeFlags.Leaf | ImGuiTreeNodeFlags.NoTreePushOnOpen;
+
+                        if (ImGui.TreeNodeEx(path, flags, path))
+                        {
+                            ImGui.Text($"Full Path: {path}");
+                            ImGui.Text($"Bytes: {assetInfo.MemoryFootprintBytes:N0}");
+                            if (textureValid)
+                            {
+                                ImGui.Separator();
+                                Vector2 previewSize = new Vector2(128, 128);
+                                float aspect = (float)glTexture.Width / glTexture.Height;
+                                if (glTexture.Width > glTexture.Height)
+                                {
+                                    previewSize.Y = previewSize.X / aspect;
+                                }
+                                else
+                                {
+                                    previewSize.X = previewSize.Y * aspect;
+                                }
+                                
+                                // Casting IntPtr to nint is correct for ImGui.Image in ImGui.NET
+                                ImGui.Image((nint)glTexture.TextureId, previewSize);
+                                ImGui.Text($"Dimensions: {glTexture.Width}x{glTexture.Height}");
+                            }
+                            ImGui.TreePop();
+                        }
+
+                        ImGui.PopID();
+
+                        ImGui.TableSetColumnIndex(1);
+                        ImGui.Text(assetInfo.Type);
+
+                        ImGui.TableSetColumnIndex(2);
+                        float sizeMB = assetInfo.MemoryFootprintBytes / MB;
+
+                        ImGui.Text($"{sizeMB:F2} MB");
+                    }
+
+                    ImGui.EndTable();
+                }
+            }
+            
+            // 3. End the Tab Item
+            ImGui.EndTabItem();
+        }
+
+        // 4. End the Tab Bar
+        ImGui.EndTabBar();
+    }
+}
 
     private void DrawSettingsTool(IWindowPipeline windowPipe)
     {
@@ -612,7 +665,10 @@ public class ToolGui
             var engineSettings = Service.Get<IEngineSettings>()!;
             if (ImGui.BeginMenu("Tools"))
             {
-                if (ImGui.MenuItem("Engine Status", "", ref m_EngineStatusWindowOpened))
+                if (ImGui.MenuItem("Inspector", "", ref m_EngineStatusWindowOpened))
+                {
+                }
+                if (ImGui.MenuItem("Assets", "", ref m_AssetsWindowOpened))
                 {
                 }
                 if (ImGui.MenuItem("Memory Monitor", "", ref m_MonitorWindowOpened))

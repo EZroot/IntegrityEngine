@@ -1,9 +1,6 @@
 using System.Diagnostics;
 using System.Numerics;
-using Integrity.Assets;
 using Integrity.Interface;
-using Integrity.Rendering;
-using Integrity.Scenes;
 using Integrity.Utils;
 using Silk.NET.SDL;
 
@@ -25,7 +22,8 @@ public class Engine
     private readonly ICameraManager m_CameraManager;
     private readonly IProfiler m_Profiler;
 
-    private readonly Dictionary<GLTexture, List<Matrix4x4>> m_RenderingBatchMap;
+    private readonly Dictionary<Assets.Texture, List<Matrix4x4>> m_RenderingBatchMap;
+    private readonly Dictionary<Assets.Texture, List<Vector4>> m_UvBatchMap = new();
 
     private int m_FrameCount;
     private float m_FpsTimeAccumulator;
@@ -165,27 +163,53 @@ public class Engine
 
         if (m_SceneManager.CurrentScene != null)
         {
+            // Batch object positions by texture
             m_Profiler.StartCpuProfile("Sprite_Sorting");
             var sceneGameObjects = m_SceneManager.CurrentScene.GetAllSpriteObjects();
             m_RenderingBatchMap.Clear();
+            m_UvBatchMap.Clear();
+
             foreach (var obj in sceneGameObjects)
             {
                 if (obj.Sprite == null) continue;
 
-                if (!m_RenderingBatchMap.TryGetValue(obj.Sprite.Texture, out var list))
+                var sprite = obj.Sprite;
+                var texture = sprite.Texture;
+
+                // Sort positions by texture
+                if (!m_RenderingBatchMap.TryGetValue(texture, out var instancedSpritePositionList))
                 {
-                    list = new List<Matrix4x4>();
-                    m_RenderingBatchMap[obj.Sprite.Texture] = list;
+                    instancedSpritePositionList = new List<Matrix4x4>();
+                    m_RenderingBatchMap[texture] = instancedSpritePositionList;
                 }
 
                 var model = MathHelper.Translation(
                     obj.Transform.X, obj.Transform.Y,
-                    obj.Sprite.Texture.Width * obj.Transform.ScaleX,
-                    obj.Sprite.Texture.Height * obj.Transform.ScaleY
+                    obj.Sprite.SourceRect.Width * obj.Transform.ScaleX,
+                    obj.Sprite.SourceRect.Height * obj.Transform.ScaleY
                 );
 
-                list.Add(model);
+                instancedSpritePositionList.Add(model);
+
+                // Sort UVs on atlas by texture
+                if (!m_UvBatchMap.TryGetValue(texture, out var instancedUvRectList))
+                {
+                    instancedUvRectList = new List<Vector4>();
+                    m_UvBatchMap[texture] = instancedUvRectList;
+                }
+
+                float texW = texture.Width;
+                float texH = texture.Height;
+                
+                float rectX = sprite.SourceRect.X / texW;
+                float rectY = sprite.SourceRect.Y / texH;
+                float rectW = sprite.SourceRect.Width / texW;
+                float rectH = sprite.SourceRect.Height / texH;
+                
+                instancedUvRectList.Add(new Vector4(rectX, rectY, rectW, rectH));
             }
+
+
             m_Profiler.StopCpuProfile("Sprite_Sorting");
 
             m_Profiler.StartRenderProfile("Draw_Sprite_Instanced");
@@ -193,7 +217,10 @@ public class Engine
             {
                 var texture = kvp.Key;
                 var matrices = kvp.Value;
-                m_RenderPipe.DrawSpritesInstanced(texture, matrices, matrices.Count);
+                if(m_UvBatchMap.TryGetValue(texture, out var uvrects))
+                {
+                    m_RenderPipe.DrawSpritesInstanced(texture, matrices, uvrects, matrices.Count);
+                }
             }
             m_Profiler.StopRenderProfile("Draw_Sprite_Instanced");
         }

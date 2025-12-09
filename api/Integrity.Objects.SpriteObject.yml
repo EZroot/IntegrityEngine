@@ -5,7 +5,7 @@ items:
   id: SpriteObject
   parent: Integrity.Objects
   children:
-  - Integrity.Objects.SpriteObject.#ctor(System.String,Integrity.Assets.GLTexture)
+  - Integrity.Objects.SpriteObject.#ctor(System.String,Integrity.Assets.Texture)
   - Integrity.Objects.SpriteObject.Sprite
   langs:
   - csharp
@@ -38,16 +38,16 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.GetHashCode
-- uid: Integrity.Objects.SpriteObject.#ctor(System.String,Integrity.Assets.GLTexture)
-  commentId: M:Integrity.Objects.SpriteObject.#ctor(System.String,Integrity.Assets.GLTexture)
-  id: '#ctor(System.String,Integrity.Assets.GLTexture)'
+- uid: Integrity.Objects.SpriteObject.#ctor(System.String,Integrity.Assets.Texture)
+  commentId: M:Integrity.Objects.SpriteObject.#ctor(System.String,Integrity.Assets.Texture)
+  id: '#ctor(System.String,Integrity.Assets.Texture)'
   parent: Integrity.Objects.SpriteObject
   langs:
   - csharp
   - vb
-  name: SpriteObject(string, GLTexture)
-  nameWithType: SpriteObject.SpriteObject(string, GLTexture)
-  fullName: Integrity.Objects.SpriteObject.SpriteObject(string, Integrity.Assets.GLTexture)
+  name: SpriteObject(string, Texture)
+  nameWithType: SpriteObject.SpriteObject(string, Texture)
+  fullName: Integrity.Objects.SpriteObject.SpriteObject(string, Integrity.Assets.Texture)
   type: Constructor
   source:
     href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/objects/SpriteObject.cs
@@ -55,17 +55,17 @@ items:
   - Integrity
   namespace: Integrity.Objects
   syntax:
-    content: public SpriteObject(string name, GLTexture glTexture)
+    content: public SpriteObject(string name, Texture Texture)
     parameters:
     - id: name
       type: System.String
-    - id: glTexture
-      type: Integrity.Assets.GLTexture
-    content.vb: Public Sub New(name As String, glTexture As GLTexture)
+    - id: Texture
+      type: Integrity.Assets.Texture
+    content.vb: Public Sub New(name As String, Texture As Texture)
   overload: Integrity.Objects.SpriteObject.#ctor*
-  nameWithType.vb: SpriteObject.New(String, GLTexture)
-  fullName.vb: Integrity.Objects.SpriteObject.New(String, Integrity.Assets.GLTexture)
-  name.vb: New(String, GLTexture)
+  nameWithType.vb: SpriteObject.New(String, Texture)
+  fullName.vb: Integrity.Objects.SpriteObject.New(String, Integrity.Assets.Texture)
+  name.vb: New(String, Texture)
 - uid: Integrity.Objects.SpriteObject.Sprite
   commentId: P:Integrity.Objects.SpriteObject.Sprite
   id: Sprite
@@ -452,7 +452,7 @@ references:
 - uid: Integrity.Objects.SpriteObject.#ctor*
   commentId: Overload:Integrity.Objects.SpriteObject.#ctor
   isExternal: true
-  href: Integrity.Objects.SpriteObject.html#Integrity_Objects_SpriteObject__ctor_System_String_Integrity_Assets_GLTexture_
+  href: Integrity.Objects.SpriteObject.html#Integrity_Objects_SpriteObject__ctor_System_String_Integrity_Assets_Texture_
   name: SpriteObject
   nameWithType: SpriteObject.SpriteObject
   fullName: Integrity.Objects.SpriteObject.SpriteObject
@@ -470,14 +470,14 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: Integrity.Assets.GLTexture
-  commentId: T:Integrity.Assets.GLTexture
+- uid: Integrity.Assets.Texture
+  commentId: T:Integrity.Assets.Texture
   parent: Integrity.Assets
   isExternal: true
-  href: Integrity.Assets.GLTexture.html
-  name: GLTexture
-  nameWithType: GLTexture
-  fullName: Integrity.Assets.GLTexture
+  href: Integrity.Assets.Texture.html
+  name: Texture
+  nameWithType: Texture
+  fullName: Integrity.Assets.Texture
 - uid: Integrity.Assets
   commentId: N:Integrity.Assets
   isExternal: true

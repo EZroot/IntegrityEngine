@@ -126,16 +126,16 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Integrity.Assets.GLTexture.yml",
+      "source_relative_path": "api/Integrity.Assets.Texture.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Integrity.Assets.GLTexture.html"
+          "relative_path": "api/Integrity.Assets.Texture.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Integrity.Assets.GLTexture",
+      "Title": "Integrity.Assets.Texture",
       "Summary": null
     },
     {

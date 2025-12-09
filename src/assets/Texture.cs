@@ -1,7 +1,7 @@
 using Silk.NET.OpenGL;
 
 namespace Integrity.Assets;
-public class GLTexture
+public class Texture
 {
     public uint TextureId { get; private set; }
     public int Width { get; }
@@ -9,7 +9,7 @@ public class GLTexture
 
     private readonly GL m_GlApi;
 
-    public GLTexture(GL glApi, ImageData imageData)
+    public Texture(GL glApi, ImageData imageData)
     {
         m_GlApi = glApi;
         Width = imageData.Width;

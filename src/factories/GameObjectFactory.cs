@@ -33,7 +33,7 @@ public class GameObjectFactory : IGameObjectFactory
     /// <summary>
     /// Creates a standard GameObject pre-configured with a TransformComponent and SpriteComponent cached.
     /// </summary>
-    /// <param name="assetPath">The file path used to retrieve the shared GLTexture resource.</param>
+    /// <param name="assetPath">The file path used to retrieve the shared Texture resource.</param>
     /// <param name="name">The Game Object's name.</param>
     /// <param name="componentsToAdd">Additional components to add to the game object.</param>
     /// <returns>A new GameObject instance.</returns>

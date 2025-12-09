@@ -122,7 +122,7 @@ items:
       description: The Game Object's name.
     - id: assetPath
       type: System.String
-      description: The file path used to retrieve the shared GLTexture resource.
+      description: The file path used to retrieve the shared Texture resource.
     - id: componentsToAdd
       type: Integrity.Interface.IComponent[]
       description: Additional components to add to the game object.

@@ -61,13 +61,13 @@ items:
   - Integrity
   namespace: Integrity.Interface
   syntax:
-    content: GLTexture GetTexture(string assetPath)
+    content: Texture GetTexture(string assetPath)
     parameters:
     - id: assetPath
       type: System.String
     return:
-      type: Integrity.Assets.GLTexture
-    content.vb: Function GetTexture(assetPath As String) As GLTexture
+      type: Integrity.Assets.Texture
+    content.vb: Function GetTexture(assetPath As String) As Texture
   overload: Integrity.Interface.IAssetManager.GetTexture*
   nameWithType.vb: IAssetManager.GetTexture(String)
   fullName.vb: Integrity.Interface.IAssetManager.GetTexture(String)
@@ -243,14 +243,14 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: Integrity.Assets.GLTexture
-  commentId: T:Integrity.Assets.GLTexture
+- uid: Integrity.Assets.Texture
+  commentId: T:Integrity.Assets.Texture
   parent: Integrity.Assets
   isExternal: true
-  href: Integrity.Assets.GLTexture.html
-  name: GLTexture
-  nameWithType: GLTexture
-  fullName: Integrity.Assets.GLTexture
+  href: Integrity.Assets.Texture.html
+  name: Texture
+  nameWithType: Texture
+  fullName: Integrity.Assets.Texture
 - uid: System
   commentId: N:System
   isExternal: true

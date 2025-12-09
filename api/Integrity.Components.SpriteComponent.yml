@@ -5,7 +5,7 @@ items:
   id: SpriteComponent
   parent: Integrity.Components
   children:
-  - Integrity.Components.SpriteComponent.#ctor(Integrity.Assets.GLTexture)
+  - Integrity.Components.SpriteComponent.#ctor(Integrity.Assets.Texture)
   - Integrity.Components.SpriteComponent.SourceRect
   - Integrity.Components.SpriteComponent.Texture
   langs:
@@ -35,16 +35,16 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.GetHashCode
-- uid: Integrity.Components.SpriteComponent.#ctor(Integrity.Assets.GLTexture)
-  commentId: M:Integrity.Components.SpriteComponent.#ctor(Integrity.Assets.GLTexture)
-  id: '#ctor(Integrity.Assets.GLTexture)'
+- uid: Integrity.Components.SpriteComponent.#ctor(Integrity.Assets.Texture)
+  commentId: M:Integrity.Components.SpriteComponent.#ctor(Integrity.Assets.Texture)
+  id: '#ctor(Integrity.Assets.Texture)'
   parent: Integrity.Components.SpriteComponent
   langs:
   - csharp
   - vb
-  name: SpriteComponent(GLTexture)
-  nameWithType: SpriteComponent.SpriteComponent(GLTexture)
-  fullName: Integrity.Components.SpriteComponent.SpriteComponent(Integrity.Assets.GLTexture)
+  name: SpriteComponent(Texture)
+  nameWithType: SpriteComponent.SpriteComponent(Texture)
+  fullName: Integrity.Components.SpriteComponent.SpriteComponent(Integrity.Assets.Texture)
   type: Constructor
   source:
     href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/components/SpriteComponent.cs
@@ -52,15 +52,15 @@ items:
   - Integrity
   namespace: Integrity.Components
   syntax:
-    content: public SpriteComponent(GLTexture texture)
+    content: public SpriteComponent(Texture texture)
     parameters:
     - id: texture
-      type: Integrity.Assets.GLTexture
-    content.vb: Public Sub New(texture As GLTexture)
+      type: Integrity.Assets.Texture
+    content.vb: Public Sub New(texture As Texture)
   overload: Integrity.Components.SpriteComponent.#ctor*
-  nameWithType.vb: SpriteComponent.New(GLTexture)
-  fullName.vb: Integrity.Components.SpriteComponent.New(Integrity.Assets.GLTexture)
-  name.vb: New(GLTexture)
+  nameWithType.vb: SpriteComponent.New(Texture)
+  fullName.vb: Integrity.Components.SpriteComponent.New(Integrity.Assets.Texture)
+  name.vb: New(Texture)
 - uid: Integrity.Components.SpriteComponent.Texture
   commentId: P:Integrity.Components.SpriteComponent.Texture
   id: Texture
@@ -78,11 +78,11 @@ items:
   - Integrity
   namespace: Integrity.Components
   syntax:
-    content: public GLTexture Texture { get; }
+    content: public Texture Texture { get; }
     parameters: []
     return:
-      type: Integrity.Assets.GLTexture
-    content.vb: Public ReadOnly Property Texture As GLTexture
+      type: Integrity.Assets.Texture
+    content.vb: Public ReadOnly Property Texture As Texture
   overload: Integrity.Components.SpriteComponent.Texture*
 - uid: Integrity.Components.SpriteComponent.SourceRect
   commentId: P:Integrity.Components.SpriteComponent.SourceRect
@@ -410,21 +410,21 @@ references:
 - uid: Integrity.Components.SpriteComponent.#ctor*
   commentId: Overload:Integrity.Components.SpriteComponent.#ctor
   isExternal: true
-  href: Integrity.Components.SpriteComponent.html#Integrity_Components_SpriteComponent__ctor_Integrity_Assets_GLTexture_
+  href: Integrity.Components.SpriteComponent.html#Integrity_Components_SpriteComponent__ctor_Integrity_Assets_Texture_
   name: SpriteComponent
   nameWithType: SpriteComponent.SpriteComponent
   fullName: Integrity.Components.SpriteComponent.SpriteComponent
   nameWithType.vb: SpriteComponent.New
   fullName.vb: Integrity.Components.SpriteComponent.New
   name.vb: New
-- uid: Integrity.Assets.GLTexture
-  commentId: T:Integrity.Assets.GLTexture
+- uid: Integrity.Assets.Texture
+  commentId: T:Integrity.Assets.Texture
   parent: Integrity.Assets
   isExternal: true
-  href: Integrity.Assets.GLTexture.html
-  name: GLTexture
-  nameWithType: GLTexture
-  fullName: Integrity.Assets.GLTexture
+  href: Integrity.Assets.Texture.html
+  name: Texture
+  nameWithType: Texture
+  fullName: Integrity.Assets.Texture
 - uid: Integrity.Assets
   commentId: N:Integrity.Assets
   isExternal: true

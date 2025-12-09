@@ -1,5 +1,4 @@
 using System.Numerics;
-using Integrity.Assets;
 using Silk.NET.OpenGL;
 using Silk.NET.SDL;
 
@@ -8,7 +7,7 @@ public interface IRenderPipeline : IService
 {
     GL? GlApi { get; }
     unsafe void InitializeRenderer(Sdl sdlApi, Window* window);
-    unsafe void DrawSpritesInstanced(GLTexture texture, in List<Matrix4x4> modelMatrices, int instanceCount);
+    unsafe void DrawSpritesInstanced(Assets.Texture texture, in List<Matrix4x4> modelMatrices, in List<Vector4> uvRects, int instanceCount);
 
     void RenderFrameStart();
     void RenderFrameEnd();

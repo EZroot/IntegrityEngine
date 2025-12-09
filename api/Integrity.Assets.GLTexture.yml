@@ -1,31 +1,31 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Integrity.Assets.GLTexture
-  commentId: T:Integrity.Assets.GLTexture
-  id: GLTexture
+- uid: Integrity.Assets.Texture
+  commentId: T:Integrity.Assets.Texture
+  id: Texture
   parent: Integrity.Assets
   children:
-  - Integrity.Assets.GLTexture.#ctor(Silk.NET.OpenGL.GL,Integrity.Assets.ImageData)
-  - Integrity.Assets.GLTexture.Dispose
-  - Integrity.Assets.GLTexture.Height
-  - Integrity.Assets.GLTexture.TextureId
-  - Integrity.Assets.GLTexture.Use(Silk.NET.OpenGL.TextureUnit)
-  - Integrity.Assets.GLTexture.Width
+  - Integrity.Assets.Texture.#ctor(Silk.NET.OpenGL.GL,Integrity.Assets.ImageData)
+  - Integrity.Assets.Texture.Dispose
+  - Integrity.Assets.Texture.Height
+  - Integrity.Assets.Texture.TextureId
+  - Integrity.Assets.Texture.Use(Silk.NET.OpenGL.TextureUnit)
+  - Integrity.Assets.Texture.Width
   langs:
   - csharp
   - vb
-  name: GLTexture
-  nameWithType: GLTexture
-  fullName: Integrity.Assets.GLTexture
+  name: Texture
+  nameWithType: Texture
+  fullName: Integrity.Assets.Texture
   type: Class
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/GLTexture.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/Texture.cs
   assemblies:
   - Integrity
   namespace: Integrity.Assets
   syntax:
-    content: public class GLTexture
-    content.vb: Public Class GLTexture
+    content: public class Texture
+    content.vb: Public Class Texture
   inheritance:
   - System.Object
   inheritedMembers:
@@ -36,47 +36,47 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.GetHashCode
-- uid: Integrity.Assets.GLTexture.#ctor(Silk.NET.OpenGL.GL,Integrity.Assets.ImageData)
-  commentId: M:Integrity.Assets.GLTexture.#ctor(Silk.NET.OpenGL.GL,Integrity.Assets.ImageData)
+- uid: Integrity.Assets.Texture.#ctor(Silk.NET.OpenGL.GL,Integrity.Assets.ImageData)
+  commentId: M:Integrity.Assets.Texture.#ctor(Silk.NET.OpenGL.GL,Integrity.Assets.ImageData)
   id: '#ctor(Silk.NET.OpenGL.GL,Integrity.Assets.ImageData)'
-  parent: Integrity.Assets.GLTexture
+  parent: Integrity.Assets.Texture
   langs:
   - csharp
   - vb
-  name: GLTexture(GL, ImageData)
-  nameWithType: GLTexture.GLTexture(GL, ImageData)
-  fullName: Integrity.Assets.GLTexture.GLTexture(Silk.NET.OpenGL.GL, Integrity.Assets.ImageData)
+  name: Texture(GL, ImageData)
+  nameWithType: Texture.Texture(GL, ImageData)
+  fullName: Integrity.Assets.Texture.Texture(Silk.NET.OpenGL.GL, Integrity.Assets.ImageData)
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/GLTexture.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/Texture.cs
   assemblies:
   - Integrity
   namespace: Integrity.Assets
   syntax:
-    content: public GLTexture(GL glApi, ImageData imageData)
+    content: public Texture(GL glApi, ImageData imageData)
     parameters:
     - id: glApi
       type: Silk.NET.OpenGL.GL
     - id: imageData
       type: Integrity.Assets.ImageData
     content.vb: Public Sub New(glApi As GL, imageData As ImageData)
-  overload: Integrity.Assets.GLTexture.#ctor*
-  nameWithType.vb: GLTexture.New(GL, ImageData)
-  fullName.vb: Integrity.Assets.GLTexture.New(Silk.NET.OpenGL.GL, Integrity.Assets.ImageData)
+  overload: Integrity.Assets.Texture.#ctor*
+  nameWithType.vb: Texture.New(GL, ImageData)
+  fullName.vb: Integrity.Assets.Texture.New(Silk.NET.OpenGL.GL, Integrity.Assets.ImageData)
   name.vb: New(GL, ImageData)
-- uid: Integrity.Assets.GLTexture.Use(Silk.NET.OpenGL.TextureUnit)
-  commentId: M:Integrity.Assets.GLTexture.Use(Silk.NET.OpenGL.TextureUnit)
+- uid: Integrity.Assets.Texture.Use(Silk.NET.OpenGL.TextureUnit)
+  commentId: M:Integrity.Assets.Texture.Use(Silk.NET.OpenGL.TextureUnit)
   id: Use(Silk.NET.OpenGL.TextureUnit)
-  parent: Integrity.Assets.GLTexture
+  parent: Integrity.Assets.Texture
   langs:
   - csharp
   - vb
   name: Use(TextureUnit)
-  nameWithType: GLTexture.Use(TextureUnit)
-  fullName: Integrity.Assets.GLTexture.Use(Silk.NET.OpenGL.TextureUnit)
+  nameWithType: Texture.Use(TextureUnit)
+  fullName: Integrity.Assets.Texture.Use(Silk.NET.OpenGL.TextureUnit)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/GLTexture.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/Texture.cs
   assemblies:
   - Integrity
   namespace: Integrity.Assets
@@ -86,40 +86,40 @@ items:
     - id: unit
       type: Silk.NET.OpenGL.TextureUnit
     content.vb: Public Sub Use(unit As TextureUnit = TextureUnit.Texture0)
-  overload: Integrity.Assets.GLTexture.Use*
-- uid: Integrity.Assets.GLTexture.Dispose
-  commentId: M:Integrity.Assets.GLTexture.Dispose
+  overload: Integrity.Assets.Texture.Use*
+- uid: Integrity.Assets.Texture.Dispose
+  commentId: M:Integrity.Assets.Texture.Dispose
   id: Dispose
-  parent: Integrity.Assets.GLTexture
+  parent: Integrity.Assets.Texture
   langs:
   - csharp
   - vb
   name: Dispose()
-  nameWithType: GLTexture.Dispose()
-  fullName: Integrity.Assets.GLTexture.Dispose()
+  nameWithType: Texture.Dispose()
+  fullName: Integrity.Assets.Texture.Dispose()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/GLTexture.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/Texture.cs
   assemblies:
   - Integrity
   namespace: Integrity.Assets
   syntax:
     content: public void Dispose()
     content.vb: Public Sub Dispose()
-  overload: Integrity.Assets.GLTexture.Dispose*
-- uid: Integrity.Assets.GLTexture.TextureId
-  commentId: P:Integrity.Assets.GLTexture.TextureId
+  overload: Integrity.Assets.Texture.Dispose*
+- uid: Integrity.Assets.Texture.TextureId
+  commentId: P:Integrity.Assets.Texture.TextureId
   id: TextureId
-  parent: Integrity.Assets.GLTexture
+  parent: Integrity.Assets.Texture
   langs:
   - csharp
   - vb
   name: TextureId
-  nameWithType: GLTexture.TextureId
-  fullName: Integrity.Assets.GLTexture.TextureId
+  nameWithType: Texture.TextureId
+  fullName: Integrity.Assets.Texture.TextureId
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/GLTexture.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/Texture.cs
   assemblies:
   - Integrity
   namespace: Integrity.Assets
@@ -129,20 +129,20 @@ items:
     return:
       type: System.UInt32
     content.vb: Public ReadOnly Property TextureId As UInteger
-  overload: Integrity.Assets.GLTexture.TextureId*
-- uid: Integrity.Assets.GLTexture.Width
-  commentId: P:Integrity.Assets.GLTexture.Width
+  overload: Integrity.Assets.Texture.TextureId*
+- uid: Integrity.Assets.Texture.Width
+  commentId: P:Integrity.Assets.Texture.Width
   id: Width
-  parent: Integrity.Assets.GLTexture
+  parent: Integrity.Assets.Texture
   langs:
   - csharp
   - vb
   name: Width
-  nameWithType: GLTexture.Width
-  fullName: Integrity.Assets.GLTexture.Width
+  nameWithType: Texture.Width
+  fullName: Integrity.Assets.Texture.Width
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/GLTexture.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/Texture.cs
   assemblies:
   - Integrity
   namespace: Integrity.Assets
@@ -152,20 +152,20 @@ items:
     return:
       type: System.Int32
     content.vb: Public ReadOnly Property Width As Integer
-  overload: Integrity.Assets.GLTexture.Width*
-- uid: Integrity.Assets.GLTexture.Height
-  commentId: P:Integrity.Assets.GLTexture.Height
+  overload: Integrity.Assets.Texture.Width*
+- uid: Integrity.Assets.Texture.Height
+  commentId: P:Integrity.Assets.Texture.Height
   id: Height
-  parent: Integrity.Assets.GLTexture
+  parent: Integrity.Assets.Texture
   langs:
   - csharp
   - vb
   name: Height
-  nameWithType: GLTexture.Height
-  fullName: Integrity.Assets.GLTexture.Height
+  nameWithType: Texture.Height
+  fullName: Integrity.Assets.Texture.Height
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/GLTexture.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/Texture.cs
   assemblies:
   - Integrity
   namespace: Integrity.Assets
@@ -175,7 +175,7 @@ items:
     return:
       type: System.Int32
     content.vb: Public ReadOnly Property Height As Integer
-  overload: Integrity.Assets.GLTexture.Height*
+  overload: Integrity.Assets.Texture.Height*
 references:
 - uid: Integrity.Assets
   commentId: N:Integrity.Assets
@@ -441,15 +441,15 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Integrity.Assets.GLTexture.#ctor*
-  commentId: Overload:Integrity.Assets.GLTexture.#ctor
+- uid: Integrity.Assets.Texture.#ctor*
+  commentId: Overload:Integrity.Assets.Texture.#ctor
   isExternal: true
-  href: Integrity.Assets.GLTexture.html#Integrity_Assets_GLTexture__ctor_Silk_NET_OpenGL_GL_Integrity_Assets_ImageData_
-  name: GLTexture
-  nameWithType: GLTexture.GLTexture
-  fullName: Integrity.Assets.GLTexture.GLTexture
-  nameWithType.vb: GLTexture.New
-  fullName.vb: Integrity.Assets.GLTexture.New
+  href: Integrity.Assets.Texture.html#Integrity_Assets_Texture__ctor_Silk_NET_OpenGL_GL_Integrity_Assets_ImageData_
+  name: Texture
+  nameWithType: Texture.Texture
+  fullName: Integrity.Assets.Texture.Texture
+  nameWithType.vb: Texture.New
+  fullName.vb: Integrity.Assets.Texture.New
   name.vb: New
 - uid: Silk.NET.OpenGL.GL
   commentId: T:Silk.NET.OpenGL.GL
@@ -496,13 +496,13 @@ references:
   - uid: Silk.NET.OpenGL
     name: OpenGL
     isExternal: true
-- uid: Integrity.Assets.GLTexture.Use*
-  commentId: Overload:Integrity.Assets.GLTexture.Use
+- uid: Integrity.Assets.Texture.Use*
+  commentId: Overload:Integrity.Assets.Texture.Use
   isExternal: true
-  href: Integrity.Assets.GLTexture.html#Integrity_Assets_GLTexture_Use_Silk_NET_OpenGL_TextureUnit_
+  href: Integrity.Assets.Texture.html#Integrity_Assets_Texture_Use_Silk_NET_OpenGL_TextureUnit_
   name: Use
-  nameWithType: GLTexture.Use
-  fullName: Integrity.Assets.GLTexture.Use
+  nameWithType: Texture.Use
+  fullName: Integrity.Assets.Texture.Use
 - uid: Silk.NET.OpenGL.TextureUnit
   commentId: T:Silk.NET.OpenGL.TextureUnit
   parent: Silk.NET.OpenGL
@@ -510,20 +510,20 @@ references:
   name: TextureUnit
   nameWithType: TextureUnit
   fullName: Silk.NET.OpenGL.TextureUnit
-- uid: Integrity.Assets.GLTexture.Dispose*
-  commentId: Overload:Integrity.Assets.GLTexture.Dispose
+- uid: Integrity.Assets.Texture.Dispose*
+  commentId: Overload:Integrity.Assets.Texture.Dispose
   isExternal: true
-  href: Integrity.Assets.GLTexture.html#Integrity_Assets_GLTexture_Dispose
+  href: Integrity.Assets.Texture.html#Integrity_Assets_Texture_Dispose
   name: Dispose
-  nameWithType: GLTexture.Dispose
-  fullName: Integrity.Assets.GLTexture.Dispose
-- uid: Integrity.Assets.GLTexture.TextureId*
-  commentId: Overload:Integrity.Assets.GLTexture.TextureId
+  nameWithType: Texture.Dispose
+  fullName: Integrity.Assets.Texture.Dispose
+- uid: Integrity.Assets.Texture.TextureId*
+  commentId: Overload:Integrity.Assets.Texture.TextureId
   isExternal: true
-  href: Integrity.Assets.GLTexture.html#Integrity_Assets_GLTexture_TextureId
+  href: Integrity.Assets.Texture.html#Integrity_Assets_Texture_TextureId
   name: TextureId
-  nameWithType: GLTexture.TextureId
-  fullName: Integrity.Assets.GLTexture.TextureId
+  nameWithType: Texture.TextureId
+  fullName: Integrity.Assets.Texture.TextureId
 - uid: System.UInt32
   commentId: T:System.UInt32
   parent: System
@@ -535,13 +535,13 @@ references:
   nameWithType.vb: UInteger
   fullName.vb: UInteger
   name.vb: UInteger
-- uid: Integrity.Assets.GLTexture.Width*
-  commentId: Overload:Integrity.Assets.GLTexture.Width
+- uid: Integrity.Assets.Texture.Width*
+  commentId: Overload:Integrity.Assets.Texture.Width
   isExternal: true
-  href: Integrity.Assets.GLTexture.html#Integrity_Assets_GLTexture_Width
+  href: Integrity.Assets.Texture.html#Integrity_Assets_Texture_Width
   name: Width
-  nameWithType: GLTexture.Width
-  fullName: Integrity.Assets.GLTexture.Width
+  nameWithType: Texture.Width
+  fullName: Integrity.Assets.Texture.Width
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -553,10 +553,10 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: Integrity.Assets.GLTexture.Height*
-  commentId: Overload:Integrity.Assets.GLTexture.Height
+- uid: Integrity.Assets.Texture.Height*
+  commentId: Overload:Integrity.Assets.Texture.Height
   isExternal: true
-  href: Integrity.Assets.GLTexture.html#Integrity_Assets_GLTexture_Height
+  href: Integrity.Assets.Texture.html#Integrity_Assets_Texture_Height
   name: Height
-  nameWithType: GLTexture.Height
-  fullName: Integrity.Assets.GLTexture.Height
+  nameWithType: Texture.Height
+  fullName: Integrity.Assets.Texture.Height
