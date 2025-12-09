@@ -44,8 +44,11 @@ public class Camera2D
             -1.0f,
             1.0f
         );
+        
+        var snappedX = (int)Position.X;
+        var snappedY = (int)Position.Y;
 
-        Matrix4x4 view = Matrix4x4.CreateTranslation(-Position.X, -Position.Y, 0);
+        Matrix4x4 view = Matrix4x4.CreateTranslation(-snappedX, -snappedY, 0);
         return view * projection;
     }
 }
