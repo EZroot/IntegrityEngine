@@ -9,7 +9,7 @@ namespace Integrity.Components;
 public class AnimationFrame
 {
     public Rect SourceRect { get; }
-    public float Duration { get; } 
+    public float Duration { get; }
 
     public AnimationFrame(Rect sourceRect, float duration)
     {
@@ -38,7 +38,7 @@ public class AnimationComponent : IComponent
         CurrentFrameIndex = 0;
         IsPlaying = false;
     }
-    
+
     /// <summary>
     /// Adds a new animation sequence under a specific name.
     /// </summary>

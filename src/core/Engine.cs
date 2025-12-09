@@ -23,9 +23,6 @@ public class Engine
     private readonly ICameraManager m_CameraManager;
     private readonly IProfiler m_Profiler;
 
-    private readonly Dictionary<Assets.Texture, List<Matrix4x4>> m_RenderingBatchMap;
-    private readonly Dictionary<Assets.Texture, List<Vector4>> m_UvBatchMap = new();
-
     private int m_FrameCount;
     private float m_FpsTimeAccumulator;
     private float m_CurrentFps;
@@ -38,7 +35,6 @@ public class Engine
     /// <exception cref="Exception"></exception>
     public Engine(IGame game)
     {
-        m_RenderingBatchMap = new();
         m_Stopwatch = new Stopwatch();
 
         m_Settings = Service.Get<IEngineSettings>() ?? throw new Exception("Engine Settings service not found.");
@@ -124,7 +120,7 @@ public class Engine
 
         m_Game.Initialize();
 
-        if(m_CameraManager.MainCamera == null)
+        if (m_CameraManager.MainCamera == null)
         {
             Logger.Log("No camera present. Aborting!", Logger.LogSeverity.Error);
             Environment.Exit(0);
@@ -154,12 +150,15 @@ public class Engine
         m_ImGuiPipe.Tools.DrawToolsUpdate(deltaTime);
         m_Game.Update(deltaTime);
 
-        m_Profiler.StartCpuProfile("Sprite_Animation");
-        if(m_SceneManager.CurrentScene != null)
+        if (m_SceneManager.CurrentScene != null)
         {
+            m_Profiler.StartCpuProfile("Sprite_Batch_Update");
+            m_SceneManager.CurrentScene.SpriteRenderSystem.UpdateSpriteBatchByTexture();
+            m_Profiler.StopCpuProfile("Sprite_Batch_Update");
+            m_Profiler.StartCpuProfile("Sprite_Animation");
             m_SceneManager.CurrentScene.AnimationRenderSystem.Update(deltaTime);
+            m_Profiler.StopCpuProfile("Sprite_Animation");
         }
-        m_Profiler.StopCpuProfile("Sprite_Animation");
     }
 
     private void Render()
@@ -170,68 +169,7 @@ public class Engine
 
         if (m_SceneManager.CurrentScene != null)
         {
-            // Batch object positions by texture
-            m_Profiler.StartCpuProfile("Sprite_Depth_Sorting");
-            m_SceneManager.CurrentScene.SortSpriteObjectsByDepth();
-            m_Profiler.StopCpuProfile("Sprite_Depth_Sorting");
-
-            var sceneGameObjects = m_SceneManager.CurrentScene.GetAllSpriteObjects();
-            m_RenderingBatchMap.Clear();
-            m_UvBatchMap.Clear();
-
-            m_Profiler.StartCpuProfile("Sprite_Sorting");
-            foreach (var obj in sceneGameObjects)
-            {
-                if (obj.Sprite == null) continue;
-
-                var sprite = obj.Sprite;
-                var texture = sprite.Texture;
-
-                // Sort positions by texture
-                if (!m_RenderingBatchMap.TryGetValue(texture, out var instancedSpritePositionList))
-                {
-                    instancedSpritePositionList = new List<Matrix4x4>();
-                    m_RenderingBatchMap[texture] = instancedSpritePositionList;
-                }
-
-                var model = MathHelper.Translation(
-                    obj.Transform.X, obj.Transform.Y,
-                    obj.Sprite.SourceRect.Width * obj.Transform.ScaleX,
-                    obj.Sprite.SourceRect.Height * obj.Transform.ScaleY
-                );
-
-                instancedSpritePositionList.Add(model);
-
-                // Sort UVs on atlas by texture
-                if (!m_UvBatchMap.TryGetValue(texture, out var instancedUvRectList))
-                {
-                    instancedUvRectList = new List<Vector4>();
-                    m_UvBatchMap[texture] = instancedUvRectList;
-                }
-
-                float texW = texture.Width;
-                float texH = texture.Height;
-                
-                float rectX = sprite.SourceRect.X / texW;
-                float rectY = sprite.SourceRect.Y / texH;
-                float rectW = sprite.SourceRect.Width / texW;
-                float rectH = sprite.SourceRect.Height / texH;
-                
-                instancedUvRectList.Add(new Vector4(rectX, rectY, rectW, rectH));
-            }
-            m_Profiler.StopCpuProfile("Sprite_Sorting");
-
-            m_Profiler.StartRenderProfile("Draw_Sprite_Instanced");
-            foreach (var kvp in m_RenderingBatchMap)
-            {
-                var texture = kvp.Key;
-                var matrices = kvp.Value;
-                if(m_UvBatchMap.TryGetValue(texture, out var uvrects))
-                {
-                    m_RenderPipe.DrawSpritesInstanced(texture, matrices, uvrects, matrices.Count);
-                }
-            }
-            m_Profiler.StopRenderProfile("Draw_Sprite_Instanced");
+            m_SceneManager.CurrentScene.SpriteRenderSystem.RenderSprites(m_RenderPipe);
         }
 
         m_Game.Render();

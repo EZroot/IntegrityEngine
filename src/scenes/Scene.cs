@@ -66,14 +66,6 @@ public class Scene
     public IReadOnlyList<SpriteObject> GetAllSpriteObjects() => m_SpriteRenderSystem.SpriteObjectList;
 
     /// <summary>
-    /// Sort Sprite Objects by Y-depth. ** WARNING: SLOW **
-    /// </summary>
-    public void SortSpriteObjectsByDepth()
-    {
-        m_SpriteRenderSystem.SpriteObjectList.Sort((a, b) => a.Transform.Y.CompareTo(b.Transform.Y));
-    }
-
-    /// <summary>
     /// Called when the scene is being unloaded. Cleans up all GameObjects.
     /// </summary>
     public void Cleanup()

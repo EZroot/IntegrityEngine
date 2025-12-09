@@ -3,7 +3,7 @@ using Integrity.Objects;
 
 namespace Integrity.Systems;
 
-public class AnimationRenderSystem 
+public class AnimationRenderSystem
 {
     private readonly List<(GameObject Object, AnimationComponent Animation, SpriteComponent Sprite)> m_AnimatedObjects;
 
@@ -47,7 +47,7 @@ public class AnimationRenderSystem
                 {
                     animComp.CurrentFrameIndex = (animComp.CurrentFrameIndex + 1) % frames.Length;
                     animComp.FrameTimeAccumulator -= currentFrame.Duration;
-                    
+
                     spriteComp.SourceRect = frames[animComp.CurrentFrameIndex].SourceRect;
                 }
             }

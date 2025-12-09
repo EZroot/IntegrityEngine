@@ -36,7 +36,7 @@ public class WindowPipeline : IWindowPipeline
 
     public void SetVSync(int useVsync)
     {
-        if(m_SdlApi == null)
+        if (m_SdlApi == null)
         {
             Logger.Log("Could not set Vsync. SDL API is null!", Logger.LogSeverity.Error);
             return;

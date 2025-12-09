@@ -87,17 +87,17 @@ public class ToolGui
             DrawEngineStatusTool(Service.Get<ISceneManager>()!, Service.Get<ICameraManager>()!);
         }
 
-        if(m_SettingsWindowOpened)
+        if (m_SettingsWindowOpened)
         {
             DrawSettingsTool(Service.Get<IWindowPipeline>()!);
         }
     }
 
-public void DrawEngineStatusTool(ISceneManager sceneManager, ICameraManager cameraManager)
+    public void DrawEngineStatusTool(ISceneManager sceneManager, ICameraManager cameraManager)
     {
         // Must implement these in your code if they are not already.
         // I've provided placeholder implementations below.
-        
+
         if (ImGui.Begin("Inspector"))
         {
             if (ImGui.BeginTabBar("EngineTabs"))
@@ -122,7 +122,7 @@ public void DrawEngineStatusTool(ISceneManager sceneManager, ICameraManager came
                         ImGui.TableSetupColumn("Property", ImGuiTableColumnFlags.WidthFixed, 150.0f);
                         ImGui.TableSetupColumn("Value", ImGuiTableColumnFlags.WidthStretch);
                         ImGui.TableHeadersRow();
-                        
+
                         // Scene Name
                         ImGui.TableNextRow();
                         ImGui.TableSetColumnIndex(0); ImGui.Text("Name");
@@ -185,12 +185,12 @@ public void DrawEngineStatusTool(ISceneManager sceneManager, ICameraManager came
                             foreach (var obj in currentScene.GetAllGameObjects())
                             {
                                 // Use PushID to ensure unique ImGui IDs inside the loop
-                                ImGui.PushID(obj.Id.ToString()); 
-                                
+                                ImGui.PushID(obj.Id.ToString());
+
                                 if (ImGui.TreeNode(obj.Id.ToString(), $"{obj.Name} ({obj.Id.ToString()[..8]}...)"))
                                 {
                                     // Calls the helper function
-                                    var componentMap = GetPrivateComponentMap(obj); 
+                                    var componentMap = GetPrivateComponentMap(obj);
                                     if (componentMap != null)
                                     {
                                         ImGui.SeparatorText("Components");

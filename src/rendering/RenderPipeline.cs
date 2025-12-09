@@ -31,7 +31,7 @@ public class RenderPipeline : IRenderPipeline
     private uint m_InstanceVboId;
     private nuint m_InstanceBufferCapacityBytes = 0;
 
-    private uint m_UvRectVboId; 
+    private uint m_UvRectVboId;
     private nuint m_UvBufferCapacityBytes = 0;
 
     private unsafe Window* m_WindowHandler;
@@ -96,7 +96,7 @@ public class RenderPipeline : IRenderPipeline
             m_GlApi.BindBuffer(GLEnum.ArrayBuffer, m_InstanceVboId);
             m_GlApi.BufferSubData(GLEnum.ArrayBuffer, 0, (nuint)modelDataSizeInBytes, dataPtr);
         }
-        
+
         // UV
         var uvSpan = CollectionsMarshal.AsSpan(uvRects).Slice(0, instanceCount);
         fixed (Vector4* uvDataPtr = &MemoryMarshal.GetReference(uvSpan))
@@ -222,7 +222,7 @@ public class RenderPipeline : IRenderPipeline
             m_GlApi.BufferData(GLEnum.ArrayBuffer, (nuint)vertexSizeInBytes, v, GLEnum.StaticDraw);
         }
 
-        int stride = 4 * sizeof(float); 
+        int stride = 4 * sizeof(float);
         m_GlApi.VertexAttribPointer(0, 2, VertexAttribPointerType.Float, false, (uint)stride, (void*)0);
         m_GlApi.EnableVertexAttribArray(0);
         m_GlApi.VertexAttribPointer(1, 2, VertexAttribPointerType.Float, false, (uint)stride, (void*)(2 * sizeof(float)));
@@ -264,7 +264,7 @@ public class RenderPipeline : IRenderPipeline
         m_GlApi.EnableVertexAttribArray(uvRectAttribLocation);
         m_GlApi.VertexAttribPointer(
             uvRectAttribLocation,
-            4, 
+            4,
             VertexAttribPointerType.Float,
             false,
             (uint)uvRectSize,
