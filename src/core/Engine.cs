@@ -155,8 +155,8 @@ public class Engine
 
         if (m_SceneManager.CurrentScene != null)
         {
-            m_SceneManager.CurrentScene.SpriteRenderSystem.RenderSprites();
             m_SceneManager.CurrentScene.TileRenderSystem.RenderTiles();
+            m_SceneManager.CurrentScene.SpriteRenderSystem.RenderSprites();
         }
 
         m_Game.Render();
