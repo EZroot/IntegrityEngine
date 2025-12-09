@@ -148,11 +148,15 @@ public class Engine
         }
     }
 
-
     private void Update(float deltaTime)
     {
         m_ImGuiPipe.Tools.DrawToolsUpdate(deltaTime);
         m_Game.Update(deltaTime);
+
+        if(m_SceneManager.CurrentScene != null)
+        {
+            m_SceneManager.CurrentScene.AnimationRenderSystem.Update(deltaTime);
+        }
     }
 
     private void Render()

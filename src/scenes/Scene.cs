@@ -1,5 +1,7 @@
+using Integrity.Components;
 using Integrity.Objects;
 using Integrity.Rendering;
+using Integrity.Systems;
 
 namespace Integrity.Scenes;
 public class Scene
@@ -10,8 +12,10 @@ public class Scene
     private readonly Dictionary<Guid, GameObject> m_GameObjectsMap;
     private readonly List<GameObject> m_GameObjectsList;
     private SpriteRenderSystem m_SpriteRenderSystem;
+    private AnimationRenderSystem m_AnimationRenderSystem;
 
     public SpriteRenderSystem SpriteRenderSystem => m_SpriteRenderSystem;
+    public AnimationRenderSystem AnimationRenderSystem => m_AnimationRenderSystem;
 
     public Scene(string name)
     {
@@ -21,6 +25,7 @@ public class Scene
         m_GameObjectsMap = new Dictionary<Guid, GameObject>(capacity: 1024);
         m_GameObjectsList = new List<GameObject>(capacity: 1024);
         m_SpriteRenderSystem = new SpriteRenderSystem();
+        m_AnimationRenderSystem = new AnimationRenderSystem();
     }
 
     /// <summary>
@@ -42,6 +47,11 @@ public class Scene
         {
             m_GameObjectsList.Add(obj);
             m_SpriteRenderSystem.RegisterObject(obj);
+
+            if (obj.TryGetComponent<AnimationComponent>(out var animationComponent))
+            {
+                m_AnimationRenderSystem.RegisterObject(obj);
+            }
         }
     }
 

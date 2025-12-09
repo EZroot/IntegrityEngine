@@ -38,14 +38,14 @@ public class AnimationRenderSystem
             if (!animComp.IsPlaying || string.IsNullOrEmpty(animComp.CurrentAnimationName))
                 continue;
 
-            if (animComp.Animations.TryGetValue(animComp.CurrentAnimationName, out var frames) && frames.Count > 1)
+            if (animComp.Animations.TryGetValue(animComp.CurrentAnimationName, out var frames) && frames.Length > 1)
             {
                 animComp.FrameTimeAccumulator += deltaTime;
                 var currentFrame = frames[animComp.CurrentFrameIndex];
 
                 if (animComp.FrameTimeAccumulator >= currentFrame.Duration)
                 {
-                    animComp.CurrentFrameIndex = (animComp.CurrentFrameIndex + 1) % frames.Count;
+                    animComp.CurrentFrameIndex = (animComp.CurrentFrameIndex + 1) % frames.Length;
                     animComp.FrameTimeAccumulator -= currentFrame.Duration;
                     
                     spriteComp.SourceRect = frames[animComp.CurrentFrameIndex].SourceRect;

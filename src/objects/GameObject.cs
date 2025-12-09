@@ -37,4 +37,17 @@ public class GameObject
         Logger.Log($"Component of type {typeof(T).Name} not found in GameObject ({Name}).", Logger.LogSeverity.Warning);
         return default!;
     }
+
+    public bool TryGetComponent<T>(out T? comp) where T : IComponent
+    {
+        if (m_ComponentMap.TryGetValue(typeof(T), out var component))
+        {
+            comp = (T)component;
+            return true;
+        }
+
+        Logger.Log($"Component of type {typeof(T).Name} not found in GameObject ({Name}).", Logger.LogSeverity.Warning);
+        comp = (T)default;
+        return false;
+    }
 }
