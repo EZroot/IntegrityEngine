@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Numerics;
+using System.Linq;
 using Integrity.Interface;
 using Integrity.Utils;
 using Silk.NET.SDL;
@@ -153,10 +154,12 @@ public class Engine
         m_ImGuiPipe.Tools.DrawToolsUpdate(deltaTime);
         m_Game.Update(deltaTime);
 
+        m_Profiler.StartCpuProfile("Sprite_Animation");
         if(m_SceneManager.CurrentScene != null)
         {
             m_SceneManager.CurrentScene.AnimationRenderSystem.Update(deltaTime);
         }
+        m_Profiler.StopCpuProfile("Sprite_Animation");
     }
 
     private void Render()
@@ -168,11 +171,15 @@ public class Engine
         if (m_SceneManager.CurrentScene != null)
         {
             // Batch object positions by texture
-            m_Profiler.StartCpuProfile("Sprite_Sorting");
+            m_Profiler.StartCpuProfile("Sprite_Depth_Sorting");
+            m_SceneManager.CurrentScene.SortSpriteObjectsByDepth();
+            m_Profiler.StopCpuProfile("Sprite_Depth_Sorting");
+
             var sceneGameObjects = m_SceneManager.CurrentScene.GetAllSpriteObjects();
             m_RenderingBatchMap.Clear();
             m_UvBatchMap.Clear();
 
+            m_Profiler.StartCpuProfile("Sprite_Sorting");
             foreach (var obj in sceneGameObjects)
             {
                 if (obj.Sprite == null) continue;
@@ -212,8 +219,6 @@ public class Engine
                 
                 instancedUvRectList.Add(new Vector4(rectX, rectY, rectW, rectH));
             }
-
-
             m_Profiler.StopCpuProfile("Sprite_Sorting");
 
             m_Profiler.StartRenderProfile("Draw_Sprite_Instanced");
