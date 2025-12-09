@@ -12,7 +12,6 @@ public class AudioManager : IAudioManager
     private nint m_Device;
     private nint m_Context;
 
-    // 1. Storage for active sources
     private readonly List<uint> m_ActiveSources = new List<uint>();
 
     public AL AlApi => m_AlApi ?? throw new Exception("ALAPI isn't enabled!");
