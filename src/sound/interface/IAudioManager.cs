@@ -1,7 +1,12 @@
+using Integrity.Assets;
+using Silk.NET.OpenAL;
+
 namespace Integrity.Interface;
 public interface IAudioManager : IService
 {
+    public AL AlApi { get; }
     void Initialize();
-    void PlaySound(string soundPath);
-    unsafe void Shutdown();
+    void Update();
+    void PlaySound(AudioClip clip);
+    void Shutdown();
 }

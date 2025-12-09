@@ -64,17 +64,17 @@ public class SpriteRenderSystem
             float y = obj.Transform.Y;
             float scaleX = obj.Transform.ScaleX;
             float scaleY = obj.Transform.ScaleY;
-            float rot = obj.Transform.Rotation; 
-            
+            float rot = obj.Transform.Rotation;
+
             float spriteWidth = sprite.SourceRect.Width * scaleX;
             float spriteHeight = sprite.SourceRect.Height * scaleY;
             Vector2 pivot = obj.Sprite.Pivot;
 
             Matrix4x4 scaleMatrix = Matrix4x4.CreateScale(spriteWidth, spriteHeight, 1.0f);
-            Matrix4x4 rotationMatrix = Matrix4x4.CreateRotationZ(rot); 
+            Matrix4x4 rotationMatrix = Matrix4x4.CreateRotationZ(rot);
             Matrix4x4 translationMatrix = Matrix4x4.CreateTranslation(x, y, 0.0f);
             Matrix4x4 pivotTranslation = Matrix4x4.CreateTranslation(-pivot.X, -pivot.Y, 0.0f);
-            
+
             Matrix4x4 model = pivotTranslation * scaleMatrix * rotationMatrix * translationMatrix;
 
             instancedSpritePositionList.Add(model);

@@ -137,6 +137,7 @@ public class Engine
 
     private void Update(float deltaTime)
     {
+        m_AudioManager.Update();
         m_Game.Update(deltaTime);
 
         if (m_SceneManager.CurrentScene != null)

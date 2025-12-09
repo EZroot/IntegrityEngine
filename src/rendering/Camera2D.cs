@@ -44,7 +44,7 @@ public class Camera2D
             -1.0f,
             1.0f
         );
-        
+
         var snappedX = (int)Position.X;
         var snappedY = (int)Position.Y;
 

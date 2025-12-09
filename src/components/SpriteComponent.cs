@@ -10,7 +10,7 @@ public class SpriteComponent : IComponent
     public Texture Texture { get; }
     public Rect SourceRect { get; set; }
     public Vector2 Pivot => m_Pivot;
-    private Vector2 m_Pivot = new Vector2(0.5f,0.5f);
+    private Vector2 m_Pivot = new Vector2(0.5f, 0.5f);
 
     public SpriteComponent(Texture texture)
     {
