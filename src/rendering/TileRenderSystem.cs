@@ -49,8 +49,8 @@ public class TileRenderSystem
     private readonly Dictionary<Vector2, TileChunk> m_TileChunks = new();
     private readonly IRenderPipeline m_RenderPipe;
 
-    private const int TILE_SIZE = 16;
     private const int CHUNK_SIZE_TILES = 32;
+    private int m_TileSize = 32;
 
     private Matrix4x4 m_MatrixModel = Matrix4x4.Identity;
 
@@ -97,6 +97,15 @@ public class TileRenderSystem
     }
 
     /// <summary>
+    /// Sets a tilesize for regenerate chunk mesh. This should be called before you set the tiles.
+    /// </summary>
+    /// <param name="tileSize"></param>
+    public void SetTileSize(int tileSize = 32)
+    {
+        m_TileSize = tileSize;
+    }
+
+    /// <summary>
     /// Builds a static mesh for a chunk 
     /// </summary>
     private void RegenerateChunkMesh(TileChunk chunk)
@@ -106,8 +115,8 @@ public class TileRenderSystem
         float texW = chunk.Texture.Width;
         float texH = chunk.Texture.Height;
 
-        float chunkOffsetX = chunk.ChunkId.X * CHUNK_SIZE_TILES * TILE_SIZE;
-        float chunkOffsetY = chunk.ChunkId.Y * CHUNK_SIZE_TILES * TILE_SIZE;
+        float chunkOffsetX = chunk.ChunkId.X * CHUNK_SIZE_TILES * m_TileSize;
+        float chunkOffsetY = chunk.ChunkId.Y * CHUNK_SIZE_TILES * m_TileSize;
 
         foreach (var kvp in chunk.TileDataMap)
         {
@@ -119,8 +128,8 @@ public class TileRenderSystem
 
             Rect sourceRect = tileData.SourceRect;
 
-            float worldX = chunkOffsetX + localX * TILE_SIZE;
-            float worldY = chunkOffsetY + localY * TILE_SIZE;
+            float worldX = chunkOffsetX + localX * m_TileSize;
+            float worldY = chunkOffsetY + localY * m_TileSize;
 
             float rectX = sourceRect.X / texW;
             float rectY = sourceRect.Y / texH;
@@ -134,22 +143,22 @@ public class TileRenderSystem
 
             float uv_bottom_v = rectY + rectH;
 
-            chunk.Vertices.Add(worldX); chunk.Vertices.Add(worldY + TILE_SIZE);
+            chunk.Vertices.Add(worldX); chunk.Vertices.Add(worldY + m_TileSize);
             chunk.Vertices.Add(uv_left_u); chunk.Vertices.Add(uv_bottom_v);
 
             chunk.Vertices.Add(worldX); chunk.Vertices.Add(worldY);
             chunk.Vertices.Add(uv_left_u); chunk.Vertices.Add(uv_top_v);
 
-            chunk.Vertices.Add(worldX + TILE_SIZE); chunk.Vertices.Add(worldY);
+            chunk.Vertices.Add(worldX + m_TileSize); chunk.Vertices.Add(worldY);
             chunk.Vertices.Add(uv_right_u); chunk.Vertices.Add(uv_top_v);
 
-            chunk.Vertices.Add(worldX); chunk.Vertices.Add(worldY + TILE_SIZE);
+            chunk.Vertices.Add(worldX); chunk.Vertices.Add(worldY + m_TileSize);
             chunk.Vertices.Add(uv_left_u); chunk.Vertices.Add(uv_bottom_v);
 
-            chunk.Vertices.Add(worldX + TILE_SIZE); chunk.Vertices.Add(worldY);
+            chunk.Vertices.Add(worldX + m_TileSize); chunk.Vertices.Add(worldY);
             chunk.Vertices.Add(uv_right_u); chunk.Vertices.Add(uv_top_v);
 
-            chunk.Vertices.Add(worldX + TILE_SIZE); chunk.Vertices.Add(worldY + TILE_SIZE);
+            chunk.Vertices.Add(worldX + m_TileSize); chunk.Vertices.Add(worldY + m_TileSize);
             chunk.Vertices.Add(uv_right_u); chunk.Vertices.Add(uv_bottom_v);
         }
     }
