@@ -1,4 +1,3 @@
-
 using System.Collections.ObjectModel;
 using static Integrity.Tools.Profiler;
 namespace Integrity.Interface;
