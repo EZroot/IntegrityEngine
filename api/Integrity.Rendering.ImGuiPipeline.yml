@@ -20,9 +20,9 @@ items:
   fullName: Integrity.Rendering.ImGuiPipeline
   type: Class
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/ImguiPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/ImguiPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Rendering
   syntax:
     content: 'public class ImGuiPipeline : IImGuiPipeline, IService'
@@ -52,9 +52,9 @@ items:
   fullName: Integrity.Rendering.ImGuiPipeline.Initialize(Silk.NET.OpenGL.GL, Silk.NET.SDL.Sdl, Silk.NET.SDL.Window*, void*)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/ImguiPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/ImguiPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Rendering
   example: []
   syntax:
@@ -87,9 +87,9 @@ items:
   fullName: Integrity.Rendering.ImGuiPipeline.BeginFrame()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/ImguiPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/ImguiPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Rendering
   example: []
   syntax:
@@ -110,9 +110,9 @@ items:
   fullName: Integrity.Rendering.ImGuiPipeline.EndFrame()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/ImguiPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/ImguiPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Rendering
   example: []
   syntax:
@@ -133,9 +133,9 @@ items:
   fullName: Integrity.Rendering.ImGuiPipeline.ProcessEvents(Silk.NET.SDL.Event)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/ImguiPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/ImguiPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Rendering
   summary: Maps SDL events to ImGui's internal Input/Output system.
   example: []
@@ -160,9 +160,9 @@ items:
   fullName: Integrity.Rendering.ImGuiPipeline.RenderDrawDataOpenGL(ImGuiNET.ImDrawDataPtr)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/ImguiPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/ImguiPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Rendering
   summary: Executes all OpenGL draw calls based on the generated ImGui draw data.
   example: []
@@ -185,9 +185,9 @@ items:
   fullName: Integrity.Rendering.ImGuiPipeline.ImGuiPipeline()
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/ImguiPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/ImguiPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Rendering
   syntax:
     content: public ImGuiPipeline()
@@ -208,9 +208,9 @@ items:
   fullName: Integrity.Rendering.ImGuiPipeline.Tools
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/ImguiPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/ImguiPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Rendering
   example: []
   syntax:

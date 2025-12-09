@@ -9,7 +9,6 @@ items:
   - Integrity.Components.TransformComponent.Rotation
   - Integrity.Components.TransformComponent.ScaleX
   - Integrity.Components.TransformComponent.ScaleY
-  - Integrity.Components.TransformComponent.Shutdown
   - Integrity.Components.TransformComponent.X
   - Integrity.Components.TransformComponent.Y
   langs:
@@ -20,9 +19,9 @@ items:
   fullName: Integrity.Components.TransformComponent
   type: Class
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/components/TransformComponent.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/components/TransformComponent.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Components
   syntax:
     content: 'public class TransformComponent : IComponent'
@@ -51,9 +50,9 @@ items:
   fullName: Integrity.Components.TransformComponent.X
   type: Field
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/components/TransformComponent.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/components/TransformComponent.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Components
   syntax:
     content: public float X
@@ -72,9 +71,9 @@ items:
   fullName: Integrity.Components.TransformComponent.Y
   type: Field
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/components/TransformComponent.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/components/TransformComponent.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Components
   syntax:
     content: public float Y
@@ -93,9 +92,9 @@ items:
   fullName: Integrity.Components.TransformComponent.Rotation
   type: Field
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/components/TransformComponent.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/components/TransformComponent.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Components
   syntax:
     content: public float Rotation
@@ -114,9 +113,9 @@ items:
   fullName: Integrity.Components.TransformComponent.ScaleX
   type: Field
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/components/TransformComponent.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/components/TransformComponent.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Components
   syntax:
     content: public float ScaleX
@@ -135,9 +134,9 @@ items:
   fullName: Integrity.Components.TransformComponent.ScaleY
   type: Field
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/components/TransformComponent.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/components/TransformComponent.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Components
   syntax:
     content: public float ScaleY
@@ -156,9 +155,9 @@ items:
   fullName: Integrity.Components.TransformComponent.TransformComponent()
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/components/TransformComponent.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/components/TransformComponent.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Components
   syntax:
     content: public TransformComponent()
@@ -167,26 +166,6 @@ items:
   nameWithType.vb: TransformComponent.New()
   fullName.vb: Integrity.Components.TransformComponent.New()
   name.vb: New()
-- uid: Integrity.Components.TransformComponent.Shutdown
-  commentId: M:Integrity.Components.TransformComponent.Shutdown
-  id: Shutdown
-  parent: Integrity.Components.TransformComponent
-  langs:
-  - csharp
-  - vb
-  name: Shutdown()
-  nameWithType: TransformComponent.Shutdown()
-  fullName: Integrity.Components.TransformComponent.Shutdown()
-  type: Method
-  source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/components/TransformComponent.cs
-  assemblies:
-  - Integrity
-  namespace: Integrity.Components
-  syntax:
-    content: public void Shutdown()
-    content.vb: Public Sub Shutdown()
-  overload: Integrity.Components.TransformComponent.Shutdown*
 references:
 - uid: Integrity.Components
   commentId: N:Integrity.Components
@@ -508,10 +487,3 @@ references:
   nameWithType.vb: TransformComponent.New
   fullName.vb: Integrity.Components.TransformComponent.New
   name.vb: New
-- uid: Integrity.Components.TransformComponent.Shutdown*
-  commentId: Overload:Integrity.Components.TransformComponent.Shutdown
-  isExternal: true
-  href: Integrity.Components.TransformComponent.html#Integrity_Components_TransformComponent_Shutdown
-  name: Shutdown
-  nameWithType: TransformComponent.Shutdown
-  fullName: Integrity.Components.TransformComponent.Shutdown

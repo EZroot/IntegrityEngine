@@ -13,7 +13,7 @@ items:
   fullName: Integrity.Io
   type: Namespace
   assemblies:
-  - Integrity
+  - Integrity2D
 references:
 - uid: Integrity.Io.InputManager
   commentId: T:Integrity.Io.InputManager

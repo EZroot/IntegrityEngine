@@ -13,7 +13,7 @@ items:
   fullName: Integrity.Factories
   type: Namespace
   assemblies:
-  - Integrity
+  - Integrity2D
 references:
 - uid: Integrity.Factories.GameObjectFactory
   commentId: T:Integrity.Factories.GameObjectFactory

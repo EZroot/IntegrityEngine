@@ -18,9 +18,9 @@ items:
   fullName: Integrity.Interface.IWindowPipeline
   type: Interface
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IWindowPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/interface/IWindowPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: 'public interface IWindowPipeline : IService'
@@ -37,9 +37,9 @@ items:
   fullName: Integrity.Interface.IWindowPipeline.InitializeWindow(Silk.NET.SDL.Sdl, string, int, int, int)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IWindowPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/interface/IWindowPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void InitializeWindow(Sdl sdlApi, string title, int width, int height, int useVsync)
@@ -71,9 +71,9 @@ items:
   fullName: Integrity.Interface.IWindowPipeline.SetVSync(int)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IWindowPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/interface/IWindowPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void SetVSync(int useVsync)
@@ -97,9 +97,9 @@ items:
   fullName: Integrity.Interface.IWindowPipeline.ShouldClose()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IWindowPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/interface/IWindowPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: bool ShouldClose()
@@ -119,9 +119,9 @@ items:
   fullName: Integrity.Interface.IWindowPipeline.WindowHandler
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IWindowPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/interface/IWindowPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: Window* WindowHandler { get; }
@@ -142,9 +142,9 @@ items:
   fullName: Integrity.Interface.IWindowPipeline.GlContext
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IWindowPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/interface/IWindowPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void* GlContext { get; }

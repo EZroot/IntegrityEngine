@@ -13,9 +13,9 @@ items:
   fullName: Integrity.Interface.IService
   type: Interface
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/core/interface/IService.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/core/interface/IService.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: public interface IService

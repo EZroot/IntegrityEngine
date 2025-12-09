@@ -16,9 +16,9 @@ items:
   fullName: Integrity.Io.InputManager
   type: Class
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/io/InputManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/io/InputManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Io
   syntax:
     content: 'public class InputManager : IInputManager, IService'
@@ -48,9 +48,9 @@ items:
   fullName: Integrity.Io.InputManager.ProcessInput(Silk.NET.SDL.Event)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/io/InputManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/io/InputManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Io
   summary: >-
     Processes a single SDL event and updates the internal key states.
@@ -78,9 +78,9 @@ items:
   fullName: Integrity.Io.InputManager.IsKeyDown(Silk.NET.SDL.Scancode)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/io/InputManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/io/InputManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Io
   summary: >-
     Checks if a key is currently in the down state. 
@@ -112,9 +112,9 @@ items:
   fullName: Integrity.Io.InputManager.InputManager()
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/io/InputManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/io/InputManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Io
   syntax:
     content: public InputManager()

@@ -124,90 +124,6 @@ references:
   commentId: Overload:Integrity.Assets.AssetInfo.Type
   fullName: Integrity.Assets.AssetInfo.Type
   nameWithType: AssetInfo.Type
-- uid: Integrity.Assets.Texture
-  name: Texture
-  href: api/Integrity.Assets.Texture.html
-  commentId: T:Integrity.Assets.Texture
-  fullName: Integrity.Assets.Texture
-  nameWithType: Texture
-- uid: Integrity.Assets.Texture.#ctor(Silk.NET.OpenGL.GL,Integrity.Assets.ImageData)
-  name: Texture(GL, ImageData)
-  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture__ctor_Silk_NET_OpenGL_GL_Integrity_Assets_ImageData_
-  commentId: M:Integrity.Assets.Texture.#ctor(Silk.NET.OpenGL.GL,Integrity.Assets.ImageData)
-  name.vb: New(GL, ImageData)
-  fullName: Integrity.Assets.Texture.Texture(Silk.NET.OpenGL.GL, Integrity.Assets.ImageData)
-  fullName.vb: Integrity.Assets.Texture.New(Silk.NET.OpenGL.GL, Integrity.Assets.ImageData)
-  nameWithType: Texture.Texture(GL, ImageData)
-  nameWithType.vb: Texture.New(GL, ImageData)
-- uid: Integrity.Assets.Texture.#ctor*
-  name: Texture
-  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture__ctor_
-  commentId: Overload:Integrity.Assets.Texture.#ctor
-  name.vb: New
-  fullName: Integrity.Assets.Texture.Texture
-  fullName.vb: Integrity.Assets.Texture.New
-  nameWithType: Texture.Texture
-  nameWithType.vb: Texture.New
-- uid: Integrity.Assets.Texture.Dispose
-  name: Dispose()
-  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_Dispose
-  commentId: M:Integrity.Assets.Texture.Dispose
-  fullName: Integrity.Assets.Texture.Dispose()
-  nameWithType: Texture.Dispose()
-- uid: Integrity.Assets.Texture.Dispose*
-  name: Dispose
-  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_Dispose_
-  commentId: Overload:Integrity.Assets.Texture.Dispose
-  fullName: Integrity.Assets.Texture.Dispose
-  nameWithType: Texture.Dispose
-- uid: Integrity.Assets.Texture.Height
-  name: Height
-  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_Height
-  commentId: P:Integrity.Assets.Texture.Height
-  fullName: Integrity.Assets.Texture.Height
-  nameWithType: Texture.Height
-- uid: Integrity.Assets.Texture.Height*
-  name: Height
-  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_Height_
-  commentId: Overload:Integrity.Assets.Texture.Height
-  fullName: Integrity.Assets.Texture.Height
-  nameWithType: Texture.Height
-- uid: Integrity.Assets.Texture.TextureId
-  name: TextureId
-  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_TextureId
-  commentId: P:Integrity.Assets.Texture.TextureId
-  fullName: Integrity.Assets.Texture.TextureId
-  nameWithType: Texture.TextureId
-- uid: Integrity.Assets.Texture.TextureId*
-  name: TextureId
-  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_TextureId_
-  commentId: Overload:Integrity.Assets.Texture.TextureId
-  fullName: Integrity.Assets.Texture.TextureId
-  nameWithType: Texture.TextureId
-- uid: Integrity.Assets.Texture.Use(Silk.NET.OpenGL.TextureUnit)
-  name: Use(TextureUnit)
-  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_Use_Silk_NET_OpenGL_TextureUnit_
-  commentId: M:Integrity.Assets.Texture.Use(Silk.NET.OpenGL.TextureUnit)
-  fullName: Integrity.Assets.Texture.Use(Silk.NET.OpenGL.TextureUnit)
-  nameWithType: Texture.Use(TextureUnit)
-- uid: Integrity.Assets.Texture.Use*
-  name: Use
-  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_Use_
-  commentId: Overload:Integrity.Assets.Texture.Use
-  fullName: Integrity.Assets.Texture.Use
-  nameWithType: Texture.Use
-- uid: Integrity.Assets.Texture.Width
-  name: Width
-  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_Width
-  commentId: P:Integrity.Assets.Texture.Width
-  fullName: Integrity.Assets.Texture.Width
-  nameWithType: Texture.Width
-- uid: Integrity.Assets.Texture.Width*
-  name: Width
-  href: api/Integrity.Assets.Texture.html#Integrity_Assets_Texture_Width_
-  commentId: Overload:Integrity.Assets.Texture.Width
-  fullName: Integrity.Assets.Texture.Width
-  nameWithType: Texture.Width
 - uid: Integrity.Assets.ImageData
   name: ImageData
   href: api/Integrity.Assets.ImageData.html
@@ -256,12 +172,237 @@ references:
   commentId: F:Integrity.Assets.ImageData.Width
   fullName: Integrity.Assets.ImageData.Width
   nameWithType: ImageData.Width
+- uid: Integrity.Assets.Texture
+  name: Texture
+  href: api/Integrity.Assets.GLTexture.html
+  commentId: T:Integrity.Assets.Texture
+  fullName: Integrity.Assets.Texture
+  nameWithType: Texture
+- uid: Integrity.Assets.Texture.#ctor(Silk.NET.OpenGL.GL,Integrity.Assets.ImageData)
+  name: Texture(GL, ImageData)
+  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_Texture__ctor_Silk_NET_OpenGL_GL_Integrity_Assets_ImageData_
+  commentId: M:Integrity.Assets.Texture.#ctor(Silk.NET.OpenGL.GL,Integrity.Assets.ImageData)
+  name.vb: New(GL, ImageData)
+  fullName: Integrity.Assets.Texture.Texture(Silk.NET.OpenGL.GL, Integrity.Assets.ImageData)
+  fullName.vb: Integrity.Assets.Texture.New(Silk.NET.OpenGL.GL, Integrity.Assets.ImageData)
+  nameWithType: Texture.Texture(GL, ImageData)
+  nameWithType.vb: Texture.New(GL, ImageData)
+- uid: Integrity.Assets.Texture.#ctor*
+  name: Texture
+  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_Texture__ctor_
+  commentId: Overload:Integrity.Assets.Texture.#ctor
+  name.vb: New
+  fullName: Integrity.Assets.Texture.Texture
+  fullName.vb: Integrity.Assets.Texture.New
+  nameWithType: Texture.Texture
+  nameWithType.vb: Texture.New
+- uid: Integrity.Assets.Texture.Dispose
+  name: Dispose()
+  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_Texture_Dispose
+  commentId: M:Integrity.Assets.Texture.Dispose
+  fullName: Integrity.Assets.Texture.Dispose()
+  nameWithType: Texture.Dispose()
+- uid: Integrity.Assets.Texture.Dispose*
+  name: Dispose
+  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_Texture_Dispose_
+  commentId: Overload:Integrity.Assets.Texture.Dispose
+  fullName: Integrity.Assets.Texture.Dispose
+  nameWithType: Texture.Dispose
+- uid: Integrity.Assets.Texture.Height
+  name: Height
+  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_Texture_Height
+  commentId: P:Integrity.Assets.Texture.Height
+  fullName: Integrity.Assets.Texture.Height
+  nameWithType: Texture.Height
+- uid: Integrity.Assets.Texture.Height*
+  name: Height
+  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_Texture_Height_
+  commentId: Overload:Integrity.Assets.Texture.Height
+  fullName: Integrity.Assets.Texture.Height
+  nameWithType: Texture.Height
+- uid: Integrity.Assets.Texture.TextureId
+  name: TextureId
+  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_Texture_TextureId
+  commentId: P:Integrity.Assets.Texture.TextureId
+  fullName: Integrity.Assets.Texture.TextureId
+  nameWithType: Texture.TextureId
+- uid: Integrity.Assets.Texture.TextureId*
+  name: TextureId
+  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_Texture_TextureId_
+  commentId: Overload:Integrity.Assets.Texture.TextureId
+  fullName: Integrity.Assets.Texture.TextureId
+  nameWithType: Texture.TextureId
+- uid: Integrity.Assets.Texture.Use(Silk.NET.OpenGL.TextureUnit)
+  name: Use(TextureUnit)
+  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_Texture_Use_Silk_NET_OpenGL_TextureUnit_
+  commentId: M:Integrity.Assets.Texture.Use(Silk.NET.OpenGL.TextureUnit)
+  fullName: Integrity.Assets.Texture.Use(Silk.NET.OpenGL.TextureUnit)
+  nameWithType: Texture.Use(TextureUnit)
+- uid: Integrity.Assets.Texture.Use*
+  name: Use
+  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_Texture_Use_
+  commentId: Overload:Integrity.Assets.Texture.Use
+  fullName: Integrity.Assets.Texture.Use
+  nameWithType: Texture.Use
+- uid: Integrity.Assets.Texture.Width
+  name: Width
+  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_Texture_Width
+  commentId: P:Integrity.Assets.Texture.Width
+  fullName: Integrity.Assets.Texture.Width
+  nameWithType: Texture.Width
+- uid: Integrity.Assets.Texture.Width*
+  name: Width
+  href: api/Integrity.Assets.GLTexture.html#Integrity_Assets_Texture_Width_
+  commentId: Overload:Integrity.Assets.Texture.Width
+  fullName: Integrity.Assets.Texture.Width
+  nameWithType: Texture.Width
 - uid: Integrity.Components
   name: Integrity.Components
   href: api/Integrity.Components.html
   commentId: N:Integrity.Components
   fullName: Integrity.Components
   nameWithType: Integrity.Components
+- uid: Integrity.Components.AnimationComponent
+  name: AnimationComponent
+  href: api/Integrity.Components.AnimationComponent.html
+  commentId: T:Integrity.Components.AnimationComponent
+  fullName: Integrity.Components.AnimationComponent
+  nameWithType: AnimationComponent
+- uid: Integrity.Components.AnimationComponent.#ctor
+  name: AnimationComponent()
+  href: api/Integrity.Components.AnimationComponent.html#Integrity_Components_AnimationComponent__ctor
+  commentId: M:Integrity.Components.AnimationComponent.#ctor
+  name.vb: New()
+  fullName: Integrity.Components.AnimationComponent.AnimationComponent()
+  fullName.vb: Integrity.Components.AnimationComponent.New()
+  nameWithType: AnimationComponent.AnimationComponent()
+  nameWithType.vb: AnimationComponent.New()
+- uid: Integrity.Components.AnimationComponent.#ctor*
+  name: AnimationComponent
+  href: api/Integrity.Components.AnimationComponent.html#Integrity_Components_AnimationComponent__ctor_
+  commentId: Overload:Integrity.Components.AnimationComponent.#ctor
+  name.vb: New
+  fullName: Integrity.Components.AnimationComponent.AnimationComponent
+  fullName.vb: Integrity.Components.AnimationComponent.New
+  nameWithType: AnimationComponent.AnimationComponent
+  nameWithType.vb: AnimationComponent.New
+- uid: Integrity.Components.AnimationComponent.AddAnimation(System.String,Integrity.Components.AnimationFrame[])
+  name: AddAnimation(string, AnimationFrame[])
+  href: api/Integrity.Components.AnimationComponent.html#Integrity_Components_AnimationComponent_AddAnimation_System_String_Integrity_Components_AnimationFrame___
+  commentId: M:Integrity.Components.AnimationComponent.AddAnimation(System.String,Integrity.Components.AnimationFrame[])
+  name.vb: AddAnimation(String, AnimationFrame())
+  fullName: Integrity.Components.AnimationComponent.AddAnimation(string, Integrity.Components.AnimationFrame[])
+  fullName.vb: Integrity.Components.AnimationComponent.AddAnimation(String, Integrity.Components.AnimationFrame())
+  nameWithType: AnimationComponent.AddAnimation(string, AnimationFrame[])
+  nameWithType.vb: AnimationComponent.AddAnimation(String, AnimationFrame())
+- uid: Integrity.Components.AnimationComponent.AddAnimation*
+  name: AddAnimation
+  href: api/Integrity.Components.AnimationComponent.html#Integrity_Components_AnimationComponent_AddAnimation_
+  commentId: Overload:Integrity.Components.AnimationComponent.AddAnimation
+  fullName: Integrity.Components.AnimationComponent.AddAnimation
+  nameWithType: AnimationComponent.AddAnimation
+- uid: Integrity.Components.AnimationComponent.Animations
+  name: Animations
+  href: api/Integrity.Components.AnimationComponent.html#Integrity_Components_AnimationComponent_Animations
+  commentId: F:Integrity.Components.AnimationComponent.Animations
+  fullName: Integrity.Components.AnimationComponent.Animations
+  nameWithType: AnimationComponent.Animations
+- uid: Integrity.Components.AnimationComponent.CurrentAnimationName
+  name: CurrentAnimationName
+  href: api/Integrity.Components.AnimationComponent.html#Integrity_Components_AnimationComponent_CurrentAnimationName
+  commentId: P:Integrity.Components.AnimationComponent.CurrentAnimationName
+  fullName: Integrity.Components.AnimationComponent.CurrentAnimationName
+  nameWithType: AnimationComponent.CurrentAnimationName
+- uid: Integrity.Components.AnimationComponent.CurrentAnimationName*
+  name: CurrentAnimationName
+  href: api/Integrity.Components.AnimationComponent.html#Integrity_Components_AnimationComponent_CurrentAnimationName_
+  commentId: Overload:Integrity.Components.AnimationComponent.CurrentAnimationName
+  fullName: Integrity.Components.AnimationComponent.CurrentAnimationName
+  nameWithType: AnimationComponent.CurrentAnimationName
+- uid: Integrity.Components.AnimationComponent.CurrentFrameIndex
+  name: CurrentFrameIndex
+  href: api/Integrity.Components.AnimationComponent.html#Integrity_Components_AnimationComponent_CurrentFrameIndex
+  commentId: P:Integrity.Components.AnimationComponent.CurrentFrameIndex
+  fullName: Integrity.Components.AnimationComponent.CurrentFrameIndex
+  nameWithType: AnimationComponent.CurrentFrameIndex
+- uid: Integrity.Components.AnimationComponent.CurrentFrameIndex*
+  name: CurrentFrameIndex
+  href: api/Integrity.Components.AnimationComponent.html#Integrity_Components_AnimationComponent_CurrentFrameIndex_
+  commentId: Overload:Integrity.Components.AnimationComponent.CurrentFrameIndex
+  fullName: Integrity.Components.AnimationComponent.CurrentFrameIndex
+  nameWithType: AnimationComponent.CurrentFrameIndex
+- uid: Integrity.Components.AnimationComponent.FrameTimeAccumulator
+  name: FrameTimeAccumulator
+  href: api/Integrity.Components.AnimationComponent.html#Integrity_Components_AnimationComponent_FrameTimeAccumulator
+  commentId: P:Integrity.Components.AnimationComponent.FrameTimeAccumulator
+  fullName: Integrity.Components.AnimationComponent.FrameTimeAccumulator
+  nameWithType: AnimationComponent.FrameTimeAccumulator
+- uid: Integrity.Components.AnimationComponent.FrameTimeAccumulator*
+  name: FrameTimeAccumulator
+  href: api/Integrity.Components.AnimationComponent.html#Integrity_Components_AnimationComponent_FrameTimeAccumulator_
+  commentId: Overload:Integrity.Components.AnimationComponent.FrameTimeAccumulator
+  fullName: Integrity.Components.AnimationComponent.FrameTimeAccumulator
+  nameWithType: AnimationComponent.FrameTimeAccumulator
+- uid: Integrity.Components.AnimationComponent.IsPlaying
+  name: IsPlaying
+  href: api/Integrity.Components.AnimationComponent.html#Integrity_Components_AnimationComponent_IsPlaying
+  commentId: P:Integrity.Components.AnimationComponent.IsPlaying
+  fullName: Integrity.Components.AnimationComponent.IsPlaying
+  nameWithType: AnimationComponent.IsPlaying
+- uid: Integrity.Components.AnimationComponent.IsPlaying*
+  name: IsPlaying
+  href: api/Integrity.Components.AnimationComponent.html#Integrity_Components_AnimationComponent_IsPlaying_
+  commentId: Overload:Integrity.Components.AnimationComponent.IsPlaying
+  fullName: Integrity.Components.AnimationComponent.IsPlaying
+  nameWithType: AnimationComponent.IsPlaying
+- uid: Integrity.Components.AnimationFrame
+  name: AnimationFrame
+  href: api/Integrity.Components.AnimationFrame.html
+  commentId: T:Integrity.Components.AnimationFrame
+  fullName: Integrity.Components.AnimationFrame
+  nameWithType: AnimationFrame
+- uid: Integrity.Components.AnimationFrame.#ctor(Integrity.Utils.Rect,System.Single)
+  name: AnimationFrame(Rect, float)
+  href: api/Integrity.Components.AnimationFrame.html#Integrity_Components_AnimationFrame__ctor_Integrity_Utils_Rect_System_Single_
+  commentId: M:Integrity.Components.AnimationFrame.#ctor(Integrity.Utils.Rect,System.Single)
+  name.vb: New(Rect, Single)
+  fullName: Integrity.Components.AnimationFrame.AnimationFrame(Integrity.Utils.Rect, float)
+  fullName.vb: Integrity.Components.AnimationFrame.New(Integrity.Utils.Rect, Single)
+  nameWithType: AnimationFrame.AnimationFrame(Rect, float)
+  nameWithType.vb: AnimationFrame.New(Rect, Single)
+- uid: Integrity.Components.AnimationFrame.#ctor*
+  name: AnimationFrame
+  href: api/Integrity.Components.AnimationFrame.html#Integrity_Components_AnimationFrame__ctor_
+  commentId: Overload:Integrity.Components.AnimationFrame.#ctor
+  name.vb: New
+  fullName: Integrity.Components.AnimationFrame.AnimationFrame
+  fullName.vb: Integrity.Components.AnimationFrame.New
+  nameWithType: AnimationFrame.AnimationFrame
+  nameWithType.vb: AnimationFrame.New
+- uid: Integrity.Components.AnimationFrame.Duration
+  name: Duration
+  href: api/Integrity.Components.AnimationFrame.html#Integrity_Components_AnimationFrame_Duration
+  commentId: P:Integrity.Components.AnimationFrame.Duration
+  fullName: Integrity.Components.AnimationFrame.Duration
+  nameWithType: AnimationFrame.Duration
+- uid: Integrity.Components.AnimationFrame.Duration*
+  name: Duration
+  href: api/Integrity.Components.AnimationFrame.html#Integrity_Components_AnimationFrame_Duration_
+  commentId: Overload:Integrity.Components.AnimationFrame.Duration
+  fullName: Integrity.Components.AnimationFrame.Duration
+  nameWithType: AnimationFrame.Duration
+- uid: Integrity.Components.AnimationFrame.SourceRect
+  name: SourceRect
+  href: api/Integrity.Components.AnimationFrame.html#Integrity_Components_AnimationFrame_SourceRect
+  commentId: P:Integrity.Components.AnimationFrame.SourceRect
+  fullName: Integrity.Components.AnimationFrame.SourceRect
+  nameWithType: AnimationFrame.SourceRect
+- uid: Integrity.Components.AnimationFrame.SourceRect*
+  name: SourceRect
+  href: api/Integrity.Components.AnimationFrame.html#Integrity_Components_AnimationFrame_SourceRect_
+  commentId: Overload:Integrity.Components.AnimationFrame.SourceRect
+  fullName: Integrity.Components.AnimationFrame.SourceRect
+  nameWithType: AnimationFrame.SourceRect
 - uid: Integrity.Components.SpriteComponent
   name: SpriteComponent
   href: api/Integrity.Components.SpriteComponent.html
@@ -352,18 +493,6 @@ references:
   commentId: F:Integrity.Components.TransformComponent.ScaleY
   fullName: Integrity.Components.TransformComponent.ScaleY
   nameWithType: TransformComponent.ScaleY
-- uid: Integrity.Components.TransformComponent.Shutdown
-  name: Shutdown()
-  href: api/Integrity.Components.TransformComponent.html#Integrity_Components_TransformComponent_Shutdown
-  commentId: M:Integrity.Components.TransformComponent.Shutdown
-  fullName: Integrity.Components.TransformComponent.Shutdown()
-  nameWithType: TransformComponent.Shutdown()
-- uid: Integrity.Components.TransformComponent.Shutdown*
-  name: Shutdown
-  href: api/Integrity.Components.TransformComponent.html#Integrity_Components_TransformComponent_Shutdown_
-  commentId: Overload:Integrity.Components.TransformComponent.Shutdown
-  fullName: Integrity.Components.TransformComponent.Shutdown
-  nameWithType: TransformComponent.Shutdown
 - uid: Integrity.Components.TransformComponent.X
   name: X
   href: api/Integrity.Components.TransformComponent.html#Integrity_Components_TransformComponent_X
@@ -1108,21 +1237,36 @@ references:
   commentId: T:Integrity.Interface.IRenderPipeline
   fullName: Integrity.Interface.IRenderPipeline
   nameWithType: IRenderPipeline
-- uid: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
-  name: DrawSpritesInstanced(Texture, in List<Matrix4x4>, int)
-  href: api/Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_DrawSpritesInstanced_Integrity_Assets_Texture_System_Collections_Generic_List_System_Numerics_Matrix4x4___System_Int32_
-  commentId: M:Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
-  name.vb: DrawSpritesInstanced(Texture, List(Of Matrix4x4), Integer)
-  fullName: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture, in System.Collections.Generic.List<System.Numerics.Matrix4x4>, int)
-  fullName.vb: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture, System.Collections.Generic.List(Of System.Numerics.Matrix4x4), Integer)
-  nameWithType: IRenderPipeline.DrawSpritesInstanced(Texture, in List<Matrix4x4>, int)
-  nameWithType.vb: IRenderPipeline.DrawSpritesInstanced(Texture, List(Of Matrix4x4), Integer)
+- uid: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Collections.Generic.List{System.Numerics.Vector4}@,System.Int32)
+  name: DrawSpritesInstanced(Texture, in List<Matrix4x4>, in List<Vector4>, int)
+  href: api/Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_DrawSpritesInstanced_Integrity_Assets_Texture_System_Collections_Generic_List_System_Numerics_Matrix4x4___System_Collections_Generic_List_System_Numerics_Vector4___System_Int32_
+  commentId: M:Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Collections.Generic.List{System.Numerics.Vector4}@,System.Int32)
+  name.vb: DrawSpritesInstanced(Texture, List(Of Matrix4x4), List(Of Vector4), Integer)
+  fullName: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture, in System.Collections.Generic.List<System.Numerics.Matrix4x4>, in System.Collections.Generic.List<System.Numerics.Vector4>, int)
+  fullName.vb: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture, System.Collections.Generic.List(Of System.Numerics.Matrix4x4), System.Collections.Generic.List(Of System.Numerics.Vector4), Integer)
+  nameWithType: IRenderPipeline.DrawSpritesInstanced(Texture, in List<Matrix4x4>, in List<Vector4>, int)
+  nameWithType.vb: IRenderPipeline.DrawSpritesInstanced(Texture, List(Of Matrix4x4), List(Of Vector4), Integer)
 - uid: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced*
   name: DrawSpritesInstanced
   href: api/Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_DrawSpritesInstanced_
   commentId: Overload:Integrity.Interface.IRenderPipeline.DrawSpritesInstanced
   fullName: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced
   nameWithType: IRenderPipeline.DrawSpritesInstanced
+- uid: Integrity.Interface.IRenderPipeline.DrawStaticMesh(Integrity.Assets.Texture,System.UInt32,System.Int32,System.Numerics.Matrix4x4@)
+  name: DrawStaticMesh(Texture, uint, int, in Matrix4x4)
+  href: api/Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_DrawStaticMesh_Integrity_Assets_Texture_System_UInt32_System_Int32_System_Numerics_Matrix4x4__
+  commentId: M:Integrity.Interface.IRenderPipeline.DrawStaticMesh(Integrity.Assets.Texture,System.UInt32,System.Int32,System.Numerics.Matrix4x4@)
+  name.vb: DrawStaticMesh(Texture, UInteger, Integer, Matrix4x4)
+  fullName: Integrity.Interface.IRenderPipeline.DrawStaticMesh(Integrity.Assets.Texture, uint, int, in System.Numerics.Matrix4x4)
+  fullName.vb: Integrity.Interface.IRenderPipeline.DrawStaticMesh(Integrity.Assets.Texture, UInteger, Integer, System.Numerics.Matrix4x4)
+  nameWithType: IRenderPipeline.DrawStaticMesh(Texture, uint, int, in Matrix4x4)
+  nameWithType.vb: IRenderPipeline.DrawStaticMesh(Texture, UInteger, Integer, Matrix4x4)
+- uid: Integrity.Interface.IRenderPipeline.DrawStaticMesh*
+  name: DrawStaticMesh
+  href: api/Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_DrawStaticMesh_
+  commentId: Overload:Integrity.Interface.IRenderPipeline.DrawStaticMesh
+  fullName: Integrity.Interface.IRenderPipeline.DrawStaticMesh
+  nameWithType: IRenderPipeline.DrawStaticMesh
 - uid: Integrity.Interface.IRenderPipeline.GlApi
   name: GlApi
   href: api/Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_GlApi
@@ -1198,6 +1342,18 @@ references:
   commentId: Overload:Integrity.Interface.IRenderPipeline.SetProjectionMatrix
   fullName: Integrity.Interface.IRenderPipeline.SetProjectionMatrix
   nameWithType: IRenderPipeline.SetProjectionMatrix
+- uid: Integrity.Interface.IRenderPipeline.UpdateTileChunkVbo(Integrity.Rendering.TileChunk)
+  name: UpdateTileChunkVbo(TileChunk)
+  href: api/Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_UpdateTileChunkVbo_Integrity_Rendering_TileChunk_
+  commentId: M:Integrity.Interface.IRenderPipeline.UpdateTileChunkVbo(Integrity.Rendering.TileChunk)
+  fullName: Integrity.Interface.IRenderPipeline.UpdateTileChunkVbo(Integrity.Rendering.TileChunk)
+  nameWithType: IRenderPipeline.UpdateTileChunkVbo(TileChunk)
+- uid: Integrity.Interface.IRenderPipeline.UpdateTileChunkVbo*
+  name: UpdateTileChunkVbo
+  href: api/Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_UpdateTileChunkVbo_
+  commentId: Overload:Integrity.Interface.IRenderPipeline.UpdateTileChunkVbo
+  fullName: Integrity.Interface.IRenderPipeline.UpdateTileChunkVbo
+  nameWithType: IRenderPipeline.UpdateTileChunkVbo
 - uid: Integrity.Interface.IRenderPipeline.UpdateViewportSize(System.Int32,System.Int32)
   name: UpdateViewportSize(int, int)
   href: api/Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_UpdateViewportSize_System_Int32_System_Int32_
@@ -1513,6 +1669,21 @@ references:
   commentId: Overload:Integrity.Objects.GameObject.Transform
   fullName: Integrity.Objects.GameObject.Transform
   nameWithType: GameObject.Transform
+- uid: Integrity.Objects.GameObject.TryGetComponent*
+  name: TryGetComponent
+  href: api/Integrity.Objects.GameObject.html#Integrity_Objects_GameObject_TryGetComponent_
+  commentId: Overload:Integrity.Objects.GameObject.TryGetComponent
+  fullName: Integrity.Objects.GameObject.TryGetComponent
+  nameWithType: GameObject.TryGetComponent
+- uid: Integrity.Objects.GameObject.TryGetComponent``1(``0@)
+  name: TryGetComponent<T>(out T?)
+  href: api/Integrity.Objects.GameObject.html#Integrity_Objects_GameObject_TryGetComponent__1___0__
+  commentId: M:Integrity.Objects.GameObject.TryGetComponent``1(``0@)
+  name.vb: TryGetComponent(Of T)(T)
+  fullName: Integrity.Objects.GameObject.TryGetComponent<T>(out T?)
+  fullName.vb: Integrity.Objects.GameObject.TryGetComponent(Of T)(T)
+  nameWithType: GameObject.TryGetComponent<T>(out T?)
+  nameWithType.vb: GameObject.TryGetComponent(Of T)(T)
 - uid: Integrity.Objects.SpriteObject
   name: SpriteObject
   href: api/Integrity.Objects.SpriteObject.html
@@ -1825,21 +1996,36 @@ references:
   fullName.vb: Integrity.Rendering.RenderPipeline.New
   nameWithType: RenderPipeline.RenderPipeline
   nameWithType.vb: RenderPipeline.New
-- uid: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
-  name: DrawSpritesInstanced(Texture, in List<Matrix4x4>, int)
-  href: api/Integrity.Rendering.RenderPipeline.html#Integrity_Rendering_RenderPipeline_DrawSpritesInstanced_Integrity_Assets_Texture_System_Collections_Generic_List_System_Numerics_Matrix4x4___System_Int32_
-  commentId: M:Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
-  name.vb: DrawSpritesInstanced(Texture, List(Of Matrix4x4), Integer)
-  fullName: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture, in System.Collections.Generic.List<System.Numerics.Matrix4x4>, int)
-  fullName.vb: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture, System.Collections.Generic.List(Of System.Numerics.Matrix4x4), Integer)
-  nameWithType: RenderPipeline.DrawSpritesInstanced(Texture, in List<Matrix4x4>, int)
-  nameWithType.vb: RenderPipeline.DrawSpritesInstanced(Texture, List(Of Matrix4x4), Integer)
+- uid: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Collections.Generic.List{System.Numerics.Vector4}@,System.Int32)
+  name: DrawSpritesInstanced(Texture, in List<Matrix4x4>, in List<Vector4>, int)
+  href: api/Integrity.Rendering.RenderPipeline.html#Integrity_Rendering_RenderPipeline_DrawSpritesInstanced_Integrity_Assets_Texture_System_Collections_Generic_List_System_Numerics_Matrix4x4___System_Collections_Generic_List_System_Numerics_Vector4___System_Int32_
+  commentId: M:Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Collections.Generic.List{System.Numerics.Vector4}@,System.Int32)
+  name.vb: DrawSpritesInstanced(Texture, List(Of Matrix4x4), List(Of Vector4), Integer)
+  fullName: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture, in System.Collections.Generic.List<System.Numerics.Matrix4x4>, in System.Collections.Generic.List<System.Numerics.Vector4>, int)
+  fullName.vb: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture, System.Collections.Generic.List(Of System.Numerics.Matrix4x4), System.Collections.Generic.List(Of System.Numerics.Vector4), Integer)
+  nameWithType: RenderPipeline.DrawSpritesInstanced(Texture, in List<Matrix4x4>, in List<Vector4>, int)
+  nameWithType.vb: RenderPipeline.DrawSpritesInstanced(Texture, List(Of Matrix4x4), List(Of Vector4), Integer)
 - uid: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced*
   name: DrawSpritesInstanced
   href: api/Integrity.Rendering.RenderPipeline.html#Integrity_Rendering_RenderPipeline_DrawSpritesInstanced_
   commentId: Overload:Integrity.Rendering.RenderPipeline.DrawSpritesInstanced
   fullName: Integrity.Rendering.RenderPipeline.DrawSpritesInstanced
   nameWithType: RenderPipeline.DrawSpritesInstanced
+- uid: Integrity.Rendering.RenderPipeline.DrawStaticMesh(Integrity.Assets.Texture,System.UInt32,System.Int32,System.Numerics.Matrix4x4@)
+  name: DrawStaticMesh(Texture, uint, int, in Matrix4x4)
+  href: api/Integrity.Rendering.RenderPipeline.html#Integrity_Rendering_RenderPipeline_DrawStaticMesh_Integrity_Assets_Texture_System_UInt32_System_Int32_System_Numerics_Matrix4x4__
+  commentId: M:Integrity.Rendering.RenderPipeline.DrawStaticMesh(Integrity.Assets.Texture,System.UInt32,System.Int32,System.Numerics.Matrix4x4@)
+  name.vb: DrawStaticMesh(Texture, UInteger, Integer, Matrix4x4)
+  fullName: Integrity.Rendering.RenderPipeline.DrawStaticMesh(Integrity.Assets.Texture, uint, int, in System.Numerics.Matrix4x4)
+  fullName.vb: Integrity.Rendering.RenderPipeline.DrawStaticMesh(Integrity.Assets.Texture, UInteger, Integer, System.Numerics.Matrix4x4)
+  nameWithType: RenderPipeline.DrawStaticMesh(Texture, uint, int, in Matrix4x4)
+  nameWithType.vb: RenderPipeline.DrawStaticMesh(Texture, UInteger, Integer, Matrix4x4)
+- uid: Integrity.Rendering.RenderPipeline.DrawStaticMesh*
+  name: DrawStaticMesh
+  href: api/Integrity.Rendering.RenderPipeline.html#Integrity_Rendering_RenderPipeline_DrawStaticMesh_
+  commentId: Overload:Integrity.Rendering.RenderPipeline.DrawStaticMesh
+  fullName: Integrity.Rendering.RenderPipeline.DrawStaticMesh
+  nameWithType: RenderPipeline.DrawStaticMesh
 - uid: Integrity.Rendering.RenderPipeline.GlApi
   name: GlApi
   href: api/Integrity.Rendering.RenderPipeline.html#Integrity_Rendering_RenderPipeline_GlApi
@@ -1915,6 +2101,18 @@ references:
   commentId: Overload:Integrity.Rendering.RenderPipeline.SetProjectionMatrix
   fullName: Integrity.Rendering.RenderPipeline.SetProjectionMatrix
   nameWithType: RenderPipeline.SetProjectionMatrix
+- uid: Integrity.Rendering.RenderPipeline.UpdateTileChunkVbo(Integrity.Rendering.TileChunk)
+  name: UpdateTileChunkVbo(TileChunk)
+  href: api/Integrity.Rendering.RenderPipeline.html#Integrity_Rendering_RenderPipeline_UpdateTileChunkVbo_Integrity_Rendering_TileChunk_
+  commentId: M:Integrity.Rendering.RenderPipeline.UpdateTileChunkVbo(Integrity.Rendering.TileChunk)
+  fullName: Integrity.Rendering.RenderPipeline.UpdateTileChunkVbo(Integrity.Rendering.TileChunk)
+  nameWithType: RenderPipeline.UpdateTileChunkVbo(TileChunk)
+- uid: Integrity.Rendering.RenderPipeline.UpdateTileChunkVbo*
+  name: UpdateTileChunkVbo
+  href: api/Integrity.Rendering.RenderPipeline.html#Integrity_Rendering_RenderPipeline_UpdateTileChunkVbo_
+  commentId: Overload:Integrity.Rendering.RenderPipeline.UpdateTileChunkVbo
+  fullName: Integrity.Rendering.RenderPipeline.UpdateTileChunkVbo
+  nameWithType: RenderPipeline.UpdateTileChunkVbo
 - uid: Integrity.Rendering.RenderPipeline.UpdateViewportSize(System.Int32,System.Int32)
   name: UpdateViewportSize(int, int)
   href: api/Integrity.Rendering.RenderPipeline.html#Integrity_Rendering_RenderPipeline_UpdateViewportSize_System_Int32_System_Int32_
@@ -1966,6 +2164,18 @@ references:
   commentId: Overload:Integrity.Rendering.SpriteRenderSystem.RegisterObject
   fullName: Integrity.Rendering.SpriteRenderSystem.RegisterObject
   nameWithType: SpriteRenderSystem.RegisterObject
+- uid: Integrity.Rendering.SpriteRenderSystem.RenderSprites
+  name: RenderSprites()
+  href: api/Integrity.Rendering.SpriteRenderSystem.html#Integrity_Rendering_SpriteRenderSystem_RenderSprites
+  commentId: M:Integrity.Rendering.SpriteRenderSystem.RenderSprites
+  fullName: Integrity.Rendering.SpriteRenderSystem.RenderSprites()
+  nameWithType: SpriteRenderSystem.RenderSprites()
+- uid: Integrity.Rendering.SpriteRenderSystem.RenderSprites*
+  name: RenderSprites
+  href: api/Integrity.Rendering.SpriteRenderSystem.html#Integrity_Rendering_SpriteRenderSystem_RenderSprites_
+  commentId: Overload:Integrity.Rendering.SpriteRenderSystem.RenderSprites
+  fullName: Integrity.Rendering.SpriteRenderSystem.RenderSprites
+  nameWithType: SpriteRenderSystem.RenderSprites
 - uid: Integrity.Rendering.SpriteRenderSystem.SpriteObjectList
   name: SpriteObjectList
   href: api/Integrity.Rendering.SpriteRenderSystem.html#Integrity_Rendering_SpriteRenderSystem_SpriteObjectList
@@ -1978,6 +2188,264 @@ references:
   commentId: Overload:Integrity.Rendering.SpriteRenderSystem.SpriteObjectList
   fullName: Integrity.Rendering.SpriteRenderSystem.SpriteObjectList
   nameWithType: SpriteRenderSystem.SpriteObjectList
+- uid: Integrity.Rendering.SpriteRenderSystem.UpdateSpriteBatchByTexture
+  name: UpdateSpriteBatchByTexture()
+  href: api/Integrity.Rendering.SpriteRenderSystem.html#Integrity_Rendering_SpriteRenderSystem_UpdateSpriteBatchByTexture
+  commentId: M:Integrity.Rendering.SpriteRenderSystem.UpdateSpriteBatchByTexture
+  fullName: Integrity.Rendering.SpriteRenderSystem.UpdateSpriteBatchByTexture()
+  nameWithType: SpriteRenderSystem.UpdateSpriteBatchByTexture()
+- uid: Integrity.Rendering.SpriteRenderSystem.UpdateSpriteBatchByTexture*
+  name: UpdateSpriteBatchByTexture
+  href: api/Integrity.Rendering.SpriteRenderSystem.html#Integrity_Rendering_SpriteRenderSystem_UpdateSpriteBatchByTexture_
+  commentId: Overload:Integrity.Rendering.SpriteRenderSystem.UpdateSpriteBatchByTexture
+  fullName: Integrity.Rendering.SpriteRenderSystem.UpdateSpriteBatchByTexture
+  nameWithType: SpriteRenderSystem.UpdateSpriteBatchByTexture
+- uid: Integrity.Rendering.TileChunk
+  name: TileChunk
+  href: api/Integrity.Rendering.TileChunk.html
+  commentId: T:Integrity.Rendering.TileChunk
+  fullName: Integrity.Rendering.TileChunk
+  nameWithType: TileChunk
+- uid: Integrity.Rendering.TileChunk.#ctor(Integrity.Assets.Texture,System.Numerics.Vector2)
+  name: TileChunk(Texture, Vector2)
+  href: api/Integrity.Rendering.TileChunk.html#Integrity_Rendering_TileChunk__ctor_Integrity_Assets_Texture_System_Numerics_Vector2_
+  commentId: M:Integrity.Rendering.TileChunk.#ctor(Integrity.Assets.Texture,System.Numerics.Vector2)
+  name.vb: New(Texture, Vector2)
+  fullName: Integrity.Rendering.TileChunk.TileChunk(Integrity.Assets.Texture, System.Numerics.Vector2)
+  fullName.vb: Integrity.Rendering.TileChunk.New(Integrity.Assets.Texture, System.Numerics.Vector2)
+  nameWithType: TileChunk.TileChunk(Texture, Vector2)
+  nameWithType.vb: TileChunk.New(Texture, Vector2)
+- uid: Integrity.Rendering.TileChunk.#ctor*
+  name: TileChunk
+  href: api/Integrity.Rendering.TileChunk.html#Integrity_Rendering_TileChunk__ctor_
+  commentId: Overload:Integrity.Rendering.TileChunk.#ctor
+  name.vb: New
+  fullName: Integrity.Rendering.TileChunk.TileChunk
+  fullName.vb: Integrity.Rendering.TileChunk.New
+  nameWithType: TileChunk.TileChunk
+  nameWithType.vb: TileChunk.New
+- uid: Integrity.Rendering.TileChunk.ChunkId
+  name: ChunkId
+  href: api/Integrity.Rendering.TileChunk.html#Integrity_Rendering_TileChunk_ChunkId
+  commentId: P:Integrity.Rendering.TileChunk.ChunkId
+  fullName: Integrity.Rendering.TileChunk.ChunkId
+  nameWithType: TileChunk.ChunkId
+- uid: Integrity.Rendering.TileChunk.ChunkId*
+  name: ChunkId
+  href: api/Integrity.Rendering.TileChunk.html#Integrity_Rendering_TileChunk_ChunkId_
+  commentId: Overload:Integrity.Rendering.TileChunk.ChunkId
+  fullName: Integrity.Rendering.TileChunk.ChunkId
+  nameWithType: TileChunk.ChunkId
+- uid: Integrity.Rendering.TileChunk.IsDirty
+  name: IsDirty
+  href: api/Integrity.Rendering.TileChunk.html#Integrity_Rendering_TileChunk_IsDirty
+  commentId: P:Integrity.Rendering.TileChunk.IsDirty
+  fullName: Integrity.Rendering.TileChunk.IsDirty
+  nameWithType: TileChunk.IsDirty
+- uid: Integrity.Rendering.TileChunk.IsDirty*
+  name: IsDirty
+  href: api/Integrity.Rendering.TileChunk.html#Integrity_Rendering_TileChunk_IsDirty_
+  commentId: Overload:Integrity.Rendering.TileChunk.IsDirty
+  fullName: Integrity.Rendering.TileChunk.IsDirty
+  nameWithType: TileChunk.IsDirty
+- uid: Integrity.Rendering.TileChunk.Texture
+  name: Texture
+  href: api/Integrity.Rendering.TileChunk.html#Integrity_Rendering_TileChunk_Texture
+  commentId: P:Integrity.Rendering.TileChunk.Texture
+  fullName: Integrity.Rendering.TileChunk.Texture
+  nameWithType: TileChunk.Texture
+- uid: Integrity.Rendering.TileChunk.Texture*
+  name: Texture
+  href: api/Integrity.Rendering.TileChunk.html#Integrity_Rendering_TileChunk_Texture_
+  commentId: Overload:Integrity.Rendering.TileChunk.Texture
+  fullName: Integrity.Rendering.TileChunk.Texture
+  nameWithType: TileChunk.Texture
+- uid: Integrity.Rendering.TileChunk.TileDataMap
+  name: TileDataMap
+  href: api/Integrity.Rendering.TileChunk.html#Integrity_Rendering_TileChunk_TileDataMap
+  commentId: P:Integrity.Rendering.TileChunk.TileDataMap
+  fullName: Integrity.Rendering.TileChunk.TileDataMap
+  nameWithType: TileChunk.TileDataMap
+- uid: Integrity.Rendering.TileChunk.TileDataMap*
+  name: TileDataMap
+  href: api/Integrity.Rendering.TileChunk.html#Integrity_Rendering_TileChunk_TileDataMap_
+  commentId: Overload:Integrity.Rendering.TileChunk.TileDataMap
+  fullName: Integrity.Rendering.TileChunk.TileDataMap
+  nameWithType: TileChunk.TileDataMap
+- uid: Integrity.Rendering.TileChunk.VboId
+  name: VboId
+  href: api/Integrity.Rendering.TileChunk.html#Integrity_Rendering_TileChunk_VboId
+  commentId: P:Integrity.Rendering.TileChunk.VboId
+  fullName: Integrity.Rendering.TileChunk.VboId
+  nameWithType: TileChunk.VboId
+- uid: Integrity.Rendering.TileChunk.VboId*
+  name: VboId
+  href: api/Integrity.Rendering.TileChunk.html#Integrity_Rendering_TileChunk_VboId_
+  commentId: Overload:Integrity.Rendering.TileChunk.VboId
+  fullName: Integrity.Rendering.TileChunk.VboId
+  nameWithType: TileChunk.VboId
+- uid: Integrity.Rendering.TileChunk.VertexCount
+  name: VertexCount
+  href: api/Integrity.Rendering.TileChunk.html#Integrity_Rendering_TileChunk_VertexCount
+  commentId: P:Integrity.Rendering.TileChunk.VertexCount
+  fullName: Integrity.Rendering.TileChunk.VertexCount
+  nameWithType: TileChunk.VertexCount
+- uid: Integrity.Rendering.TileChunk.VertexCount*
+  name: VertexCount
+  href: api/Integrity.Rendering.TileChunk.html#Integrity_Rendering_TileChunk_VertexCount_
+  commentId: Overload:Integrity.Rendering.TileChunk.VertexCount
+  fullName: Integrity.Rendering.TileChunk.VertexCount
+  nameWithType: TileChunk.VertexCount
+- uid: Integrity.Rendering.TileChunk.Vertices
+  name: Vertices
+  href: api/Integrity.Rendering.TileChunk.html#Integrity_Rendering_TileChunk_Vertices
+  commentId: P:Integrity.Rendering.TileChunk.Vertices
+  fullName: Integrity.Rendering.TileChunk.Vertices
+  nameWithType: TileChunk.Vertices
+- uid: Integrity.Rendering.TileChunk.Vertices*
+  name: Vertices
+  href: api/Integrity.Rendering.TileChunk.html#Integrity_Rendering_TileChunk_Vertices_
+  commentId: Overload:Integrity.Rendering.TileChunk.Vertices
+  fullName: Integrity.Rendering.TileChunk.Vertices
+  nameWithType: TileChunk.Vertices
+- uid: Integrity.Rendering.TileData
+  name: TileData
+  href: api/Integrity.Rendering.TileData.html
+  commentId: T:Integrity.Rendering.TileData
+  fullName: Integrity.Rendering.TileData
+  nameWithType: TileData
+- uid: Integrity.Rendering.TileData.#ctor(Integrity.Assets.Texture,Integrity.Utils.Rect)
+  name: TileData(Texture, Rect)
+  href: api/Integrity.Rendering.TileData.html#Integrity_Rendering_TileData__ctor_Integrity_Assets_Texture_Integrity_Utils_Rect_
+  commentId: M:Integrity.Rendering.TileData.#ctor(Integrity.Assets.Texture,Integrity.Utils.Rect)
+  name.vb: New(Texture, Rect)
+  fullName: Integrity.Rendering.TileData.TileData(Integrity.Assets.Texture, Integrity.Utils.Rect)
+  fullName.vb: Integrity.Rendering.TileData.New(Integrity.Assets.Texture, Integrity.Utils.Rect)
+  nameWithType: TileData.TileData(Texture, Rect)
+  nameWithType.vb: TileData.New(Texture, Rect)
+- uid: Integrity.Rendering.TileData.#ctor*
+  name: TileData
+  href: api/Integrity.Rendering.TileData.html#Integrity_Rendering_TileData__ctor_
+  commentId: Overload:Integrity.Rendering.TileData.#ctor
+  name.vb: New
+  fullName: Integrity.Rendering.TileData.TileData
+  fullName.vb: Integrity.Rendering.TileData.New
+  nameWithType: TileData.TileData
+  nameWithType.vb: TileData.New
+- uid: Integrity.Rendering.TileData.IsVisible
+  name: IsVisible
+  href: api/Integrity.Rendering.TileData.html#Integrity_Rendering_TileData_IsVisible
+  commentId: P:Integrity.Rendering.TileData.IsVisible
+  fullName: Integrity.Rendering.TileData.IsVisible
+  nameWithType: TileData.IsVisible
+- uid: Integrity.Rendering.TileData.IsVisible*
+  name: IsVisible
+  href: api/Integrity.Rendering.TileData.html#Integrity_Rendering_TileData_IsVisible_
+  commentId: Overload:Integrity.Rendering.TileData.IsVisible
+  fullName: Integrity.Rendering.TileData.IsVisible
+  nameWithType: TileData.IsVisible
+- uid: Integrity.Rendering.TileData.SourceRect
+  name: SourceRect
+  href: api/Integrity.Rendering.TileData.html#Integrity_Rendering_TileData_SourceRect
+  commentId: P:Integrity.Rendering.TileData.SourceRect
+  fullName: Integrity.Rendering.TileData.SourceRect
+  nameWithType: TileData.SourceRect
+- uid: Integrity.Rendering.TileData.SourceRect*
+  name: SourceRect
+  href: api/Integrity.Rendering.TileData.html#Integrity_Rendering_TileData_SourceRect_
+  commentId: Overload:Integrity.Rendering.TileData.SourceRect
+  fullName: Integrity.Rendering.TileData.SourceRect
+  nameWithType: TileData.SourceRect
+- uid: Integrity.Rendering.TileData.Texture
+  name: Texture
+  href: api/Integrity.Rendering.TileData.html#Integrity_Rendering_TileData_Texture
+  commentId: P:Integrity.Rendering.TileData.Texture
+  fullName: Integrity.Rendering.TileData.Texture
+  nameWithType: TileData.Texture
+- uid: Integrity.Rendering.TileData.Texture*
+  name: Texture
+  href: api/Integrity.Rendering.TileData.html#Integrity_Rendering_TileData_Texture_
+  commentId: Overload:Integrity.Rendering.TileData.Texture
+  fullName: Integrity.Rendering.TileData.Texture
+  nameWithType: TileData.Texture
+- uid: Integrity.Rendering.TileRenderSystem
+  name: TileRenderSystem
+  href: api/Integrity.Rendering.TileRenderSystem.html
+  commentId: T:Integrity.Rendering.TileRenderSystem
+  fullName: Integrity.Rendering.TileRenderSystem
+  nameWithType: TileRenderSystem
+- uid: Integrity.Rendering.TileRenderSystem.#ctor
+  name: TileRenderSystem()
+  href: api/Integrity.Rendering.TileRenderSystem.html#Integrity_Rendering_TileRenderSystem__ctor
+  commentId: M:Integrity.Rendering.TileRenderSystem.#ctor
+  name.vb: New()
+  fullName: Integrity.Rendering.TileRenderSystem.TileRenderSystem()
+  fullName.vb: Integrity.Rendering.TileRenderSystem.New()
+  nameWithType: TileRenderSystem.TileRenderSystem()
+  nameWithType.vb: TileRenderSystem.New()
+- uid: Integrity.Rendering.TileRenderSystem.#ctor*
+  name: TileRenderSystem
+  href: api/Integrity.Rendering.TileRenderSystem.html#Integrity_Rendering_TileRenderSystem__ctor_
+  commentId: Overload:Integrity.Rendering.TileRenderSystem.#ctor
+  name.vb: New
+  fullName: Integrity.Rendering.TileRenderSystem.TileRenderSystem
+  fullName.vb: Integrity.Rendering.TileRenderSystem.New
+  nameWithType: TileRenderSystem.TileRenderSystem
+  nameWithType.vb: TileRenderSystem.New
+- uid: Integrity.Rendering.TileRenderSystem.RenderTiles
+  name: RenderTiles()
+  href: api/Integrity.Rendering.TileRenderSystem.html#Integrity_Rendering_TileRenderSystem_RenderTiles
+  commentId: M:Integrity.Rendering.TileRenderSystem.RenderTiles
+  fullName: Integrity.Rendering.TileRenderSystem.RenderTiles()
+  nameWithType: TileRenderSystem.RenderTiles()
+- uid: Integrity.Rendering.TileRenderSystem.RenderTiles*
+  name: RenderTiles
+  href: api/Integrity.Rendering.TileRenderSystem.html#Integrity_Rendering_TileRenderSystem_RenderTiles_
+  commentId: Overload:Integrity.Rendering.TileRenderSystem.RenderTiles
+  fullName: Integrity.Rendering.TileRenderSystem.RenderTiles
+  nameWithType: TileRenderSystem.RenderTiles
+- uid: Integrity.Rendering.TileRenderSystem.SetTile(System.Int32,System.Int32,Integrity.Assets.Texture,Integrity.Utils.Rect,System.Boolean)
+  name: SetTile(int, int, Texture, Rect, bool)
+  href: api/Integrity.Rendering.TileRenderSystem.html#Integrity_Rendering_TileRenderSystem_SetTile_System_Int32_System_Int32_Integrity_Assets_Texture_Integrity_Utils_Rect_System_Boolean_
+  commentId: M:Integrity.Rendering.TileRenderSystem.SetTile(System.Int32,System.Int32,Integrity.Assets.Texture,Integrity.Utils.Rect,System.Boolean)
+  name.vb: SetTile(Integer, Integer, Texture, Rect, Boolean)
+  fullName: Integrity.Rendering.TileRenderSystem.SetTile(int, int, Integrity.Assets.Texture, Integrity.Utils.Rect, bool)
+  fullName.vb: Integrity.Rendering.TileRenderSystem.SetTile(Integer, Integer, Integrity.Assets.Texture, Integrity.Utils.Rect, Boolean)
+  nameWithType: TileRenderSystem.SetTile(int, int, Texture, Rect, bool)
+  nameWithType.vb: TileRenderSystem.SetTile(Integer, Integer, Texture, Rect, Boolean)
+- uid: Integrity.Rendering.TileRenderSystem.SetTile*
+  name: SetTile
+  href: api/Integrity.Rendering.TileRenderSystem.html#Integrity_Rendering_TileRenderSystem_SetTile_
+  commentId: Overload:Integrity.Rendering.TileRenderSystem.SetTile
+  fullName: Integrity.Rendering.TileRenderSystem.SetTile
+  nameWithType: TileRenderSystem.SetTile
+- uid: Integrity.Rendering.TileRenderSystem.SetTileSize(System.Int32)
+  name: SetTileSize(int)
+  href: api/Integrity.Rendering.TileRenderSystem.html#Integrity_Rendering_TileRenderSystem_SetTileSize_System_Int32_
+  commentId: M:Integrity.Rendering.TileRenderSystem.SetTileSize(System.Int32)
+  name.vb: SetTileSize(Integer)
+  fullName: Integrity.Rendering.TileRenderSystem.SetTileSize(int)
+  fullName.vb: Integrity.Rendering.TileRenderSystem.SetTileSize(Integer)
+  nameWithType: TileRenderSystem.SetTileSize(int)
+  nameWithType.vb: TileRenderSystem.SetTileSize(Integer)
+- uid: Integrity.Rendering.TileRenderSystem.SetTileSize*
+  name: SetTileSize
+  href: api/Integrity.Rendering.TileRenderSystem.html#Integrity_Rendering_TileRenderSystem_SetTileSize_
+  commentId: Overload:Integrity.Rendering.TileRenderSystem.SetTileSize
+  fullName: Integrity.Rendering.TileRenderSystem.SetTileSize
+  nameWithType: TileRenderSystem.SetTileSize
+- uid: Integrity.Rendering.TileRenderSystem.TileChunks
+  name: TileChunks
+  href: api/Integrity.Rendering.TileRenderSystem.html#Integrity_Rendering_TileRenderSystem_TileChunks
+  commentId: P:Integrity.Rendering.TileRenderSystem.TileChunks
+  fullName: Integrity.Rendering.TileRenderSystem.TileChunks
+  nameWithType: TileRenderSystem.TileChunks
+- uid: Integrity.Rendering.TileRenderSystem.TileChunks*
+  name: TileChunks
+  href: api/Integrity.Rendering.TileRenderSystem.html#Integrity_Rendering_TileRenderSystem_TileChunks_
+  commentId: Overload:Integrity.Rendering.TileRenderSystem.TileChunks
+  fullName: Integrity.Rendering.TileRenderSystem.TileChunks
+  nameWithType: TileRenderSystem.TileChunks
 - uid: Integrity.Rendering.WindowPipeline
   name: WindowPipeline
   href: api/Integrity.Rendering.WindowPipeline.html
@@ -2098,6 +2566,18 @@ references:
   fullName.vb: Integrity.Scenes.Scene.New
   nameWithType: Scene.Scene
   nameWithType.vb: Scene.New
+- uid: Integrity.Scenes.Scene.AnimationRenderSystem
+  name: AnimationRenderSystem
+  href: api/Integrity.Scenes.Scene.html#Integrity_Scenes_Scene_AnimationRenderSystem
+  commentId: P:Integrity.Scenes.Scene.AnimationRenderSystem
+  fullName: Integrity.Scenes.Scene.AnimationRenderSystem
+  nameWithType: Scene.AnimationRenderSystem
+- uid: Integrity.Scenes.Scene.AnimationRenderSystem*
+  name: AnimationRenderSystem
+  href: api/Integrity.Scenes.Scene.html#Integrity_Scenes_Scene_AnimationRenderSystem_
+  commentId: Overload:Integrity.Scenes.Scene.AnimationRenderSystem
+  fullName: Integrity.Scenes.Scene.AnimationRenderSystem
+  nameWithType: Scene.AnimationRenderSystem
 - uid: Integrity.Scenes.Scene.Cleanup
   name: Cleanup()
   href: api/Integrity.Scenes.Scene.html#Integrity_Scenes_Scene_Cleanup
@@ -2206,6 +2686,18 @@ references:
   commentId: Overload:Integrity.Scenes.Scene.SpriteRenderSystem
   fullName: Integrity.Scenes.Scene.SpriteRenderSystem
   nameWithType: Scene.SpriteRenderSystem
+- uid: Integrity.Scenes.Scene.TileRenderSystem
+  name: TileRenderSystem
+  href: api/Integrity.Scenes.Scene.html#Integrity_Scenes_Scene_TileRenderSystem
+  commentId: P:Integrity.Scenes.Scene.TileRenderSystem
+  fullName: Integrity.Scenes.Scene.TileRenderSystem
+  nameWithType: Scene.TileRenderSystem
+- uid: Integrity.Scenes.Scene.TileRenderSystem*
+  name: TileRenderSystem
+  href: api/Integrity.Scenes.Scene.html#Integrity_Scenes_Scene_TileRenderSystem_
+  commentId: Overload:Integrity.Scenes.Scene.TileRenderSystem
+  fullName: Integrity.Scenes.Scene.TileRenderSystem
+  nameWithType: Scene.TileRenderSystem
 - uid: Integrity.Scenes.SceneManager
   name: SceneManager
   href: api/Integrity.Scenes.SceneManager.html
@@ -2581,6 +3073,75 @@ references:
   commentId: Overload:Integrity.Src.Program.Main
   fullName: Integrity.Src.Program.Main
   nameWithType: Program.Main
+- uid: Integrity.Systems
+  name: Integrity.Systems
+  href: api/Integrity.Systems.html
+  commentId: N:Integrity.Systems
+  fullName: Integrity.Systems
+  nameWithType: Integrity.Systems
+- uid: Integrity.Systems.AnimationRenderSystem
+  name: AnimationRenderSystem
+  href: api/Integrity.Systems.AnimationRenderSystem.html
+  commentId: T:Integrity.Systems.AnimationRenderSystem
+  fullName: Integrity.Systems.AnimationRenderSystem
+  nameWithType: AnimationRenderSystem
+- uid: Integrity.Systems.AnimationRenderSystem.#ctor
+  name: AnimationRenderSystem()
+  href: api/Integrity.Systems.AnimationRenderSystem.html#Integrity_Systems_AnimationRenderSystem__ctor
+  commentId: M:Integrity.Systems.AnimationRenderSystem.#ctor
+  name.vb: New()
+  fullName: Integrity.Systems.AnimationRenderSystem.AnimationRenderSystem()
+  fullName.vb: Integrity.Systems.AnimationRenderSystem.New()
+  nameWithType: AnimationRenderSystem.AnimationRenderSystem()
+  nameWithType.vb: AnimationRenderSystem.New()
+- uid: Integrity.Systems.AnimationRenderSystem.#ctor*
+  name: AnimationRenderSystem
+  href: api/Integrity.Systems.AnimationRenderSystem.html#Integrity_Systems_AnimationRenderSystem__ctor_
+  commentId: Overload:Integrity.Systems.AnimationRenderSystem.#ctor
+  name.vb: New
+  fullName: Integrity.Systems.AnimationRenderSystem.AnimationRenderSystem
+  fullName.vb: Integrity.Systems.AnimationRenderSystem.New
+  nameWithType: AnimationRenderSystem.AnimationRenderSystem
+  nameWithType.vb: AnimationRenderSystem.New
+- uid: Integrity.Systems.AnimationRenderSystem.RegisterObject(Integrity.Objects.GameObject)
+  name: RegisterObject(GameObject)
+  href: api/Integrity.Systems.AnimationRenderSystem.html#Integrity_Systems_AnimationRenderSystem_RegisterObject_Integrity_Objects_GameObject_
+  commentId: M:Integrity.Systems.AnimationRenderSystem.RegisterObject(Integrity.Objects.GameObject)
+  fullName: Integrity.Systems.AnimationRenderSystem.RegisterObject(Integrity.Objects.GameObject)
+  nameWithType: AnimationRenderSystem.RegisterObject(GameObject)
+- uid: Integrity.Systems.AnimationRenderSystem.RegisterObject*
+  name: RegisterObject
+  href: api/Integrity.Systems.AnimationRenderSystem.html#Integrity_Systems_AnimationRenderSystem_RegisterObject_
+  commentId: Overload:Integrity.Systems.AnimationRenderSystem.RegisterObject
+  fullName: Integrity.Systems.AnimationRenderSystem.RegisterObject
+  nameWithType: AnimationRenderSystem.RegisterObject
+- uid: Integrity.Systems.AnimationRenderSystem.Shutdown
+  name: Shutdown()
+  href: api/Integrity.Systems.AnimationRenderSystem.html#Integrity_Systems_AnimationRenderSystem_Shutdown
+  commentId: M:Integrity.Systems.AnimationRenderSystem.Shutdown
+  fullName: Integrity.Systems.AnimationRenderSystem.Shutdown()
+  nameWithType: AnimationRenderSystem.Shutdown()
+- uid: Integrity.Systems.AnimationRenderSystem.Shutdown*
+  name: Shutdown
+  href: api/Integrity.Systems.AnimationRenderSystem.html#Integrity_Systems_AnimationRenderSystem_Shutdown_
+  commentId: Overload:Integrity.Systems.AnimationRenderSystem.Shutdown
+  fullName: Integrity.Systems.AnimationRenderSystem.Shutdown
+  nameWithType: AnimationRenderSystem.Shutdown
+- uid: Integrity.Systems.AnimationRenderSystem.UpdateAnimationFrames(System.Single)
+  name: UpdateAnimationFrames(float)
+  href: api/Integrity.Systems.AnimationRenderSystem.html#Integrity_Systems_AnimationRenderSystem_UpdateAnimationFrames_System_Single_
+  commentId: M:Integrity.Systems.AnimationRenderSystem.UpdateAnimationFrames(System.Single)
+  name.vb: UpdateAnimationFrames(Single)
+  fullName: Integrity.Systems.AnimationRenderSystem.UpdateAnimationFrames(float)
+  fullName.vb: Integrity.Systems.AnimationRenderSystem.UpdateAnimationFrames(Single)
+  nameWithType: AnimationRenderSystem.UpdateAnimationFrames(float)
+  nameWithType.vb: AnimationRenderSystem.UpdateAnimationFrames(Single)
+- uid: Integrity.Systems.AnimationRenderSystem.UpdateAnimationFrames*
+  name: UpdateAnimationFrames
+  href: api/Integrity.Systems.AnimationRenderSystem.html#Integrity_Systems_AnimationRenderSystem_UpdateAnimationFrames_
+  commentId: Overload:Integrity.Systems.AnimationRenderSystem.UpdateAnimationFrames
+  fullName: Integrity.Systems.AnimationRenderSystem.UpdateAnimationFrames
+  nameWithType: AnimationRenderSystem.UpdateAnimationFrames
 - uid: Integrity.Tools
   name: Integrity.Tools
   href: api/Integrity.Tools.html
@@ -2905,57 +3466,96 @@ references:
   commentId: Overload:Integrity.Tools.ToolGui.DrawMenuBar
   fullName: Integrity.Tools.ToolGui.DrawMenuBar
   nameWithType: ToolGui.DrawMenuBar
-- uid: Integrity.Tools.ToolGui.DrawTools(Integrity.Interface.IProfiler)
-  name: DrawTools(IProfiler)
-  href: api/Integrity.Tools.ToolGui.html#Integrity_Tools_ToolGui_DrawTools_Integrity_Interface_IProfiler_
-  commentId: M:Integrity.Tools.ToolGui.DrawTools(Integrity.Interface.IProfiler)
-  fullName: Integrity.Tools.ToolGui.DrawTools(Integrity.Interface.IProfiler)
-  nameWithType: ToolGui.DrawTools(IProfiler)
+- uid: Integrity.Tools.ToolGui.DrawTools
+  name: DrawTools()
+  href: api/Integrity.Tools.ToolGui.html#Integrity_Tools_ToolGui_DrawTools
+  commentId: M:Integrity.Tools.ToolGui.DrawTools
+  fullName: Integrity.Tools.ToolGui.DrawTools()
+  nameWithType: ToolGui.DrawTools()
 - uid: Integrity.Tools.ToolGui.DrawTools*
   name: DrawTools
   href: api/Integrity.Tools.ToolGui.html#Integrity_Tools_ToolGui_DrawTools_
   commentId: Overload:Integrity.Tools.ToolGui.DrawTools
   fullName: Integrity.Tools.ToolGui.DrawTools
   nameWithType: ToolGui.DrawTools
-- uid: Integrity.Tools.ToolGui.DrawToolsUpdate(System.Single)
-  name: DrawToolsUpdate(float)
-  href: api/Integrity.Tools.ToolGui.html#Integrity_Tools_ToolGui_DrawToolsUpdate_System_Single_
-  commentId: M:Integrity.Tools.ToolGui.DrawToolsUpdate(System.Single)
-  name.vb: DrawToolsUpdate(Single)
-  fullName: Integrity.Tools.ToolGui.DrawToolsUpdate(float)
-  fullName.vb: Integrity.Tools.ToolGui.DrawToolsUpdate(Single)
-  nameWithType: ToolGui.DrawToolsUpdate(float)
-  nameWithType.vb: ToolGui.DrawToolsUpdate(Single)
-- uid: Integrity.Tools.ToolGui.DrawToolsUpdate*
-  name: DrawToolsUpdate
-  href: api/Integrity.Tools.ToolGui.html#Integrity_Tools_ToolGui_DrawToolsUpdate_
-  commentId: Overload:Integrity.Tools.ToolGui.DrawToolsUpdate
-  fullName: Integrity.Tools.ToolGui.DrawToolsUpdate
-  nameWithType: ToolGui.DrawToolsUpdate
-- uid: Integrity.Tools.ToolGui.UpdateMemoryHistory(Integrity.Utils.MemoryMonitor.MemorySnapshot)
-  name: UpdateMemoryHistory(MemorySnapshot)
-  href: api/Integrity.Tools.ToolGui.html#Integrity_Tools_ToolGui_UpdateMemoryHistory_Integrity_Utils_MemoryMonitor_MemorySnapshot_
-  commentId: M:Integrity.Tools.ToolGui.UpdateMemoryHistory(Integrity.Utils.MemoryMonitor.MemorySnapshot)
-  fullName: Integrity.Tools.ToolGui.UpdateMemoryHistory(Integrity.Utils.MemoryMonitor.MemorySnapshot)
-  nameWithType: ToolGui.UpdateMemoryHistory(MemoryMonitor.MemorySnapshot)
-- uid: Integrity.Tools.ToolGui.UpdateMemoryHistory*
-  name: UpdateMemoryHistory
-  href: api/Integrity.Tools.ToolGui.html#Integrity_Tools_ToolGui_UpdateMemoryHistory_
-  commentId: Overload:Integrity.Tools.ToolGui.UpdateMemoryHistory
-  fullName: Integrity.Tools.ToolGui.UpdateMemoryHistory
-  nameWithType: ToolGui.UpdateMemoryHistory
-- uid: Integrity.Tools.ToolGui.UpdateProfilerHistory(Integrity.Interface.IProfiler)
-  name: UpdateProfilerHistory(IProfiler)
-  href: api/Integrity.Tools.ToolGui.html#Integrity_Tools_ToolGui_UpdateProfilerHistory_Integrity_Interface_IProfiler_
-  commentId: M:Integrity.Tools.ToolGui.UpdateProfilerHistory(Integrity.Interface.IProfiler)
-  fullName: Integrity.Tools.ToolGui.UpdateProfilerHistory(Integrity.Interface.IProfiler)
-  nameWithType: ToolGui.UpdateProfilerHistory(IProfiler)
-- uid: Integrity.Tools.ToolGui.UpdateProfilerHistory*
-  name: UpdateProfilerHistory
-  href: api/Integrity.Tools.ToolGui.html#Integrity_Tools_ToolGui_UpdateProfilerHistory_
-  commentId: Overload:Integrity.Tools.ToolGui.UpdateProfilerHistory
-  fullName: Integrity.Tools.ToolGui.UpdateProfilerHistory
-  nameWithType: ToolGui.UpdateProfilerHistory
+- uid: Integrity.Tools.ToolInspector
+  name: ToolInspector
+  href: api/Integrity.Tools.ToolInspector.html
+  commentId: T:Integrity.Tools.ToolInspector
+  fullName: Integrity.Tools.ToolInspector
+  nameWithType: ToolInspector
+- uid: Integrity.Tools.ToolInspector.#ctor
+  name: ToolInspector()
+  href: api/Integrity.Tools.ToolInspector.html#Integrity_Tools_ToolInspector__ctor
+  commentId: M:Integrity.Tools.ToolInspector.#ctor
+  name.vb: New()
+  fullName: Integrity.Tools.ToolInspector.ToolInspector()
+  fullName.vb: Integrity.Tools.ToolInspector.New()
+  nameWithType: ToolInspector.ToolInspector()
+  nameWithType.vb: ToolInspector.New()
+- uid: Integrity.Tools.ToolInspector.#ctor*
+  name: ToolInspector
+  href: api/Integrity.Tools.ToolInspector.html#Integrity_Tools_ToolInspector__ctor_
+  commentId: Overload:Integrity.Tools.ToolInspector.#ctor
+  name.vb: New
+  fullName: Integrity.Tools.ToolInspector.ToolInspector
+  fullName.vb: Integrity.Tools.ToolInspector.New
+  nameWithType: ToolInspector.ToolInspector
+  nameWithType.vb: ToolInspector.New
+- uid: Integrity.Tools.ToolInspector.DrawInspectorWindow(System.Boolean@)
+  name: DrawInspectorWindow(ref bool)
+  href: api/Integrity.Tools.ToolInspector.html#Integrity_Tools_ToolInspector_DrawInspectorWindow_System_Boolean__
+  commentId: M:Integrity.Tools.ToolInspector.DrawInspectorWindow(System.Boolean@)
+  name.vb: DrawInspectorWindow(Boolean)
+  fullName: Integrity.Tools.ToolInspector.DrawInspectorWindow(ref bool)
+  fullName.vb: Integrity.Tools.ToolInspector.DrawInspectorWindow(Boolean)
+  nameWithType: ToolInspector.DrawInspectorWindow(ref bool)
+  nameWithType.vb: ToolInspector.DrawInspectorWindow(Boolean)
+- uid: Integrity.Tools.ToolInspector.DrawInspectorWindow*
+  name: DrawInspectorWindow
+  href: api/Integrity.Tools.ToolInspector.html#Integrity_Tools_ToolInspector_DrawInspectorWindow_
+  commentId: Overload:Integrity.Tools.ToolInspector.DrawInspectorWindow
+  fullName: Integrity.Tools.ToolInspector.DrawInspectorWindow
+  nameWithType: ToolInspector.DrawInspectorWindow
+- uid: Integrity.Tools.ToolTileMonitor
+  name: ToolTileMonitor
+  href: api/Integrity.Tools.ToolTileMonitor.html
+  commentId: T:Integrity.Tools.ToolTileMonitor
+  fullName: Integrity.Tools.ToolTileMonitor
+  nameWithType: ToolTileMonitor
+- uid: Integrity.Tools.ToolTileMonitor.#ctor
+  name: ToolTileMonitor()
+  href: api/Integrity.Tools.ToolTileMonitor.html#Integrity_Tools_ToolTileMonitor__ctor
+  commentId: M:Integrity.Tools.ToolTileMonitor.#ctor
+  name.vb: New()
+  fullName: Integrity.Tools.ToolTileMonitor.ToolTileMonitor()
+  fullName.vb: Integrity.Tools.ToolTileMonitor.New()
+  nameWithType: ToolTileMonitor.ToolTileMonitor()
+  nameWithType.vb: ToolTileMonitor.New()
+- uid: Integrity.Tools.ToolTileMonitor.#ctor*
+  name: ToolTileMonitor
+  href: api/Integrity.Tools.ToolTileMonitor.html#Integrity_Tools_ToolTileMonitor__ctor_
+  commentId: Overload:Integrity.Tools.ToolTileMonitor.#ctor
+  name.vb: New
+  fullName: Integrity.Tools.ToolTileMonitor.ToolTileMonitor
+  fullName.vb: Integrity.Tools.ToolTileMonitor.New
+  nameWithType: ToolTileMonitor.ToolTileMonitor
+  nameWithType.vb: ToolTileMonitor.New
+- uid: Integrity.Tools.ToolTileMonitor.DrawTileMonitorWindow(System.Boolean@)
+  name: DrawTileMonitorWindow(ref bool)
+  href: api/Integrity.Tools.ToolTileMonitor.html#Integrity_Tools_ToolTileMonitor_DrawTileMonitorWindow_System_Boolean__
+  commentId: M:Integrity.Tools.ToolTileMonitor.DrawTileMonitorWindow(System.Boolean@)
+  name.vb: DrawTileMonitorWindow(Boolean)
+  fullName: Integrity.Tools.ToolTileMonitor.DrawTileMonitorWindow(ref bool)
+  fullName.vb: Integrity.Tools.ToolTileMonitor.DrawTileMonitorWindow(Boolean)
+  nameWithType: ToolTileMonitor.DrawTileMonitorWindow(ref bool)
+  nameWithType.vb: ToolTileMonitor.DrawTileMonitorWindow(Boolean)
+- uid: Integrity.Tools.ToolTileMonitor.DrawTileMonitorWindow*
+  name: DrawTileMonitorWindow
+  href: api/Integrity.Tools.ToolTileMonitor.html#Integrity_Tools_ToolTileMonitor_DrawTileMonitorWindow_
+  commentId: Overload:Integrity.Tools.ToolTileMonitor.DrawTileMonitorWindow
+  fullName: Integrity.Tools.ToolTileMonitor.DrawTileMonitorWindow
+  nameWithType: ToolTileMonitor.DrawTileMonitorWindow
 - uid: Integrity.Utils
   name: Integrity.Utils
   href: api/Integrity.Utils.html

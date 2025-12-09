@@ -4,6 +4,8 @@ items:
   commentId: N:Integrity.Components
   id: Integrity.Components
   children:
+  - Integrity.Components.AnimationComponent
+  - Integrity.Components.AnimationFrame
   - Integrity.Components.SpriteComponent
   - Integrity.Components.TransformComponent
   langs:
@@ -14,8 +16,22 @@ items:
   fullName: Integrity.Components
   type: Namespace
   assemblies:
-  - Integrity
+  - Integrity2D
 references:
+- uid: Integrity.Components.AnimationFrame
+  commentId: T:Integrity.Components.AnimationFrame
+  isExternal: true
+  href: Integrity.Components.AnimationFrame.html
+  name: AnimationFrame
+  nameWithType: AnimationFrame
+  fullName: Integrity.Components.AnimationFrame
+- uid: Integrity.Components.AnimationComponent
+  commentId: T:Integrity.Components.AnimationComponent
+  isExternal: true
+  href: Integrity.Components.AnimationComponent.html
+  name: AnimationComponent
+  nameWithType: AnimationComponent
+  fullName: Integrity.Components.AnimationComponent
 - uid: Integrity.Components.SpriteComponent
   commentId: T:Integrity.Components.SpriteComponent
   parent: Integrity.Components

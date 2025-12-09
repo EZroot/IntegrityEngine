@@ -5,13 +5,15 @@ items:
   id: IRenderPipeline
   parent: Integrity.Interface
   children:
-  - Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
+  - Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Collections.Generic.List{System.Numerics.Vector4}@,System.Int32)
+  - Integrity.Interface.IRenderPipeline.DrawStaticMesh(Integrity.Assets.Texture,System.UInt32,System.Int32,System.Numerics.Matrix4x4@)
   - Integrity.Interface.IRenderPipeline.GlApi
   - Integrity.Interface.IRenderPipeline.InitializeRenderer(Silk.NET.SDL.Sdl,Silk.NET.SDL.Window*)
   - Integrity.Interface.IRenderPipeline.RenderFrameEnd
   - Integrity.Interface.IRenderPipeline.RenderFrameStart
   - Integrity.Interface.IRenderPipeline.SetClearColor(System.Drawing.Color)
   - Integrity.Interface.IRenderPipeline.SetProjectionMatrix(System.Numerics.Matrix4x4@)
+  - Integrity.Interface.IRenderPipeline.UpdateTileChunkVbo(Integrity.Rendering.TileChunk)
   - Integrity.Interface.IRenderPipeline.UpdateViewportSize(System.Int32,System.Int32)
   langs:
   - csharp
@@ -21,9 +23,9 @@ items:
   fullName: Integrity.Interface.IRenderPipeline
   type: Interface
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IRenderPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/interface/IRenderPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: 'public interface IRenderPipeline : IService'
@@ -40,9 +42,9 @@ items:
   fullName: Integrity.Interface.IRenderPipeline.InitializeRenderer(Silk.NET.SDL.Sdl, Silk.NET.SDL.Window*)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IRenderPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/interface/IRenderPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void InitializeRenderer(Sdl sdlApi, Window* window)
@@ -53,36 +55,93 @@ items:
       type: Silk.NET.SDL.Window*
     content.vb: Sub InitializeRenderer(sdlApi As Sdl, window As Window*)
   overload: Integrity.Interface.IRenderPipeline.InitializeRenderer*
-- uid: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
-  commentId: M:Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
-  id: DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Int32)
+- uid: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Collections.Generic.List{System.Numerics.Vector4}@,System.Int32)
+  commentId: M:Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Collections.Generic.List{System.Numerics.Vector4}@,System.Int32)
+  id: DrawSpritesInstanced(Integrity.Assets.Texture,System.Collections.Generic.List{System.Numerics.Matrix4x4}@,System.Collections.Generic.List{System.Numerics.Vector4}@,System.Int32)
   parent: Integrity.Interface.IRenderPipeline
   langs:
   - csharp
   - vb
-  name: DrawSpritesInstanced(Texture, in List<Matrix4x4>, int)
-  nameWithType: IRenderPipeline.DrawSpritesInstanced(Texture, in List<Matrix4x4>, int)
-  fullName: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture, in System.Collections.Generic.List<System.Numerics.Matrix4x4>, int)
+  name: DrawSpritesInstanced(Texture, in List<Matrix4x4>, in List<Vector4>, int)
+  nameWithType: IRenderPipeline.DrawSpritesInstanced(Texture, in List<Matrix4x4>, in List<Vector4>, int)
+  fullName: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture, in System.Collections.Generic.List<System.Numerics.Matrix4x4>, in System.Collections.Generic.List<System.Numerics.Vector4>, int)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IRenderPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/interface/IRenderPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
-    content: void DrawSpritesInstanced(Texture texture, in List<Matrix4x4> modelMatrices, int instanceCount)
+    content: void DrawSpritesInstanced(Texture texture, in List<Matrix4x4> modelMatrices, in List<Vector4> uvRects, int instanceCount)
     parameters:
     - id: texture
       type: Integrity.Assets.Texture
     - id: modelMatrices
       type: System.Collections.Generic.List{System.Numerics.Matrix4x4}
+    - id: uvRects
+      type: System.Collections.Generic.List{System.Numerics.Vector4}
     - id: instanceCount
       type: System.Int32
-    content.vb: Sub DrawSpritesInstanced(texture As Texture, modelMatrices As List(Of Matrix4x4), instanceCount As Integer)
+    content.vb: Sub DrawSpritesInstanced(texture As Texture, modelMatrices As List(Of Matrix4x4), uvRects As List(Of Vector4), instanceCount As Integer)
   overload: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced*
-  nameWithType.vb: IRenderPipeline.DrawSpritesInstanced(Texture, List(Of Matrix4x4), Integer)
-  fullName.vb: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture, System.Collections.Generic.List(Of System.Numerics.Matrix4x4), Integer)
-  name.vb: DrawSpritesInstanced(Texture, List(Of Matrix4x4), Integer)
+  nameWithType.vb: IRenderPipeline.DrawSpritesInstanced(Texture, List(Of Matrix4x4), List(Of Vector4), Integer)
+  fullName.vb: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced(Integrity.Assets.Texture, System.Collections.Generic.List(Of System.Numerics.Matrix4x4), System.Collections.Generic.List(Of System.Numerics.Vector4), Integer)
+  name.vb: DrawSpritesInstanced(Texture, List(Of Matrix4x4), List(Of Vector4), Integer)
+- uid: Integrity.Interface.IRenderPipeline.DrawStaticMesh(Integrity.Assets.Texture,System.UInt32,System.Int32,System.Numerics.Matrix4x4@)
+  commentId: M:Integrity.Interface.IRenderPipeline.DrawStaticMesh(Integrity.Assets.Texture,System.UInt32,System.Int32,System.Numerics.Matrix4x4@)
+  id: DrawStaticMesh(Integrity.Assets.Texture,System.UInt32,System.Int32,System.Numerics.Matrix4x4@)
+  parent: Integrity.Interface.IRenderPipeline
+  langs:
+  - csharp
+  - vb
+  name: DrawStaticMesh(Texture, uint, int, in Matrix4x4)
+  nameWithType: IRenderPipeline.DrawStaticMesh(Texture, uint, int, in Matrix4x4)
+  fullName: Integrity.Interface.IRenderPipeline.DrawStaticMesh(Integrity.Assets.Texture, uint, int, in System.Numerics.Matrix4x4)
+  type: Method
+  source:
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/interface/IRenderPipeline.cs
+  assemblies:
+  - Integrity2D
+  namespace: Integrity.Interface
+  syntax:
+    content: void DrawStaticMesh(Texture texture, uint vboId, int vertexCount, in Matrix4x4 modelMatrix)
+    parameters:
+    - id: texture
+      type: Integrity.Assets.Texture
+    - id: vboId
+      type: System.UInt32
+    - id: vertexCount
+      type: System.Int32
+    - id: modelMatrix
+      type: System.Numerics.Matrix4x4
+    content.vb: Sub DrawStaticMesh(texture As Texture, vboId As UInteger, vertexCount As Integer, modelMatrix As Matrix4x4)
+  overload: Integrity.Interface.IRenderPipeline.DrawStaticMesh*
+  nameWithType.vb: IRenderPipeline.DrawStaticMesh(Texture, UInteger, Integer, Matrix4x4)
+  fullName.vb: Integrity.Interface.IRenderPipeline.DrawStaticMesh(Integrity.Assets.Texture, UInteger, Integer, System.Numerics.Matrix4x4)
+  name.vb: DrawStaticMesh(Texture, UInteger, Integer, Matrix4x4)
+- uid: Integrity.Interface.IRenderPipeline.UpdateTileChunkVbo(Integrity.Rendering.TileChunk)
+  commentId: M:Integrity.Interface.IRenderPipeline.UpdateTileChunkVbo(Integrity.Rendering.TileChunk)
+  id: UpdateTileChunkVbo(Integrity.Rendering.TileChunk)
+  parent: Integrity.Interface.IRenderPipeline
+  langs:
+  - csharp
+  - vb
+  name: UpdateTileChunkVbo(TileChunk)
+  nameWithType: IRenderPipeline.UpdateTileChunkVbo(TileChunk)
+  fullName: Integrity.Interface.IRenderPipeline.UpdateTileChunkVbo(Integrity.Rendering.TileChunk)
+  type: Method
+  source:
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/interface/IRenderPipeline.cs
+  assemblies:
+  - Integrity2D
+  namespace: Integrity.Interface
+  syntax:
+    content: void UpdateTileChunkVbo(TileChunk chunk)
+    parameters:
+    - id: chunk
+      type: Integrity.Rendering.TileChunk
+    content.vb: Sub UpdateTileChunkVbo(chunk As TileChunk)
+  overload: Integrity.Interface.IRenderPipeline.UpdateTileChunkVbo*
 - uid: Integrity.Interface.IRenderPipeline.RenderFrameStart
   commentId: M:Integrity.Interface.IRenderPipeline.RenderFrameStart
   id: RenderFrameStart
@@ -95,9 +154,9 @@ items:
   fullName: Integrity.Interface.IRenderPipeline.RenderFrameStart()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IRenderPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/interface/IRenderPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void RenderFrameStart()
@@ -115,9 +174,9 @@ items:
   fullName: Integrity.Interface.IRenderPipeline.RenderFrameEnd()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IRenderPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/interface/IRenderPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void RenderFrameEnd()
@@ -135,9 +194,9 @@ items:
   fullName: Integrity.Interface.IRenderPipeline.UpdateViewportSize(int, int)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IRenderPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/interface/IRenderPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void UpdateViewportSize(int width, int height)
@@ -163,9 +222,9 @@ items:
   fullName: Integrity.Interface.IRenderPipeline.SetProjectionMatrix(in System.Numerics.Matrix4x4)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IRenderPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/interface/IRenderPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void SetProjectionMatrix(in Matrix4x4 matrix)
@@ -189,9 +248,9 @@ items:
   fullName: Integrity.Interface.IRenderPipeline.SetClearColor(System.Drawing.Color)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IRenderPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/interface/IRenderPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void SetClearColor(Color color)
@@ -212,9 +271,9 @@ items:
   fullName: Integrity.Interface.IRenderPipeline.GlApi
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/interface/IRenderPipeline.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/interface/IRenderPipeline.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: GL? GlApi { get; }
@@ -313,7 +372,7 @@ references:
 - uid: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced*
   commentId: Overload:Integrity.Interface.IRenderPipeline.DrawSpritesInstanced
   isExternal: true
-  href: Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_DrawSpritesInstanced_Integrity_Assets_Texture_System_Collections_Generic_List_System_Numerics_Matrix4x4___System_Int32_
+  href: Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_DrawSpritesInstanced_Integrity_Assets_Texture_System_Collections_Generic_List_System_Numerics_Matrix4x4___System_Collections_Generic_List_System_Numerics_Vector4___System_Int32_
   name: DrawSpritesInstanced
   nameWithType: IRenderPipeline.DrawSpritesInstanced
   fullName: Integrity.Interface.IRenderPipeline.DrawSpritesInstanced
@@ -359,6 +418,41 @@ references:
     name: Matrix4x4
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.numerics.matrix4x4
+  - name: )
+- uid: System.Collections.Generic.List{System.Numerics.Vector4}
+  commentId: T:System.Collections.Generic.List{System.Numerics.Vector4}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Vector4>
+  nameWithType: List<Vector4>
+  fullName: System.Collections.Generic.List<System.Numerics.Vector4>
+  nameWithType.vb: List(Of Vector4)
+  fullName.vb: System.Collections.Generic.List(Of System.Numerics.Vector4)
+  name.vb: List(Of Vector4)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Numerics.Vector4
+    name: Vector4
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector4
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Numerics.Vector4
+    name: Vector4
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector4
   - name: )
 - uid: System.Int32
   commentId: T:System.Int32
@@ -470,34 +564,24 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Integrity.Interface.IRenderPipeline.RenderFrameStart*
-  commentId: Overload:Integrity.Interface.IRenderPipeline.RenderFrameStart
+- uid: Integrity.Interface.IRenderPipeline.DrawStaticMesh*
+  commentId: Overload:Integrity.Interface.IRenderPipeline.DrawStaticMesh
   isExternal: true
-  href: Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_RenderFrameStart
-  name: RenderFrameStart
-  nameWithType: IRenderPipeline.RenderFrameStart
-  fullName: Integrity.Interface.IRenderPipeline.RenderFrameStart
-- uid: Integrity.Interface.IRenderPipeline.RenderFrameEnd*
-  commentId: Overload:Integrity.Interface.IRenderPipeline.RenderFrameEnd
+  href: Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_DrawStaticMesh_Integrity_Assets_Texture_System_UInt32_System_Int32_System_Numerics_Matrix4x4__
+  name: DrawStaticMesh
+  nameWithType: IRenderPipeline.DrawStaticMesh
+  fullName: Integrity.Interface.IRenderPipeline.DrawStaticMesh
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
   isExternal: true
-  href: Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_RenderFrameEnd
-  name: RenderFrameEnd
-  nameWithType: IRenderPipeline.RenderFrameEnd
-  fullName: Integrity.Interface.IRenderPipeline.RenderFrameEnd
-- uid: Integrity.Interface.IRenderPipeline.UpdateViewportSize*
-  commentId: Overload:Integrity.Interface.IRenderPipeline.UpdateViewportSize
-  isExternal: true
-  href: Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_UpdateViewportSize_System_Int32_System_Int32_
-  name: UpdateViewportSize
-  nameWithType: IRenderPipeline.UpdateViewportSize
-  fullName: Integrity.Interface.IRenderPipeline.UpdateViewportSize
-- uid: Integrity.Interface.IRenderPipeline.SetProjectionMatrix*
-  commentId: Overload:Integrity.Interface.IRenderPipeline.SetProjectionMatrix
-  isExternal: true
-  href: Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_SetProjectionMatrix_System_Numerics_Matrix4x4__
-  name: SetProjectionMatrix
-  nameWithType: IRenderPipeline.SetProjectionMatrix
-  fullName: Integrity.Interface.IRenderPipeline.SetProjectionMatrix
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger
 - uid: System.Numerics.Matrix4x4
   commentId: T:System.Numerics.Matrix4x4
   parent: System.Numerics
@@ -533,6 +617,76 @@ references:
     name: Numerics
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.numerics
+- uid: Integrity.Interface.IRenderPipeline.UpdateTileChunkVbo*
+  commentId: Overload:Integrity.Interface.IRenderPipeline.UpdateTileChunkVbo
+  isExternal: true
+  href: Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_UpdateTileChunkVbo_Integrity_Rendering_TileChunk_
+  name: UpdateTileChunkVbo
+  nameWithType: IRenderPipeline.UpdateTileChunkVbo
+  fullName: Integrity.Interface.IRenderPipeline.UpdateTileChunkVbo
+- uid: Integrity.Rendering.TileChunk
+  commentId: T:Integrity.Rendering.TileChunk
+  parent: Integrity.Rendering
+  isExternal: true
+  href: Integrity.Rendering.TileChunk.html
+  name: TileChunk
+  nameWithType: TileChunk
+  fullName: Integrity.Rendering.TileChunk
+- uid: Integrity.Rendering
+  commentId: N:Integrity.Rendering
+  isExternal: true
+  href: Integrity.html
+  name: Integrity.Rendering
+  nameWithType: Integrity.Rendering
+  fullName: Integrity.Rendering
+  spec.csharp:
+  - uid: Integrity
+    name: Integrity
+    isExternal: true
+    href: Integrity.html
+  - name: .
+  - uid: Integrity.Rendering
+    name: Rendering
+    isExternal: true
+    href: Integrity.Rendering.html
+  spec.vb:
+  - uid: Integrity
+    name: Integrity
+    isExternal: true
+    href: Integrity.html
+  - name: .
+  - uid: Integrity.Rendering
+    name: Rendering
+    isExternal: true
+    href: Integrity.Rendering.html
+- uid: Integrity.Interface.IRenderPipeline.RenderFrameStart*
+  commentId: Overload:Integrity.Interface.IRenderPipeline.RenderFrameStart
+  isExternal: true
+  href: Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_RenderFrameStart
+  name: RenderFrameStart
+  nameWithType: IRenderPipeline.RenderFrameStart
+  fullName: Integrity.Interface.IRenderPipeline.RenderFrameStart
+- uid: Integrity.Interface.IRenderPipeline.RenderFrameEnd*
+  commentId: Overload:Integrity.Interface.IRenderPipeline.RenderFrameEnd
+  isExternal: true
+  href: Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_RenderFrameEnd
+  name: RenderFrameEnd
+  nameWithType: IRenderPipeline.RenderFrameEnd
+  fullName: Integrity.Interface.IRenderPipeline.RenderFrameEnd
+- uid: Integrity.Interface.IRenderPipeline.UpdateViewportSize*
+  commentId: Overload:Integrity.Interface.IRenderPipeline.UpdateViewportSize
+  isExternal: true
+  href: Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_UpdateViewportSize_System_Int32_System_Int32_
+  name: UpdateViewportSize
+  nameWithType: IRenderPipeline.UpdateViewportSize
+  fullName: Integrity.Interface.IRenderPipeline.UpdateViewportSize
+- uid: Integrity.Interface.IRenderPipeline.SetProjectionMatrix*
+  commentId: Overload:Integrity.Interface.IRenderPipeline.SetProjectionMatrix
+  isExternal: true
+  href: Integrity.Interface.IRenderPipeline.html#Integrity_Interface_IRenderPipeline_SetProjectionMatrix_System_Numerics_Matrix4x4__
+  name: SetProjectionMatrix
+  nameWithType: IRenderPipeline.SetProjectionMatrix
+  fullName: Integrity.Interface.IRenderPipeline.SetProjectionMatrix
 - uid: Integrity.Interface.IRenderPipeline.SetClearColor*
   commentId: Overload:Integrity.Interface.IRenderPipeline.SetClearColor
   isExternal: true

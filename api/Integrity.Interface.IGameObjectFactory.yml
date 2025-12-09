@@ -15,9 +15,9 @@ items:
   fullName: Integrity.Interface.IGameObjectFactory
   type: Interface
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/factories/interface/IGameObjectFactory.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/factories/interface/IGameObjectFactory.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: 'public interface IGameObjectFactory : IService'
@@ -34,9 +34,9 @@ items:
   fullName: Integrity.Interface.IGameObjectFactory.CreateGameObject(string, Integrity.Interface.IComponent[]?)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/factories/interface/IGameObjectFactory.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/factories/interface/IGameObjectFactory.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: GameObject CreateGameObject(string name, IComponent[]? componentsToAdd = null)
@@ -64,9 +64,9 @@ items:
   fullName: Integrity.Interface.IGameObjectFactory.CreateSpriteObject(string, string, Integrity.Interface.IComponent[]?)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/factories/interface/IGameObjectFactory.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/factories/interface/IGameObjectFactory.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: SpriteObject CreateSpriteObject(string name, string assetPath, IComponent[]? componentsToAdd = null)

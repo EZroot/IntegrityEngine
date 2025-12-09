@@ -6,6 +6,7 @@ items:
   parent: Integrity.Scenes
   children:
   - Integrity.Scenes.Scene.#ctor(System.String)
+  - Integrity.Scenes.Scene.AnimationRenderSystem
   - Integrity.Scenes.Scene.Cleanup
   - Integrity.Scenes.Scene.GetAllGameObjects
   - Integrity.Scenes.Scene.GetAllSpriteObjects
@@ -15,6 +16,7 @@ items:
   - Integrity.Scenes.Scene.Name
   - Integrity.Scenes.Scene.RegisterGameObject(Integrity.Objects.GameObject)
   - Integrity.Scenes.Scene.SpriteRenderSystem
+  - Integrity.Scenes.Scene.TileRenderSystem
   langs:
   - csharp
   - vb
@@ -23,9 +25,9 @@ items:
   fullName: Integrity.Scenes.Scene
   type: Class
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/Scene.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/Scene.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Scenes
   syntax:
     content: public class Scene
@@ -52,9 +54,9 @@ items:
   fullName: Integrity.Scenes.Scene.Scene(string)
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/Scene.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/Scene.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Scenes
   syntax:
     content: public Scene(string name)
@@ -78,9 +80,9 @@ items:
   fullName: Integrity.Scenes.Scene.Initialize()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/Scene.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/Scene.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Scenes
   summary: Called when the scene is first loaded/activated. Initializes all GameObjects.
   example: []
@@ -100,9 +102,9 @@ items:
   fullName: Integrity.Scenes.Scene.RegisterGameObject(Integrity.Objects.GameObject)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/Scene.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/Scene.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Scenes
   syntax:
     content: public void RegisterGameObject(GameObject obj)
@@ -123,9 +125,9 @@ items:
   fullName: Integrity.Scenes.Scene.GetGameObjectById(System.Guid)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/Scene.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/Scene.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Scenes
   syntax:
     content: public GameObject? GetGameObjectById(Guid id)
@@ -148,9 +150,9 @@ items:
   fullName: Integrity.Scenes.Scene.GetAllGameObjects()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/Scene.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/Scene.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Scenes
   syntax:
     content: public IReadOnlyList<GameObject> GetAllGameObjects()
@@ -170,9 +172,9 @@ items:
   fullName: Integrity.Scenes.Scene.GetAllSpriteObjects()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/Scene.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/Scene.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Scenes
   syntax:
     content: public IReadOnlyList<SpriteObject> GetAllSpriteObjects()
@@ -192,9 +194,9 @@ items:
   fullName: Integrity.Scenes.Scene.Cleanup()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/Scene.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/Scene.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Scenes
   summary: Called when the scene is being unloaded. Cleans up all GameObjects.
   example: []
@@ -214,9 +216,9 @@ items:
   fullName: Integrity.Scenes.Scene.Id
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/Scene.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/Scene.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Scenes
   syntax:
     content: public Guid Id { get; }
@@ -237,9 +239,9 @@ items:
   fullName: Integrity.Scenes.Scene.Name
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/Scene.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/Scene.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Scenes
   syntax:
     content: public string Name { get; }
@@ -260,9 +262,9 @@ items:
   fullName: Integrity.Scenes.Scene.SpriteRenderSystem
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/Scene.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/Scene.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Scenes
   syntax:
     content: public SpriteRenderSystem SpriteRenderSystem { get; }
@@ -271,6 +273,52 @@ items:
       type: Integrity.Rendering.SpriteRenderSystem
     content.vb: Public ReadOnly Property SpriteRenderSystem As SpriteRenderSystem
   overload: Integrity.Scenes.Scene.SpriteRenderSystem*
+- uid: Integrity.Scenes.Scene.AnimationRenderSystem
+  commentId: P:Integrity.Scenes.Scene.AnimationRenderSystem
+  id: AnimationRenderSystem
+  parent: Integrity.Scenes.Scene
+  langs:
+  - csharp
+  - vb
+  name: AnimationRenderSystem
+  nameWithType: Scene.AnimationRenderSystem
+  fullName: Integrity.Scenes.Scene.AnimationRenderSystem
+  type: Property
+  source:
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/Scene.cs
+  assemblies:
+  - Integrity2D
+  namespace: Integrity.Scenes
+  syntax:
+    content: public AnimationRenderSystem AnimationRenderSystem { get; }
+    parameters: []
+    return:
+      type: Integrity.Systems.AnimationRenderSystem
+    content.vb: Public ReadOnly Property AnimationRenderSystem As AnimationRenderSystem
+  overload: Integrity.Scenes.Scene.AnimationRenderSystem*
+- uid: Integrity.Scenes.Scene.TileRenderSystem
+  commentId: P:Integrity.Scenes.Scene.TileRenderSystem
+  id: TileRenderSystem
+  parent: Integrity.Scenes.Scene
+  langs:
+  - csharp
+  - vb
+  name: TileRenderSystem
+  nameWithType: Scene.TileRenderSystem
+  fullName: Integrity.Scenes.Scene.TileRenderSystem
+  type: Property
+  source:
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/Scene.cs
+  assemblies:
+  - Integrity2D
+  namespace: Integrity.Scenes
+  syntax:
+    content: public TileRenderSystem TileRenderSystem { get; }
+    parameters: []
+    return:
+      type: Integrity.Rendering.TileRenderSystem
+    content.vb: Public ReadOnly Property TileRenderSystem As TileRenderSystem
+  overload: Integrity.Scenes.Scene.TileRenderSystem*
 references:
 - uid: Integrity.Scenes
   commentId: N:Integrity.Scenes
@@ -833,3 +881,60 @@ references:
     name: Rendering
     isExternal: true
     href: Integrity.Rendering.html
+- uid: Integrity.Scenes.Scene.AnimationRenderSystem*
+  commentId: Overload:Integrity.Scenes.Scene.AnimationRenderSystem
+  isExternal: true
+  href: Integrity.Scenes.Scene.html#Integrity_Scenes_Scene_AnimationRenderSystem
+  name: AnimationRenderSystem
+  nameWithType: Scene.AnimationRenderSystem
+  fullName: Integrity.Scenes.Scene.AnimationRenderSystem
+- uid: Integrity.Systems.AnimationRenderSystem
+  commentId: T:Integrity.Systems.AnimationRenderSystem
+  parent: Integrity.Systems
+  isExternal: true
+  href: Integrity.Systems.AnimationRenderSystem.html
+  name: AnimationRenderSystem
+  nameWithType: AnimationRenderSystem
+  fullName: Integrity.Systems.AnimationRenderSystem
+- uid: Integrity.Systems
+  commentId: N:Integrity.Systems
+  isExternal: true
+  href: Integrity.html
+  name: Integrity.Systems
+  nameWithType: Integrity.Systems
+  fullName: Integrity.Systems
+  spec.csharp:
+  - uid: Integrity
+    name: Integrity
+    isExternal: true
+    href: Integrity.html
+  - name: .
+  - uid: Integrity.Systems
+    name: Systems
+    isExternal: true
+    href: Integrity.Systems.html
+  spec.vb:
+  - uid: Integrity
+    name: Integrity
+    isExternal: true
+    href: Integrity.html
+  - name: .
+  - uid: Integrity.Systems
+    name: Systems
+    isExternal: true
+    href: Integrity.Systems.html
+- uid: Integrity.Scenes.Scene.TileRenderSystem*
+  commentId: Overload:Integrity.Scenes.Scene.TileRenderSystem
+  isExternal: true
+  href: Integrity.Scenes.Scene.html#Integrity_Scenes_Scene_TileRenderSystem
+  name: TileRenderSystem
+  nameWithType: Scene.TileRenderSystem
+  fullName: Integrity.Scenes.Scene.TileRenderSystem
+- uid: Integrity.Rendering.TileRenderSystem
+  commentId: T:Integrity.Rendering.TileRenderSystem
+  parent: Integrity.Rendering
+  isExternal: true
+  href: Integrity.Rendering.TileRenderSystem.html
+  name: TileRenderSystem
+  nameWithType: TileRenderSystem
+  fullName: Integrity.Rendering.TileRenderSystem

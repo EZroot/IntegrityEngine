@@ -23,9 +23,9 @@ items:
   fullName: Integrity.Interface.IProfiler
   type: Interface
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/interface/IProfiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: 'public interface IProfiler : IService'
@@ -42,9 +42,9 @@ items:
   fullName: Integrity.Interface.IProfiler.InitializeRenderProfiler(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/interface/IProfiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void InitializeRenderProfiler(string tag)
@@ -68,9 +68,9 @@ items:
   fullName: Integrity.Interface.IProfiler.StartRenderProfile(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/interface/IProfiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void StartRenderProfile(string tag)
@@ -94,9 +94,9 @@ items:
   fullName: Integrity.Interface.IProfiler.StopRenderProfile(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/interface/IProfiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void StopRenderProfile(string tag)
@@ -120,9 +120,9 @@ items:
   fullName: Integrity.Interface.IProfiler.GetRenderProfile(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/interface/IProfiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: Profiler.ProfileResultGpu? GetRenderProfile(string tag)
@@ -148,9 +148,9 @@ items:
   fullName: Integrity.Interface.IProfiler.StartCpuProfile(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/interface/IProfiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void StartCpuProfile(string tag)
@@ -174,9 +174,9 @@ items:
   fullName: Integrity.Interface.IProfiler.StopCpuProfile(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/interface/IProfiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void StopCpuProfile(string tag)
@@ -200,9 +200,9 @@ items:
   fullName: Integrity.Interface.IProfiler.GetCpuProfile(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/interface/IProfiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: Profiler.ProfileResultCpu? GetCpuProfile(string tag)
@@ -228,9 +228,9 @@ items:
   fullName: Integrity.Interface.IProfiler.Cleanup()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/interface/IProfiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void Cleanup()
@@ -248,9 +248,9 @@ items:
   fullName: Integrity.Interface.IProfiler.RenderProfileResults
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/interface/IProfiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: ReadOnlyDictionary<string, Profiler.ProfileResultGpu> RenderProfileResults { get; }
@@ -271,9 +271,9 @@ items:
   fullName: Integrity.Interface.IProfiler.CpuProfileResults
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/interface/IProfiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/interface/IProfiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: ReadOnlyDictionary<string, Profiler.ProfileResultCpu> CpuProfileResults { get; }

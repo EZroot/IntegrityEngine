@@ -1,0 +1,52 @@
+### YamlMime:ManagedReference
+items:
+- uid: Integrity.Systems
+  commentId: N:Integrity.Systems
+  id: Integrity.Systems
+  children:
+  - Integrity.Systems.AnimationRenderSystem
+  langs:
+  - csharp
+  - vb
+  name: Integrity.Systems
+  nameWithType: Integrity.Systems
+  fullName: Integrity.Systems
+  type: Namespace
+  assemblies:
+  - Integrity2D
+references:
+- uid: Integrity.Systems.AnimationRenderSystem
+  commentId: T:Integrity.Systems.AnimationRenderSystem
+  parent: Integrity.Systems
+  isExternal: true
+  href: Integrity.Systems.AnimationRenderSystem.html
+  name: AnimationRenderSystem
+  nameWithType: AnimationRenderSystem
+  fullName: Integrity.Systems.AnimationRenderSystem
+- uid: Integrity.Systems
+  commentId: N:Integrity.Systems
+  isExternal: true
+  href: Integrity.html
+  name: Integrity.Systems
+  nameWithType: Integrity.Systems
+  fullName: Integrity.Systems
+  spec.csharp:
+  - uid: Integrity
+    name: Integrity
+    isExternal: true
+    href: Integrity.html
+  - name: .
+  - uid: Integrity.Systems
+    name: Systems
+    isExternal: true
+    href: Integrity.Systems.html
+  spec.vb:
+  - uid: Integrity
+    name: Integrity
+    isExternal: true
+    href: Integrity.html
+  - name: .
+  - uid: Integrity.Systems
+    name: Systems
+    isExternal: true
+    href: Integrity.Systems.html

@@ -15,9 +15,9 @@ items:
   fullName: Integrity.Interface.IInputManager
   type: Interface
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/io/interface/IInputManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/io/interface/IInputManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: 'public interface IInputManager : IService'
@@ -34,9 +34,9 @@ items:
   fullName: Integrity.Interface.IInputManager.ProcessInput(Silk.NET.SDL.Event)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/io/interface/IInputManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/io/interface/IInputManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void ProcessInput(Event ev)
@@ -57,9 +57,9 @@ items:
   fullName: Integrity.Interface.IInputManager.IsKeyDown(Silk.NET.SDL.Scancode)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/io/interface/IInputManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/io/interface/IInputManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: bool IsKeyDown(Scancode scancode)

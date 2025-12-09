@@ -19,9 +19,9 @@ items:
   fullName: Integrity.Settings.EngineSettings
   type: Class
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/settings/EngineSettings.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Settings
   syntax:
     content: 'public class EngineSettings : IEngineSettings, IService'
@@ -51,15 +51,15 @@ items:
   fullName: Integrity.Settings.EngineSettings.SHADER_DIR
   type: Field
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/settings/EngineSettings.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Settings
   syntax:
-    content: public const string SHADER_DIR = "/home/ezroot/Repos/Integrity/DefaultEngineAssets/shaders/"
+    content: public const string SHADER_DIR = "Shaders/"
     return:
       type: System.String
-    content.vb: Public Const SHADER_DIR As String = "/home/ezroot/Repos/Integrity/DefaultEngineAssets/shaders/"
+    content.vb: Public Const SHADER_DIR As String = "Shaders/"
 - uid: Integrity.Settings.EngineSettings.FILENAME_ENGINE_SETTINGS
   commentId: F:Integrity.Settings.EngineSettings.FILENAME_ENGINE_SETTINGS
   id: FILENAME_ENGINE_SETTINGS
@@ -72,9 +72,9 @@ items:
   fullName: Integrity.Settings.EngineSettings.FILENAME_ENGINE_SETTINGS
   type: Field
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/settings/EngineSettings.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Settings
   syntax:
     content: public const string FILENAME_ENGINE_SETTINGS = "engine.ini"
@@ -93,9 +93,9 @@ items:
   fullName: Integrity.Settings.EngineSettings.LoadSettingsAsync()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/settings/EngineSettings.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Settings
   example: []
   syntax:
@@ -118,9 +118,9 @@ items:
   fullName: Integrity.Settings.EngineSettings.SaveSettingsAsync()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/settings/EngineSettings.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Settings
   example: []
   syntax:
@@ -143,9 +143,9 @@ items:
   fullName: Integrity.Settings.EngineSettings.EngineSettings()
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/settings/EngineSettings.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Settings
   syntax:
     content: public EngineSettings()
@@ -166,9 +166,9 @@ items:
   fullName: Integrity.Settings.EngineSettings.Data
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/settings/EngineSettings.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Settings
   example: []
   syntax:

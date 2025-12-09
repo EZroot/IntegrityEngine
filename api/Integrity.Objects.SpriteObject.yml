@@ -15,9 +15,9 @@ items:
   fullName: Integrity.Objects.SpriteObject
   type: Class
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/objects/SpriteObject.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/objects/SpriteObject.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Objects
   syntax:
     content: 'public class SpriteObject : GameObject'
@@ -28,6 +28,7 @@ items:
   inheritedMembers:
   - Integrity.Objects.GameObject.AddComponent(Integrity.Interface.IComponent)
   - Integrity.Objects.GameObject.GetComponent``1
+  - Integrity.Objects.GameObject.TryGetComponent``1({T}@)
   - Integrity.Objects.GameObject.Transform
   - Integrity.Objects.GameObject.Id
   - Integrity.Objects.GameObject.Name
@@ -50,9 +51,9 @@ items:
   fullName: Integrity.Objects.SpriteObject.SpriteObject(string, Integrity.Assets.Texture)
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/objects/SpriteObject.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/objects/SpriteObject.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Objects
   syntax:
     content: public SpriteObject(string name, Texture Texture)
@@ -78,9 +79,9 @@ items:
   fullName: Integrity.Objects.SpriteObject.Sprite
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/objects/SpriteObject.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/objects/SpriteObject.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Objects
   syntax:
     content: public SpriteComponent Sprite { get; }
@@ -198,6 +199,43 @@ references:
   - name: T
   - name: )
   - name: (
+  - name: )
+- uid: Integrity.Objects.GameObject.TryGetComponent``1({T}@)
+  commentId: M:Integrity.Objects.GameObject.TryGetComponent``1(``0@)
+  parent: Integrity.Objects.GameObject
+  definition: Integrity.Objects.GameObject.TryGetComponent``1(``0@)
+  href: Integrity.Objects.GameObject.html#Integrity_Objects_GameObject_TryGetComponent__1___0__
+  name: TryGetComponent<T>(out T)
+  nameWithType: GameObject.TryGetComponent<T>(out T)
+  fullName: Integrity.Objects.GameObject.TryGetComponent<T>(out T)
+  nameWithType.vb: GameObject.TryGetComponent(Of T)(T)
+  fullName.vb: Integrity.Objects.GameObject.TryGetComponent(Of T)(T)
+  name.vb: TryGetComponent(Of T)(T)
+  spec.csharp:
+  - uid: Integrity.Objects.GameObject.TryGetComponent``1(``0@)
+    name: TryGetComponent
+    isExternal: true
+    href: Integrity.Objects.GameObject.html#Integrity_Objects_GameObject_TryGetComponent__1___0__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: out
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: Integrity.Objects.GameObject.TryGetComponent``1(``0@)
+    name: TryGetComponent
+    isExternal: true
+    href: Integrity.Objects.GameObject.html#Integrity_Objects_GameObject_TryGetComponent__1___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
   - name: )
 - uid: Integrity.Objects.GameObject.Transform
   commentId: P:Integrity.Objects.GameObject.Transform
@@ -449,6 +487,42 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: Integrity.Objects.GameObject.TryGetComponent``1(``0@)
+  commentId: M:Integrity.Objects.GameObject.TryGetComponent``1(``0@)
+  isExternal: true
+  href: Integrity.Objects.GameObject.html#Integrity_Objects_GameObject_TryGetComponent__1___0__
+  name: TryGetComponent<T>(out T)
+  nameWithType: GameObject.TryGetComponent<T>(out T)
+  fullName: Integrity.Objects.GameObject.TryGetComponent<T>(out T)
+  nameWithType.vb: GameObject.TryGetComponent(Of T)(T)
+  fullName.vb: Integrity.Objects.GameObject.TryGetComponent(Of T)(T)
+  name.vb: TryGetComponent(Of T)(T)
+  spec.csharp:
+  - uid: Integrity.Objects.GameObject.TryGetComponent``1(``0@)
+    name: TryGetComponent
+    isExternal: true
+    href: Integrity.Objects.GameObject.html#Integrity_Objects_GameObject_TryGetComponent__1___0__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: out
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: Integrity.Objects.GameObject.TryGetComponent``1(``0@)
+    name: TryGetComponent
+    isExternal: true
+    href: Integrity.Objects.GameObject.html#Integrity_Objects_GameObject_TryGetComponent__1___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: )
 - uid: Integrity.Objects.SpriteObject.#ctor*
   commentId: Overload:Integrity.Objects.SpriteObject.#ctor
   isExternal: true

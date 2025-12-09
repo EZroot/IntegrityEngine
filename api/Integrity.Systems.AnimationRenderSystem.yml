@@ -1,0 +1,487 @@
+### YamlMime:ManagedReference
+items:
+- uid: Integrity.Systems.AnimationRenderSystem
+  commentId: T:Integrity.Systems.AnimationRenderSystem
+  id: AnimationRenderSystem
+  parent: Integrity.Systems
+  children:
+  - Integrity.Systems.AnimationRenderSystem.#ctor
+  - Integrity.Systems.AnimationRenderSystem.RegisterObject(Integrity.Objects.GameObject)
+  - Integrity.Systems.AnimationRenderSystem.Shutdown
+  - Integrity.Systems.AnimationRenderSystem.UpdateAnimationFrames(System.Single)
+  langs:
+  - csharp
+  - vb
+  name: AnimationRenderSystem
+  nameWithType: AnimationRenderSystem
+  fullName: Integrity.Systems.AnimationRenderSystem
+  type: Class
+  source:
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/AnimationRenderSystem.cs
+  assemblies:
+  - Integrity2D
+  namespace: Integrity.Systems
+  syntax:
+    content: public class AnimationRenderSystem
+    content.vb: Public Class AnimationRenderSystem
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: Integrity.Systems.AnimationRenderSystem.#ctor
+  commentId: M:Integrity.Systems.AnimationRenderSystem.#ctor
+  id: '#ctor'
+  parent: Integrity.Systems.AnimationRenderSystem
+  langs:
+  - csharp
+  - vb
+  name: AnimationRenderSystem()
+  nameWithType: AnimationRenderSystem.AnimationRenderSystem()
+  fullName: Integrity.Systems.AnimationRenderSystem.AnimationRenderSystem()
+  type: Constructor
+  source:
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/AnimationRenderSystem.cs
+  assemblies:
+  - Integrity2D
+  namespace: Integrity.Systems
+  syntax:
+    content: public AnimationRenderSystem()
+    content.vb: Public Sub New()
+  overload: Integrity.Systems.AnimationRenderSystem.#ctor*
+  nameWithType.vb: AnimationRenderSystem.New()
+  fullName.vb: Integrity.Systems.AnimationRenderSystem.New()
+  name.vb: New()
+- uid: Integrity.Systems.AnimationRenderSystem.RegisterObject(Integrity.Objects.GameObject)
+  commentId: M:Integrity.Systems.AnimationRenderSystem.RegisterObject(Integrity.Objects.GameObject)
+  id: RegisterObject(Integrity.Objects.GameObject)
+  parent: Integrity.Systems.AnimationRenderSystem
+  langs:
+  - csharp
+  - vb
+  name: RegisterObject(GameObject)
+  nameWithType: AnimationRenderSystem.RegisterObject(GameObject)
+  fullName: Integrity.Systems.AnimationRenderSystem.RegisterObject(Integrity.Objects.GameObject)
+  type: Method
+  source:
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/AnimationRenderSystem.cs
+  assemblies:
+  - Integrity2D
+  namespace: Integrity.Systems
+  summary: Register an object with animation component to play through the animation
+  example: []
+  syntax:
+    content: public void RegisterObject(GameObject obj)
+    parameters:
+    - id: obj
+      type: Integrity.Objects.GameObject
+      description: ''
+    content.vb: Public Sub RegisterObject(obj As GameObject)
+  overload: Integrity.Systems.AnimationRenderSystem.RegisterObject*
+  exceptions:
+  - type: System.Exception
+    commentId: T:System.Exception
+    description: ''
+- uid: Integrity.Systems.AnimationRenderSystem.UpdateAnimationFrames(System.Single)
+  commentId: M:Integrity.Systems.AnimationRenderSystem.UpdateAnimationFrames(System.Single)
+  id: UpdateAnimationFrames(System.Single)
+  parent: Integrity.Systems.AnimationRenderSystem
+  langs:
+  - csharp
+  - vb
+  name: UpdateAnimationFrames(float)
+  nameWithType: AnimationRenderSystem.UpdateAnimationFrames(float)
+  fullName: Integrity.Systems.AnimationRenderSystem.UpdateAnimationFrames(float)
+  type: Method
+  source:
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/AnimationRenderSystem.cs
+  assemblies:
+  - Integrity2D
+  namespace: Integrity.Systems
+  summary: Play through the current animation of sprite objects
+  example: []
+  syntax:
+    content: public void UpdateAnimationFrames(float deltaTime)
+    parameters:
+    - id: deltaTime
+      type: System.Single
+      description: ''
+    content.vb: Public Sub UpdateAnimationFrames(deltaTime As Single)
+  overload: Integrity.Systems.AnimationRenderSystem.UpdateAnimationFrames*
+  nameWithType.vb: AnimationRenderSystem.UpdateAnimationFrames(Single)
+  fullName.vb: Integrity.Systems.AnimationRenderSystem.UpdateAnimationFrames(Single)
+  name.vb: UpdateAnimationFrames(Single)
+- uid: Integrity.Systems.AnimationRenderSystem.Shutdown
+  commentId: M:Integrity.Systems.AnimationRenderSystem.Shutdown
+  id: Shutdown
+  parent: Integrity.Systems.AnimationRenderSystem
+  langs:
+  - csharp
+  - vb
+  name: Shutdown()
+  nameWithType: AnimationRenderSystem.Shutdown()
+  fullName: Integrity.Systems.AnimationRenderSystem.Shutdown()
+  type: Method
+  source:
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/AnimationRenderSystem.cs
+  assemblies:
+  - Integrity2D
+  namespace: Integrity.Systems
+  syntax:
+    content: public void Shutdown()
+    content.vb: Public Sub Shutdown()
+  overload: Integrity.Systems.AnimationRenderSystem.Shutdown*
+references:
+- uid: Integrity.Systems
+  commentId: N:Integrity.Systems
+  isExternal: true
+  href: Integrity.html
+  name: Integrity.Systems
+  nameWithType: Integrity.Systems
+  fullName: Integrity.Systems
+  spec.csharp:
+  - uid: Integrity
+    name: Integrity
+    isExternal: true
+    href: Integrity.html
+  - name: .
+  - uid: Integrity.Systems
+    name: Systems
+    isExternal: true
+    href: Integrity.Systems.html
+  spec.vb:
+  - uid: Integrity
+    name: Integrity
+    isExternal: true
+    href: Integrity.html
+  - name: .
+  - uid: Integrity.Systems
+    name: Systems
+    isExternal: true
+    href: Integrity.Systems.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Integrity.Systems.AnimationRenderSystem.#ctor*
+  commentId: Overload:Integrity.Systems.AnimationRenderSystem.#ctor
+  isExternal: true
+  href: Integrity.Systems.AnimationRenderSystem.html#Integrity_Systems_AnimationRenderSystem__ctor
+  name: AnimationRenderSystem
+  nameWithType: AnimationRenderSystem.AnimationRenderSystem
+  fullName: Integrity.Systems.AnimationRenderSystem.AnimationRenderSystem
+  nameWithType.vb: AnimationRenderSystem.New
+  fullName.vb: Integrity.Systems.AnimationRenderSystem.New
+  name.vb: New
+- uid: System.Exception
+  commentId: T:System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: Integrity.Systems.AnimationRenderSystem.RegisterObject*
+  commentId: Overload:Integrity.Systems.AnimationRenderSystem.RegisterObject
+  isExternal: true
+  href: Integrity.Systems.AnimationRenderSystem.html#Integrity_Systems_AnimationRenderSystem_RegisterObject_Integrity_Objects_GameObject_
+  name: RegisterObject
+  nameWithType: AnimationRenderSystem.RegisterObject
+  fullName: Integrity.Systems.AnimationRenderSystem.RegisterObject
+- uid: Integrity.Objects.GameObject
+  commentId: T:Integrity.Objects.GameObject
+  parent: Integrity.Objects
+  isExternal: true
+  href: Integrity.Objects.GameObject.html
+  name: GameObject
+  nameWithType: GameObject
+  fullName: Integrity.Objects.GameObject
+- uid: Integrity.Objects
+  commentId: N:Integrity.Objects
+  isExternal: true
+  href: Integrity.html
+  name: Integrity.Objects
+  nameWithType: Integrity.Objects
+  fullName: Integrity.Objects
+  spec.csharp:
+  - uid: Integrity
+    name: Integrity
+    isExternal: true
+    href: Integrity.html
+  - name: .
+  - uid: Integrity.Objects
+    name: Objects
+    isExternal: true
+    href: Integrity.Objects.html
+  spec.vb:
+  - uid: Integrity
+    name: Integrity
+    isExternal: true
+    href: Integrity.html
+  - name: .
+  - uid: Integrity.Objects
+    name: Objects
+    isExternal: true
+    href: Integrity.Objects.html
+- uid: Integrity.Systems.AnimationRenderSystem.UpdateAnimationFrames*
+  commentId: Overload:Integrity.Systems.AnimationRenderSystem.UpdateAnimationFrames
+  isExternal: true
+  href: Integrity.Systems.AnimationRenderSystem.html#Integrity_Systems_AnimationRenderSystem_UpdateAnimationFrames_System_Single_
+  name: UpdateAnimationFrames
+  nameWithType: AnimationRenderSystem.UpdateAnimationFrames
+  fullName: Integrity.Systems.AnimationRenderSystem.UpdateAnimationFrames
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Integrity.Systems.AnimationRenderSystem.Shutdown*
+  commentId: Overload:Integrity.Systems.AnimationRenderSystem.Shutdown
+  isExternal: true
+  href: Integrity.Systems.AnimationRenderSystem.html#Integrity_Systems_AnimationRenderSystem_Shutdown
+  name: Shutdown
+  nameWithType: AnimationRenderSystem.Shutdown
+  fullName: Integrity.Systems.AnimationRenderSystem.Shutdown

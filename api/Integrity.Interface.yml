@@ -26,7 +26,7 @@ items:
   fullName: Integrity.Interface
   type: Namespace
   assemblies:
-  - Integrity
+  - Integrity2D
 references:
 - uid: Integrity.Interface.IAssetManager
   commentId: T:Integrity.Interface.IAssetManager

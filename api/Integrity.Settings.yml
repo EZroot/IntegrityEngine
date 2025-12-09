@@ -14,7 +14,7 @@ items:
   fullName: Integrity.Settings
   type: Namespace
   assemblies:
-  - Integrity
+  - Integrity2D
 references:
 - uid: Integrity.Settings.EngineSettings
   commentId: T:Integrity.Settings.EngineSettings

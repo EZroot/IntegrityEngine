@@ -15,9 +15,9 @@ items:
   fullName: Integrity.Interface.IAssetManager
   type: Interface
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/interface/IAssetManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/assets/interface/IAssetManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: 'public interface IAssetManager : IService'
@@ -34,9 +34,9 @@ items:
   fullName: Integrity.Interface.IAssetManager.GetLoadedAssets()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/interface/IAssetManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/assets/interface/IAssetManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: IReadOnlyDictionary<string, AssetInfo> GetLoadedAssets()
@@ -56,9 +56,9 @@ items:
   fullName: Integrity.Interface.IAssetManager.GetTexture(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/interface/IAssetManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/assets/interface/IAssetManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: Texture GetTexture(string assetPath)

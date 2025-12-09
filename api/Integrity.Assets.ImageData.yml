@@ -18,9 +18,9 @@ items:
   fullName: Integrity.Assets.ImageData
   type: Struct
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/ImageData.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/assets/ImageData.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Assets
   syntax:
     content: public struct ImageData
@@ -44,9 +44,9 @@ items:
   fullName: Integrity.Assets.ImageData.PixelData
   type: Field
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/ImageData.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/assets/ImageData.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Assets
   syntax:
     content: public byte[] PixelData
@@ -65,9 +65,9 @@ items:
   fullName: Integrity.Assets.ImageData.Width
   type: Field
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/ImageData.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/assets/ImageData.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Assets
   syntax:
     content: public int Width
@@ -86,9 +86,9 @@ items:
   fullName: Integrity.Assets.ImageData.Height
   type: Field
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/ImageData.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/assets/ImageData.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Assets
   syntax:
     content: public int Height
@@ -107,9 +107,9 @@ items:
   fullName: Integrity.Assets.ImageData.Channels
   type: Field
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/ImageData.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/assets/ImageData.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Assets
   syntax:
     content: public int Channels
@@ -128,9 +128,9 @@ items:
   fullName: Integrity.Assets.ImageData.ImageData(byte[], int, int, int)
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/ImageData.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/assets/ImageData.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Assets
   syntax:
     content: public ImageData(byte[] pixelData, int width, int height, int channels)

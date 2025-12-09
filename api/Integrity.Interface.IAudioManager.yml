@@ -15,9 +15,9 @@ items:
   fullName: Integrity.Interface.IAudioManager
   type: Interface
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/sound/interface/IAudioManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/sound/interface/IAudioManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: 'public interface IAudioManager : IService'
@@ -34,9 +34,9 @@ items:
   fullName: Integrity.Interface.IAudioManager.InitializeAudio()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/sound/interface/IAudioManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/sound/interface/IAudioManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void InitializeAudio()
@@ -54,9 +54,9 @@ items:
   fullName: Integrity.Interface.IAudioManager.PlaySound(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/sound/interface/IAudioManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/sound/interface/IAudioManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void PlaySound(string soundPath)

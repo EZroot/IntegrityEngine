@@ -13,7 +13,7 @@ items:
   fullName: Integrity.Sound
   type: Namespace
   assemblies:
-  - Integrity
+  - Integrity2D
 references:
 - uid: Integrity.Sound.AudioManager
   commentId: T:Integrity.Sound.AudioManager

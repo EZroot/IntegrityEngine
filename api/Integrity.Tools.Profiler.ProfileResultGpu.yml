@@ -18,9 +18,9 @@ items:
   fullName: Integrity.Tools.Profiler.ProfileResultGpu
   type: Class
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/Profiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/Profiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Tools
   syntax:
     content: public class Profiler.ProfileResultGpu
@@ -47,9 +47,9 @@ items:
   fullName: Integrity.Tools.Profiler.ProfileResultGpu.GpuQueries
   type: Field
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/Profiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/Profiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Tools
   syntax:
     content: public readonly uint[] GpuQueries
@@ -68,9 +68,9 @@ items:
   fullName: Integrity.Tools.Profiler.ProfileResultGpu.ProfileResultGpu(string)
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/Profiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/Profiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Tools
   syntax:
     content: public ProfileResultGpu(string tag)
@@ -94,9 +94,9 @@ items:
   fullName: Integrity.Tools.Profiler.ProfileResultGpu.Tag
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/Profiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/Profiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Tools
   syntax:
     content: public string Tag { get; }
@@ -117,9 +117,9 @@ items:
   fullName: Integrity.Tools.Profiler.ProfileResultGpu.LastTimeMs
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/Profiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/Profiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Tools
   syntax:
     content: public float LastTimeMs { get; set; }
@@ -140,9 +140,9 @@ items:
   fullName: Integrity.Tools.Profiler.ProfileResultGpu.NextQueryIndex
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/Profiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/Profiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Tools
   syntax:
     content: public int NextQueryIndex { get; set; }

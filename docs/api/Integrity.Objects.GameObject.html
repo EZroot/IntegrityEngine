@@ -104,7 +104,7 @@
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Integrity.html">Integrity</a>.<a class="xref" href="Integrity.Objects.html">Objects</a></h6>
-  <h6><strong>Assembly</strong>: Integrity.dll</h6>
+  <h6><strong>Assembly</strong>: Integrity2D.dll</h6>
   <h5 id="Integrity_Objects_GameObject_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class GameObject</code></pre>
@@ -113,7 +113,7 @@
 </h3>
 
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/objects/GameObject.cs">View Source</a>
+    <a href="https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/objects/GameObject.cs">View Source</a>
   </span>
   <a id="Integrity_Objects_GameObject__ctor_" data-uid="Integrity.Objects.GameObject.#ctor*"></a>
   <h4 id="Integrity_Objects_GameObject__ctor_System_String_" data-uid="Integrity.Objects.GameObject.#ctor(System.String)">GameObject(string)</h4>
@@ -144,7 +144,7 @@
 </h3>
 
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/objects/GameObject.cs">View Source</a>
+    <a href="https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/objects/GameObject.cs">View Source</a>
   </span>
   <a id="Integrity_Objects_GameObject_Id_" data-uid="Integrity.Objects.GameObject.Id*"></a>
   <h4 id="Integrity_Objects_GameObject_Id" data-uid="Integrity.Objects.GameObject.Id">Id</h4>
@@ -171,7 +171,7 @@
   </table>
 
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/objects/GameObject.cs">View Source</a>
+    <a href="https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/objects/GameObject.cs">View Source</a>
   </span>
   <a id="Integrity_Objects_GameObject_Name_" data-uid="Integrity.Objects.GameObject.Name*"></a>
   <h4 id="Integrity_Objects_GameObject_Name" data-uid="Integrity.Objects.GameObject.Name">Name</h4>
@@ -198,7 +198,7 @@
   </table>
 
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/objects/GameObject.cs">View Source</a>
+    <a href="https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/objects/GameObject.cs">View Source</a>
   </span>
   <a id="Integrity_Objects_GameObject_Transform_" data-uid="Integrity.Objects.GameObject.Transform*"></a>
   <h4 id="Integrity_Objects_GameObject_Transform" data-uid="Integrity.Objects.GameObject.Transform">Transform</h4>
@@ -227,7 +227,7 @@
 </h3>
 
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/objects/GameObject.cs">View Source</a>
+    <a href="https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/objects/GameObject.cs">View Source</a>
   </span>
   <a id="Integrity_Objects_GameObject_AddComponent_" data-uid="Integrity.Objects.GameObject.AddComponent*"></a>
   <h4 id="Integrity_Objects_GameObject_AddComponent_Integrity_Interface_IComponent_" data-uid="Integrity.Objects.GameObject.AddComponent(Integrity.Interface.IComponent)">AddComponent(IComponent)</h4>
@@ -256,7 +256,7 @@
   </table>
 
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/objects/GameObject.cs">View Source</a>
+    <a href="https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/objects/GameObject.cs">View Source</a>
   </span>
   <a id="Integrity_Objects_GameObject_GetComponent_" data-uid="Integrity.Objects.GameObject.GetComponent*"></a>
   <h4 id="Integrity_Objects_GameObject_GetComponent__1" data-uid="Integrity.Objects.GameObject.GetComponent``1">GetComponent&lt;T&gt;()</h4>
@@ -297,6 +297,65 @@
     </tbody>
   </table>
 
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/objects/GameObject.cs">View Source</a>
+  </span>
+  <a id="Integrity_Objects_GameObject_TryGetComponent_" data-uid="Integrity.Objects.GameObject.TryGetComponent*"></a>
+  <h4 id="Integrity_Objects_GameObject_TryGetComponent__1___0__" data-uid="Integrity.Objects.GameObject.TryGetComponent``1(``0@)">TryGetComponent&lt;T&gt;(out T?)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetComponent&lt;T&gt;(out T? comp) where T : IComponent</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">comp</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
 </article>
           </div>
 
@@ -305,7 +364,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/objects/GameObject.cs" class="contribution-link">View Source</a>
+                    <a href="https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/objects/GameObject.cs" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

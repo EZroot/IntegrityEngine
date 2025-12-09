@@ -5,8 +5,8 @@ items:
   id: Integrity.Assets
   children:
   - Integrity.Assets.AssetInfo
-  - Integrity.Assets.Texture
   - Integrity.Assets.ImageData
+  - Integrity.Assets.Texture
   langs:
   - csharp
   - vb
@@ -15,7 +15,7 @@ items:
   fullName: Integrity.Assets
   type: Namespace
   assemblies:
-  - Integrity
+  - Integrity2D
 references:
 - uid: Integrity.Assets.AssetInfo
   commentId: T:Integrity.Assets.AssetInfo
@@ -24,14 +24,6 @@ references:
   name: AssetInfo
   nameWithType: AssetInfo
   fullName: Integrity.Assets.AssetInfo
-- uid: Integrity.Assets.Texture
-  commentId: T:Integrity.Assets.Texture
-  parent: Integrity.Assets
-  isExternal: true
-  href: Integrity.Assets.Texture.html
-  name: Texture
-  nameWithType: Texture
-  fullName: Integrity.Assets.Texture
 - uid: Integrity.Assets.ImageData
   commentId: T:Integrity.Assets.ImageData
   parent: Integrity.Assets
@@ -40,6 +32,14 @@ references:
   name: ImageData
   nameWithType: ImageData
   fullName: Integrity.Assets.ImageData
+- uid: Integrity.Assets.Texture
+  commentId: T:Integrity.Assets.Texture
+  parent: Integrity.Assets
+  isExternal: true
+  href: Integrity.Assets.Texture.html
+  name: Texture
+  nameWithType: Texture
+  fullName: Integrity.Assets.Texture
 - uid: Integrity.Assets
   commentId: N:Integrity.Assets
   isExternal: true

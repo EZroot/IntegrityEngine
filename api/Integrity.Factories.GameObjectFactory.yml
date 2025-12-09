@@ -16,9 +16,9 @@ items:
   fullName: Integrity.Factories.GameObjectFactory
   type: Class
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/factories/GameObjectFactory.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/factories/GameObjectFactory.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Factories
   syntax:
     content: 'public class GameObjectFactory : IGameObjectFactory, IService'
@@ -48,9 +48,9 @@ items:
   fullName: Integrity.Factories.GameObjectFactory.GameObjectFactory()
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/factories/GameObjectFactory.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/factories/GameObjectFactory.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Factories
   syntax:
     content: public GameObjectFactory()
@@ -71,9 +71,9 @@ items:
   fullName: Integrity.Factories.GameObjectFactory.CreateGameObject(string, Integrity.Interface.IComponent[]?)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/factories/GameObjectFactory.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/factories/GameObjectFactory.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Factories
   summary: Creates a standard GameObject pre-configured with a TransformComponent cached.
   example: []
@@ -108,9 +108,9 @@ items:
   fullName: Integrity.Factories.GameObjectFactory.CreateSpriteObject(string, string, Integrity.Interface.IComponent[]?)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/factories/GameObjectFactory.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/factories/GameObjectFactory.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Factories
   summary: Creates a standard GameObject pre-configured with a TransformComponent and SpriteComponent cached.
   example: []

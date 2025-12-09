@@ -20,9 +20,9 @@ items:
   fullName: Integrity.Settings.EngineSettings.EngineSettingsData
   type: Struct
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/settings/EngineSettings.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Settings
   syntax:
     content: public struct EngineSettings.EngineSettingsData
@@ -46,9 +46,9 @@ items:
   fullName: Integrity.Settings.EngineSettings.EngineSettingsData.EngineSettingsData()
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/settings/EngineSettings.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Settings
   syntax:
     content: public EngineSettingsData()
@@ -69,9 +69,9 @@ items:
   fullName: Integrity.Settings.EngineSettings.EngineSettingsData.EngineName
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/settings/EngineSettings.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Settings
   syntax:
     content: public string EngineName { readonly get; set; }
@@ -92,9 +92,9 @@ items:
   fullName: Integrity.Settings.EngineSettings.EngineSettingsData.EngineVersion
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/settings/EngineSettings.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Settings
   syntax:
     content: public string EngineVersion { readonly get; set; }
@@ -115,9 +115,9 @@ items:
   fullName: Integrity.Settings.EngineSettings.EngineSettingsData.WindowWidth
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/settings/EngineSettings.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Settings
   syntax:
     content: public int WindowWidth { readonly get; set; }
@@ -138,9 +138,9 @@ items:
   fullName: Integrity.Settings.EngineSettings.EngineSettingsData.WindowHeight
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/settings/EngineSettings.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Settings
   syntax:
     content: public int WindowHeight { readonly get; set; }
@@ -161,9 +161,9 @@ items:
   fullName: Integrity.Settings.EngineSettings.EngineSettingsData.WindowTitle
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/settings/EngineSettings.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Settings
   syntax:
     content: public string WindowTitle { readonly get; set; }
@@ -184,9 +184,9 @@ items:
   fullName: Integrity.Settings.EngineSettings.EngineSettingsData.UseVsync
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/settings/EngineSettings.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/settings/EngineSettings.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Settings
   syntax:
     content: public int UseVsync { readonly get; set; }

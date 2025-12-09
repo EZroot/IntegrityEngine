@@ -1,87 +1,7 @@
 {
-  "source_base_path": "/home/ezroot/Repos/Integrity",
+  "source_base_path": "/home/ezroot/Repos/Integrity2D",
   "xrefmap": "xrefmap.yml",
   "files": [
-    {
-      "type": "Resource",
-      "source_relative_path": "DefaultEngineAssets/blue_face.png",
-      "output": {
-        "resource": {
-          "relative_path": "DefaultEngineAssets/blue_face.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "DefaultEngineAssets/logo.png",
-      "output": {
-        "resource": {
-          "relative_path": "DefaultEngineAssets/logo.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "DefaultEngineAssets/pink_face.png",
-      "output": {
-        "resource": {
-          "relative_path": "DefaultEngineAssets/pink_face.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "DefaultEngineAssets/shaders/default.frag",
-      "output": {
-        "resource": {
-          "relative_path": "DefaultEngineAssets/shaders/default.frag"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "DefaultEngineAssets/shaders/default.vert",
-      "output": {
-        "resource": {
-          "relative_path": "DefaultEngineAssets/shaders/default.vert"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "DefaultEngineAssets/shaders/imgui.frag",
-      "output": {
-        "resource": {
-          "relative_path": "DefaultEngineAssets/shaders/imgui.frag"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "DefaultEngineAssets/shaders/imgui.vert",
-      "output": {
-        "resource": {
-          "relative_path": "DefaultEngineAssets/shaders/imgui.vert"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "DefaultEngineAssets/yellow_face.png",
-      "output": {
-        "resource": {
-          "relative_path": "DefaultEngineAssets/yellow_face.png"
-        }
-      },
-      "version": ""
-    },
     {
       "type": "ManagedReference",
       "source_relative_path": "api/Integirty.Assets.AssetManager.yml",
@@ -126,10 +46,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Integrity.Assets.Texture.yml",
+      "source_relative_path": "api/Integrity.Assets.GLTexture.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Integrity.Assets.Texture.html"
+          "relative_path": "api/Integrity.Assets.GLTexture.html"
         }
       },
       "version": "",
@@ -154,6 +74,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Integrity.Assets.Texture.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Integrity.Assets.Texture.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Integrity.Assets.Texture",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Integrity.Assets.yml",
       "output": {
         ".html": {
@@ -165,6 +99,34 @@
       "IsMRef": true,
       "Title": "Integrity.Assets",
       "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Integrity.Components.AnimationComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Integrity.Components.AnimationComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Integrity.Components.AnimationComponent",
+      "Summary": "<p sourcefile=\"api/Integrity.Components.AnimationComponent.yml\" sourcestartlinenumber=\"1\">Data container for all animation definitions and current playback state.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Integrity.Components.AnimationFrame.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Integrity.Components.AnimationFrame.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Integrity.Components.AnimationFrame",
+      "Summary": "<p sourcefile=\"api/Integrity.Components.AnimationFrame.yml\" sourcestartlinenumber=\"1\">Defines a single frame in an animation sequence.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -644,6 +606,48 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Integrity.Rendering.TileChunk.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Integrity.Rendering.TileChunk.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Integrity.Rendering.TileChunk",
+      "Summary": "<p sourcefile=\"api/Integrity.Rendering.TileChunk.yml\" sourcestartlinenumber=\"1\">Represents the geometry data for a single tile chunk (e.g., 32x32 tiles).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Integrity.Rendering.TileData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Integrity.Rendering.TileData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Integrity.Rendering.TileData",
+      "Summary": "<p sourcefile=\"api/Integrity.Rendering.TileData.yml\" sourcestartlinenumber=\"1\">Data for a single tile</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Integrity.Rendering.TileRenderSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Integrity.Rendering.TileRenderSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Integrity.Rendering.TileRenderSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Integrity.Rendering.WindowPipeline.yml",
       "output": {
         ".html": {
@@ -812,6 +816,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Integrity.Systems.AnimationRenderSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Integrity.Systems.AnimationRenderSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Integrity.Systems.AnimationRenderSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Integrity.Systems.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Integrity.Systems.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Integrity.Systems",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Integrity.Tools.Profiler.ProfileResultCpu.yml",
       "output": {
         ".html": {
@@ -864,6 +896,34 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Integrity.Tools.ToolGui",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Integrity.Tools.ToolInspector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Integrity.Tools.ToolInspector.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Integrity.Tools.ToolInspector",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Integrity.Tools.ToolTileMonitor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Integrity.Tools.ToolTileMonitor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Integrity.Tools.ToolTileMonitor",
       "Summary": null
     },
     {

@@ -11,6 +11,7 @@ items:
   - Integrity.Objects.GameObject.Id
   - Integrity.Objects.GameObject.Name
   - Integrity.Objects.GameObject.Transform
+  - Integrity.Objects.GameObject.TryGetComponent``1(``0@)
   langs:
   - csharp
   - vb
@@ -19,9 +20,9 @@ items:
   fullName: Integrity.Objects.GameObject
   type: Class
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/objects/GameObject.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/objects/GameObject.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Objects
   syntax:
     content: public class GameObject
@@ -50,9 +51,9 @@ items:
   fullName: Integrity.Objects.GameObject.GameObject(string)
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/objects/GameObject.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/objects/GameObject.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Objects
   syntax:
     content: public GameObject(string name)
@@ -76,9 +77,9 @@ items:
   fullName: Integrity.Objects.GameObject.AddComponent(Integrity.Interface.IComponent)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/objects/GameObject.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/objects/GameObject.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Objects
   syntax:
     content: public void AddComponent(IComponent component)
@@ -99,9 +100,9 @@ items:
   fullName: Integrity.Objects.GameObject.GetComponent<T>()
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/objects/GameObject.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/objects/GameObject.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Objects
   syntax:
     content: 'public T GetComponent<T>() where T : IComponent'
@@ -114,6 +115,36 @@ items:
   nameWithType.vb: GameObject.GetComponent(Of T)()
   fullName.vb: Integrity.Objects.GameObject.GetComponent(Of T)()
   name.vb: GetComponent(Of T)()
+- uid: Integrity.Objects.GameObject.TryGetComponent``1(``0@)
+  commentId: M:Integrity.Objects.GameObject.TryGetComponent``1(``0@)
+  id: TryGetComponent``1(``0@)
+  parent: Integrity.Objects.GameObject
+  langs:
+  - csharp
+  - vb
+  name: TryGetComponent<T>(out T?)
+  nameWithType: GameObject.TryGetComponent<T>(out T?)
+  fullName: Integrity.Objects.GameObject.TryGetComponent<T>(out T?)
+  type: Method
+  source:
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/objects/GameObject.cs
+  assemblies:
+  - Integrity2D
+  namespace: Integrity.Objects
+  syntax:
+    content: 'public bool TryGetComponent<T>(out T? comp) where T : IComponent'
+    parameters:
+    - id: comp
+      type: '{T}'
+    typeParameters:
+    - id: T
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryGetComponent(Of T As IComponent)(comp As T) As Boolean
+  overload: Integrity.Objects.GameObject.TryGetComponent*
+  nameWithType.vb: GameObject.TryGetComponent(Of T)(T)
+  fullName.vb: Integrity.Objects.GameObject.TryGetComponent(Of T)(T)
+  name.vb: TryGetComponent(Of T)(T)
 - uid: Integrity.Objects.GameObject.Transform
   commentId: P:Integrity.Objects.GameObject.Transform
   id: Transform
@@ -126,9 +157,9 @@ items:
   fullName: Integrity.Objects.GameObject.Transform
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/objects/GameObject.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/objects/GameObject.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Objects
   syntax:
     content: public TransformComponent Transform { get; }
@@ -149,9 +180,9 @@ items:
   fullName: Integrity.Objects.GameObject.Id
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/objects/GameObject.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/objects/GameObject.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Objects
   syntax:
     content: public Guid Id { get; }
@@ -172,9 +203,9 @@ items:
   fullName: Integrity.Objects.GameObject.Name
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/objects/GameObject.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/objects/GameObject.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Objects
   syntax:
     content: public string Name { get; }
@@ -528,6 +559,24 @@ references:
   name: T
   nameWithType: T
   fullName: T
+- uid: Integrity.Objects.GameObject.TryGetComponent*
+  commentId: Overload:Integrity.Objects.GameObject.TryGetComponent
+  isExternal: true
+  href: Integrity.Objects.GameObject.html#Integrity_Objects_GameObject_TryGetComponent__1___0__
+  name: TryGetComponent
+  nameWithType: GameObject.TryGetComponent
+  fullName: Integrity.Objects.GameObject.TryGetComponent
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: Integrity.Objects.GameObject.Transform*
   commentId: Overload:Integrity.Objects.GameObject.Transform
   isExternal: true

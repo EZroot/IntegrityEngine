@@ -7,7 +7,9 @@ items:
   children:
   - Integrity.Rendering.SpriteRenderSystem.#ctor
   - Integrity.Rendering.SpriteRenderSystem.RegisterObject(Integrity.Objects.GameObject)
+  - Integrity.Rendering.SpriteRenderSystem.RenderSprites
   - Integrity.Rendering.SpriteRenderSystem.SpriteObjectList
+  - Integrity.Rendering.SpriteRenderSystem.UpdateSpriteBatchByTexture
   langs:
   - csharp
   - vb
@@ -16,9 +18,9 @@ items:
   fullName: Integrity.Rendering.SpriteRenderSystem
   type: Class
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/SpriteRenderSystem.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/SpriteRenderSystem.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Rendering
   syntax:
     content: public class SpriteRenderSystem
@@ -33,29 +35,6 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.GetHashCode
-- uid: Integrity.Rendering.SpriteRenderSystem.RegisterObject(Integrity.Objects.GameObject)
-  commentId: M:Integrity.Rendering.SpriteRenderSystem.RegisterObject(Integrity.Objects.GameObject)
-  id: RegisterObject(Integrity.Objects.GameObject)
-  parent: Integrity.Rendering.SpriteRenderSystem
-  langs:
-  - csharp
-  - vb
-  name: RegisterObject(GameObject)
-  nameWithType: SpriteRenderSystem.RegisterObject(GameObject)
-  fullName: Integrity.Rendering.SpriteRenderSystem.RegisterObject(Integrity.Objects.GameObject)
-  type: Method
-  source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/SpriteRenderSystem.cs
-  assemblies:
-  - Integrity
-  namespace: Integrity.Rendering
-  syntax:
-    content: public void RegisterObject(GameObject obj)
-    parameters:
-    - id: obj
-      type: Integrity.Objects.GameObject
-    content.vb: Public Sub RegisterObject(obj As GameObject)
-  overload: Integrity.Rendering.SpriteRenderSystem.RegisterObject*
 - uid: Integrity.Rendering.SpriteRenderSystem.#ctor
   commentId: M:Integrity.Rendering.SpriteRenderSystem.#ctor
   id: '#ctor'
@@ -68,9 +47,9 @@ items:
   fullName: Integrity.Rendering.SpriteRenderSystem.SpriteRenderSystem()
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/SpriteRenderSystem.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/SpriteRenderSystem.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Rendering
   syntax:
     content: public SpriteRenderSystem()
@@ -79,6 +58,76 @@ items:
   nameWithType.vb: SpriteRenderSystem.New()
   fullName.vb: Integrity.Rendering.SpriteRenderSystem.New()
   name.vb: New()
+- uid: Integrity.Rendering.SpriteRenderSystem.RegisterObject(Integrity.Objects.GameObject)
+  commentId: M:Integrity.Rendering.SpriteRenderSystem.RegisterObject(Integrity.Objects.GameObject)
+  id: RegisterObject(Integrity.Objects.GameObject)
+  parent: Integrity.Rendering.SpriteRenderSystem
+  langs:
+  - csharp
+  - vb
+  name: RegisterObject(GameObject)
+  nameWithType: SpriteRenderSystem.RegisterObject(GameObject)
+  fullName: Integrity.Rendering.SpriteRenderSystem.RegisterObject(Integrity.Objects.GameObject)
+  type: Method
+  source:
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/SpriteRenderSystem.cs
+  assemblies:
+  - Integrity2D
+  namespace: Integrity.Rendering
+  summary: Register a GameObject to the sprite render system to be sorted and batched
+  example: []
+  syntax:
+    content: public void RegisterObject(GameObject obj)
+    parameters:
+    - id: obj
+      type: Integrity.Objects.GameObject
+      description: ''
+    content.vb: Public Sub RegisterObject(obj As GameObject)
+  overload: Integrity.Rendering.SpriteRenderSystem.RegisterObject*
+- uid: Integrity.Rendering.SpriteRenderSystem.UpdateSpriteBatchByTexture
+  commentId: M:Integrity.Rendering.SpriteRenderSystem.UpdateSpriteBatchByTexture
+  id: UpdateSpriteBatchByTexture
+  parent: Integrity.Rendering.SpriteRenderSystem
+  langs:
+  - csharp
+  - vb
+  name: UpdateSpriteBatchByTexture()
+  nameWithType: SpriteRenderSystem.UpdateSpriteBatchByTexture()
+  fullName: Integrity.Rendering.SpriteRenderSystem.UpdateSpriteBatchByTexture()
+  type: Method
+  source:
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/SpriteRenderSystem.cs
+  assemblies:
+  - Integrity2D
+  namespace: Integrity.Rendering
+  summary: Batch sprite objects by texture id for efficient GPU upload
+  example: []
+  syntax:
+    content: public void UpdateSpriteBatchByTexture()
+    content.vb: Public Sub UpdateSpriteBatchByTexture()
+  overload: Integrity.Rendering.SpriteRenderSystem.UpdateSpriteBatchByTexture*
+- uid: Integrity.Rendering.SpriteRenderSystem.RenderSprites
+  commentId: M:Integrity.Rendering.SpriteRenderSystem.RenderSprites
+  id: RenderSprites
+  parent: Integrity.Rendering.SpriteRenderSystem
+  langs:
+  - csharp
+  - vb
+  name: RenderSprites()
+  nameWithType: SpriteRenderSystem.RenderSprites()
+  fullName: Integrity.Rendering.SpriteRenderSystem.RenderSprites()
+  type: Method
+  source:
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/SpriteRenderSystem.cs
+  assemblies:
+  - Integrity2D
+  namespace: Integrity.Rendering
+  summary: Render sprites by batch
+  example: []
+  syntax:
+    content: public void RenderSprites()
+    content.vb: Public Sub RenderSprites()
+  overload: Integrity.Rendering.SpriteRenderSystem.RenderSprites*
 - uid: Integrity.Rendering.SpriteRenderSystem.SpriteObjectList
   commentId: P:Integrity.Rendering.SpriteRenderSystem.SpriteObjectList
   id: SpriteObjectList
@@ -91,9 +140,9 @@ items:
   fullName: Integrity.Rendering.SpriteRenderSystem.SpriteObjectList
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/SpriteRenderSystem.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/SpriteRenderSystem.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Rendering
   syntax:
     content: public List<SpriteObject> SpriteObjectList { get; }
@@ -367,6 +416,16 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: Integrity.Rendering.SpriteRenderSystem.#ctor*
+  commentId: Overload:Integrity.Rendering.SpriteRenderSystem.#ctor
+  isExternal: true
+  href: Integrity.Rendering.SpriteRenderSystem.html#Integrity_Rendering_SpriteRenderSystem__ctor
+  name: SpriteRenderSystem
+  nameWithType: SpriteRenderSystem.SpriteRenderSystem
+  fullName: Integrity.Rendering.SpriteRenderSystem.SpriteRenderSystem
+  nameWithType.vb: SpriteRenderSystem.New
+  fullName.vb: Integrity.Rendering.SpriteRenderSystem.New
+  name.vb: New
 - uid: Integrity.Rendering.SpriteRenderSystem.RegisterObject*
   commentId: Overload:Integrity.Rendering.SpriteRenderSystem.RegisterObject
   isExternal: true
@@ -409,16 +468,20 @@ references:
     name: Objects
     isExternal: true
     href: Integrity.Objects.html
-- uid: Integrity.Rendering.SpriteRenderSystem.#ctor*
-  commentId: Overload:Integrity.Rendering.SpriteRenderSystem.#ctor
+- uid: Integrity.Rendering.SpriteRenderSystem.UpdateSpriteBatchByTexture*
+  commentId: Overload:Integrity.Rendering.SpriteRenderSystem.UpdateSpriteBatchByTexture
   isExternal: true
-  href: Integrity.Rendering.SpriteRenderSystem.html#Integrity_Rendering_SpriteRenderSystem__ctor
-  name: SpriteRenderSystem
-  nameWithType: SpriteRenderSystem.SpriteRenderSystem
-  fullName: Integrity.Rendering.SpriteRenderSystem.SpriteRenderSystem
-  nameWithType.vb: SpriteRenderSystem.New
-  fullName.vb: Integrity.Rendering.SpriteRenderSystem.New
-  name.vb: New
+  href: Integrity.Rendering.SpriteRenderSystem.html#Integrity_Rendering_SpriteRenderSystem_UpdateSpriteBatchByTexture
+  name: UpdateSpriteBatchByTexture
+  nameWithType: SpriteRenderSystem.UpdateSpriteBatchByTexture
+  fullName: Integrity.Rendering.SpriteRenderSystem.UpdateSpriteBatchByTexture
+- uid: Integrity.Rendering.SpriteRenderSystem.RenderSprites*
+  commentId: Overload:Integrity.Rendering.SpriteRenderSystem.RenderSprites
+  isExternal: true
+  href: Integrity.Rendering.SpriteRenderSystem.html#Integrity_Rendering_SpriteRenderSystem_RenderSprites
+  name: RenderSprites
+  nameWithType: SpriteRenderSystem.RenderSprites
+  fullName: Integrity.Rendering.SpriteRenderSystem.RenderSprites
 - uid: Integrity.Rendering.SpriteRenderSystem.SpriteObjectList*
   commentId: Overload:Integrity.Rendering.SpriteRenderSystem.SpriteObjectList
   isExternal: true

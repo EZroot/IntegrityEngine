@@ -18,9 +18,9 @@ items:
   fullName: Integrity.Utils.Rect
   type: Struct
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/utils/Rect.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/utils/Rect.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Utils
   syntax:
     content: public struct Rect
@@ -44,9 +44,9 @@ items:
   fullName: Integrity.Utils.Rect.X
   type: Field
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/utils/Rect.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/utils/Rect.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Utils
   syntax:
     content: public float X
@@ -65,9 +65,9 @@ items:
   fullName: Integrity.Utils.Rect.Y
   type: Field
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/utils/Rect.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/utils/Rect.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Utils
   syntax:
     content: public float Y
@@ -86,9 +86,9 @@ items:
   fullName: Integrity.Utils.Rect.Width
   type: Field
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/utils/Rect.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/utils/Rect.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Utils
   syntax:
     content: public float Width
@@ -107,9 +107,9 @@ items:
   fullName: Integrity.Utils.Rect.Height
   type: Field
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/utils/Rect.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/utils/Rect.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Utils
   syntax:
     content: public float Height
@@ -128,9 +128,9 @@ items:
   fullName: Integrity.Utils.Rect.Rect(float, float, float, float)
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/utils/Rect.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/utils/Rect.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Utils
   syntax:
     content: public Rect(float x, float y, float w, float h)

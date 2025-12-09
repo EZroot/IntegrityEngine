@@ -14,7 +14,7 @@ items:
   fullName: Integrity.Objects
   type: Namespace
   assemblies:
-  - Integrity
+  - Integrity2D
 references:
 - uid: Integrity.Objects.GameObject
   commentId: T:Integrity.Objects.GameObject

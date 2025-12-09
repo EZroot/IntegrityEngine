@@ -17,9 +17,9 @@ items:
   fullName: Integrity.Assets.AssetInfo
   type: Struct
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/AssetInfo.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/assets/AssetInfo.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Assets
   syntax:
     content: public struct AssetInfo
@@ -43,9 +43,9 @@ items:
   fullName: Integrity.Assets.AssetInfo.AssetInfo(string, string, long)
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/AssetInfo.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/assets/AssetInfo.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Assets
   syntax:
     content: public AssetInfo(string assetPath, string type, long memoryFootprintBytes)
@@ -73,9 +73,9 @@ items:
   fullName: Integrity.Assets.AssetInfo.AssetPath
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/AssetInfo.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/assets/AssetInfo.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Assets
   syntax:
     content: public string AssetPath { readonly get; set; }
@@ -96,9 +96,9 @@ items:
   fullName: Integrity.Assets.AssetInfo.Type
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/AssetInfo.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/assets/AssetInfo.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Assets
   syntax:
     content: public string Type { readonly get; set; }
@@ -119,9 +119,9 @@ items:
   fullName: Integrity.Assets.AssetInfo.MemoryFootprintBytes
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/assets/AssetInfo.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/assets/AssetInfo.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Assets
   syntax:
     content: public long MemoryFootprintBytes { readonly get; set; }

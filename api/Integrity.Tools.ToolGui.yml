@@ -7,10 +7,7 @@ items:
   children:
   - Integrity.Tools.ToolGui.#ctor
   - Integrity.Tools.ToolGui.DrawMenuBar(System.Single)
-  - Integrity.Tools.ToolGui.DrawTools(Integrity.Interface.IProfiler)
-  - Integrity.Tools.ToolGui.DrawToolsUpdate(System.Single)
-  - Integrity.Tools.ToolGui.UpdateMemoryHistory(Integrity.Utils.MemoryMonitor.MemorySnapshot)
-  - Integrity.Tools.ToolGui.UpdateProfilerHistory(Integrity.Interface.IProfiler)
+  - Integrity.Tools.ToolGui.DrawTools
   langs:
   - csharp
   - vb
@@ -19,9 +16,9 @@ items:
   fullName: Integrity.Tools.ToolGui
   type: Class
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/ToolGui.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/ToolGui.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Tools
   syntax:
     content: public class ToolGui
@@ -36,127 +33,6 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.GetHashCode
-- uid: Integrity.Tools.ToolGui.DrawToolsUpdate(System.Single)
-  commentId: M:Integrity.Tools.ToolGui.DrawToolsUpdate(System.Single)
-  id: DrawToolsUpdate(System.Single)
-  parent: Integrity.Tools.ToolGui
-  langs:
-  - csharp
-  - vb
-  name: DrawToolsUpdate(float)
-  nameWithType: ToolGui.DrawToolsUpdate(float)
-  fullName: Integrity.Tools.ToolGui.DrawToolsUpdate(float)
-  type: Method
-  source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/ToolGui.cs
-  assemblies:
-  - Integrity
-  namespace: Integrity.Tools
-  syntax:
-    content: public void DrawToolsUpdate(float deltaTime)
-    parameters:
-    - id: deltaTime
-      type: System.Single
-    content.vb: Public Sub DrawToolsUpdate(deltaTime As Single)
-  overload: Integrity.Tools.ToolGui.DrawToolsUpdate*
-  nameWithType.vb: ToolGui.DrawToolsUpdate(Single)
-  fullName.vb: Integrity.Tools.ToolGui.DrawToolsUpdate(Single)
-  name.vb: DrawToolsUpdate(Single)
-- uid: Integrity.Tools.ToolGui.UpdateProfilerHistory(Integrity.Interface.IProfiler)
-  commentId: M:Integrity.Tools.ToolGui.UpdateProfilerHistory(Integrity.Interface.IProfiler)
-  id: UpdateProfilerHistory(Integrity.Interface.IProfiler)
-  parent: Integrity.Tools.ToolGui
-  langs:
-  - csharp
-  - vb
-  name: UpdateProfilerHistory(IProfiler)
-  nameWithType: ToolGui.UpdateProfilerHistory(IProfiler)
-  fullName: Integrity.Tools.ToolGui.UpdateProfilerHistory(Integrity.Interface.IProfiler)
-  type: Method
-  source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/ToolGui.cs
-  assemblies:
-  - Integrity
-  namespace: Integrity.Tools
-  syntax:
-    content: public void UpdateProfilerHistory(IProfiler profiler)
-    parameters:
-    - id: profiler
-      type: Integrity.Interface.IProfiler
-    content.vb: Public Sub UpdateProfilerHistory(profiler As IProfiler)
-  overload: Integrity.Tools.ToolGui.UpdateProfilerHistory*
-- uid: Integrity.Tools.ToolGui.UpdateMemoryHistory(Integrity.Utils.MemoryMonitor.MemorySnapshot)
-  commentId: M:Integrity.Tools.ToolGui.UpdateMemoryHistory(Integrity.Utils.MemoryMonitor.MemorySnapshot)
-  id: UpdateMemoryHistory(Integrity.Utils.MemoryMonitor.MemorySnapshot)
-  parent: Integrity.Tools.ToolGui
-  langs:
-  - csharp
-  - vb
-  name: UpdateMemoryHistory(MemorySnapshot)
-  nameWithType: ToolGui.UpdateMemoryHistory(MemoryMonitor.MemorySnapshot)
-  fullName: Integrity.Tools.ToolGui.UpdateMemoryHistory(Integrity.Utils.MemoryMonitor.MemorySnapshot)
-  type: Method
-  source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/ToolGui.cs
-  assemblies:
-  - Integrity
-  namespace: Integrity.Tools
-  syntax:
-    content: public void UpdateMemoryHistory(MemoryMonitor.MemorySnapshot currentSnapshot)
-    parameters:
-    - id: currentSnapshot
-      type: Integrity.Utils.MemoryMonitor.MemorySnapshot
-    content.vb: Public Sub UpdateMemoryHistory(currentSnapshot As MemoryMonitor.MemorySnapshot)
-  overload: Integrity.Tools.ToolGui.UpdateMemoryHistory*
-- uid: Integrity.Tools.ToolGui.DrawTools(Integrity.Interface.IProfiler)
-  commentId: M:Integrity.Tools.ToolGui.DrawTools(Integrity.Interface.IProfiler)
-  id: DrawTools(Integrity.Interface.IProfiler)
-  parent: Integrity.Tools.ToolGui
-  langs:
-  - csharp
-  - vb
-  name: DrawTools(IProfiler)
-  nameWithType: ToolGui.DrawTools(IProfiler)
-  fullName: Integrity.Tools.ToolGui.DrawTools(Integrity.Interface.IProfiler)
-  type: Method
-  source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/ToolGui.cs
-  assemblies:
-  - Integrity
-  namespace: Integrity.Tools
-  syntax:
-    content: public void DrawTools(IProfiler profiler)
-    parameters:
-    - id: profiler
-      type: Integrity.Interface.IProfiler
-    content.vb: Public Sub DrawTools(profiler As IProfiler)
-  overload: Integrity.Tools.ToolGui.DrawTools*
-- uid: Integrity.Tools.ToolGui.DrawMenuBar(System.Single)
-  commentId: M:Integrity.Tools.ToolGui.DrawMenuBar(System.Single)
-  id: DrawMenuBar(System.Single)
-  parent: Integrity.Tools.ToolGui
-  langs:
-  - csharp
-  - vb
-  name: DrawMenuBar(float)
-  nameWithType: ToolGui.DrawMenuBar(float)
-  fullName: Integrity.Tools.ToolGui.DrawMenuBar(float)
-  type: Method
-  source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/ToolGui.cs
-  assemblies:
-  - Integrity
-  namespace: Integrity.Tools
-  syntax:
-    content: public void DrawMenuBar(float fps)
-    parameters:
-    - id: fps
-      type: System.Single
-    content.vb: Public Sub DrawMenuBar(fps As Single)
-  overload: Integrity.Tools.ToolGui.DrawMenuBar*
-  nameWithType.vb: ToolGui.DrawMenuBar(Single)
-  fullName.vb: Integrity.Tools.ToolGui.DrawMenuBar(Single)
-  name.vb: DrawMenuBar(Single)
 - uid: Integrity.Tools.ToolGui.#ctor
   commentId: M:Integrity.Tools.ToolGui.#ctor
   id: '#ctor'
@@ -169,9 +45,9 @@ items:
   fullName: Integrity.Tools.ToolGui.ToolGui()
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/ToolGui.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/ToolGui.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Tools
   syntax:
     content: public ToolGui()
@@ -180,6 +56,54 @@ items:
   nameWithType.vb: ToolGui.New()
   fullName.vb: Integrity.Tools.ToolGui.New()
   name.vb: New()
+- uid: Integrity.Tools.ToolGui.DrawMenuBar(System.Single)
+  commentId: M:Integrity.Tools.ToolGui.DrawMenuBar(System.Single)
+  id: DrawMenuBar(System.Single)
+  parent: Integrity.Tools.ToolGui
+  langs:
+  - csharp
+  - vb
+  name: DrawMenuBar(float)
+  nameWithType: ToolGui.DrawMenuBar(float)
+  fullName: Integrity.Tools.ToolGui.DrawMenuBar(float)
+  type: Method
+  source:
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/ToolGui.cs
+  assemblies:
+  - Integrity2D
+  namespace: Integrity.Tools
+  syntax:
+    content: public void DrawMenuBar(float fps)
+    parameters:
+    - id: fps
+      type: System.Single
+    content.vb: Public Sub DrawMenuBar(fps As Single)
+  overload: Integrity.Tools.ToolGui.DrawMenuBar*
+  nameWithType.vb: ToolGui.DrawMenuBar(Single)
+  fullName.vb: Integrity.Tools.ToolGui.DrawMenuBar(Single)
+  name.vb: DrawMenuBar(Single)
+- uid: Integrity.Tools.ToolGui.DrawTools
+  commentId: M:Integrity.Tools.ToolGui.DrawTools
+  id: DrawTools
+  parent: Integrity.Tools.ToolGui
+  langs:
+  - csharp
+  - vb
+  name: DrawTools()
+  nameWithType: ToolGui.DrawTools()
+  fullName: Integrity.Tools.ToolGui.DrawTools()
+  type: Method
+  source:
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/ToolGui.cs
+  assemblies:
+  - Integrity2D
+  namespace: Integrity.Tools
+  summary: New method to draw all open tool windows. This should be called from your engine loop.
+  example: []
+  syntax:
+    content: public void DrawTools()
+    content.vb: Public Sub DrawTools()
+  overload: Integrity.Tools.ToolGui.DrawTools*
 references:
 - uid: Integrity.Tools
   commentId: N:Integrity.Tools
@@ -445,13 +369,23 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Integrity.Tools.ToolGui.DrawToolsUpdate*
-  commentId: Overload:Integrity.Tools.ToolGui.DrawToolsUpdate
+- uid: Integrity.Tools.ToolGui.#ctor*
+  commentId: Overload:Integrity.Tools.ToolGui.#ctor
   isExternal: true
-  href: Integrity.Tools.ToolGui.html#Integrity_Tools_ToolGui_DrawToolsUpdate_System_Single_
-  name: DrawToolsUpdate
-  nameWithType: ToolGui.DrawToolsUpdate
-  fullName: Integrity.Tools.ToolGui.DrawToolsUpdate
+  href: Integrity.Tools.ToolGui.html#Integrity_Tools_ToolGui__ctor
+  name: ToolGui
+  nameWithType: ToolGui.ToolGui
+  fullName: Integrity.Tools.ToolGui.ToolGui
+  nameWithType.vb: ToolGui.New
+  fullName.vb: Integrity.Tools.ToolGui.New
+  name.vb: New
+- uid: Integrity.Tools.ToolGui.DrawMenuBar*
+  commentId: Overload:Integrity.Tools.ToolGui.DrawMenuBar
+  isExternal: true
+  href: Integrity.Tools.ToolGui.html#Integrity_Tools_ToolGui_DrawMenuBar_System_Single_
+  name: DrawMenuBar
+  nameWithType: ToolGui.DrawMenuBar
+  fullName: Integrity.Tools.ToolGui.DrawMenuBar
 - uid: System.Single
   commentId: T:System.Single
   parent: System
@@ -463,131 +397,10 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
-- uid: Integrity.Tools.ToolGui.UpdateProfilerHistory*
-  commentId: Overload:Integrity.Tools.ToolGui.UpdateProfilerHistory
-  isExternal: true
-  href: Integrity.Tools.ToolGui.html#Integrity_Tools_ToolGui_UpdateProfilerHistory_Integrity_Interface_IProfiler_
-  name: UpdateProfilerHistory
-  nameWithType: ToolGui.UpdateProfilerHistory
-  fullName: Integrity.Tools.ToolGui.UpdateProfilerHistory
-- uid: Integrity.Interface.IProfiler
-  commentId: T:Integrity.Interface.IProfiler
-  parent: Integrity.Interface
-  isExternal: true
-  href: Integrity.Interface.IProfiler.html
-  name: IProfiler
-  nameWithType: IProfiler
-  fullName: Integrity.Interface.IProfiler
-- uid: Integrity.Interface
-  commentId: N:Integrity.Interface
-  isExternal: true
-  href: Integrity.html
-  name: Integrity.Interface
-  nameWithType: Integrity.Interface
-  fullName: Integrity.Interface
-  spec.csharp:
-  - uid: Integrity
-    name: Integrity
-    isExternal: true
-    href: Integrity.html
-  - name: .
-  - uid: Integrity.Interface
-    name: Interface
-    isExternal: true
-    href: Integrity.Interface.html
-  spec.vb:
-  - uid: Integrity
-    name: Integrity
-    isExternal: true
-    href: Integrity.html
-  - name: .
-  - uid: Integrity.Interface
-    name: Interface
-    isExternal: true
-    href: Integrity.Interface.html
-- uid: Integrity.Tools.ToolGui.UpdateMemoryHistory*
-  commentId: Overload:Integrity.Tools.ToolGui.UpdateMemoryHistory
-  isExternal: true
-  href: Integrity.Tools.ToolGui.html#Integrity_Tools_ToolGui_UpdateMemoryHistory_Integrity_Utils_MemoryMonitor_MemorySnapshot_
-  name: UpdateMemoryHistory
-  nameWithType: ToolGui.UpdateMemoryHistory
-  fullName: Integrity.Tools.ToolGui.UpdateMemoryHistory
-- uid: Integrity.Utils.MemoryMonitor.MemorySnapshot
-  commentId: T:Integrity.Utils.MemoryMonitor.MemorySnapshot
-  parent: Integrity.Utils
-  isExternal: true
-  href: Integrity.Utils.MemoryMonitor.html
-  name: MemoryMonitor.MemorySnapshot
-  nameWithType: MemoryMonitor.MemorySnapshot
-  fullName: Integrity.Utils.MemoryMonitor.MemorySnapshot
-  spec.csharp:
-  - uid: Integrity.Utils.MemoryMonitor
-    name: MemoryMonitor
-    isExternal: true
-    href: Integrity.Utils.MemoryMonitor.html
-  - name: .
-  - uid: Integrity.Utils.MemoryMonitor.MemorySnapshot
-    name: MemorySnapshot
-    isExternal: true
-    href: Integrity.Utils.MemoryMonitor.MemorySnapshot.html
-  spec.vb:
-  - uid: Integrity.Utils.MemoryMonitor
-    name: MemoryMonitor
-    isExternal: true
-    href: Integrity.Utils.MemoryMonitor.html
-  - name: .
-  - uid: Integrity.Utils.MemoryMonitor.MemorySnapshot
-    name: MemorySnapshot
-    isExternal: true
-    href: Integrity.Utils.MemoryMonitor.MemorySnapshot.html
-- uid: Integrity.Utils
-  commentId: N:Integrity.Utils
-  isExternal: true
-  href: Integrity.html
-  name: Integrity.Utils
-  nameWithType: Integrity.Utils
-  fullName: Integrity.Utils
-  spec.csharp:
-  - uid: Integrity
-    name: Integrity
-    isExternal: true
-    href: Integrity.html
-  - name: .
-  - uid: Integrity.Utils
-    name: Utils
-    isExternal: true
-    href: Integrity.Utils.html
-  spec.vb:
-  - uid: Integrity
-    name: Integrity
-    isExternal: true
-    href: Integrity.html
-  - name: .
-  - uid: Integrity.Utils
-    name: Utils
-    isExternal: true
-    href: Integrity.Utils.html
 - uid: Integrity.Tools.ToolGui.DrawTools*
   commentId: Overload:Integrity.Tools.ToolGui.DrawTools
   isExternal: true
-  href: Integrity.Tools.ToolGui.html#Integrity_Tools_ToolGui_DrawTools_Integrity_Interface_IProfiler_
+  href: Integrity.Tools.ToolGui.html#Integrity_Tools_ToolGui_DrawTools
   name: DrawTools
   nameWithType: ToolGui.DrawTools
   fullName: Integrity.Tools.ToolGui.DrawTools
-- uid: Integrity.Tools.ToolGui.DrawMenuBar*
-  commentId: Overload:Integrity.Tools.ToolGui.DrawMenuBar
-  isExternal: true
-  href: Integrity.Tools.ToolGui.html#Integrity_Tools_ToolGui_DrawMenuBar_System_Single_
-  name: DrawMenuBar
-  nameWithType: ToolGui.DrawMenuBar
-  fullName: Integrity.Tools.ToolGui.DrawMenuBar
-- uid: Integrity.Tools.ToolGui.#ctor*
-  commentId: Overload:Integrity.Tools.ToolGui.#ctor
-  isExternal: true
-  href: Integrity.Tools.ToolGui.html#Integrity_Tools_ToolGui__ctor
-  name: ToolGui
-  nameWithType: ToolGui.ToolGui
-  fullName: Integrity.Tools.ToolGui.ToolGui
-  nameWithType.vb: ToolGui.New
-  fullName.vb: Integrity.Tools.ToolGui.New
-  name.vb: New

@@ -14,7 +14,7 @@ items:
   fullName: Integrity.Scenes
   type: Namespace
   assemblies:
-  - Integrity
+  - Integrity2D
 references:
 - uid: Integrity.Scenes.Scene
   commentId: T:Integrity.Scenes.Scene

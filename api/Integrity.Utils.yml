@@ -16,7 +16,7 @@ items:
   fullName: Integrity.Utils
   type: Namespace
   assemblies:
-  - Integrity
+  - Integrity2D
 references:
 - uid: Integrity.Utils.MathHelper
   commentId: T:Integrity.Utils.MathHelper

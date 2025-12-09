@@ -16,9 +16,9 @@ items:
   fullName: Integrity.Rendering.CameraManager
   type: Class
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/CameraManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/CameraManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Rendering
   syntax:
     content: 'public class CameraManager : ICameraManager, IService'
@@ -48,9 +48,9 @@ items:
   fullName: Integrity.Rendering.CameraManager.RegisterCamera(Integrity.Rendering.Camera2D)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/CameraManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/CameraManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Rendering
   example: []
   syntax:
@@ -74,9 +74,9 @@ items:
   fullName: Integrity.Rendering.CameraManager.CameraManager()
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/CameraManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/CameraManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Rendering
   syntax:
     content: public CameraManager()
@@ -97,9 +97,9 @@ items:
   fullName: Integrity.Rendering.CameraManager.MainCamera
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/rendering/CameraManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/rendering/CameraManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Rendering
   example: []
   syntax:

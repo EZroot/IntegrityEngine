@@ -14,16 +14,22 @@ items:
   - uid: Integrity.Assets.AssetInfo
     name: AssetInfo
     type: Struct
-  - uid: Integrity.Assets.Texture
-    name: Texture
-    type: Class
   - uid: Integrity.Assets.ImageData
     name: ImageData
     type: Struct
+  - uid: Integrity.Assets.Texture
+    name: Texture
+    type: Class
 - uid: Integrity.Components
   name: Integrity.Components
   type: Namespace
   items:
+  - uid: Integrity.Components.AnimationComponent
+    name: AnimationComponent
+    type: Class
+  - uid: Integrity.Components.AnimationFrame
+    name: AnimationFrame
+    type: Class
   - uid: Integrity.Components.SpriteComponent
     name: SpriteComponent
     type: Class
@@ -34,9 +40,6 @@ items:
   name: Integrity.Core
   type: Namespace
   items:
-  - uid: Integrity.Core.DefaultGame
-    name: DefaultGame
-    type: Class
   - uid: Integrity.Core.Engine
     name: Engine
     type: Class
@@ -132,6 +135,15 @@ items:
   - uid: Integrity.Rendering.SpriteRenderSystem
     name: SpriteRenderSystem
     type: Class
+  - uid: Integrity.Rendering.TileChunk
+    name: TileChunk
+    type: Class
+  - uid: Integrity.Rendering.TileData
+    name: TileData
+    type: Class
+  - uid: Integrity.Rendering.TileRenderSystem
+    name: TileRenderSystem
+    type: Class
   - uid: Integrity.Rendering.WindowPipeline
     name: WindowPipeline
     type: Class
@@ -169,6 +181,13 @@ items:
   - uid: Integrity.Src.Program
     name: Program
     type: Class
+- uid: Integrity.Systems
+  name: Integrity.Systems
+  type: Namespace
+  items:
+  - uid: Integrity.Systems.AnimationRenderSystem
+    name: AnimationRenderSystem
+    type: Class
 - uid: Integrity.Tools
   name: Integrity.Tools
   type: Namespace
@@ -184,6 +203,12 @@ items:
     type: Class
   - uid: Integrity.Tools.ToolGui
     name: ToolGui
+    type: Class
+  - uid: Integrity.Tools.ToolInspector
+    name: ToolInspector
+    type: Class
+  - uid: Integrity.Tools.ToolTileMonitor
+    name: ToolTileMonitor
     type: Class
 - uid: Integrity.Utils
   name: Integrity.Utils

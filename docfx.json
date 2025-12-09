@@ -3,7 +3,7 @@
     {
       "src": [
         {
-          "files": ["bin/Release/net8.0/Integrity.dll"]
+          "files": ["bin/Release/net8.0/Integrity2D.dll"]
         }
       ],
       "dest": "api",

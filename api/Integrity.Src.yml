@@ -13,7 +13,7 @@ items:
   fullName: Integrity.Src
   type: Namespace
   assemblies:
-  - Integrity
+  - Integrity2D
 references:
 - uid: Integrity.Src.Program
   commentId: T:Integrity.Src.Program

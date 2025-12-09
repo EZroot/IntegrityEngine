@@ -16,9 +16,9 @@ items:
   fullName: Integrity.Tools.Profiler.ProfileResultCpu
   type: Class
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/Profiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/Profiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Tools
   syntax:
     content: public class Profiler.ProfileResultCpu
@@ -45,9 +45,9 @@ items:
   fullName: Integrity.Tools.Profiler.ProfileResultCpu.ProfileResultCpu(string)
   type: Constructor
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/Profiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/Profiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Tools
   syntax:
     content: public ProfileResultCpu(string tag)
@@ -71,9 +71,9 @@ items:
   fullName: Integrity.Tools.Profiler.ProfileResultCpu.Tag
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/Profiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/Profiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Tools
   syntax:
     content: public string Tag { get; }
@@ -94,9 +94,9 @@ items:
   fullName: Integrity.Tools.Profiler.ProfileResultCpu.LastTimeMs
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/tools/Profiler.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/Profiler.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Tools
   syntax:
     content: public float LastTimeMs { get; set; }

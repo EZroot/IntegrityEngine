@@ -19,9 +19,9 @@ items:
   fullName: Integrity.Interface.ISceneManager
   type: Interface
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/interface/ISceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/interface/ISceneManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: 'public interface ISceneManager : IService'
@@ -38,9 +38,9 @@ items:
   fullName: Integrity.Interface.ISceneManager.LoadScene(Integrity.Scenes.Scene)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/interface/ISceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/interface/ISceneManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void LoadScene(Scene scene)
@@ -61,9 +61,9 @@ items:
   fullName: Integrity.Interface.ISceneManager.UnloadScene(Integrity.Scenes.Scene)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/interface/ISceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/interface/ISceneManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void UnloadScene(Scene scene)
@@ -84,9 +84,9 @@ items:
   fullName: Integrity.Interface.ISceneManager.AddScene(Integrity.Scenes.Scene)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/interface/ISceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/interface/ISceneManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: void AddScene(Scene scene)
@@ -107,9 +107,9 @@ items:
   fullName: Integrity.Interface.ISceneManager.GetScene(System.Guid)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/interface/ISceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/interface/ISceneManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: Scene? GetScene(Guid id)
@@ -132,9 +132,9 @@ items:
   fullName: Integrity.Interface.ISceneManager.GetScene(string)
   type: Method
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/interface/ISceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/interface/ISceneManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: Scene? GetScene(string sceneName)
@@ -160,9 +160,9 @@ items:
   fullName: Integrity.Interface.ISceneManager.CurrentScene
   type: Property
   source:
-    href: https://github.com/EZroot/IntegrityEngine/blob/238822dad4b27a1762235a6cafb8a195b844863d/src/scenes/interface/ISceneManager.cs
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/scenes/interface/ISceneManager.cs
   assemblies:
-  - Integrity
+  - Integrity2D
   namespace: Integrity.Interface
   syntax:
     content: Scene? CurrentScene { get; }

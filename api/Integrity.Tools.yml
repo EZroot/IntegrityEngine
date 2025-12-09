@@ -8,6 +8,8 @@ items:
   - Integrity.Tools.Profiler.ProfileResultCpu
   - Integrity.Tools.Profiler.ProfileResultGpu
   - Integrity.Tools.ToolGui
+  - Integrity.Tools.ToolInspector
+  - Integrity.Tools.ToolTileMonitor
   langs:
   - csharp
   - vb
@@ -16,7 +18,7 @@ items:
   fullName: Integrity.Tools
   type: Namespace
   assemblies:
-  - Integrity
+  - Integrity2D
 references:
 - uid: Integrity.Tools.Profiler
   commentId: T:Integrity.Tools.Profiler
@@ -89,6 +91,20 @@ references:
   name: ToolGui
   nameWithType: ToolGui
   fullName: Integrity.Tools.ToolGui
+- uid: Integrity.Tools.ToolInspector
+  commentId: T:Integrity.Tools.ToolInspector
+  isExternal: true
+  href: Integrity.Tools.ToolInspector.html
+  name: ToolInspector
+  nameWithType: ToolInspector
+  fullName: Integrity.Tools.ToolInspector
+- uid: Integrity.Tools.ToolTileMonitor
+  commentId: T:Integrity.Tools.ToolTileMonitor
+  isExternal: true
+  href: Integrity.Tools.ToolTileMonitor.html
+  name: ToolTileMonitor
+  nameWithType: ToolTileMonitor
+  fullName: Integrity.Tools.ToolTileMonitor
 - uid: Integrity.Tools
   commentId: N:Integrity.Tools
   isExternal: true

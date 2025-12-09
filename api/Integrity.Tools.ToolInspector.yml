@@ -1,0 +1,376 @@
+### YamlMime:ManagedReference
+items:
+- uid: Integrity.Tools.ToolInspector
+  commentId: T:Integrity.Tools.ToolInspector
+  id: ToolInspector
+  parent: Integrity.Tools
+  children:
+  - Integrity.Tools.ToolInspector.#ctor
+  - Integrity.Tools.ToolInspector.DrawInspectorWindow(System.Boolean@)
+  langs:
+  - csharp
+  - vb
+  name: ToolInspector
+  nameWithType: ToolInspector
+  fullName: Integrity.Tools.ToolInspector
+  type: Class
+  source:
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/ToolInspector.cs
+  assemblies:
+  - Integrity2D
+  namespace: Integrity.Tools
+  syntax:
+    content: public class ToolInspector
+    content.vb: Public Class ToolInspector
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: Integrity.Tools.ToolInspector.DrawInspectorWindow(System.Boolean@)
+  commentId: M:Integrity.Tools.ToolInspector.DrawInspectorWindow(System.Boolean@)
+  id: DrawInspectorWindow(System.Boolean@)
+  parent: Integrity.Tools.ToolInspector
+  langs:
+  - csharp
+  - vb
+  name: DrawInspectorWindow(ref bool)
+  nameWithType: ToolInspector.DrawInspectorWindow(ref bool)
+  fullName: Integrity.Tools.ToolInspector.DrawInspectorWindow(ref bool)
+  type: Method
+  source:
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/ToolInspector.cs
+  assemblies:
+  - Integrity2D
+  namespace: Integrity.Tools
+  syntax:
+    content: public void DrawInspectorWindow(ref bool inspectorWindowOpened)
+    parameters:
+    - id: inspectorWindowOpened
+      type: System.Boolean
+    content.vb: Public Sub DrawInspectorWindow(inspectorWindowOpened As Boolean)
+  overload: Integrity.Tools.ToolInspector.DrawInspectorWindow*
+  nameWithType.vb: ToolInspector.DrawInspectorWindow(Boolean)
+  fullName.vb: Integrity.Tools.ToolInspector.DrawInspectorWindow(Boolean)
+  name.vb: DrawInspectorWindow(Boolean)
+- uid: Integrity.Tools.ToolInspector.#ctor
+  commentId: M:Integrity.Tools.ToolInspector.#ctor
+  id: '#ctor'
+  parent: Integrity.Tools.ToolInspector
+  langs:
+  - csharp
+  - vb
+  name: ToolInspector()
+  nameWithType: ToolInspector.ToolInspector()
+  fullName: Integrity.Tools.ToolInspector.ToolInspector()
+  type: Constructor
+  source:
+    href: https://github.com/EZroot/IntegrityEngine/blob/77192f0f5818fbb17d551a6d37438d25b9c817bb/src/tools/ToolInspector.cs
+  assemblies:
+  - Integrity2D
+  namespace: Integrity.Tools
+  syntax:
+    content: public ToolInspector()
+    content.vb: Public Sub New()
+  overload: Integrity.Tools.ToolInspector.#ctor*
+  nameWithType.vb: ToolInspector.New()
+  fullName.vb: Integrity.Tools.ToolInspector.New()
+  name.vb: New()
+references:
+- uid: Integrity.Tools
+  commentId: N:Integrity.Tools
+  isExternal: true
+  href: Integrity.html
+  name: Integrity.Tools
+  nameWithType: Integrity.Tools
+  fullName: Integrity.Tools
+  spec.csharp:
+  - uid: Integrity
+    name: Integrity
+    isExternal: true
+    href: Integrity.html
+  - name: .
+  - uid: Integrity.Tools
+    name: Tools
+    isExternal: true
+    href: Integrity.Tools.html
+  spec.vb:
+  - uid: Integrity
+    name: Integrity
+    isExternal: true
+    href: Integrity.html
+  - name: .
+  - uid: Integrity.Tools
+    name: Tools
+    isExternal: true
+    href: Integrity.Tools.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Integrity.Tools.ToolInspector.DrawInspectorWindow*
+  commentId: Overload:Integrity.Tools.ToolInspector.DrawInspectorWindow
+  isExternal: true
+  href: Integrity.Tools.ToolInspector.html#Integrity_Tools_ToolInspector_DrawInspectorWindow_System_Boolean__
+  name: DrawInspectorWindow
+  nameWithType: ToolInspector.DrawInspectorWindow
+  fullName: Integrity.Tools.ToolInspector.DrawInspectorWindow
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Integrity.Tools.ToolInspector.#ctor*
+  commentId: Overload:Integrity.Tools.ToolInspector.#ctor
+  isExternal: true
+  href: Integrity.Tools.ToolInspector.html#Integrity_Tools_ToolInspector__ctor
+  name: ToolInspector
+  nameWithType: ToolInspector.ToolInspector
+  fullName: Integrity.Tools.ToolInspector.ToolInspector
+  nameWithType.vb: ToolInspector.New
+  fullName.vb: Integrity.Tools.ToolInspector.New
+  name.vb: New
