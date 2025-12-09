@@ -4,7 +4,7 @@ namespace Integrity.Components;
 public class TransformComponent : IComponent
 {
     public float X, Y;
-    public float Rotation;
+    public float Rotation; // In Radians
     public float ScaleX, ScaleY;
 
     public TransformComponent()

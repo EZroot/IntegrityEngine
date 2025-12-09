@@ -60,11 +60,22 @@ public class SpriteRenderSystem
                 m_RenderingBatchMap[texture] = instancedSpritePositionList;
             }
 
-            var model = MathHelper.Translation(
-                obj.Transform.X, obj.Transform.Y,
-                obj.Sprite.SourceRect.Width * obj.Transform.ScaleX,
-                obj.Sprite.SourceRect.Height * obj.Transform.ScaleY
-            );
+            float x = obj.Transform.X;
+            float y = obj.Transform.Y;
+            float scaleX = obj.Transform.ScaleX;
+            float scaleY = obj.Transform.ScaleY;
+            float rot = obj.Transform.Rotation; 
+            
+            float spriteWidth = sprite.SourceRect.Width * scaleX;
+            float spriteHeight = sprite.SourceRect.Height * scaleY;
+            Vector2 pivot = obj.Sprite.Pivot;
+
+            Matrix4x4 scaleMatrix = Matrix4x4.CreateScale(spriteWidth, spriteHeight, 1.0f);
+            Matrix4x4 rotationMatrix = Matrix4x4.CreateRotationZ(rot); 
+            Matrix4x4 translationMatrix = Matrix4x4.CreateTranslation(x, y, 0.0f);
+            Matrix4x4 pivotTranslation = Matrix4x4.CreateTranslation(-pivot.X, -pivot.Y, 0.0f);
+            
+            Matrix4x4 model = pivotTranslation * scaleMatrix * rotationMatrix * translationMatrix;
 
             instancedSpritePositionList.Add(model);
 
