@@ -51,4 +51,23 @@ public class Camera2D
         Matrix4x4 view = Matrix4x4.CreateTranslation(-snappedX, -snappedY, 0);
         return view * projection;
     }
+
+    /// <summary>
+    /// Converts a screen pixel coordinate to a world coordinate, respecting zoom and position.
+    /// </summary>
+    /// <param name="screenPosition">The raw pixel screen position.</param>
+    /// <returns>The position in world space.</returns>
+    public Vector2 ScreenToWorld(Vector2 screenPosition)
+    {
+        Matrix4x4 viewProjection = GetViewProjectionMatrix();
+        if (Matrix4x4.Invert(viewProjection, out Matrix4x4 inverseMatrix))
+        {
+            var clip = new Vector3(screenPosition.X / m_Width * 2f - 1f, 1f - screenPosition.Y / m_Height * 2f, 0f);
+            var worldPosition4 = Vector4.Transform(clip, inverseMatrix);
+            var worldPosition = new Vector2(worldPosition4.X / worldPosition4.W, worldPosition4.Y / worldPosition4.W);
+            return worldPosition;
+        }
+
+        return Vector2.Zero; 
+    }
 }

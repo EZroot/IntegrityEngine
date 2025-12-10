@@ -9,6 +9,8 @@ public class InputManager : IInputManager
     private readonly Dictionary<byte, bool> m_MouseButtonStates = new();
     private Vector2 m_MousePosition = Vector2.Zero;
 
+    public Vector2 MousePosition => m_MousePosition;
+
     /// <summary>
     /// Processes a single SDL event and updates the internal key states.
     /// This is called in the Engine's HandleInput() loop for every polled event.
