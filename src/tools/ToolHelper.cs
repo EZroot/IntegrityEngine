@@ -1,8 +1,6 @@
 using ImGuiNET;
 using Integrity.Objects;
 using System.Reflection;
-using System.Numerics;
-using Integrity.Interface;
 using IComponent = Integrity.Interface.IComponent;
 
 public static class ToolHelper
@@ -40,8 +38,10 @@ public static class ToolHelper
             return;
         }
 
+        // FIX 1: Added Vector4 to the initial list of types to check.
         if (targetType.IsPrimitive || targetType.IsEnum || targetType == typeof(string) ||
-            targetType == typeof(System.Numerics.Vector2) || targetType == typeof(System.Numerics.Vector3))
+            targetType == typeof(System.Numerics.Vector2) || targetType == typeof(System.Numerics.Vector3) || 
+            targetType == typeof(System.Numerics.Vector4))
         {
             bool canWrite = false;
             if (memberInfo is PropertyInfo property)
@@ -83,25 +83,29 @@ public static class ToolHelper
                     SetValue(memberInfo!, parentObject, value);
                 }
             }
-            else if (targetType == typeof(System.Numerics.Vector3))
+            else if (targetType == typeof(System.Numerics.Vector4))
             {
-                System.Numerics.Vector3 value = (System.Numerics.Vector3)targetObject;
-                if (ImGui.InputFloat3($"##{label}{memberInfo!.GetHashCode()}", ref value))
+                System.Numerics.Vector4 value = (System.Numerics.Vector4)targetObject;
+                if (ImGui.ColorEdit4(label, ref value))
                 {
                     SetValue(memberInfo!, parentObject, value);
                 }
-                ImGui.SameLine();
-                ImGui.Text(label);
+            }
+            else if (targetType == typeof(System.Numerics.Vector3))
+            {
+                System.Numerics.Vector3 value = (System.Numerics.Vector3)targetObject;
+                if (ImGui.InputFloat3(label, ref value)) 
+                {
+                    SetValue(memberInfo!, parentObject, value);
+                }
             }
             else if (targetType == typeof(System.Numerics.Vector2))
             {
                 System.Numerics.Vector2 value = (System.Numerics.Vector2)targetObject;
-                if (ImGui.InputFloat2($"##{label}{memberInfo!.GetHashCode()}", ref value))
+                if (ImGui.InputFloat2(label, ref value))
                 {
                     SetValue(memberInfo!, parentObject, value);
                 }
-                ImGui.SameLine();
-                ImGui.Text(label);
             }
             else if (targetType == typeof(string))
             {
@@ -171,7 +175,7 @@ public static class ToolHelper
                 {
                     ImGui.PushID(member.GetHashCode());
 
-                    DrawObjectProperties(value, memberName, member, targetObject);
+                    DrawObjectProperties(value, memberName, member, targetObject); 
 
                     ImGui.PopID();
                 }

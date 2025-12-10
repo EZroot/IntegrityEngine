@@ -2,14 +2,16 @@ using System.Numerics;
 using Integrity.Core;
 using Integrity.Interface;
 using Integrity.Objects;
-using Integrity.Utils;
+using Integrity.Assets;
 
 namespace Integrity.Rendering;
+
 public class SpriteRenderSystem
 {
     private IRenderPipeline m_RenderPipe;
-    private readonly Dictionary<Assets.Texture, List<Matrix4x4>> m_RenderingBatchMap;
-    private readonly Dictionary<Assets.Texture, List<Vector4>> m_UvBatchMap;
+    private readonly Dictionary<Texture, List<Matrix4x4>> m_RenderingBatchMap;
+    private readonly Dictionary<Texture, List<Vector4>> m_UvBatchMap;
+    private readonly Dictionary<Texture, List<Vector4>> m_ColorBatchMap;
 
     private readonly List<SpriteObject> m_SpriteObjectList = new();
 
@@ -19,6 +21,7 @@ public class SpriteRenderSystem
     {
         m_RenderingBatchMap = new();
         m_UvBatchMap = new();
+        m_ColorBatchMap = new(); 
         m_RenderPipe = Service.Get<IRenderPipeline>() ?? throw new Exception("Render pipeline couldn't be found by sprite render system!");
     }
 
@@ -39,12 +42,12 @@ public class SpriteRenderSystem
     /// </summary>
     public void UpdateSpriteBatchByTexture()
     {
-        // Batch object positions by texture
         UpdateSpriteSortByDepth();
 
         var sceneGameObjects = m_SpriteObjectList;
         m_RenderingBatchMap.Clear();
         m_UvBatchMap.Clear();
+        m_ColorBatchMap.Clear(); 
 
         foreach (var obj in sceneGameObjects)
         {
@@ -52,8 +55,8 @@ public class SpriteRenderSystem
 
             var sprite = obj.Sprite;
             var texture = sprite.Texture;
-
-            // Sort positions by texture
+            
+            // Model matrices
             if (!m_RenderingBatchMap.TryGetValue(texture, out var instancedSpritePositionList))
             {
                 instancedSpritePositionList = new List<Matrix4x4>();
@@ -79,7 +82,7 @@ public class SpriteRenderSystem
 
             instancedSpritePositionList.Add(model);
 
-            // Sort UVs on atlas by texture
+            // Batch uv rects
             if (!m_UvBatchMap.TryGetValue(texture, out var instancedUvRectList))
             {
                 instancedUvRectList = new List<Vector4>();
@@ -95,6 +98,15 @@ public class SpriteRenderSystem
             float rectH = sprite.SourceRect.Height / texH;
 
             instancedUvRectList.Add(new Vector4(rectX, rectY, rectW, rectH));
+
+            // Batch colors
+            if (!m_ColorBatchMap.TryGetValue(texture, out var instancedColorList))
+            {
+                instancedColorList = new List<Vector4>();
+                m_ColorBatchMap[texture] = instancedColorList;
+            }
+
+            instancedColorList.Add(sprite.Color); 
         }
     }
 
@@ -107,25 +119,82 @@ public class SpriteRenderSystem
         {
             var texture = kvp.Key;
             var matrices = kvp.Value;
-            if (m_UvBatchMap.TryGetValue(texture, out var uvrects))
+
+            if (m_UvBatchMap.TryGetValue(texture, out var uvrects) && 
+                m_ColorBatchMap.TryGetValue(texture, out var tintColors) && // Get the color list
+                matrices.Count == uvrects.Count && 
+                matrices.Count == tintColors.Count) 
             {
-                m_RenderPipe.DrawSpritesInstanced(texture, matrices, uvrects, matrices.Count);
+                m_RenderPipe.DrawSpritesInstanced(
+                    texture, 
+                    matrices, 
+                    uvrects, 
+                    tintColors,
+                    matrices.Count
+                );
             }
         }
     }
 
     /// <summary>
-    /// Sort Sprite Objects by Y-depth. ** WARNING: SLOW **
+    /// Sort Sprite Objects by Y-depth and Layer id
     /// </summary>
     private void UpdateSpriteSortByDepth()
     {
-        // Incremental sort, should be faster
         var list = m_SpriteObjectList;
-        int n = list.Count;
-        for (int i = 1; i < n; ++i)
+        var n = list.Count;
+        for (var i = 1; i < n; ++i)
+        {
+            var key = list[i];
+            var j = i - 1;
+            var swapNeeded = true;
+            
+            while (j >= 0 && swapNeeded)
+            {
+                var current = list[j];
+
+                if (key.Sprite.Layer.CompareTo(current.Sprite.Layer) < 0)
+                {
+                    swapNeeded = true;
+                }
+                else if (key.Sprite.Layer.CompareTo(current.Sprite.Layer) == 0)
+                {
+                    if (key.Transform.Y.CompareTo(current.Transform.Y) < 0)
+                    {
+                        swapNeeded = true;
+                    }
+                    else
+                    {
+                        swapNeeded = false;
+                    }
+                }
+                else 
+                {
+                    swapNeeded = false;
+                }
+
+                if (swapNeeded)
+                {
+                    list[j + 1] = list[j];
+                    j = j - 1;
+                }
+            }
+            
+            list[j + 1] = key;
+        }
+    }
+
+    /// <summary>
+    /// Sort sprite objects by Y-depth
+    /// </summary>
+    private void UpdateSpriteSortByDepthOnly()
+    {
+        var list = m_SpriteObjectList;
+        var n = list.Count;
+        for (var i = 1; i < n; ++i)
         {
             SpriteObject key = list[i];
-            int j = i - 1;
+            var j = i - 1;
             while (j >= 0 && key.Transform.Y.CompareTo(list[j].Transform.Y) < 0)
             {
                 list[j + 1] = list[j];

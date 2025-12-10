@@ -8,10 +8,13 @@ layout (location = 4) in vec4 instModelCol3;
 layout (location = 5) in vec4 instModelCol4;
 
 layout (location = 6) in vec4 uvLocation;
+layout (location = 7) in vec4 aTintColor; 
 
 out vec2 TexCoord;
+out vec4 TintColor;
 
 uniform mat4 projection;
+
 void main()
 {
     mat4 instModel = mat4(
@@ -22,5 +25,7 @@ void main()
     );
 
     gl_Position = projection * instModel * vec4(aPos, 0.0, 1.0);
+    
     TexCoord = uvLocation.xy + aTexCoord * uvLocation.zw;
+    TintColor = aTintColor; 
 }

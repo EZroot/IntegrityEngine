@@ -6,9 +6,9 @@ public class SpriteObject : GameObject
 {
     public SpriteComponent Sprite { get; }
 
-    public SpriteObject(string name, Texture Texture) : base(name)
+    public SpriteObject(string name, Texture texture, int layer = 0) : base(name)
     {
-        Sprite = new SpriteComponent(Texture);
+        Sprite = new SpriteComponent(texture, layer);
         AddComponent(Sprite);
     }
 }
